@@ -28,9 +28,7 @@ Con el propósito de adquirir el artículo deseado de manera confidencial, estos
 
 ### CSS folder
 
-La carpeta de CSS alberga el archivo `main.css``, el cual se encarga de dar estilo a la presentación visual de _incognito dB_.
-
-En este archivo, se pueden identificar diversas secciones que se encuentran delimitadas por diferentes comentarios:
+La carpeta de CSS alberga el archivo `main.css``, el cual se encarga de dar estilo a la presentación visual de _incognito dB_. En este archivo, se pueden identificar diversas secciones que se encuentran delimitadas por diferentes comentarios:
 
 - Con el propósito de marcar divisiones más amplias, se utiliza el siguiente formato:
 
@@ -74,12 +72,10 @@ La carpeta `pkg/` es creada mediante la siguiente instrucción (ejecutada en `..
 wasm-pack build --target web --out-dir ../../site/dist/pkg
 ```
 
-Dentro de esta carpeta se encuentran los resultados de la compilación del código en Rust proveniente de ../components/client/, transformado en WebAssembly y optimizado para su desempeño en entornos web.
-
-Esta carpeta juega un papel fundamental en varios procesos relacionados con el cifrado y descifrado de mensajes.
+Dentro de esta carpeta se encuentran los resultados de la compilación del código en Rust proveniente de `../components/client/`, transformado en WebAssembly y optimizado para su desempeño en entornos web. Esta carpeta juega un papel fundamental en varios procesos relacionados con el cifrado y descifrado de mensajes.
 
 > [!NOTE]
-> Esta carpeta no se encuentra en el repositorio de GitHub, ya que ha sido excluida mediante la configuración del archivo .gitignore. Para generarla, es necesario ejecutar el comando mencionado previamente en la dirección especificada.
+> Esta carpeta no se encuentra en el repositorio de GitHub, ya que ha sido excluida mediante la configuración del archivo `.gitignore`. Para generarla, es necesario ejecutar el comando mencionado previamente en la dirección especificada.
 
 ### Public folder
 
