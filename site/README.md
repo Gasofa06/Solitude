@@ -26,42 +26,65 @@ Con el propósito de adquirir el artículo deseado de manera confidencial, estos
 
 ## Description
 
-### `CSS folder`
+### CSS folder
 
-**css/** - This directory contains Cascading Style Sheets (CSS) files responsible for styling the website's appearance.
+La carpeta de CSS alberga el archivo `main.css``, el cual se encarga de dar estilo a la presentación visual de _incognito dB_.
 
-**main.css** - The main CSS file that defines the global styles for the entire website.
+En este archivo, se pueden identificar diversas secciones que se encuentran delimitadas por diferentes comentarios:
 
-### `JavaScript folder`
+- Con el propósito de marcar divisiones más amplias, se utiliza el siguiente formato:
 
-**javascript/** - This directory contains JavaScript (JS) files that handle dynamic behavior and interactivity on the website.
+```
+/* ================================================== */
+/* ================================================== */
+/* ================================================== */
+/*                                                    */
+/*                                                    */
+/*                  SOMETHING INSIDE                  */
+/*                                                    */
+/*                                                    */
+/* ================================================== */
+/* ================================================== */
+/* ================================================== */
+```
 
-**articleCodeBook.js** - The main JavaScript file responsible for handling various interactive features.
+- Para establecer separaciones entre las subcategorías dentro de estas secciones, se emplea la siguiente estructura:
 
-**bz2.js** - The main JavaScript file responsible for handling various interactive features.
+```
+/* ================================================== */
+/*                  SOMETHING INSIDE                  */
+/* ================================================== */
+```
 
-**detectTheme.js** - The main JavaScript file responsible for handling various interactive features.
+- Asimismo, para diferenciar las sub-subcategorías en estas secciones, se sigue la siguiente pauta:
 
-**main.js** - The main JavaScript file responsible for handling various interactive features.
+```
+/* ---------------- SOMETHING INSIDE ---------------- */
+```
 
+### JavaScript folder
 
-### `PKG folder`
+TODO
 
-### `Public folder`
+### PKG folder
 
-**public/** - This directory stores image files used throughout the website.
+La carpeta `pkg/` es creada mediante la siguiente instrucción (ejecutada en `../components/client/`):
 
-**logo.png** - The website's logo image.
+```
+wasm-pack build --target web --out-dir ../../site/dist/pkg
+```
 
-### `Index HTML file`
+Dentro de esta carpeta se encuentran los resultados de la compilación del código en Rust proveniente de ../components/client/, transformado en WebAssembly y optimizado para su desempeño en entornos web.
 
-**index.html** - The homepage of the website, containing the main content and structure.
+Esta carpeta juega un papel fundamental en varios procesos relacionados con el cifrado y descifrado de mensajes.
 
-## Usage
-To maintain the website's user interface:
+> [!NOTE]
+> Esta carpeta no se encuentra en el repositorio de GitHub, ya que ha sido excluida mediante la configuración del archivo .gitignore. Para generarla, es necesario ejecutar el comando mencionado previamente en la dirección especificada.
 
-Edit the CSS files in the css/ directory to adjust the website's styling.
-Modify the JavaScript files in the js/ directory to enhance interactivity.
-Add or replace images in the images/ directory for visual content.
-Edit the HTML files to update the content and structure of different pages.
-Remember to keep the files organized and follow best practices for a maintainable and responsive website.
+### Public folder
+
+La carpeta `public/` contiene únicamente el logotipo distintivo de la página.
+
+### Index HTML file
+
+El archivo `index.html` contiene la página de inicio de _incognito dB_. El archivo index.html contiene la página de inicio de incognito dB. La estructura en HTML del artículo se genera en el archivo articleCodeBook.js ubicado en la carpeta de JavaScript.
