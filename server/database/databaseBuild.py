@@ -94,7 +94,7 @@ def Main():
     articles_groups, title_and_indices = Pack_Articles(articles, target_size)
 
     # Crear un solo archivo que contenga todos los grupos de artículos.
-    with open("server/database/db_articles.txt", "wb") as f:
+    with open("server/database/db/db.txt", "wb") as f:
         f.write(b"".join(articles_groups))
 
     # Crear un archivo JSON (para compartir) que contenga los títulos los artículos y el índice del grupo en el que se encuentran.
