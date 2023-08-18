@@ -10,10 +10,6 @@
 /* =================================================== */
 /* =================================================== */
 
-/* =================================================== */
-/*                      VARIABLES                      */
-/* =================================================== */
-
 :root {
   --text-xs: 0.76rem;
   --text-s: 0.82rem;
@@ -1215,21 +1211,42 @@ nav.top_bar .nav_content .links_and_switch_theme_container .switch_theme label.s
 
 .about_container .secondary_boxes_container ul {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-
-  max-width: 1200px;
 
   margin: 0 auto;
   padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .about_container .secondary_boxes_container ul {
+    flex-direction: column;
+    align-content: center;
+
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .about_container .secondary_boxes_container ul {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    max-width: 1200px;
+  }
 }
 
 .about_container .secondary_boxes_container ul li {
   display: flex;
   flex-direction: column;
 
-  margin: 0 18px;
+  margin: 0 18px 32px 18px;
+}
+
+@media only screen and (max-width: 768px) {
+  .about_container .secondary_boxes_container ul li {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 /* --------------- SECONDARY ABOUT BOX  --------------- */
@@ -1241,6 +1258,12 @@ nav.top_bar .nav_content .links_and_switch_theme_container .switch_theme label.s
   padding: 24px;
 
   /* box-shadow: 0 3px 6px rgba(24, 24, 27, 0.04), 0 2px 7px rgba(24, 24, 27, 0.02); */
+}
+
+@media only screen and (max-width: 768px) {
+  .about_container .secondary_boxes_container ul li pre.secondary_about_box {
+    width: 100%;
+  }
 }
 
 .about_container .secondary_boxes_container ul li pre.secondary_about_box figure {

@@ -5,7 +5,7 @@ Con el propósito de adquirir el artículo deseado de manera confidencial, estos
 
 ## Files Structure
 ```
- dist
+ site
   ├── css
   │    └── index.css
   │

@@ -23,7 +23,7 @@ const PUB_PARAMS_MAX: usize = 250;
 
 // Variables para la direccion y el nombre de archivos.
 
-const PATH_SITE: &str = "../../../site/dist/";
+const PATH_SITE: &str = "../../../site/";
 const HTML_FILENAME: &str = "index.html";
 const PATH_TITLE_INDICES: &str = "../../database/shared/title_and_indices.json";
 

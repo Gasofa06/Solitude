@@ -1,6 +1,9 @@
-In client path: wasm-pack build --target web --out-dir ../../site/dist/pkg
+# _incognito dB_
 
-In spiral-rs/src: cargo run --bin preprocess_db --
-..\..\..\server\database\db.json ..\..\..\server\database\preprocessed_db.json
+## Before Running It
 
-In server/src: cargo run build -- ../../database/preprocessed_db.json 8000
+In client path: wasm-pack build --target web --out-dir ../../site/pkg
+
+In spiral-rs/src: cargo run --bin preprocess_db -- ..\..\..\server\database\db\db.txt ..\..\..\server\database\db\preprocessed_db.txt
+
+In server/src: cargo run build -- ../../database/db/preprocessed_db.txt 8080

@@ -1,7 +1,7 @@
 import init, { initialize, generate_keys, generate_query, decode_response } from '../pkg/client.js';
 import './bz2.js';
 
-import Build_HTML_Article from './articleCodeBook.js';
+import Build_HTML_Article from './article_code_book/articleCodeBook.js';
 
 const API_URL = '/api';
 const CHECK_URL = '/check';
