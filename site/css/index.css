@@ -1040,34 +1040,34 @@ nav.top_bar .nav_content .links_and_switch_theme_container .switch_theme label.s
 /*                  PINCIPAL ABOUT BOX                  */
 /* ==================================================== */
 
-.about_container pre.principal_about_box {
+pre.principal_about_box {
   margin-bottom: 24px;
 }
 
 @media only screen and (max-width: 768px) {
-  .about_container pre.principal_about_box {
+  pre.principal_about_box {
     width: 100%;
   }
 
-  .about_container pre.principal_about_box figure {
+  pre.principal_about_box figure {
     width: var(--principal-about-box-width);
   }
 
-  .about_container pre.principal_about_box p {
+  pre.principal_about_box p {
     width: calc(var(--principal-about-box-width) * 0.9);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .about_container pre.principal_about_box {
+  pre.principal_about_box {
     width: var(--principal-about-box-width);
   }
 }
 
-.about_container pre.principal_about_box figure {
+pre.principal_about_box figure {
   display: flex;
 
-  margin: 24px auto 12px auto;
+  margin: 24px auto;
 
   --about-box-figure-width: calc(var(--principal-about-box-width) * 0.9);
   --about-box-figure-height: calc(var(--principal-about-box-width) * 0.9 * 0.4);
@@ -1076,12 +1076,12 @@ nav.top_bar .nav_content .links_and_switch_theme_container .switch_theme label.s
   height: var(--about-box-figure-height);
 }
 
-.about_container pre.principal_about_box figure svg {
+pre.principal_about_box figure svg {
   width: 100%;
   height: 100%;
 }
 
-.about_container pre.principal_about_box figure svg rect {
+pre.principal_about_box figure svg rect {
   width: 100%;
   height: 100%;
 
@@ -1089,7 +1089,7 @@ nav.top_bar .nav_content .links_and_switch_theme_container .switch_theme label.s
   fill: url(#principal_about_box_gradient);
 }
 
-.about_container pre.principal_about_box figure svg path {
+pre.principal_about_box figure svg path {
   /* fill: url(#principal_about_box_gradient); */
   fill: var(--c-bg);
 
@@ -1117,62 +1117,50 @@ nav.top_bar .nav_content .links_and_switch_theme_container .switch_theme label.s
   transform: scale(var(--scale)) translate(var(--x), var(--y));
 }
 
-.about_container pre.principal_about_box p {
-  margin: 16px 38px 24px 38px;
+pre.principal_about_box label {
+  margin: 0;
+  padding-top: 24px;
+  padding-left: 38px;
 
-  font-size: var(--text-m);
+  text-align: initial;
+  letter-spacing: 0.01em;
 
-  text-align: center;
+  font-weight: bold;
+  font-size: var(--text-ml);
+  color: var(--c-secondary-350);
+  font-family: system-ui !important;
+
+  border-top: 1px solid var(--c-secondary-050);
+}
+
+pre.principal_about_box p {
+  margin: 14px 95px 24px 38px;
+
+  text-align: initial;
   white-space: break-spaces;
 
+  font-size: var(--text-ms);
   color: var(--c-secondary-250);
 }
 
+pre.principal_about_box a {
+  margin: 0 64px 24px 38px;
+
+  text-align: initial;
+  white-space: break-spaces;
+
+  font-size: var(--text-ms);
+  color: var(--c-primary-300);
+}
+
 @media only screen and (max-width: 768px) {
-  .about_container pre.principal_about_box p {
+  pre.principal_about_box p {
     margin-left: auto !important;
     margin-right: auto !important;
 
     padding-left: var(--gutter-x);
     padding-right: var(--gutter-x);
   }
-}
-
-/* ==================================================== */
-/*                   BUTTON BELOW BOX                   */
-/* ==================================================== */
-
-.about_container .button_container {
-  margin: 12px auto;
-}
-
-@media only screen and (max-width: 480px) {
-  .about_container .button_container {
-    width: calc(var(--principal-about-box-width) * 0.9);
-  }
-}
-
-@media only screen and (min-width: 480px) {
-  .about_container .button_container {
-    width: var(--principal-about-box-width);
-  }
-}
-
-.about_container .button_container a {
-  display: block;
-
-  padding: 4px 0;
-
-  text-align: center;
-  font-size: var(--text-m);
-  color: var(--c-secondary-000);
-
-  border-radius: 6px;
-  background: var(--c-primary-200);
-}
-
-[theme='dark'] .about_container .button_container a {
-  color: var(--c-secondary-650) !important;
 }
 
 /* ===================================================== */
