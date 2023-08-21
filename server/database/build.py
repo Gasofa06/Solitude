@@ -41,16 +41,16 @@ def Pack_Articles(_articles, _target_size):
         size = sys.getsizeof(comp_article_group)
 
         if size > _target_size:
-            # Si agregar el artículo excede el tamaño deseado, inicia un nuevo grupo.
             comp_curr_group = Compress_Article(curr_group)
-            curr_group = ""
 
-            # Rellena el grupo con espacios si es necesario para lograr el tamaño deseado.
+            # Rellena el grupo con espacios si es
+            # necesario para lograr el tamaño deseado.
             new_size = sys.getsizeof(comp_curr_group)
             spaces = b" " * (_target_size - new_size + 33)
             comp_curr_group += spaces
 
             arr_groups.append(comp_curr_group)
+            curr_group = ""
         else:
             curr_group += article
 
@@ -92,23 +92,15 @@ def Main():
         arr_articles, target_size
     )
 
-    # Crear un archivo único que contenga todos los grupos de artículos.
     db_path = "server/database/db/db.txt"
-
     with open(db_path, "wb") as f:
         f.write(b"".join(arr_groups))
 
-    # Generar un archivo JSON con los títulos de los artículos y
-    # el índice del grupo en el que se encuentran.
     title_and_idx_path = "server/database/shared/title_and_idx.json"
-
     with open(title_and_idx_path, "w") as json_f:
         json.dump(dict_title_and_idx, json_f)
 
-    # Generar un archivo JSON con los títulos de los artículos y
-    # las categorías a las que peretenece.
     title_and_idx_path = "server/database/shared/title_and_topics.json"
-
     with open(title_and_idx_path, "w") as json_f:
         json.dump(dict_title_and_topics, json_f)
 

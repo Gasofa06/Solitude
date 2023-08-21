@@ -25,7 +25,9 @@ const PUB_PARAMS_MAX: usize = 250;
 
 const PATH_SITE: &str = "../../../site/";
 const HTML_FILENAME: &str = "index.html";
-const PATH_TITLE_INDICES: &str = "../../database/shared/title_and_indices.json";
+const PATH_TITLE_INDICES: &str = "../../database/shared/title_and_idx.json";
+const PATH_TITLE_TOPICS: &str = "../../database/shared/title_and_topics.json";
+const PATH_TOPICS: &str = "../../database/shared/topics.json";
 
 struct ServerState<'a> {
   fname: String,
@@ -149,9 +151,25 @@ async fn query<'a>(
   Ok(result)
 }
 
-#[get("/data/title_and_indices.json")]
+#[get("/data/title_and_idx.json")]
 async fn article_indices() -> Result<NamedFile, std::io::Error> {
   match NamedFile::open(PATH_TITLE_INDICES) {
+    Ok(file) => Ok(file),
+    Err(err) => Err(err),
+  }
+}
+
+#[get("/data/title_and_topics.json")]
+async fn article_titles_and_topics() -> Result<NamedFile, std::io::Error> {
+  match NamedFile::open(PATH_TITLE_TOPICS) {
+    Ok(file) => Ok(file),
+    Err(err) => Err(err),
+  }
+}
+
+#[get("/data/topics.json")]
+async fn article_topics() -> Result<NamedFile, std::io::Error> {
+  match NamedFile::open(PATH_TOPICS) {
     Ok(file) => Ok(file),
     Err(err) => Err(err),
   }
@@ -230,6 +248,8 @@ async fn main() -> std::io::Result<()> {
       .service(query) // POST
       .service(check) // GET
       .service(article_indices) // GET
+      .service(article_titles_and_topics) // GET
+      .service(article_topics) // GET
       .service(Files::new("/", PATH_SITE).index_file(HTML_FILENAME));
 
   HttpServer::new(app_build)
