@@ -6,21 +6,16 @@ import re
 
 
 def Compress_Article(_article):
-    # Comprimir el artículo utilizando bz2.
-    compressed_article = bz2.compress(_article.encode("utf-8"))
-    return compressed_article
+    return bz2.compress(_article.encode("utf-8"))
 
 
 def Load_Articles(_articles_folder_path):
-    # `Array`` con todos los artículos.
     arr_articles = []
 
     for filename in os.listdir(_articles_folder_path):
-        # Procesar solo los archivos `.txt`.
         if filename.endswith(".txt"):
             article_path = os.path.join(_articles_folder_path, filename)
 
-            # Abrir el archivo en modo de lectura.
             with open(article_path, "r", encoding="utf-8") as f:
                 article = f.read()
                 arr_articles.append(article)
@@ -32,74 +27,90 @@ def Pack_Articles(_articles, _target_size):
     # Ordenar los artículos en orden descendente según su tamaño.
     sorted_articles = sorted(_articles, key=lambda article: len(article), reverse=True)
 
-    # Lista para almacenar los grupos de artículos.
-    groups = []
+    # [Curr]ent
+    curr_group = ""
+    arr_groups = []
 
-    # Grupo actual siendo procesado.
-    current_group = ""
-
-    # Diccionario para almacenar los títulos de los artículos y sus índices.
-    title_and_indices = {}
+    # [Dict]ionaries
+    dict_title_and_idx = {}
+    dict_title_and_topics = {}
 
     for article in sorted_articles:
-        compressed_article_group = Compress_Article(current_group + article)
-        size = sys.getsizeof(compressed_article_group)
+        # [Comp]ressed article group
+        comp_article_group = Compress_Article(curr_group + article)
+        size = sys.getsizeof(comp_article_group)
 
         if size > _target_size:
-            # Si agregar el artículo excediera el tamaño deseado, comienza un nuevo grupo.
-            compressed_current_group = Compress_Article(current_group)
-            current_group = ""
+            # Si agregar el artículo excede el tamaño deseado, inicia un nuevo grupo.
+            comp_curr_group = Compress_Article(curr_group)
+            curr_group = ""
 
-            # Llena el grupo con espacios si es necesario, para alcanzar el tamaño objetivo (nota: un espacio = un byte).
-            size = sys.getsizeof(compressed_current_group)
-            spaces_needed = _target_size - size
-            spaces = b" " * spaces_needed
-            compressed_current_group += spaces
+            # Rellena el grupo con espacios si es necesario para lograr el tamaño deseado.
+            new_size = sys.getsizeof(comp_curr_group)
+            spaces = b" " * (_target_size - new_size + 33)
+            comp_curr_group += spaces
 
-            groups.append(compressed_current_group)
-
-        # Añadir el artículo al grupo actual.
-        current_group += article
+            arr_groups.append(comp_curr_group)
+        else:
+            curr_group += article
 
         # Dentro del artículo, su título se ubica entre "T:" y "‽".
-        pattern_for_title = r"T:(.*?)‽"
-        match_title = re.search(pattern_for_title, article)
+        title_regex = r"T:(.*?)‽"
+        title_match = re.search(title_regex, article)
 
-        if match_title:
-            # Agregar un par título-índice al diccionario de títulos e índices.
-            article_group_idx = len(groups)
-            article_title = match_title.group(1).lower()
-            title_and_indices[article_title] = article_group_idx
+        if title_match:
+            # Si hay coincidencia, agregamos un par título-índice.
+            title = title_match.group(1).lower()
+            idx = len(arr_groups)
+            dict_title_and_idx[title] = idx
 
-            print(f"The article '{article_title}' is in index {article_group_idx}.")
-        else:
-            error_article_group_idx = len(groups)
-            print(f"Error in index {error_article_group_idx}, title not found.")
+            # En el artículo, los temas a los que pertenece están entre "C:" y "‽".
+            # Y se separan entre sí por "&".
+            topic_regex = r"C:(.*?)‽"
+            topic_match = re.search(topic_regex, article)
+
+            arr_topics = topic_match.group(1).split("&") if topic_match else []
+            dict_title_and_topics[title] = arr_topics
 
     # Llena el último grupo con espacios.
-    spaces_needed = _target_size - size
-    spaces = b" " * spaces_needed
-    compressed_article_group += spaces
+    spaces = b" " * (_target_size - size + 33)
+    comp_article_group += spaces
 
-    # Añade el último grupo a la lista de grupos.
-    groups.append(compressed_article_group)
+    arr_groups.append(comp_article_group)
 
-    return groups, title_and_indices
+    return (arr_groups, dict_title_and_idx, dict_title_and_topics)
 
 
 def Main():
-    target_size = 100 * 1024  # 100 KB in bytes.
-    articles = Load_Articles("server/database/articles")
+    articles_folder_path = "server/database/articles"
+    arr_articles = Load_Articles(articles_folder_path)
 
-    articles_groups, title_and_indices = Pack_Articles(articles, target_size)
+    # Cada grupo de artículos debe tener exactamente 100KB.
+    target_size = 100 * 1000
 
-    # Crear un solo archivo que contenga todos los grupos de artículos.
-    with open("server/database/db/db.txt", "wb") as f:
-        f.write(b"".join(articles_groups))
+    (arr_groups, dict_title_and_idx, dict_title_and_topics) = Pack_Articles(
+        arr_articles, target_size
+    )
 
-    # Crear un archivo JSON (para compartir) que contenga los títulos los artículos y el índice del grupo en el que se encuentran.
-    with open("server/database/shared/title_and_indices.json", "w") as json_f:
-        json.dump(title_and_indices, json_f, indent=4)
+    # Crear un archivo único que contenga todos los grupos de artículos.
+    db_path = "server/database/db/db.txt"
+
+    with open(db_path, "wb") as f:
+        f.write(b"".join(arr_groups))
+
+    # Generar un archivo JSON con los títulos de los artículos y
+    # el índice del grupo en el que se encuentran.
+    title_and_idx_path = "server/database/shared/title_and_idx.json"
+
+    with open(title_and_idx_path, "w") as json_f:
+        json.dump(dict_title_and_idx, json_f)
+
+    # Generar un archivo JSON con los títulos de los artículos y
+    # las categorías a las que peretenece.
+    title_and_idx_path = "server/database/shared/title_and_topics.json"
+
+    with open(title_and_idx_path, "w") as json_f:
+        json.dump(dict_title_and_topics, json_f)
 
 
 if __name__ == "__main__":
