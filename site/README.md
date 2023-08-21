@@ -83,4 +83,4 @@ La carpeta `public/` contiene únicamente el logotipo distintivo de la página.
 
 ### Index HTML file
 
-El archivo `index.html` contiene la página de inicio de _incognito dB_. El archivo index.html contiene la página de inicio de incognito dB. La estructura en HTML del artículo se genera en el archivo articleCodeBook.js ubicado en la carpeta de JavaScript.
+El archivo `index.html` contiene la página de inicio de _incognito dB_. El archivo `index.html` contiene la página de inicio de _incognito dB_. La estructura en HTML del artículo se genera en el archivo articleCodeBook.js ubicado en la carpeta de JavaScript.
