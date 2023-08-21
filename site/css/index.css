@@ -1,3 +1,73 @@
+ul.selected_topics_container {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 0 9px;
+}
+
+ul.selected_topics_container li {
+  padding: 6px;
+  border: 1px solid var(--c-secondary-050);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 0 7px;
+}
+
+ul.selected_topics_container li p {
+  margin: 0;
+
+  font-size: var(--text-ms);
+  color: var(--c-secondary-250);
+}
+
+button.cross_topic_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  height: 12px;
+  padding: 0 0 0 12px;
+}
+
+button.cross_topic_btn svg {
+  height: 100%;
+  fill: none;
+}
+
+button.cross_topic_btn svg path {
+  stroke-width: 2;
+  stroke: var(--c-secondary-250);
+  stroke-linecap: round;
+}
+
+.homepage_container .search_box form li.search_bar div.search_bar_container ul.selected_topics_container + input.search_bar_input_text {
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: transparent;
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: transparent;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: transparent;
+  }
+}
+
+.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion svg {
+  width: 16px;
+  height: 16px;
+
+  margin-right: 12px;
+}
+
 /* =================================================== */
 /* =================================================== */
 /* =================================================== */
@@ -913,6 +983,10 @@ nav.top_bar .nav_content .links_and_switch_theme_container .switch_theme label.s
 }
 
 .homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   position: relative;
   margin: 20px 0;
 
@@ -944,6 +1018,8 @@ nav.top_bar .nav_content .links_and_switch_theme_container .switch_theme label.s
   text-decoration: none;
 
   max-width: 80%;
+
+  margin: 0;
 
   overflow: hidden;
   white-space: nowrap;
