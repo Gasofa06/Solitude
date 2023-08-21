@@ -322,6 +322,10 @@ async function setUpClient() {
     }
 }
 
+function Search_Articles_By_Topics_Query(_arr_topics) {
+    wi;
+}
+
 /*                                                    */
 /*                                                    */
 /*                 NAVIGATION TOP BAR                 */
@@ -421,6 +425,14 @@ function Assert(_condition, _message) {
     }
 
     return true;
+}
+
+function Contains_Obj(obj, list) {
+    for (var i = 0; i < list.length; i++) {
+        if (list[i] === obj) return true;
+    }
+
+    return false;
 }
 
 /*                                                         */
@@ -869,6 +881,89 @@ function Set_Progress(_loaded, _total_to_load) {
 /* ================================================= */
 
 let max_search_suggestions = 5;
+let min_num_letters = 3;
+
+const Clear_Search_Text_Input = () => (window.HTML_search_bar_input.value = '');
+
+const Change_Search_Input_Placeholder = _new_placeholder => {
+    window.HTML_search_bar_input.setAttribute('placeholder', _new_placeholder);
+};
+
+const Clear_Existing_Suggestions = () => {
+    var search_suggestions_container = document.querySelector('div.search_suggestions_container');
+    if (search_suggestions_container) search_suggestions_container.remove();
+};
+
+/**
+ * @info Actualiza las sugerencias de búsqueda
+ * en la barra de navegación.
+ *
+ * @param {Event} _e - El evento de entrada
+ * que activó la función.
+ */
+function Search_Bar_Sugestions(_e) {
+    var search_txt = _e.target.value;
+    Clear_Existing_Suggestions();
+
+    switch (selected_search_type) {
+        case 'Title':
+            if (search_txt.length < min_num_letters) return;
+
+            var arr_match_articles = window.arr_title_articles.filter(e =>
+                e.startsWith(search_txt),
+            );
+
+            var len = arr_match_articles.length;
+
+            if (len > 0) {
+                arr_match_articles.sort();
+
+                arr_match_articles =
+                    len > max_search_suggestions
+                        ? arr_match_articles.slice(0, max_search_suggestions)
+                        : arr_match_articles;
+
+                Show_Suggestions_Type_Title(arr_match_articles, search_txt);
+            }
+
+            break;
+
+        case 'Topic':
+            var arr_match_topics = window.topics.filter(t => t.startsWith(search_txt));
+
+            var len = arr_match_topics.length;
+
+            if (len > 0) {
+                arr_match_topics.sort();
+                console.log('Matching topics: ' + arr_match_topics);
+
+                arr_match_topics =
+                    len > max_search_suggestions
+                        ? arr_match_topics.slice(0, max_search_suggestions)
+                        : arr_match_topics;
+
+                Show_Suggestions_Type_Topic(arr_match_topics, search_txt);
+            }
+
+            break;
+
+        case 'REF.':
+            break;
+    }
+}
+
+/* =================================================== */
+/*                        TITLE                        */
+/* =================================================== */
+
+const On_Click_Title_Suggestion = _e => {
+    Clear_Existing_Suggestions();
+
+    let clicked_title = _e.target.getAttribute('data-title');
+    window.HTML_search_bar_input.value = clicked_title;
+
+    window.HTML_make_query_button.click();
+};
 
 /**
  * @info Muestra las sugerencias de búsqueda
@@ -888,17 +983,13 @@ function Show_Suggestions_Type_Title(_suggestions, _search_text) {
     var hmtl_suggestions =
         '<div class="search_suggestions_container">' +
             _suggestions
-                .map(txt => {
-                    /*
-                     * Dividimos el texto que coincide
-                     * del que no.
-                     */
-                    let matching_txt = txt.substr(0, _search_text.length);
-                    let not_matching_txt = txt.substr(_search_text.length);
+                .map(title => {
+                    let matching_txt = title.substr(0, _search_text.length);
+                    let not_matching_txt = title.substr(_search_text.length);
 
                     return (
                         '<li class="suggestion">' +
-                            '<input type="button" data-suggestion="' + txt + '">' +
+                            '<input type="button" data-title="' + title + '">' +
                             '<p>' +
                                 '<b>' + matching_txt + '</b>' +
                                 not_matching_txt +
@@ -917,105 +1008,130 @@ function Show_Suggestions_Type_Title(_suggestions, _search_text) {
     );
 
     all_input_suggestions.forEach(input => {
-        input.onclick = _e => {
-            /*
-             * El atributo "data-suggestion" fue
-             * definido en el momento de su creación
-             * y se refiere al titulo del articulo.
-             */
-            let suggestion_content = _e.target.getAttribute('data-suggestion');
-            window.HTML_search_bar_input.value = suggestion_content;
-
-            Clear_Existing_Suggestions();
-
-            window.HTML_make_query_button.click();
-        };
+        input.onclick = _e => On_Click_Title_Suggestion(_e);
     });
 }
 
-function Show_Suggestions_Type_Topic(_suggestions, _search_text) {}
+/* ==================================================== */
+/*                        TOPICS                        */
+/* ==================================================== */
 
-function Show_Suggestions_Type_Reference(_suggestions, _search_text) {}
+let selected_topics = [];
 
-/**
- * @info Actualiza las sugerencias de búsqueda
- * en la barra de navegación.
- *
- * @param {Event} _e - El evento de entrada
- * que activó la función.
- */
-function Search_Bar_Sugestions(_e) {
-    if (selected_search_type == 'Title') {
-        Clear_Existing_Suggestions();
+const On_Click_Cross_Topics = _btn => {
+    let topic = _btn.getAttribute('data-topic');
 
-        let search_txt = _e.target.value;
+    selected_topics = selected_topics.filter(_t => _t != topic);
+    // console.log(topic + " have been eliminated.")
 
-        let minimum_num_of_letters = 3;
-        if (search_txt.length < minimum_num_of_letters) return;
+    window.HTML_search_bar_input.select();
+    Show_Selected_Topics();
+};
 
-        /*
-         * `arr_articles` almacena una `array str` con
-         * los nombres de todos los articulos.
-         */
-        let arr_articles = Object.keys(window.title_index);
+function Show_Selected_Topics() {
+    let html_selected_topics = document.querySelector('ul.selected_topics_container');
+    let element_exists = !!html_selected_topics;
+    if (element_exists) html_selected_topics.remove();
 
-        /*
-         * `arr_matching_articles` almacena una `array`
-         * con todos los elementos que comiencen por
-         * `search_text`.
-         */
-        var arr_matching_articles = arr_articles.filter(e => e.startsWith(search_txt));
+    if (selected_topics.length == 0) return;
 
-        if (arr_matching_articles.length < 0) return;
+    let cross_svg = '<svg viewBox="0 0 24 24"> <path d="M20 20L4 4.00003M20 4L4.00002 20"/> </svg>';
 
-        arr_matching_articles.sort();
+    // prettier-ignore
+    let new_html_selected_topics = 
+    '<ul class="selected_topics_container">' + 
+        selected_topics
+            .map(_topic => {
+                return (
+                    '<li>' +
+                        '<p>' + _topic + '</p>' +
+                        '<button type="button" class="cross_topic_btn" data-topic="' + _topic + '">' +
+                            cross_svg +
+                        '</button>' +
+                    '</li>'
+                );
+            }).join('') +
+    '</ul>';
 
-        /*
-         * Limitamos el numero de sugerencias a una
-         * cantidad maxima establecida por
-         * `max_search_suggestions`.
-         */
-        if (arr_matching_articles.length > max_search_suggestions) {
-            arr_matching_articles = arr_matching_articles.slice(0, max_search_suggestions);
-        }
+    document
+        .querySelector('.search_bar_container')
+        .insertAdjacentHTML('afterbegin', new_html_selected_topics);
 
-        Show_Suggestions_Type_Title(arr_matching_articles, search_txt);
-    }
-    //   space   //
-    else if (selected_search_type == 'REF.') {
-        Show_Suggestions_Type_Reference();
-    }
-    //   space   //
-    else if (selected_search_type == 'Topic') {
-        Show_Suggestions_Type_Topic();
-    }
+    let all_topics_cross_btns = document.querySelectorAll('.cross_topic_btn');
+    all_topics_cross_btns.forEach(_btn => {
+        _btn.onclick = () => On_Click_Cross_Topics(_btn);
+    });
 }
 
-/**
- * @info Limpia el campo de texto de la barra
- * de búsqueda.
- */
-const Clear_Search_Text_Input = () => (window.HTML_search_bar_input.value = '');
+const On_Click_Topic_Suggestion = _e => {
+    Clear_Existing_Suggestions();
+    Clear_Search_Text_Input();
 
-/**
- * @info Función para cambiar el `placeholder`
- * de la barra de búsqueda.
- *
- * @param {string} _new_placeholder - El texto
- * del nuevo `placeholder`.
- */
-const Change_Search_Input_Placeholder = _new_placeholder => {
-    window.HTML_search_bar_input.setAttribute('placeholder', _new_placeholder);
+    window.HTML_search_bar_input.select();
+
+    let clicked_topic = _e.target.getAttribute('data-topic');
+
+    let contains_obj = Contains_Obj(clicked_topic, selected_topics);
+
+    if (!contains_obj) {
+        selected_topics.push(clicked_topic);
+        // console.log(clicked_topic + " have been added.")
+    } else {
+        selected_topics = selected_topics.filter(_topic => _topic != clicked_topic);
+        // console.log(clicked_topic + " have been eliminated.")
+    }
+
+    Show_Selected_Topics();
 };
 
-/**
- * @info Elimina la interfaz de las sugerencias
- * de búsqueda existentes.
- */
-const Clear_Existing_Suggestions = () => {
-    var search_suggestions_container = document.querySelector('div.search_suggestions_container');
-    if (search_suggestions_container) search_suggestions_container.remove();
-};
+function Show_Suggestions_Type_Topic(_suggestions, _search_text) {
+    var hmtl_suggestions =
+        '<div class="search_suggestions_container">' +
+        _suggestions
+            .map(_topic => {
+                let matching_txt = _topic.substr(0, _search_text.length);
+                let not_matching_txt = _topic.substr(_search_text.length);
+
+                let contains_obj = Contains_Obj(_topic, selected_topics);
+                let svg = contains_obj
+                    ? `<svg viewBox="0 0 16 16" fill="var(--c-primary-200)"> <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/></svg>`
+                    : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="var(--c-secondary-100)" ><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" style="&#10;    /* fill: aliceblue; */&#10;"/></svg>';
+
+                return (
+                    '<li class="suggestion">' +
+                    '<input type="button" data-topic="' +
+                    _topic +
+                    '">' +
+                    svg +
+                    '<p>' +
+                    '<b>' +
+                    matching_txt +
+                    '</b>' +
+                    not_matching_txt +
+                    '</p>' +
+                    '</li>'
+                );
+            })
+            .join('') +
+        '</div>';
+
+    let html_search_suggestions = document.getElementById('search_suggestions');
+    html_search_suggestions.insertAdjacentHTML('afterbegin', hmtl_suggestions);
+
+    let all_input_suggestions = html_search_suggestions.querySelectorAll(
+        '.search_suggestions_container .suggestion input',
+    );
+
+    all_input_suggestions.forEach(input => {
+        input.onclick = _e => On_Click_Topic_Suggestion(_e);
+    });
+}
+
+/* =================================================== */
+/*                      REFERENCE                      */
+/* =================================================== */
+
+function Show_Suggestions_Type_Reference(_suggestions, _search_text) {}
 
 /*                                                         */
 /*                                                         */
@@ -1087,6 +1203,9 @@ function Set_Search_Type(_new_type) {
     document.getElementById('selected_search_type').innerHTML = _new_type.toUpperCase();
 
     selected_search_type = _new_type;
+
+    window.HTML_search_bar_input.click();
+    window.HTML_search_bar_input.select();
 }
 
 /**
@@ -1243,16 +1362,16 @@ async function run() {
 
     Start_Loading('Loading article titles...');
 
-    /*
-     * Accedemos a la lista completa (`.json`) que
-     * contiene los titulos de los articulos y sus
-     * indices.
-     */
-    let title_index_list_p = getData('data/title_and_indices.json', true);
+    let title_idx = getData('data/title_and_idx.json', true);
+    let title_topics = getData('data/title_and_topics.json', true);
+    let arr_topics = getData('data/topics.json', true);
 
     let setupClientResult = setUpClient();
 
-    window.title_index = await title_index_list_p;
+    window.title_index = await title_idx;
+    window.arr_title_articles = Object.keys(window.title_index);
+    window.title_topics = await title_topics;
+    window.topics = await arr_topics;
     window.hasSetUp = await setupClientResult;
 
     Stop_Loading('Articles loaded.');
