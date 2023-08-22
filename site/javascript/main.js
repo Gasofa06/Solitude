@@ -322,9 +322,7 @@ async function setUpClient() {
     }
 }
 
-function Search_Articles_By_Topics_Query(_arr_topics) {
-    windo;
-}
+function Search_Articles_By_Topics_Query(_arr_topics) {}
 
 /*                                                    */
 /*                                                    */
@@ -1370,7 +1368,7 @@ async function Get_Server_Data() {
      * ej. { "Technology": ["Title", "Other"], "Science": ["Title"], ... }
      */
     var new_dict_title_topics = {};
-    for (let _t in window.topics) new_dict_title_topics[_t] = [];
+    for (let _t of window.topics) new_dict_title_topics[_t] = [];
 
     /*
      * Obtenemos un diccionario con todos los
@@ -1385,10 +1383,11 @@ async function Get_Server_Data() {
     let dict_title_topics = await getData('data/title_and_topics.json', true);
 
     for (let _title in dict_title_topics) {
-        let arr_topics = dict_title_topics[_title];
+        let arr_topics_idx = dict_title_topics[_title];
 
-        for (let _t of arr_topics) {
-            new_dict_title_topics[_t].push(_title);
+        for (let _idx of arr_topics_idx) {
+            let topic = window.topics[_idx];
+            new_dict_title_topics[topic].push(_title);
         }
     }
 
