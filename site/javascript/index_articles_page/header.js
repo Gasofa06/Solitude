@@ -1,15 +1,14 @@
-function Build_Index_Articles_Page(_filtered_dict_topic_titles) {
-    // prettier-ignore
-    let index_articles =
-        '<div class="articles_list_container">' +
-            Add_Header(_filtered_dict_topic_titles) +
-            Add_Articles_List(_filtered_dict_topic_titles) +
-        '</div>';
-
-    document
-        .querySelector('.query_result_container')
-        .insertAdjacentHTML('afterbegin', index_articles);
-}
+/* ================================================ */
+/* ================================================ */
+/* ================================================ */
+/*                                                  */
+/*                                                  */
+/*                      HEADER                      */
+/*                                                  */
+/*                                                  */
+/* ================================================ */
+/* ================================================ */
+/* ================================================ */
 
 function Add_Header(_filtered_dict_topic_titles) {
     let articles_founded = 0;
@@ -56,25 +55,4 @@ function Add_Header(_filtered_dict_topic_titles) {
     return header;
 }
 
-function Add_Articles_List(_filtered_dict_topic_titles) {
-    //let
-
-    // prettier-ignore
-    var hmtl_suggestions =
-        '<div class="content">' +
-            '<div class="filter_bar">' +
-                '<button class="filter"></button>' +
-            '</div>' +
-            
-            '<ul class="articles_list">' +
-                '<li>' +
-                '<h6>Centralización del Poder</h6>' +
-                '<div class="date_and_topics">' +
-                '<a class="date">November 15, 2022</a>' +
-                '<p class="separator">—</p>' +
-                '<a class="topics"> Technology </a>' +
-                '</div>' +
-                '</li>' +
-            '</ul>' +
-        '</div>';
-}
+export default Add_Header;
