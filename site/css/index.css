@@ -2931,8 +2931,71 @@ pre.circle_chart_container .chart_and_information_container .chart_information l
 /* ==================================================== */
 
 .query_result_container .articles_list_container .content {
+  padding-top: 46px;
 }
 
+/* ------------------- FILTER BAR ------------------- */
+
+.query_result_container .articles_list_container .content .filter_bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.query_result_container .articles_list_container .content .filter_bar button {
+  display: inline-flex;
+  align-items: center;
+
+  height: 32px;
+
+  padding: 4px 6px;
+  margin-right: 16px;
+
+  border-radius: 4px;
+
+  background: none;
+  border: 1px solid var(--c-secondary-050);
+}
+
+.query_result_container .articles_list_container .content .filter_bar button.filter::before {
+  content: 'Filter';
+
+  font-size: var(--text-ms);
+  color: var(--c-secondary-350);
+
+  letter-spacing: 0.03em;
+  font-family: sans-serif, segoe ui, nunito-sans, Helvetica;
+}
+
+.query_result_container .articles_list_container .content .filter_bar button.filter svg {
+  display: flex;
+
+  width: 20px;
+  height: 20px;
+
+  margin-left: 6px;
+}
+
+.query_result_container .articles_list_container .content .filter_bar button.filter svg path {
+  fill: var(--c-secondary-300);
+}
+
+.query_result_container .articles_list_container .content .filter_bar button.intersection svg {
+  width: 28px;
+  height: 28px;
+}
+
+.query_result_container .articles_list_container .content .filter_bar button.intersection svg circle {
+  stroke: var(--c-secondary-300);
+
+  fill: none;
+  fill-rule: evenodd;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ------------------ ARTICLES LIST ------------------ */
 .query_result_container .articles_list_container .content ul.articles_list {
   padding: 52px 0 0 0;
   margin: 0;
@@ -2949,6 +3012,7 @@ pre.circle_chart_container .chart_and_information_container .chart_information l
 
   padding-top: 4px;
 }
+
 .query_result_container .articles_list_container .content ul.articles_list li .date_and_topics > * {
   font-size: var(--text-s);
   color: var(--c-secondary-100);
