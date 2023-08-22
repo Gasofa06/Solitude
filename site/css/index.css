@@ -301,6 +301,20 @@ h5 {
   font-family: segoe ui, nunito-sans, Tahoma, 'Lucida Sans';
 }
 
+h6 {
+  margin: 0;
+
+  font-size: 1.29rem;
+  color: var(--c-secondary-400);
+
+  font-weight: bold;
+  line-height: 1.15;
+  font-style: normal;
+  letter-spacing: 0.025em;
+
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
 /* ==================================================== */
 /*                     FLOATING BOX                     */
 /* ==================================================== */
@@ -1546,6 +1560,10 @@ a.category_tag:hover {
   border-top: 1px solid var(--c-secondary-050);
 }
 
+.faqs_container.disactive {
+  display: none;
+}
+
 /* ===================================================== */
 /*                       FAQS LIST                       */
 /* ===================================================== */
@@ -1693,6 +1711,59 @@ div.query_result_container {
 }
 
 /* =================================================== */
+/*                       GENERAL                       */
+/* =================================================== */
+
+/* ----------------- BACKWARD ARROW  ----------------- */
+
+a.backward_link {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+
+  width: max-content;
+
+  font-size: var(--text-ms);
+  color: var(--c-primary-300);
+}
+
+a.backward_link svg {
+  position: relative;
+
+  width: 26px;
+  height: 26px;
+
+  margin-right: 12px;
+
+  transform: rotate(180deg);
+  transition: var(--default-transition);
+}
+
+a.backward_link svg g {
+  fill: none;
+
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke: var(--c-primary-300);
+}
+
+a.backward_link svg g circle {
+  r: 15.12;
+
+  cx: 16;
+  cy: 16;
+
+  stroke-dasharray: 95;
+  stroke-dashoffset: 95;
+
+  transition: var(--default-transition);
+}
+
+a.backward_link:hover svg g circle {
+  stroke-dashoffset: 0;
+}
+
+/* =================================================== */
 /* =================================================== */
 /* =================================================== */
 /*                                                     */
@@ -1773,55 +1844,6 @@ article header {
   article header {
     padding-right: var(--table-of-contents-total-width) !important;
   }
-}
-
-/* ----------------- BACKWARD ARROW  ----------------- */
-
-article header a.backward_link {
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
-
-  width: max-content;
-
-  font-size: var(--text-ms);
-  color: var(--c-primary-300);
-}
-
-article header a.backward_link svg {
-  position: relative;
-
-  width: 26px;
-  height: 26px;
-
-  margin-right: 12px;
-
-  transform: rotate(180deg);
-  transition: var(--default-transition);
-}
-
-article header a.backward_link svg g {
-  fill: none;
-
-  stroke-width: 1.5;
-  stroke-linejoin: round;
-  stroke: var(--c-primary-300);
-}
-
-article header a.backward_link svg g circle {
-  r: 15.12;
-
-  cx: 16;
-  cy: 16;
-
-  stroke-dasharray: 95;
-  stroke-dashoffset: 95;
-
-  transition: var(--default-transition);
-}
-
-article header a.backward_link:hover svg g circle {
-  stroke-dashoffset: 0;
 }
 
 /* --------------------- TITLE  --------------------- */
@@ -2798,4 +2820,141 @@ pre.circle_chart_container .chart_and_information_container .chart_information l
 
 pre.circle_chart_container .chart_and_information_container .chart_information li.background p.name::before {
   background: var(--c-secondary-050);
+}
+
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+/*                                                     */
+/*                                                     */
+/*                    ARTICLES LIST                    */
+/*                                                     */
+/*                                                     */
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+
+.query_result_container .articles_list_container {
+  max-width: var(--article-max-width);
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* ==================================================== */
+/*                        HEADER                        */
+/* ==================================================== */
+
+.query_result_container .articles_list_container header {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: 0;
+}
+
+/* --------------------- TITLE --------------------- */
+
+.query_result_container .articles_list_container header h2 {
+  margin: 32px 0 0 0;
+
+  text-align: center;
+  word-break: break-word;
+}
+
+/* -------------------- SUBTITLE -------------------- */
+
+.query_result_container .articles_list_container header .subtitle_container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+
+  padding-top: 14px;
+}
+
+.query_result_container .articles_list_container header .subtitle_container p {
+  margin: 0;
+
+  font-size: var(--text-s);
+  color: var(--c-secondary-150);
+}
+
+.query_result_container .articles_list_container header .subtitle_container label {
+  margin: 0 6px;
+  padding: 0px 8px;
+
+  font-size: var(--text-xs);
+  color: var(--c-secondary-150);
+
+  border-radius: 2em;
+  border: 1px solid var(--c-secondary-050);
+}
+
+/* ---------------- TOPICS CONTAINER ---------------- */
+
+.query_result_container .articles_list_container header .topics_container {
+  padding: 8px 0;
+  margin: 46px 0 0 0;
+
+  border-top: 1px solid var(--c-secondary-050);
+  border-bottom: 1px solid var(--c-secondary-050);
+}
+
+.query_result_container .articles_list_container header .topics_container .selected_topics_container {
+  padding: 0 !important;
+}
+
+.query_result_container .articles_list_container header .topics_container .selected_topics_container li {
+  padding: 3px 6px !important;
+  margin: 0 7px 0 0 !important;
+
+  color: var(--c-primary-500);
+  background-color: hsla(228, 100%, 87%, 0.259);
+
+  border: none !important;
+}
+
+.query_result_container .articles_list_container header .topics_container .selected_topics_container li p {
+  color: var(--c-primary-500) !important;
+}
+
+.query_result_container .articles_list_container header .topics_container .selected_topics_container li button svg path {
+  stroke: var(--c-primary-500) !important;
+}
+
+/* ==================================================== */
+/*                     MAIN CONTENT                     */
+/* ==================================================== */
+
+.query_result_container .articles_list_container .content {
+}
+
+.query_result_container .articles_list_container .content ul.articles_list {
+  padding: 52px 0 0 0;
+  margin: 0;
+}
+
+.query_result_container .articles_list_container .content ul.articles_list li {
+  margin-bottom: 32px;
+}
+
+.query_result_container .articles_list_container .content ul.articles_list li .date_and_topics {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  padding-top: 4px;
+}
+.query_result_container .articles_list_container .content ul.articles_list li .date_and_topics > * {
+  font-size: var(--text-s);
+  color: var(--c-secondary-100);
+}
+
+.query_result_container .articles_list_container .content ul.articles_list li .date_and_topics p.separator {
+  margin: 0 6px;
+  font-family: 'DM Serif Display', Georgia, serif;
 }
