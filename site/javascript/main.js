@@ -2,6 +2,7 @@ import init, { initialize, generate_keys, generate_query, decode_response } from
 import './bz2.js';
 
 import Build_HTML_Article from './article_code_book/articleCodeBook.js';
+import Build_Index_Articles_Page from './index_articles_page/indexArticles.js';
 
 const API_URL = '/api';
 const CHECK_URL = '/check';
@@ -170,30 +171,6 @@ async function getData(url = '', json = false) {
     }
 }
 
-async function makeQuery() {
-    console.log('Making the query...');
-
-    // Deshabilitamos boton.
-    window.HTML_make_query_button.disabled = true;
-
-    // Accedemos al valor escrito en la barra de navegacion.
-    let search_text = window.HTML_search_bar_input.value;
-
-    // Continuar solo si hay algun texto escrito.
-    Assert(search_text.length > 0, "Error, there isn't any text in the search bar.");
-
-    if (selected_search_type == 'Title') {
-        await queryTitle(search_text);
-    } else if (selected_search_type == 'Index') {
-    } else if (selected_search_type == 'Topic') {
-    }
-
-    // Habilitamos boton.
-    window.HTML_make_query_button.disabled = false;
-
-    console.log('Query finalized.');
-}
-
 /**
  * @info Recupera la configuración del usuario, si existe.
  *
@@ -322,8 +299,6 @@ async function setUpClient() {
     }
 }
 
-function Search_Articles_By_Topics_Query(_arr_topics) {}
-
 /*                                                    */
 /*                                                    */
 /*                 NAVIGATION TOP BAR                 */
@@ -349,7 +324,7 @@ function Set_Navigation_Top_Bar_Links(
     html_contact_link.onclick = _e => _on_click_contact_link(_e);
 }
 
-function Set_Navigation_Top_Bar_Links_In_Homepage_Display() {
+function Set_Navbar_Main_Page() {
     let html_about = document.querySelector('.about_container');
 
     let on_click_logo_link = () => Go_To_Top();
@@ -368,7 +343,7 @@ function Set_Navigation_Top_Bar_Links_In_Homepage_Display() {
     );
 }
 
-function Set_Navigation_Top_Bar_Links_In_Article_Display() {
+function Set_Navbar_Article_Page() {
     let html_about = document.querySelector('.about_container');
 
     let on_click_logo_link = () => (window.is_article_displaying = false);
@@ -403,25 +378,11 @@ function Set_Navigation_Top_Bar_Links_In_Article_Display() {
 /* ================================================= */
 /* ================================================= */
 
-/**
- * @info Evalúa una condición y muestra
- * un error en la consola si la condición
- * no es cierta.
- *
- * @param _condition - La condición a evaluar.
- *
- * @param {string} _message - El mensaje que se
- * muestra si la condición no se cumple.
- *
- * @returns {boolean} `false` si la condición no
- * es cierta y `true` si la condición es cierta..
- */
 function Assert(_condition, _message) {
     if (!_condition) {
         console.error(_message || 'Some error occurred.');
         return false;
     }
-
     return true;
 }
 
@@ -429,8 +390,31 @@ function Contains_Obj(obj, list) {
     for (var i = 0; i < list.length; i++) {
         if (list[i] === obj) return true;
     }
-
     return false;
+}
+
+function Show_Main_Page() {
+    let html_homepage = document.querySelector('.homepage_container');
+    let html_about = document.querySelector('.about_container');
+    let html_faq = document.querySelector('.faqs_container');
+
+    html_homepage.classList.remove('disactive');
+    html_about.classList.remove('disactive');
+    html_faq.classList.remove('disactive');
+
+    console.log('Showing the Main page.');
+}
+
+function Hide_Main_Page() {
+    let html_homepage = document.querySelector('.homepage_container');
+    let html_about = document.querySelector('.about_container');
+    let html_faq = document.querySelector('.faqs_container');
+
+    html_homepage.classList.add('disactive');
+    html_about.classList.add('disactive');
+    html_faq.classList.add('disactive');
+
+    console.log('The Main page have been hidden.');
 }
 
 /*                                                         */
@@ -558,114 +542,6 @@ function Response_To_HTML(_response, _target_title) {
 /* ================================================== */
 /* ================================================== */
 /* ================================================== */
-
-let _is_article_displaying = false;
-
-let all_aricle_sections;
-let table_of_contents_navigation_links;
-
-/**
- * @info Define una propiedad
- * "is_article_displaying" en el
- * objeto global "window", que permite
- * acceder y modificar el estado de visualización
- * del artículo desde cualquier lugar del código.
- */
-Object.defineProperty(window, 'is_article_displaying', {
-    /**
-     * @info Función `getter` que devuelve
-     * el valor actual del estado de
-     * visualización del artículo.
-     *
-     * @return {boolean} - El estado de
-     * visualización del artículo.
-     */
-    get: () => {
-        return _is_article_displaying;
-    },
-
-    /**
-     * @info Función `setter` que permite
-     * establecer un nuevo valor para el
-     * estado de visualización del artículo
-     * y ejecutar un codigo para cuando
-     * esto suceda.
-     *
-     * @param {boolean} _bool - El nuevo valor
-     * para establecer el estado de visualización
-     * del artículo.
-     */
-    set: _bool => {
-        _is_article_displaying = _bool;
-
-        let html_about = document.querySelector('.about_container');
-        let html_homepage = document.querySelector('.homepage_container');
-
-        let html_article = document.querySelector('.query_result_container article');
-
-        /*
-         * Si el artículo ya no se está mostrando,
-         * se reinician las variables, se muestra
-         * el `About` y la `Homepage`, así como se
-         * elimina el artículo.
-         */
-        if (!_is_article_displaying) {
-            all_aricle_sections = null;
-            table_of_contents_navigation_links = null;
-
-            html_homepage.classList.remove('disactive');
-            html_about.classList.remove('disactive');
-
-            html_article.remove();
-
-            Go_To_Top();
-
-            Set_Navigation_Top_Bar_Links_In_Homepage_Display();
-
-            return;
-        }
-
-        all_aricle_sections = html_article.querySelectorAll('[id^="section-"]');
-        table_of_contents_navigation_links = html_article.querySelectorAll(
-            'nav.table_contents ul li a',
-        );
-
-        /*
-         * Agregamos una función a todos los
-         * enlaces de navegación del artículo
-         * para que redireccionen al usuario
-         * hacia la sección que desea.
-         */
-        table_of_contents_navigation_links.forEach((_link, _idx) => {
-            if (_idx == 0) _link.classList.add('active');
-
-            _link.addEventListener('click', () => {
-                all_aricle_sections[_idx].scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        html_homepage.classList.add('disactive');
-        html_about.classList.add('disactive');
-
-        let html_backward_link = document.querySelector('.backward_link');
-        html_backward_link.addEventListener('click', () => (window.is_article_displaying = false));
-
-        let html_back_to_top_button = document.querySelector('.back_to_top');
-        html_back_to_top_button.addEventListener('click', () => Go_To_Top());
-
-        /*
-         * Cambiamos la función que los botones
-         * de la barra de navegación superior
-         * deben cumplir; dado que al existir
-         * un artículo, los pasos necesarios
-         * para redirigir al usuario a ese sitio
-         * son distintos.
-         */
-        Set_Navigation_Top_Bar_Links_In_Article_Display();
-
-        Clear_Search_Text_Input();
-    },
-});
 
 /**
  * @info Función para manejar el
@@ -1278,6 +1154,207 @@ function toggle_theme() {
     localStorage.setItem('data-theme', window.theme);
 }
 
+/* ================================================= */
+/* ================================================= */
+/* ================================================= */
+/*                                                   */
+/*                                                   */
+/*                       QUERY                       */
+/*                                                   */
+/*                                                   */
+/* ================================================= */
+/* ================================================= */
+/* ================================================= */
+
+const Make_Query = () => {
+    console.log('Making the query...');
+
+    window.HTML_make_query_button.disabled = true;
+
+    switch (selected_search_type) {
+        case 'Title':
+            Article_Query_By_Title();
+
+            break;
+
+        case 'Topic':
+            Articles_List_Query_By_Topics(selected_topics);
+
+            break;
+
+        case 'REF.':
+            Article_Query_By_Reference();
+
+            break;
+    }
+
+    window.HTML_make_query_button.disabled = false;
+
+    console.log('Query finalized.');
+};
+
+/* =================================================== */
+/*                     TITLE QUERY                     */
+/* =================================================== */
+
+let _is_article_displaying = false;
+
+let all_aricle_sections;
+let table_of_contents_navigation_links;
+
+/**
+ * @info Define una propiedad
+ * "is_article_displaying" en el
+ * objeto global "window", que permite
+ * acceder y modificar el estado de visualización
+ * del artículo desde cualquier lugar del código.
+ */
+Object.defineProperty(window, 'is_article_displaying', {
+    get: () => {
+        return _is_article_displaying;
+    },
+
+    set: _bool => {
+        _is_article_displaying = _bool;
+
+        let html_article = document.querySelector('.query_result_container article');
+
+        /*
+         * Si el artículo ya no se está mostrando,
+         * se reinician las variables, se muestra
+         * el `About` y la `Homepage`, así como se
+         * elimina el artículo.
+         */
+        if (!_is_article_displaying) {
+            all_aricle_sections = null;
+            table_of_contents_navigation_links = null;
+
+            Show_Main_Page();
+            html_article.remove();
+
+            Go_To_Top();
+            Set_Navbar_Main_Page();
+
+            return;
+        }
+
+        Hide_Main_Page();
+
+        all_aricle_sections = html_article.querySelectorAll('[id^="section-"]');
+        table_of_contents_navigation_links = html_article.querySelectorAll(
+            'nav.table_contents ul li a',
+        );
+
+        /*
+         * Agregamos una función a todos los
+         * enlaces de navegación del artículo
+         * para que redireccionen al usuario
+         * hacia la sección que desea.
+         */
+        table_of_contents_navigation_links.forEach((_link, _idx) => {
+            if (_idx == 0) _link.classList.add('active');
+
+            _link.addEventListener('click', () => {
+                all_aricle_sections[_idx].scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        let html_backward_link = document.querySelector('.backward_link');
+        html_backward_link.addEventListener('click', () => (window.is_article_displaying = false));
+
+        let html_back_to_top_button = document.querySelector('.back_to_top');
+        html_back_to_top_button.addEventListener('click', () => Go_To_Top());
+
+        /*
+         * Cambiamos la función que los botones
+         * de la barra de navegación superior
+         * deben cumplir; dado que al existir
+         * un artículo, los pasos necesarios
+         * para redirigir al usuario a ese sitio
+         * son distintos.
+         */
+        Set_Navbar_Article_Page();
+
+        Clear_Search_Text_Input();
+    },
+});
+
+async function Article_Query_By_Title() {
+    // Accedemos al valor escrito en la barra de navegacion.
+    let search_text = window.HTML_search_bar_input.value;
+
+    // Continuar solo si hay algun texto escrito.
+    Assert(search_text.length > 0, "Error, there isn't any text in the search bar.");
+
+    if (selected_search_type == 'Title') {
+        await queryTitle(search_text);
+    } else if (selected_search_type == 'Index') {
+    } else if (selected_search_type == 'Topic') {
+    }
+}
+
+/* ==================================================== */
+/*                     TOPICS QUERY                     */
+/* ==================================================== */
+
+let _displying_articles_topics_list = false;
+
+Object.defineProperty(window, 'displying_articles_topics_list', {
+    get: () => {
+        return _displying_articles_topics_list;
+    },
+
+    set: _bool => {
+        _displying_articles_topics_list = _bool;
+
+        let articles_list = document.querySelector('.query_result_container article');
+
+        if (!_displying_articles_topics_list) {
+            Show_Main_Page();
+
+            let article_list_exists = !!articles_list;
+            if (article_list_exists) articles_list.remove();
+
+            Go_To_Top();
+            Set_Navbar_Main_Page();
+
+            return;
+        }
+
+        Hide_Main_Page();
+        Set_Navbar_Article_Page();
+        Clear_Search_Text_Input();
+    },
+});
+
+function Articles_List_Query_By_Topics(_arr_topics) {
+    /*
+     * Diccionario que guarda únicamente los
+     * `topics` y los títulos de las categorías
+     * que el usuario ha buscado.
+     */
+    let filtered_dict_topic_titles = {};
+
+    for (var _topic in window.dict_topic_titles) {
+        let contains_topic = Contains_Obj(_topic, _arr_topics);
+
+        if (contains_topic) {
+            filtered_dict_topic_titles[_topic] = window.dict_topic_titles[_topic];
+        }
+    }
+
+    Build_Index_Articles_Page(filtered_dict_topic_titles);
+    window.displying_articles_topics_list = true;
+}
+
+/* =================================================== */
+/*                   REFERENCE QUERY                   */
+/* =================================================== */
+
+async function Article_Query_By_Reference() {
+    return;
+}
+
 /*                                                        */
 /*                                                        */
 /*                                                        */
@@ -1306,9 +1383,6 @@ const KEY_NAME = 'spiralKey';
  */
 const MAX_VALID_TIME = 604800000;
 
-/**
- * @info Inicializa los eventos de la interfaz web.
- */
 function Initialize_Web_Events() {
     /*
      * Accedemos al interruptor para cambiar
@@ -1329,7 +1403,7 @@ function Initialize_Web_Events() {
      * Evento para realizar una solicitud al
      * servidor al hacer clic en el botón.
      */
-    window.HTML_make_query_button.onclick = () => makeQuery();
+    window.HTML_make_query_button.onclick = () => Make_Query();
 
     /*
      * Agregar el evento de desplazamiento
@@ -1360,15 +1434,15 @@ async function Get_Server_Data() {
     window.topics = await getData('data/topics.json', true);
 
     /*
-     * `new_dict_title_topics` guarda un
+     * `new_dict_topic_titles` guarda un
      * diccionario con categorías como `key`
      * y los títulos de los artículos que
      * les pertenecen como contenido.
      *
      * ej. { "Technology": ["Title", "Other"], "Science": ["Title"], ... }
      */
-    var new_dict_title_topics = {};
-    for (let _t of window.topics) new_dict_title_topics[_t] = [];
+    var new_dict_topic_titles = {};
+    for (let _t of window.topics) new_dict_topic_titles[_t] = [];
 
     /*
      * Obtenemos un diccionario con todos los
@@ -1387,11 +1461,11 @@ async function Get_Server_Data() {
 
         for (let _idx of arr_topics_idx) {
             let topic = window.topics[_idx];
-            new_dict_title_topics[topic].push(_title);
+            new_dict_topic_titles[topic].push(_title);
         }
     }
 
-    window.dict_title_topics = new_dict_title_topics;
+    window.dict_topic_titles = new_dict_topic_titles;
 
     window.dict_title_idx = await dict_title_idx;
     window.arr_title_articles = Object.keys(window.dict_title_idx);
@@ -1422,7 +1496,7 @@ async function run() {
 
     Initialize_Search_Types();
     Initialize_Web_Events();
-    Set_Navigation_Top_Bar_Links_In_Homepage_Display();
+    Set_Navbar_Main_Page();
 }
 
 /**
