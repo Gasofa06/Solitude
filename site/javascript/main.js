@@ -2,7 +2,7 @@ import init, { initialize, generate_keys, generate_query, decode_response } from
 import './bz2.js';
 
 import Build_HTML_Article from './article_code_book/articleCodeBook.js';
-import Build_Index_Articles_Page from './index_articles_page/indexArticles.js';
+import Build_Index_Articles_Page from './index_articles_page/build.js';
 
 const API_URL = '/api';
 const CHECK_URL = '/check';
@@ -299,73 +299,6 @@ async function setUpClient() {
     }
 }
 
-/*                                                    */
-/*                                                    */
-/*                 NAVIGATION TOP BAR                 */
-/*                                                    */
-/*                                                    */
-
-function Set_Navigation_Top_Bar_Links(
-    _on_click_logo_link,
-    _on_click_search_link,
-    _on_click_about_link,
-    _on_click_contact_link,
-) {
-    let html_nav_top_bar = document.querySelector('nav.top_bar');
-
-    let html_logo_link = html_nav_top_bar.querySelector('div.logo_container a');
-    let html_search_link = html_nav_top_bar.querySelector('ul.links li.search a');
-    let html_about_link = html_nav_top_bar.querySelector('ul.links li.about a');
-    let html_contact_link = html_nav_top_bar.querySelector('ul.links li.contact a');
-
-    html_logo_link.onclick = _e => _on_click_logo_link(_e);
-    html_search_link.onclick = _e => _on_click_search_link(_e);
-    html_about_link.onclick = _e => _on_click_about_link(_e);
-    html_contact_link.onclick = _e => _on_click_contact_link(_e);
-}
-
-function Set_Navbar_Main_Page() {
-    let html_about = document.querySelector('.about_container');
-
-    let on_click_logo_link = () => Go_To_Top();
-
-    let on_click_search_link = () => Go_To_Top();
-
-    let on_click_about_link = () => html_about.scrollIntoView({ behavior: 'smooth' });
-
-    let on_click_contact_link = () => NaN;
-
-    Set_Navigation_Top_Bar_Links(
-        on_click_logo_link,
-        on_click_search_link,
-        on_click_about_link,
-        on_click_contact_link,
-    );
-}
-
-function Set_Navbar_Article_Page() {
-    let html_about = document.querySelector('.about_container');
-
-    let on_click_logo_link = () => (window.is_article_displaying = false);
-
-    let on_click_search_link = () => (window.is_article_displaying = false);
-
-    let on_click_about_link = () => {
-        window.is_article_displaying = false;
-
-        html_about.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    let on_click_contact_link = () => NaN;
-
-    Set_Navigation_Top_Bar_Links(
-        on_click_logo_link,
-        on_click_search_link,
-        on_click_about_link,
-        on_click_contact_link,
-    );
-}
-
 /* ================================================= */
 /* ================================================= */
 /* ================================================= */
@@ -415,6 +348,119 @@ function Hide_Main_Page() {
     html_faq.classList.add('disactive');
 
     console.log('The Main page have been hidden.');
+}
+
+/* ================================================= */
+/* ================================================= */
+/* ================================================= */
+/*                                                   */
+/*                                                   */
+/*              NAVIGATION TOP BAR (NTB)             */
+/*                                                   */
+/*                                                   */
+/* ================================================= */
+/* ================================================= */
+/* ================================================= */
+
+let On_Click_Logo_Link = () => {};
+
+let On_Click_Search_Link = () => {};
+
+let On_Click_About_Link = () => {};
+
+let On_Click_FAQs_Link = () => {};
+
+function Initialize_NTB_Links() {
+    let navigation_top_bar = document.querySelector('nav.top_bar');
+
+    let logo_link = navigation_top_bar.querySelector('div.logo_container a');
+    let search_link = navigation_top_bar.querySelector('ul.links li.search a');
+    let about_link = navigation_top_bar.querySelector('ul.links li.about a');
+    let faqs_link = navigation_top_bar.querySelector('ul.links li.faqs a');
+
+    logo_link.onclick = _e => On_Click_Logo_Link(_e);
+    search_link.onclick = _e => On_Click_Search_Link(_e);
+    about_link.onclick = _e => On_Click_About_Link(_e);
+    faqs_link.onclick = _e => On_Click_FAQs_Link(_e);
+}
+
+/* ================================================== */
+/*                    IN MAIN PAGE                    */
+/* ================================================== */
+
+function Set_NTB_Main_Page() {
+    On_Click_Logo_Link = () => Go_To_Top();
+
+    On_Click_Search_Link = () => {
+        Go_To_Top();
+        window.HTML_search_bar_input.select();
+    };
+
+    On_Click_About_Link = () => {
+        let about = document.querySelector('.about_container');
+        about.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    On_Click_FAQs_Link = () => {
+        let faqs = document.querySelector('.faqs_container');
+        faqs.scrollIntoView({ behavior: 'smooth' });
+    };
+}
+
+/* =================================================== */
+/*                   IN ARTICLE PAGE                   */
+/* =================================================== */
+
+function Set_NTB_Article_Page() {
+    On_Click_Logo_Link = () => {
+        window.displaying_article_page = false;
+    };
+
+    On_Click_Search_Link = () => {
+        window.displaying_article_page = false;
+    };
+
+    On_Click_About_Link = () => {
+        window.displaying_article_page = false;
+
+        let about = document.querySelector('.about_container');
+        about.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    On_Click_FAQs_Link = () => {
+        window.displaying_article_page = false;
+
+        let faqs = document.querySelector('.faqs_container');
+        faqs.scrollIntoView({ behavior: 'smooth' });
+    };
+}
+
+/* ==================================================== */
+/*                IN INDEX ARTICLES PAGE                */
+/* ==================================================== */
+
+function Set_NTB_Index_Articles_Page() {
+    On_Click_Logo_Link = () => {
+        window.displying_index_articles_page = false;
+    };
+
+    On_Click_Search_Link = () => {
+        window.displying_index_articles_page = false;
+    };
+
+    On_Click_About_Link = () => {
+        window.displying_index_articles_page = false;
+
+        let about = document.querySelector('.about_container');
+        about.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    On_Click_FAQs_Link = () => {
+        window.displying_index_articles_page = false;
+
+        let faqs = document.querySelector('.faqs_container');
+        faqs.scrollIntoView({ behavior: 'smooth' });
+    };
 }
 
 /*                                                         */
@@ -526,7 +572,7 @@ function Response_To_HTML(_response, _target_title) {
         'It took ' + delta_time.toString() + ' miliseconds to build and display the article.',
     );
 
-    window.is_article_displaying = true;
+    window.displaying_article_page = true;
 
     Go_To_Top();
 }
@@ -548,7 +594,7 @@ function Response_To_HTML(_response, _target_title) {
  * evento de desplazamiento (_scroll_).
  */
 function Handle_Scroll() {
-    if (!window.is_article_displaying) return;
+    if (!window.displaying_article_page) return;
 
     if (all_aricle_sections.length < 1 || table_of_contents_navigation_links.length < 1) {
         return;
@@ -1197,25 +1243,25 @@ const Make_Query = () => {
 /*                     TITLE QUERY                     */
 /* =================================================== */
 
-let _is_article_displaying = false;
+let _displaying_article_page = false;
 
 let all_aricle_sections;
 let table_of_contents_navigation_links;
 
 /**
  * @info Define una propiedad
- * "is_article_displaying" en el
+ * "displaying_article_page" en el
  * objeto global "window", que permite
  * acceder y modificar el estado de visualización
  * del artículo desde cualquier lugar del código.
  */
-Object.defineProperty(window, 'is_article_displaying', {
+Object.defineProperty(window, 'displaying_article_page', {
     get: () => {
-        return _is_article_displaying;
+        return _displaying_article_page;
     },
 
     set: _bool => {
-        _is_article_displaying = _bool;
+        _displaying_article_page = _bool;
 
         let html_article = document.querySelector('.query_result_container article');
 
@@ -1225,7 +1271,7 @@ Object.defineProperty(window, 'is_article_displaying', {
          * el `About` y la `Homepage`, así como se
          * elimina el artículo.
          */
-        if (!_is_article_displaying) {
+        if (!_displaying_article_page) {
             all_aricle_sections = null;
             table_of_contents_navigation_links = null;
 
@@ -1233,7 +1279,7 @@ Object.defineProperty(window, 'is_article_displaying', {
             html_article.remove();
 
             Go_To_Top();
-            Set_Navbar_Main_Page();
+            Set_NTB_Main_Page();
 
             return;
         }
@@ -1260,21 +1306,15 @@ Object.defineProperty(window, 'is_article_displaying', {
         });
 
         let html_backward_link = document.querySelector('.backward_link');
-        html_backward_link.addEventListener('click', () => (window.is_article_displaying = false));
+        html_backward_link.addEventListener(
+            'click',
+            () => (window.displaying_article_page = false),
+        );
 
         let html_back_to_top_button = document.querySelector('.back_to_top');
         html_back_to_top_button.addEventListener('click', () => Go_To_Top());
 
-        /*
-         * Cambiamos la función que los botones
-         * de la barra de navegación superior
-         * deben cumplir; dado que al existir
-         * un artículo, los pasos necesarios
-         * para redirigir al usuario a ese sitio
-         * son distintos.
-         */
-        Set_Navbar_Article_Page();
-
+        Set_NTB_Article_Page();
         Clear_Search_Text_Input();
     },
 });
@@ -1297,32 +1337,32 @@ async function Article_Query_By_Title() {
 /*                     TOPICS QUERY                     */
 /* ==================================================== */
 
-let _displying_articles_topics_list = false;
+let _displying_index_articles_page = false;
 
-Object.defineProperty(window, 'displying_articles_topics_list', {
+Object.defineProperty(window, 'displying_index_articles_page', {
     get: () => {
-        return _displying_articles_topics_list;
+        return _displying_index_articles_page;
     },
 
     set: _bool => {
-        _displying_articles_topics_list = _bool;
+        _displying_index_articles_page = _bool;
 
         let articles_list = document.querySelector('.query_result_container article');
 
-        if (!_displying_articles_topics_list) {
+        if (!_displying_index_articles_page) {
             Show_Main_Page();
 
             let article_list_exists = !!articles_list;
             if (article_list_exists) articles_list.remove();
 
             Go_To_Top();
-            Set_Navbar_Main_Page();
+            Set_NTB_Main_Page();
 
             return;
         }
 
         Hide_Main_Page();
-        Set_Navbar_Article_Page();
+        Set_NTB_Index_Articles_Page();
         Clear_Search_Text_Input();
     },
 });
@@ -1344,7 +1384,7 @@ function Articles_List_Query_By_Topics(_arr_topics) {
     }
 
     Build_Index_Articles_Page(filtered_dict_topic_titles);
-    window.displying_articles_topics_list = true;
+    window.displying_index_articles_page = true;
 }
 
 /* =================================================== */
@@ -1496,7 +1536,9 @@ async function run() {
 
     Initialize_Search_Types();
     Initialize_Web_Events();
-    Set_Navbar_Main_Page();
+
+    Initialize_NTB_Links();
+    Set_NTB_Main_Page();
 }
 
 /**
