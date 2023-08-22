@@ -1,10 +1,14 @@
 <br/>
-
+    
 <h1 align="center">incognito dB</h1>
 
+<br />
+
 <p align="center">
-  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles.
+  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, , ensuring users privacy while delivering the requested content.
 </p>
+
+<br />
 
 <p align="center">
   <a href="">Docs</a>
@@ -14,7 +18,9 @@
   <a href="mailto:rogerrovi2006@gmail.com">Contact</a>
 </p>
 
-<h4 align="center">
+<br />
+
+<p align="center">
   <a href="https://github.com/Gasofa06/incognito-db/blob/main/LICENSE">
     <img alt="GitHub" src="https://img.shields.io/github/license/Gasofa06/incognito-db?color=blue">
   </a>
@@ -24,15 +30,17 @@
   <a href="https://blyss.dev/">
     <img alt="Static Badge" src="https://img.shields.io/badge/build-spiral-blue?label=powered%20by&color=blue">
   </a>
-</h4>
+</p>
 
 --------------------------------------------------------------------------------
 
-With the sole purpose of achieving the level of privacy and confidentiality that we all wish to attain in our database queries, the [_incognito dB_]() platform utilizes homomorphic encryption for [private information retrieval](https://en.wikipedia.org/wiki/Private_information_retrieval).
+## Introduction
 
-This approach guarantees that no individual, even including the server itself, possesses awareness of the specific information we have both requested and received.
+With the sole purpose of achieving the level of privacy and confidentiality that we all wish to attain in our database queries, the [_incognito dB_]() platform utilizes homomorphic encryption for [private information retrieval](https://en.wikipedia.org/wiki/Private_information_retrieval). This approach guarantees that no individual, even including the server itself, possesses awareness of the specific information we have both requested and received.
 
 Data is **now** cryptographically protected even throughout the process.
+
+<img src="docs/static/imgs/PIR.png"></a>
 
 ## Table of Contents
 
