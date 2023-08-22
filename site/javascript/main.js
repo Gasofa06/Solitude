@@ -34,7 +34,7 @@ async function storeState(key, uuid) {
         uuid: uuid,
         createdAt: Date.now(),
     };
-    window.localStorage[window.KEY_NAME] = JSON.stringify(dataToStore);
+    window.localStorage[KEY_NAME] = JSON.stringify(dataToStore);
 }
 
 async function uploadState() {
@@ -77,7 +77,7 @@ async function query(targetIdx, title) {
 }
 
 async function queryTitle(targetTitle) {
-    let articleIndex = window.title_index[targetTitle];
+    let articleIndex = window.dict_title_idx[targetTitle];
     return await query(articleIndex, targetTitle);
 }
 
@@ -211,7 +211,7 @@ function retrieve_client_state() {
      * devlovera `false`. Haciendo saber que
      * el usuario no  se ha inicializado aún.
      */
-    if (!window.localStorage || !window.localStorage[window.KEY_NAME]) return false;
+    if (!window.localStorage || !window.localStorage[KEY_NAME]) return false;
 
     /**
      * Si el usuario ya se habia inicializado,
@@ -219,7 +219,7 @@ function retrieve_client_state() {
      * (formato JSON) y lo convertiremos en un
      * objeto de `JS`.
      */
-    let state = JSON.parse(window.localStorage[window.KEY_NAME]);
+    let state = JSON.parse(window.localStorage[KEY_NAME]);
 
     /**
      * Como en el `localstorage` solo se permite
@@ -253,7 +253,7 @@ async function is_client_state_valid(state) {
      * (`MAX_VALID_TIME`), este usuario no
      * sera valido.
      */
-    if (Date.now() - state.createdAt > window.MAX_VALID_TIME) return false;
+    if (Date.now() - state.createdAt > MAX_VALID_TIME) return false;
 
     /**
      * Comprovar configuracion de usuario
@@ -311,7 +311,7 @@ async function setUpClient() {
          * `self.crypto.getRandomValues(key)` llena la `array` creada con valores
          * aleatorios generados de manera criptográficamente segura.
          */
-        let key = new Uint8Array(window.KEY_SIZE);
+        let key = new Uint8Array(KEY_SIZE);
         self.crypto.getRandomValues(key);
 
         /**
@@ -323,7 +323,7 @@ async function setUpClient() {
 }
 
 function Search_Articles_By_Topics_Query(_arr_topics) {
-    wi;
+    windo;
 }
 
 /*                                                    */
@@ -1250,6 +1250,11 @@ function Generate_Search_Type_Dropdown_Content() {
     });
 }
 
+const Initialize_Search_Types = () => {
+    Generate_Search_Type_Dropdown_Content();
+    Set_Search_Type(selected_search_type);
+};
+
 /*                                                          */
 /*                                                          */
 /*                                                          */
@@ -1272,10 +1277,6 @@ function toggle_theme() {
 
     document.documentElement.setAttribute('theme', window.theme);
 
-    /*
-     * Guardamos el nuevo `theme`
-     * como predeterminado.
-     */
     localStorage.setItem('data-theme', window.theme);
 }
 
@@ -1288,6 +1289,24 @@ function toggle_theme() {
 /*                                                        */
 /*                                                        */
 /*                                                        */
+
+/**
+ * El tamaño (en `bytes`) de la clave.
+ */
+const KEY_SIZE = 32;
+
+/**
+ * El nombre que recibe la clave (y sus
+ * demas datos) en el almacenamiento
+ * local (`localStorage`).
+ */
+const KEY_NAME = 'spiralKey';
+
+/**
+ * El tiempo máximo de validez de la clave
+ * en milisegundos. En este caso 1 semana.
+ */
+const MAX_VALID_TIME = 604800000;
 
 /**
  * @info Inicializa los eventos de la interfaz web.
@@ -1323,6 +1342,62 @@ function Initialize_Web_Events() {
     window.addEventListener('scroll', Handle_Scroll);
 }
 
+async function Get_Server_Data() {
+    /*
+     * Obtenemos un diccionario con todos
+     * los títulos de los artículos y el
+     * índice del grupo en el que están
+     * almacenados en el servidor.
+     *
+     * ej. { "Title": 0, "Other": 0, ... }
+     */
+    let dict_title_idx = getData('data/title_and_idx.json', true);
+
+    /*
+     * Obtenemos una `Array` con todas las
+     * categorías de artículos disponibles.
+     *
+     * ej. ["Technology", "Science", ... ]
+     */
+    window.topics = await getData('data/topics.json', true);
+
+    /*
+     * `new_dict_title_topics` guarda un
+     * diccionario con categorías como `key`
+     * y los títulos de los artículos que
+     * les pertenecen como contenido.
+     *
+     * ej. { "Technology": ["Title", "Other"], "Science": ["Title"], ... }
+     */
+    var new_dict_title_topics = {};
+    for (let _t in window.topics) new_dict_title_topics[_t] = [];
+
+    /*
+     * Obtenemos un diccionario con todos los
+     * artículos y las categorías a las que
+     * pertenecen. Las categorías no están
+     * escritas en sí, sino que hacen
+     * referencia al índice en el que esa
+     * categoría se encuentra en `window.topics`.
+     *
+     * ej. { "Title": [0, 1], "Other": [0], ... }
+     */
+    let dict_title_topics = await getData('data/title_and_topics.json', true);
+
+    for (let _title in dict_title_topics) {
+        let arr_topics = dict_title_topics[_title];
+
+        for (let _t of arr_topics) {
+            new_dict_title_topics[_t].push(_title);
+        }
+    }
+
+    window.dict_title_topics = new_dict_title_topics;
+
+    window.dict_title_idx = await dict_title_idx;
+    window.arr_title_articles = Object.keys(window.dict_title_idx);
+}
+
 /**
  * @info Función asincrónica que se encarga
  * de ejecutar el código principal.
@@ -1330,52 +1405,23 @@ function Initialize_Web_Events() {
 async function run() {
     /*
      * Debemos inicializar el módulo WebAssembly
-     * (en este caso `../pkg/client.js`) antes de
-     * llamar a cualquier funcion `wasm`.
+     * antes de llamar a cualquier funcion `wasm`.
      */
-    Start_Loading('Initializing');
+    Start_Loading('Initializing WebAssembly');
     await init();
     Stop_Loading('Done');
 
-    /*
-     * El tamaño (en `bytes`) de la clave.
-     */
-    window.KEY_SIZE = 32;
+    Start_Loading('Geting server data...');
+    await Get_Server_Data();
+    Stop_Loading('Server data loaded');
 
-    /*
-     * El nombre que recibe la clave (y sus
-     * demas datos) en el almacenamiento
-     * local (`localStorage`).
-     */
-    window.KEY_NAME = 'spiralKey';
-
-    /*
-     * El tiempo máximo de validez de la clave
-     * en milisegundos. En este caso 1 semana.
-     */
-    window.MAX_VALID_TIME = 604800000;
+    Start_Loading('Seting up the client...');
+    window.hasSetUp = await setUpClient();
+    Stop_Loading('Client seted up');
 
     window.theme = document.documentElement.getAttribute('theme');
 
-    Generate_Search_Type_Dropdown_Content();
-    Set_Search_Type(selected_search_type);
-
-    Start_Loading('Loading article titles...');
-
-    let title_idx = getData('data/title_and_idx.json', true);
-    let title_topics = getData('data/title_and_topics.json', true);
-    let arr_topics = getData('data/topics.json', true);
-
-    let setupClientResult = setUpClient();
-
-    window.title_index = await title_idx;
-    window.arr_title_articles = Object.keys(window.title_index);
-    window.title_topics = await title_topics;
-    window.topics = await arr_topics;
-    window.hasSetUp = await setupClientResult;
-
-    Stop_Loading('Articles loaded.');
-
+    Initialize_Search_Types();
     Initialize_Web_Events();
     Set_Navigation_Top_Bar_Links_In_Homepage_Display();
 }
