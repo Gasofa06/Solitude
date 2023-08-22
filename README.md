@@ -40,22 +40,24 @@ With the sole purpose of achieving the level of privacy and confidentiality that
 
 Data is **now** cryptographically protected even throughout the process.
 
+<br/>
+
 <img src="docs/static/imgs/PIR.png"></a>
 
 ## Table of Contents
 
-1. [Live Demo](#live_demo)
-2. [Platform Description](#description)
+1. [Live Demo](#live-demo)
+2. [Platform Description](#platform-description)
    * [Features and Benefits](#features-and-benefits)
    * [Limitations](#limitations)
 3. [Run in Local Device](#run-in-local-device)
-   * [Setup](#setup)
+   * [Requirements](#requirements)
    * [Quick Start](#quick-start)
-5. [Documentation](#documentation)
-6. [Disclamer](#disclamer)
-7. [Credits](#credits)
-8. [Contact](#contact)
-9. [License](#license)
+4. [Disclamer](#disclamer)
+5. [Credits](#credits)
+   * [Project References](#project-references)
+6. [Contact](#contact)
+7. [License](#license)
 
 ## Live Demo
 
@@ -63,7 +65,17 @@ You can quickly experience the _indognito dB_ platform by visiting its own [webs
 
 ...
 
-## Quick Start
+## Platform Description
+
+### Features and Benefits
+
+### Limitations
+
+## Run in Local Device
+
+### Requirements
+
+### Quick Start
 
 1. Commence by cloning the repository to your local device:
 ```
@@ -90,11 +102,26 @@ cargo run build -- ../../server/database/db/preprocessed_db.txt 8080
 
 Now you are runing it in your own device in localhost port 8080.
 
-## Documentation
-
-...
-
 ## Credits
+
+**Project Author:** [Roger Rovira]().
+
+Emerging from the final stages of my secondary education in Catalonia, Barcelona, this project has taken shape as the Synthesis Work that Catalan students are required to present during the last year of our studies.
+
+### External Contributions
+
+The development of [_incognito dB_]() was enriched by the valuable contribution of the open-source library Spiral and the SpiralWiki project.
+
+* **Spiral**: [link](https://blyss.dev/)
+* **SpiralWiki**: [link](https://spiralwiki.com/)
+
+It was thanks to these tools that I was able to successfully implement homomorphic encryption to achieve private information retrieval.
+
+### Reconocimientos
+
+Quiero expresar mi agradecimiento a la comunidad de Spiral y SpiralWiki por su labor en la creación y mantenimiento de estas herramientas. También agradezco a mis mentores y profesores que me brindaron orientación durante el proceso de desarrollo.
+
+La realización de este proyecto fue posible gracias a la colaboración y esfuerzo de estas diversas fuentes de apoyo.
 
 ## Contact
 
