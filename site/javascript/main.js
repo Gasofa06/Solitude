@@ -1494,10 +1494,10 @@ async function Get_Server_Data() {
      *
      * ej. { "Title": [0, 1], "Other": [0], ... }
      */
-    let dict_title_topics = await getData('data/title_and_topics.json', true);
+    window.dict_title_topics = await getData('data/title_and_topics.json', true);
 
-    for (let _title in dict_title_topics) {
-        let arr_topics_idx = dict_title_topics[_title];
+    for (let _title in window.dict_title_topics) {
+        let arr_topics_idx = window.dict_title_topics[_title];
 
         for (let _idx of arr_topics_idx) {
             let topic = window.topics[_idx];
