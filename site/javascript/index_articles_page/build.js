@@ -1,6 +1,6 @@
-import Add_Header from './header';
-import Add_Main_Content from './content';
-import Add_Footer from './footer';
+import Add_Header from './header.js';
+import Add_Main_Content from './content.js';
+import Add_Footer from './footer.js';
 
 function Build_Index_Articles_Page(_filtered_dict_topic_titles) {
     // prettier-ignore
