@@ -1494,14 +1494,38 @@ async function Get_Server_Data() {
      *
      * ej. { "Title": [0, 1], "Other": [0], ... }
      */
-    window.dict_title_topics = await getData('data/title_and_topics.json', true);
+    let bz2_dict_title_topics = await getData('data/title_and_topics.json', true);
+
+    let decoded_bz2 = atob(bz2_dict_title_topics['bz2']);
+
+    let char_num_arr = decoded_bz2.split('').map(x => {
+        return x.charCodeAt(0);
+    });
+
+    let byte_arr = new Uint8Array(char_num_arr);
+    let descompressed_dict_title_topics = bz2.decompress(byte_arr);
+
+    let decoded_dict_title_topics = new TextDecoder('utf-8').decode(
+        descompressed_dict_title_topics,
+    );
+
+    let obj_dict_title_topics = JSON.parse(decoded_dict_title_topics);
+    window.dict_title_topics = obj_dict_title_topics;
 
     for (let _title in window.dict_title_topics) {
         let arr_topics_idx = window.dict_title_topics[_title];
 
         for (let _idx of arr_topics_idx) {
             let topic = window.topics[_idx];
-            new_dict_topic_titles[topic].push(_title);
+            try {
+                new_dict_topic_titles[topic].push(_title);
+            } catch (_error) {
+                // alert(_error);
+                alert(
+                    `The article titled '${_title}' is associated with the topic '${topic}', 
+                    but this topic does not exist within the array of topics.`,
+                );
+            }
         }
     }
 
