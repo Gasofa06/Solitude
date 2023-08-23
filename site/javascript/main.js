@@ -1316,37 +1316,52 @@ function Set_Article_Buttons() {
 }
 
 async function Article_Query_By_Title() {
-    let title = window.HTML_search_bar_input.value;
-    let group_idx = window.dict_title_idx[title];
+    let article_title = window.HTML_search_bar_input.value;
+    let article_group_idx = window.dict_title_idx[article_title];
 
-    return await query(group_idx, title);
-}
-
-async function query(targetIdx, title) {
-    //
-    // `!window.hasSetUp` devuelve `true` si el usuario no esta configurado.
-    if (!window.hasSetUp) {
-        //
-        //
+    if (!window.client_has_set_up) {
         let id = await uploadState();
-        if (!id) return false;
-        window.hasSetUp = true;
-        window.id = id;
+
+        if (id) {
+            window.id = id;
+            window.client_has_set_up = true;
+        } else {
+            return;
+        }
     }
 
     Start_Loading('Loading article');
-    console.log('Generating query... (' + targetIdx + ')');
-    let query = generate_query(window.client, window.id, targetIdx);
-    console.log(`done (${query.length} bytes)`);
 
-    console.log('Sending query...');
-    let response = new Uint8Array(await api.query(query));
-    console.log('sent.');
+    console.log('Generating a query for the server.');
+    console.log(`( Index: ${article_group_idx} )`);
+    let query = generate_query(window.client, window.id, article_group_idx);
+    console.log(`Query generated.`);
 
-    Response_To_HTML(response, title);
+    console.log('Sending query.');
+    let server_response = new Uint8Array(await api.query(query));
+    console.log('Received response.');
 
-    Stop_Loading('Loading article');
+    console.log('( Decoding / Decompressing ) the server response.');
+
+    let result = decode_response(window.client, _response);
+    let decompressedData = bz2.decompress(result);
+    let response_txt = new TextDecoder('utf-8').decode(decompressedData);
+
+    console.log('Done.');
+
+    let article = Find_Requested_Article(response_txt, _target_title);
+
+    Build_HTML_Article(article);
+    Go_To_Top();
+
+    window.displaying_article_page = true;
+
+    Stop_Loading('Article loaded');
+
+    return;
 }
+
+function Load_Article() {}
 
 /* ==================================================== */
 /*                     TOPICS QUERY                     */
@@ -1561,7 +1576,7 @@ async function run() {
     Stop_Loading('Server data loaded');
 
     Start_Loading('Seting up the client...');
-    window.hasSetUp = await setUpClient();
+    window.client_has_set_up = await setUpClient();
     Stop_Loading('Client seted up');
 
     window.theme = document.documentElement.getAttribute('theme');
