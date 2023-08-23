@@ -55,7 +55,8 @@ Data is **now** cryptographically protected even throughout the process.
    * [Quick Start](#quick-start)
 4. [Disclamer](#disclamer)
 5. [Credits](#credits)
-   * [Project References](#project-references)
+   * [External Contributions](#external-contributions)
+   * [Acknowledgments](#acknowledgments)
 6. [Contact](#contact)
 7. [License](#license)
 
@@ -117,7 +118,7 @@ The development of [_incognito dB_]() was enriched by the valuable contribution 
 
 It was thanks to these tools that I was able to successfully implement homomorphic encryption to achieve private information retrieval.
 
-### Reconocimientos
+### Acknowledgments
 
 While expressing my thanks to the contributors of Spiral and SpiralWiki, I would also like to extend my appreciation to my mentors and professors. 
 
