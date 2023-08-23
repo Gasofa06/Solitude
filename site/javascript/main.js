@@ -51,37 +51,6 @@ async function uploadState() {
     return id;
 }
 
-async function query(targetIdx, title) {
-    //
-    // `!window.hasSetUp` devuelve `true` si el usuario no esta configurado.
-    if (!window.hasSetUp) {
-        //
-        //
-        let id = await uploadState();
-        if (!id) return false;
-        window.hasSetUp = true;
-        window.id = id;
-    }
-
-    Start_Loading('Loading article');
-    console.log('Generating query... (' + targetIdx + ')');
-    let query = generate_query(window.client, window.id, targetIdx);
-    console.log(`done (${query.length} bytes)`);
-
-    console.log('Sending query...');
-    let response = new Uint8Array(await api.query(query));
-    console.log('sent.');
-
-    Response_To_HTML(response, title);
-
-    Stop_Loading('Loading article');
-}
-
-async function queryTitle(targetTitle) {
-    let articleIndex = window.dict_title_idx[targetTitle];
-    return await query(articleIndex, targetTitle);
-}
-
 async function postData(url = '', data = {}, json = false) {
     // No se puede usar `Fetch API` aquí porque carece de indicación de progreso.
 
@@ -319,9 +288,9 @@ function Assert(_condition, _message) {
     return true;
 }
 
-function Contains_Obj(obj, list) {
-    for (var i = 0; i < list.length; i++) {
-        if (list[i] === obj) return true;
+function Contains_Obj(_obj, _list) {
+    for (var i = 0; i < _list.length; i++) {
+        if (_list[i] === _obj) return true;
     }
     return false;
 }
@@ -348,6 +317,22 @@ function Hide_Main_Page() {
     html_faq.classList.add('disactive');
 
     console.log('The Main page have been hidden.');
+}
+
+function Decompress_JSON_File(_compressed_str) {
+    let decoded_compressed_str = atob(_compressed_str);
+
+    let char_num_arr = decoded_compressed_str.split('').map(_x => {
+        return _x.charCodeAt(0);
+    });
+    let byte_arr = new Uint8Array(char_num_arr);
+
+    let decompressed_str = bz2.decompress(byte_arr);
+    let decoded_decompressed_str = new TextDecoder('utf-8').decode(decompressed_str);
+
+    let obj = JSON.parse(decoded_decompressed_str);
+
+    return obj;
 }
 
 /* ================================================= */
@@ -596,7 +581,7 @@ function Response_To_HTML(_response, _target_title) {
 function Handle_Scroll() {
     if (!window.displaying_article_page) return;
 
-    if (all_aricle_sections.length < 1 || table_of_contents_navigation_links.length < 1) {
+    if (aricle_sections.length < 1 || table_of_contents_links.length < 1) {
         return;
     }
 
@@ -607,7 +592,7 @@ function Handle_Scroll() {
      * para determinar cuál está en la
      * vista del usuario.
      */
-    all_aricle_sections.forEach((section, index) => {
+    aricle_sections.forEach((section, index) => {
         let section_height = section.clientHeight;
         let section_top_position = section.offsetTop;
 
@@ -625,14 +610,14 @@ function Handle_Scroll() {
              * remueve la clase "active" de todos
              * los enlaces de navegación.
              */
-            table_of_contents_navigation_links.forEach(a => a.classList.remove('active'));
+            table_of_contents_links.forEach(a => a.classList.remove('active'));
 
             /*
              * Agrega la clase "active" al enlace
              * de navegación que corresponde a la
              * sección actual.
              */
-            table_of_contents_navigation_links[index].classList.add('active');
+            table_of_contents_links[index].classList.add('active');
 
             return;
         }
@@ -1245,13 +1230,9 @@ const Make_Query = () => {
 
 let _displaying_article_page = false;
 
-let all_aricle_sections;
-let table_of_contents_navigation_links;
-
 /**
- * @info Define una propiedad
- * "displaying_article_page" en el
- * objeto global "window", que permite
+ * @info Define una propiedad "displaying_article_page"
+ * en el objeto global "window", que permite
  * acceder y modificar el estado de visualización
  * del artículo desde cualquier lugar del código.
  */
@@ -1262,75 +1243,109 @@ Object.defineProperty(window, 'displaying_article_page', {
 
     set: _bool => {
         _displaying_article_page = _bool;
+        let article = document.querySelector('.query_result_container article');
 
-        let html_article = document.querySelector('.query_result_container article');
-
-        /*
-         * Si el artículo ya no se está mostrando,
-         * se reinician las variables, se muestra
-         * el `About` y la `Homepage`, así como se
-         * elimina el artículo.
-         */
-        if (!_displaying_article_page) {
-            all_aricle_sections = null;
-            table_of_contents_navigation_links = null;
-
-            Show_Main_Page();
-            html_article.remove();
+        if (!_bool) {
+            /*
+             * Si el artículo ya no se está mostrando,
+             * se reinician las variables, se muestra
+             * la `Main Page`, se elimina el artículo
+             * y se cámbian las funciones de los links
+             * de la NTB.
+             */
+            aricle_sections = null;
+            table_of_contents_links = null;
 
             Go_To_Top();
+
+            Show_Main_Page();
+            article.remove();
+
             Set_NTB_Main_Page();
+        } else {
+            /*
+             * Si el artículo se acaba de comenzar a
+             * mostrar, se esconde la `Main Page`, se
+             * inicializan los botones y la tabla de
+             * contenidos del artículo y se cámbian
+             * las funciones de los links de la NTB.
+             */
+            Hide_Main_Page();
 
-            return;
+            Set_Article_Table_Contents(article);
+            Set_Article_Buttons();
+
+            Set_NTB_Article_Page();
+            Clear_Search_Text_Input();
         }
-
-        Hide_Main_Page();
-
-        all_aricle_sections = html_article.querySelectorAll('[id^="section-"]');
-        table_of_contents_navigation_links = html_article.querySelectorAll(
-            'nav.table_contents ul li a',
-        );
-
-        /*
-         * Agregamos una función a todos los
-         * enlaces de navegación del artículo
-         * para que redireccionen al usuario
-         * hacia la sección que desea.
-         */
-        table_of_contents_navigation_links.forEach((_link, _idx) => {
-            if (_idx == 0) _link.classList.add('active');
-
-            _link.addEventListener('click', () => {
-                all_aricle_sections[_idx].scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        let html_backward_link = document.querySelector('.backward_link');
-        html_backward_link.addEventListener(
-            'click',
-            () => (window.displaying_article_page = false),
-        );
-
-        let html_back_to_top_button = document.querySelector('.back_to_top');
-        html_back_to_top_button.addEventListener('click', () => Go_To_Top());
-
-        Set_NTB_Article_Page();
-        Clear_Search_Text_Input();
     },
 });
 
+let aricle_sections;
+let table_of_contents_links;
+
+/**
+ * @info Agregamos una función a todos los
+ * enlaces de navegación del artículo para
+ * que redireccionen al usuario hacia la
+ * sección que desea.
+ *
+ * @param {Element} _html_article
+ */
+function Set_Article_Table_Contents(_html_article) {
+    aricle_sections = _html_article.querySelectorAll('[id^="section-"]');
+    table_of_contents_links = _html_article.querySelectorAll('nav.table_contents a');
+
+    table_of_contents_links.forEach((_link, _idx) => {
+        if (_idx == 0) {
+            _link.classList.add('active');
+        }
+
+        _link.addEventListener('click', () => {
+            aricle_sections[_idx].scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+}
+
+function Set_Article_Buttons() {
+    document
+        .querySelector('.backward_link')
+        .addEventListener('click', () => (window.displaying_article_page = false));
+
+    document.querySelector('.back_to_top').addEventListener('click', () => Go_To_Top());
+}
+
 async function Article_Query_By_Title() {
-    // Accedemos al valor escrito en la barra de navegacion.
-    let search_text = window.HTML_search_bar_input.value;
+    let title = window.HTML_search_bar_input.value;
+    let group_idx = window.dict_title_idx[title];
 
-    // Continuar solo si hay algun texto escrito.
-    Assert(search_text.length > 0, "Error, there isn't any text in the search bar.");
+    return await query(group_idx, title);
+}
 
-    if (selected_search_type == 'Title') {
-        await queryTitle(search_text);
-    } else if (selected_search_type == 'Index') {
-    } else if (selected_search_type == 'Topic') {
+async function query(targetIdx, title) {
+    //
+    // `!window.hasSetUp` devuelve `true` si el usuario no esta configurado.
+    if (!window.hasSetUp) {
+        //
+        //
+        let id = await uploadState();
+        if (!id) return false;
+        window.hasSetUp = true;
+        window.id = id;
     }
+
+    Start_Loading('Loading article');
+    console.log('Generating query... (' + targetIdx + ')');
+    let query = generate_query(window.client, window.id, targetIdx);
+    console.log(`done (${query.length} bytes)`);
+
+    console.log('Sending query...');
+    let response = new Uint8Array(await api.query(query));
+    console.log('sent.');
+
+    Response_To_HTML(response, title);
+
+    Stop_Loading('Loading article');
 }
 
 /* ==================================================== */
@@ -1395,15 +1410,17 @@ async function Article_Query_By_Reference() {
     return;
 }
 
-/*                                                        */
-/*                                                        */
-/*                                                        */
-/*                                                        */
-/*                    CODIGO PRINCIPAL                    */
-/*                                                        */
-/*                                                        */
-/*                                                        */
-/*                                                        */
+/* ================================================ */
+/* ================================================ */
+/* ================================================ */
+/*                                                  */
+/*                                                  */
+/*                  PRINCIPAL CODE                  */
+/*                                                  */
+/*                                                  */
+/* ================================================ */
+/* ================================================ */
+/* ================================================ */
 
 /**
  * El tamaño (en `bytes`) de la clave.
@@ -1461,9 +1478,11 @@ async function Get_Server_Data() {
      * índice del grupo en el que están
      * almacenados en el servidor.
      *
+     * NOTA: Comienza estando comprimido.
+     *
      * ej. { "Title": 0, "Other": 0, ... }
      */
-    let dict_title_idx = getData('data/title_and_idx.json', true);
+    let bz2_dict_title_idx = getData('data/title_and_idx.json', true);
 
     /*
      * Obtenemos una `Array` con todas las
@@ -1487,29 +1506,15 @@ async function Get_Server_Data() {
     /*
      * Obtenemos un diccionario con todos los
      * artículos y las categorías a las que
-     * pertenecen. Las categorías no están
-     * escritas en sí, sino que hacen
-     * referencia al índice en el que esa
-     * categoría se encuentra en `window.topics`.
+     * pertenecen.
      *
-     * ej. { "Title": [0, 1], "Other": [0], ... }
+     * NOTA: Comienza estando comprimido.
+     *
+     * ej. { "Title": ["Technology", "Politics"], ... }
      */
     let bz2_dict_title_topics = await getData('data/title_and_topics.json', true);
 
-    let decoded_bz2 = atob(bz2_dict_title_topics['bz2']);
-
-    let char_num_arr = decoded_bz2.split('').map(x => {
-        return x.charCodeAt(0);
-    });
-
-    let byte_arr = new Uint8Array(char_num_arr);
-    let descompressed_dict_title_topics = bz2.decompress(byte_arr);
-
-    let decoded_dict_title_topics = new TextDecoder('utf-8').decode(
-        descompressed_dict_title_topics,
-    );
-
-    let obj_dict_title_topics = JSON.parse(decoded_dict_title_topics);
+    let obj_dict_title_topics = Decompress_JSON_File(bz2_dict_title_topics['bz2']);
     window.dict_title_topics = obj_dict_title_topics;
 
     for (let _title in window.dict_title_topics) {
@@ -1517,10 +1522,10 @@ async function Get_Server_Data() {
 
         for (let _idx of arr_topics_idx) {
             let topic = window.topics[_idx];
+
             try {
                 new_dict_topic_titles[topic].push(_title);
-            } catch (_error) {
-                // alert(_error);
+            } catch {
                 alert(
                     `The article titled '${_title}' is associated with the topic '${topic}', 
                     but this topic does not exist within the array of topics.`,
@@ -1531,8 +1536,11 @@ async function Get_Server_Data() {
 
     window.dict_topic_titles = new_dict_topic_titles;
 
-    window.dict_title_idx = await dict_title_idx;
-    window.arr_title_articles = Object.keys(window.dict_title_idx);
+    bz2_dict_title_idx = await bz2_dict_title_idx;
+    let obj_dict_title_idx = Decompress_JSON_File(bz2_dict_title_idx['bz2']);
+
+    window.dict_title_idx = obj_dict_title_idx;
+    window.arr_title_articles = Object.keys(obj_dict_title_idx);
 }
 
 /**
