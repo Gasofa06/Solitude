@@ -5,7 +5,7 @@
 <br />
 
 <p align="center">
-  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, , ensuring users privacy while delivering the requested content.
+  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, ensuring the privacy of users while delivering the requested content.
 </p>
 
 <br />
@@ -55,7 +55,8 @@ Data is **now** cryptographically protected even throughout the process.
    * [Quick Start](#quick-start)
 4. [Disclamer](#disclamer)
 5. [Credits](#credits)
-   * [Project References](#project-references)
+   * [External Contributions](#external-contributions)
+   * [Acknowledgments](#acknowledgments)
 6. [Contact](#contact)
 7. [License](#license)
 
@@ -106,29 +107,31 @@ Now you are runing it in your own device in localhost port 8080.
 
 **Project Author:** [Roger Rovira]().
 
-Emerging from the final stages of my secondary education in Catalonia, Barcelona, this project has taken shape as the Synthesis Work that Catalan students are required to present during the last year of our studies.
+Emerging from the final stages of my high school education in Barcelona, Catalonia, this project has taken shape as the _Treball de Recerca_ that Catalan students are required to present during the last year of their studies.
 
 ### External Contributions
 
 The development of [_incognito dB_]() was enriched by the valuable contribution of the open-source library Spiral and the SpiralWiki project.
 
-* **Spiral**: [link](https://blyss.dev/)
-* **SpiralWiki**: [link](https://spiralwiki.com/)
+* **Spiral**: [company webpage](https://blyss.dev/).
+* **SpiralWiki**: [project web](https://spiralwiki.com/).
 
 It was thanks to these tools that I was able to successfully implement homomorphic encryption to achieve private information retrieval.
 
-### Reconocimientos
+### Acknowledgments
 
-Quiero expresar mi agradecimiento a la comunidad de Spiral y SpiralWiki por su labor en la creación y mantenimiento de estas herramientas. También agradezco a mis mentores y profesores que me brindaron orientación durante el proceso de desarrollo.
+While expressing my thanks to the contributors of Spiral and SpiralWiki, I would also like to extend my appreciation to my mentors and professors. 
 
-La realización de este proyecto fue posible gracias a la colaboración y esfuerzo de estas diversas fuentes de apoyo.
+Their insightful guidance assisted me throughout the development phase, helping to establish the foundations of the project, the main ideas. Allowing me to materialize, with my own hands, the underlying structure of [_incognito dB_]() through programming.
+
+Thanks 😁.
 
 ## Contact
 
 Feel free to reach out if you have any questions, suggestions, or feedback regarding this project. You can contact me via email or connect with me on social media as well.
 
-- Email: [rogerrovi2006@gmail.com](mailto:rogerrovi2006@gmail.com)
-- Twitter: [@rovi_roger](https://twitter.com/rovi_roger)
+- **Email**: [rogerrovi2006@gmail.com](mailto:rogerrovi2006@gmail.com)
+- **Twitter**: [@rovi_roger](https://twitter.com/rovi_roger)
 
 ## License
 
