@@ -1228,6 +1228,44 @@ const Make_Query = () => {
 /*                     TITLE QUERY                     */
 /* =================================================== */
 
+async function Article_Query_By_Title() {
+    if (!window.client_has_set_up) {
+        let id = await uploadState();
+
+        if (id) {
+            window.id = id;
+            window.client_has_set_up = true;
+        } else {
+            return;
+        }
+    }
+
+    let article_title = window.HTML_search_bar_input.value;
+    let article_group_idx = window.dict_title_idx[article_title];
+
+    await Load_Article(article_group_idx, article_title);
+
+    window.displaying_article_page = true;
+}
+
+async function Load_Article(_group_idx, _title) {
+    Start_Loading('Loading article');
+
+    let query = generate_query(window.client, window.id, _group_idx);
+    let server_response = new Uint8Array(await api.query(query));
+
+    let result = decode_response(window.client, server_response);
+    let decompressed_result = bz2.decompress(result);
+    let processed_response = new TextDecoder('utf-8').decode(decompressed_result);
+
+    let article = Find_Requested_Article(processed_response, _title);
+
+    Go_To_Top();
+    Build_HTML_Article(article);
+
+    Stop_Loading('Article loaded');
+}
+
 let _displaying_article_page = false;
 
 /**
@@ -1315,57 +1353,29 @@ function Set_Article_Buttons() {
     document.querySelector('.back_to_top').addEventListener('click', () => Go_To_Top());
 }
 
-async function Article_Query_By_Title() {
-    let article_title = window.HTML_search_bar_input.value;
-    let article_group_idx = window.dict_title_idx[article_title];
-
-    if (!window.client_has_set_up) {
-        let id = await uploadState();
-
-        if (id) {
-            window.id = id;
-            window.client_has_set_up = true;
-        } else {
-            return;
-        }
-    }
-
-    Start_Loading('Loading article');
-
-    console.log('Generating a query for the server.');
-    console.log(`( Index: ${article_group_idx} )`);
-    let query = generate_query(window.client, window.id, article_group_idx);
-    console.log(`Query generated.`);
-
-    console.log('Sending query.');
-    let server_response = new Uint8Array(await api.query(query));
-    console.log('Received response.');
-
-    console.log('( Decoding / Decompressing ) the server response.');
-
-    let result = decode_response(window.client, _response);
-    let decompressedData = bz2.decompress(result);
-    let response_txt = new TextDecoder('utf-8').decode(decompressedData);
-
-    console.log('Done.');
-
-    let article = Find_Requested_Article(response_txt, _target_title);
-
-    Build_HTML_Article(article);
-    Go_To_Top();
-
-    window.displaying_article_page = true;
-
-    Stop_Loading('Article loaded');
-
-    return;
-}
-
-function Load_Article() {}
-
 /* ==================================================== */
 /*                     TOPICS QUERY                     */
 /* ==================================================== */
+
+function Articles_List_Query_By_Topics(_arr_topics) {
+    /*
+     * Diccionario que guarda únicamente los
+     * `topics` y los títulos de las categorías
+     * que el usuario ha buscado.
+     */
+    let filtered_dict_topic_titles = {};
+
+    for (var _topic in window.dict_topic_titles) {
+        let contains_topic = Contains_Obj(_topic, _arr_topics);
+
+        if (contains_topic) {
+            filtered_dict_topic_titles[_topic] = window.dict_topic_titles[_topic];
+        }
+    }
+
+    Build_Index_Articles_Page(filtered_dict_topic_titles);
+    window.displying_index_articles_page = true;
+}
 
 let _displying_index_articles_page = false;
 
@@ -1396,26 +1406,6 @@ Object.defineProperty(window, 'displying_index_articles_page', {
         Clear_Search_Text_Input();
     },
 });
-
-function Articles_List_Query_By_Topics(_arr_topics) {
-    /*
-     * Diccionario que guarda únicamente los
-     * `topics` y los títulos de las categorías
-     * que el usuario ha buscado.
-     */
-    let filtered_dict_topic_titles = {};
-
-    for (var _topic in window.dict_topic_titles) {
-        let contains_topic = Contains_Obj(_topic, _arr_topics);
-
-        if (contains_topic) {
-            filtered_dict_topic_titles[_topic] = window.dict_topic_titles[_topic];
-        }
-    }
-
-    Build_Index_Articles_Page(filtered_dict_topic_titles);
-    window.displying_index_articles_page = true;
-}
 
 /* =================================================== */
 /*                   REFERENCE QUERY                   */
