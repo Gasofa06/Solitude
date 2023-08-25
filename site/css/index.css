@@ -2048,7 +2048,7 @@ article .container .article_body summary p {
   color: var(--c-secondary-200);
 }
 
-article .container .article_body summary p.summary_title {
+article .container .article_body summary p.title {
   margin: 0;
 
   font-weight: bold;
