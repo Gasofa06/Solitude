@@ -5,6 +5,7 @@ import {
 
 /**
  * @class Trie Node.
+ * 
  * @info Representa un nodo en la estructura del trie.
  */
 class TrieNode {
@@ -15,6 +16,7 @@ class TrieNode {
 
     /**
      * @info Actualiza los nodos secundarios de este nodo.
+     * 
      * @param {_key} - Clave que representa el carácter asociado
      * al nodo secundario.
      * @param {_obj} - Objeto TrieNode que representa el nodo secundario.
@@ -25,6 +27,7 @@ class TrieNode {
 
     /**
      * @info Actualiza los datos almacenados en este nodo.
+     * 
      * @param {_data} - Datos que se vincularán al nodo.
      */
     update_data(_data) {
@@ -34,6 +37,7 @@ class TrieNode {
 
 /**
  * @class Trie.
+ * 
  * @info Representa una estructura de datos Trie utilizada para
  * almacenar y buscar información sobre los artículos.
  */
@@ -49,6 +53,7 @@ export class ArticlesTrie {
 
     /**
      * @info Construye el trie utilizando el diccionario dado.
+     * 
      * @param {_dict_title_information}
      */
     build_trie(_dict_title_information) {
@@ -76,6 +81,7 @@ export class ArticlesTrie {
 
     /**
      * @info Busca datos asociados con un título dado.
+     * 
      * @param {_title} - El título que se va a buscar.
      * @return {Array} Los datos asociados con el título.
      */
@@ -102,6 +108,7 @@ export class ArticlesTrie {
 
     /**
      * @info Busca el índice del servidor asociado con un título dado.
+     * 
      * @param {_title} - El título para el cual se busca el índice del servidor.
      * @return {number} El índice del servidor asociado con el título.
      */
@@ -114,6 +121,7 @@ export class ArticlesTrie {
 
     /**
      * @info Busca la fecha de lanzamiento asociada con un título dado.
+     * 
      * @param {_title} - El título para el cual se busca la fecha de lanzamiento.
      * @return {string} La fecha de lanzamiento asociada con el título.
      */
@@ -126,6 +134,7 @@ export class ArticlesTrie {
 
     /**
      * @info Función auxiliar para sugerir títulos basados en un prefijo.
+     * 
      * @param {_root} - El nodo raíz desde donde comenzar las sugerencias.
      * @param {_suggestions} - Un array para almacenar los títulos sugeridos.
      * @param {_curr} - El título actual que se está formando durante la traversía.
@@ -154,6 +163,7 @@ export class ArticlesTrie {
 
     /**
      * @info Genera sugerencias de títulos basadas en un prefijo.
+     * 
      * @param {_prefix} - El prefijo en el que basar las sugerencias.
      * @param {_max_suggestions} - El número máximo de sugerencias a generar.
      * @return {Array} Un array de títulos que comienzan con el prefijo dado.
