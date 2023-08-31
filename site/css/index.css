@@ -3013,12 +3013,26 @@ pre.circle_chart_container .chart_and_information_container .chart_information l
   padding-top: 4px;
 }
 
-.query_result_container .articles_list_container .content ul.articles_list li .date_and_topics > * {
+.query_result_container .articles_list_container .content ul.articles_list li .date_and_topics p.date {
   font-size: var(--text-s);
   color: var(--c-secondary-100);
 }
 
 .query_result_container .articles_list_container .content ul.articles_list li .date_and_topics p.separator {
   margin: 0 6px;
+
+  font-size: var(--text-s);
+  color: var(--c-secondary-100);
+
   font-family: 'DM Serif Display', Georgia, serif;
+}
+
+.query_result_container .articles_list_container .content ul.articles_list li .date_and_topics .topics {
+  display: flex;
+  flex-direction: column;
+}
+
+.query_result_container .articles_list_container .content ul.articles_list li .date_and_topics .topics a {
+  font-size: var(--text-s);
+  color: var(--c-secondary-100);
 }
