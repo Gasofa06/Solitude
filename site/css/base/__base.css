@@ -1,0 +1,9 @@
+@import url('./global.css') layer(global);
+
+@import url('./nav.css') layer(nav);
+
+@import url('./sec_homepage.css') layer(section-homepage);
+@import url('./section_about.css') layer(section-about);
+@import url('./sec_faqs.css') layer(section-faqs);
+
+@import url('./footer.css') layer(footer);
