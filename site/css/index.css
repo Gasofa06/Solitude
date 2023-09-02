@@ -2,6 +2,10 @@
 
 @import url(./\(main\)/__main.css) layer(main_page);
 
+@import url(./\(article\)/__article.css) layer(article_page);
+
+@import url(./\(index_articles\)/__index_articles.css) layer(__index_articles.css);
+
 /* ==================================================== */
 /* ==================================================== */
 /* ==================================================== */
