@@ -1,0 +1,305 @@
+.about_container {
+  margin: 0 auto;
+  padding: 55px 0;
+}
+
+.about_container.disactive {
+  display: none !important;
+}
+
+@layer principal_about_box {
+  pre.principal_about_box {
+    margin-top: 72px;
+    margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 480px) {
+    pre.principal_about_box {
+      width: 100%;
+
+      border-radius: 0 !important;
+
+      border-left: none !important;
+      border-right: none !important;
+    }
+  }
+
+  @media only screen and (min-width: 480px) {
+    pre.principal_about_box {
+      width: 442px;
+    }
+  }
+
+  pre.principal_about_box figure {
+    display: flex;
+
+    width: 90%;
+
+    margin: 24px auto;
+  }
+
+  pre.principal_about_box figure svg rect {
+    width: 100%;
+    height: 100%;
+
+    fill: url(#principal_about_box_gradient);
+  }
+
+  pre.principal_about_box figure svg path {
+    fill: var(--c-bg);
+
+    --scale: 0.16;
+
+    --path-normal-width: 576px;
+    --path-normal-height: 384px;
+
+    --path-actual-width: calc(var(--path-normal-width) * var(--scale));
+    --path-actual-height: calc(var(--path-normal-height) * var(--scale));
+
+    --offest-y: 50px;
+
+    /*
+     * Número con el que se debe multiplicar
+     * para que las coordenadas vuelvan a su
+     * valor real y no se vean afectadas por
+     * la modificaión de `scale`.
+     */
+    --n: calc(1 / var(--scale));
+
+    --x: calc((var(--path-actual-width) / -2 + 50%) * var(--n));
+    --y: calc((var(--path-actual-height) / -2 + 50%) * var(--n) - var(--offest-y));
+
+    transform: scale(var(--scale)) translate(var(--x), var(--y));
+  }
+
+  pre.principal_about_box label {
+    margin: 0;
+
+    padding-top: 24px;
+    padding-left: 38px;
+
+    text-align: initial;
+    letter-spacing: 0.01em;
+
+    font-weight: bold;
+    font-size: var(--text-l);
+    color: var(--c-secondary-350);
+    font-family: system-ui !important;
+
+    white-space: break-spaces;
+
+    border-top: 1px solid var(--c-secondary-050);
+  }
+
+  pre.principal_about_box p {
+    margin: 20px 95px 42px 38px;
+
+    text-align: initial;
+    white-space: break-spaces;
+
+    font-size: var(--text-ms);
+    color: var(--c-secondary-250);
+  }
+
+  pre.principal_about_box a {
+    width: 100%;
+
+    margin: 0 64px 24px 38px;
+
+    text-align: initial;
+    white-space: break-spaces;
+
+    font-size: var(--text-ms);
+    color: var(--c-primary-300);
+  }
+
+  @media only screen and (max-width: 480px) {
+    pre.principal_about_box label {
+      width: 100%;
+    }
+
+    pre.principal_about_box p,
+    pre.principal_about_box label,
+    pre.principal_about_box a {
+      margin-left: auto !important;
+      margin-right: auto !important;
+
+      padding-left: var(--gutter-x);
+      padding-right: var(--gutter-x);
+    }
+  }
+}
+
+.secondary_boxes_container {
+  padding: 172px 0 0 0;
+}
+
+@layer subsections_titles_and_subtitles {
+  p.subsection_about_title {
+    width: max-content;
+
+    margin: 0 auto;
+    padding: 6px 38px;
+
+    text-align: center;
+
+    font-weight: bold;
+    font-size: var(--text-ms);
+    color: var(--c-secondary-350);
+
+    border-radius: 6px;
+    background: var(--c-secondary-010);
+  }
+
+  p.subsection_about_subtitle {
+    max-width: 540px;
+
+    margin: 28px auto 72px auto;
+
+    text-align: center;
+    color: var(--c-secondary-150);
+  }
+}
+
+.secondary_boxes_container ul {
+  display: flex;
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .secondary_boxes_container ul {
+    width: 76%;
+
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .about_container .secondary_boxes_container ul {
+    max-width: 1200px;
+
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.secondary_boxes_container ul li {
+  display: flex;
+
+  margin: 0 18px 32px 18px;
+}
+
+@layer secondary_about_box {
+  pre.secondary_about_box {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 768px) {
+    pre.secondary_about_box {
+      width: 270px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    pre.secondary_about_box {
+      width: 100%;
+    }
+  }
+
+  .box_figure_container {
+    display: flex;
+
+    padding: 24px 0;
+
+    background: var(--c-secondary-010);
+
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+
+  pre.secondary_about_box figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0 auto;
+
+    background-color: var(--c-bg);
+    border: 1px solid var(--c-secondary-050);
+
+    border-radius: 50%;
+  }
+
+  pre.secondary_about_box figure svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  pre.secondary_about_box figure svg path {
+    fill: none;
+
+    stroke-width: 2px;
+    stroke: var(--c-secondary-250);
+  }
+
+  pre.secondary_about_box p.box_title {
+    margin: 0;
+    padding: 26px 24px 0 24px;
+
+    text-align: center;
+
+    font-weight: bold;
+    font-size: var(--text-m);
+    color: var(--c-primary-300);
+
+    font-family: system-ui !important;
+
+    border-top: 1px solid var(--c-secondary-050);
+  }
+
+  pre.secondary_about_box p.box_text {
+    padding: 0 24px;
+    margin: 18px 0 24px 0;
+
+    text-align: center;
+
+    font-size: var(--text-ms);
+    color: var(--c-secondary-150);
+
+    white-space: break-spaces;
+  }
+}
+
+@layer secondary_about_box.first {
+  .secondary_boxes_container li:nth-child(1) .box_figure_container {
+    background-color: hsl(228 60% 95%) !important;
+  }
+
+  .secondary_boxes_container li:nth-child(1) path {
+    stroke: var(--c-primary-300) !important;
+  }
+
+  .secondary_boxes_container li:nth-child(1) p.box_title {
+    color: var(--c-primary-300) !important;
+  }
+}
+
+@layer secondary_about_box.third {
+  .secondary_boxes_container li:nth-child(3) .box_figure_container {
+    background-color: hsl(145 59% 94%) !important;
+  }
+
+  .secondary_boxes_container li:nth-child(3) path {
+    stroke: hsl(155 77% 43%) !important;
+  }
+
+  .secondary_boxes_container li:nth-child(3) p.box_title {
+    color: hsl(155 77% 43%) !important;
+  }
+}
