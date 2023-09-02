@@ -1,5 +1,3 @@
-@import '../__variables.css';
-
 @layer general_styles {
   body {
     margin: 0;
@@ -51,6 +49,7 @@
     border: 1px solid var(--c-secondary-050);
   }
 
+  /*
   @media only screen and (max-width: 768px) {
     blockquote,
     summary,
@@ -60,7 +59,7 @@
       border-left: none !important;
       border-right: none !important;
     }
-  }
+  }*/
 }
 
 @layer headings {
