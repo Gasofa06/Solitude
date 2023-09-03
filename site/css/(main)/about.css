@@ -283,7 +283,7 @@
 
 @layer secondary_about_box.first {
   .secondary_boxes_container li:nth-child(1) .box_figure_container {
-    background-color: hsl(228 60% 95%) !important;
+    background-color: hsl(228 80% 95%) !important;
   }
 
   .secondary_boxes_container li:nth-child(1) path {
