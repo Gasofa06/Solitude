@@ -22,13 +22,10 @@ div.query_result_container {
   width: 100%;
   max-width: none !important;
 
-  /* margin-top: 160px; */
-  /* padding-top: 84px; */
-  margin-top: 102px;
-
+  margin: 0;
   padding: 0;
 
-  /* border-top: 1px solid var(--c-secondary-050); */
+  /* margin-top: 102px; */
 }
 
 @media only screen and (max-width: 768px) {
