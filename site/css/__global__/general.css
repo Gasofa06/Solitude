@@ -258,3 +258,12 @@ a.category_tag {
 a.category_tag:hover {
   text-decoration: none !important;
 }
+
+.logo {
+  font-size: 1.18rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  color: var(--c-secondary-450);
+  font-family: system-ui !important;
+}

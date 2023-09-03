@@ -54,23 +54,12 @@ nav.top_bar {
   }
 }
 
-@layer logo {
+@layer logo_container {
   .logo_nav_container {
     display: flex;
     align-items: center;
 
     height: 100%;
-  }
-
-  .logo_nav_container a {
-    font-size: 1.18rem;
-
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    color: var(--c-secondary-450);
-
-    font-family: system-ui !important;
   }
 
   @media only screen and (min-width: 992px) {

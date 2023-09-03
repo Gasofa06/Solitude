@@ -7,6 +7,8 @@
   --text-l: 1.08rem;
   --text-xl: 1.12rem;
 
+  --default-transition: all 0.3s ease-in-out;
+
   --c-bg: white;
 
   --c-primary-000: #bac8ff;
@@ -36,8 +38,6 @@
   --c-secondary-650: #101113;
 
   --shadow: rgba(0, 0, 0, 0.1);
-
-  --default-transition: all 0.3s ease-in-out;
 }
 
 [theme='dark'] {
@@ -90,11 +90,11 @@
   --table-of-contents-total-width: calc(var(--table-of-contents-width) + var(--table-of-contents-padding-left));
 }
 
-@media only screen and (max-width: 768px) {
-  :root {
-    --gutter-x: 6%;
-  }
+/* @media only screen and (max-width: 768px) {*/
+:root {
+  --gutter-x: 6%;
 }
+/*}*/
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   :root {
