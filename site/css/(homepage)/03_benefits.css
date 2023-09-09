@@ -1,0 +1,54 @@
+.benefits {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 92px 0;
+
+  background: var(--c-secondary-010);
+  border-top: 1px solid var(--c-secondary-050);
+  border-bottom: 1px solid var(--c-secondary-050);
+}
+
+@layer title {
+  .benefits h2 {
+    margin: 0;
+  }
+}
+
+@layer benefits_list {
+  ul.benefits_list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 0;
+    margin: 76px auto 0 auto;
+  }
+
+  ul.benefits_list li {
+    display: flex;
+    margin: 0 18px 32px 18px;
+  }
+}
+
+@layer benefits_list.first_box {
+  .benefits_list li:nth-child(1) .box_figure_container {
+    background-color: hsl(228 90% 92% / 1) !important;
+  }
+
+  .benefits_list li:nth-child(1) path {
+    stroke: var(--c-primary-300) !important;
+  }
+}
+
+@layer benefits_list.third_box {
+  .benefits_list li:nth-child(3) .box_figure_container {
+    background-color: hsl(145 59% 94%) !important;
+  }
+
+  .benefits_list li:nth-child(3) path {
+    stroke: hsl(155 77% 43%) !important;
+  }
+}
