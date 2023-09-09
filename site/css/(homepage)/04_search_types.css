@@ -1,0 +1,14 @@
+@layer title {
+  .search_types h2 {
+    max-width: 512px;
+
+    padding: 124px 0;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .search_types h2 span {
+    color: var(--c-primary-200);
+  }
+}
