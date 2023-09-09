@@ -1,0 +1,75 @@
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 116px 0 142px 0;
+
+  background: var(--c-secondary-010);
+  border-bottom: 1px solid var(--c-secondary-050);
+}
+
+@layer title {
+  .homepage_title {
+    width: 100%;
+    max-width: 960px;
+  }
+
+  .homepage_title h1 {
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+  }
+
+  .homepage_title h1 span {
+    color: var(--c-primary-200);
+  }
+}
+
+@layer introduction {
+  .web_introduction {
+    width: 100%;
+    max-width: 940px;
+
+    margin-top: 52px;
+  }
+
+  .web_introduction p {
+    width: 64%;
+
+    padding: 0;
+    margin: 0 auto 17px auto;
+
+    font-size: var(--text-ml);
+    color: var(--c-secondary-100);
+
+    text-align: center;
+    white-space: break-spaces;
+  }
+}
+
+@layer buttons {
+  .hero_btns_container {
+    margin: 32px auto 0 auto;
+  }
+
+  .hero_btns_container button#start_searching_btn,
+  .hero_btns_container button#view_github_btn {
+    width: 164px;
+  }
+
+  .hero_btns_container button#view_github_btn {
+    margin: 0 0 0 32px !important;
+  }
+}
+
+@layer image {
+  .hero_image {
+    width: 960px;
+
+    padding: 0;
+    margin-top: 116px;
+  }
+}
