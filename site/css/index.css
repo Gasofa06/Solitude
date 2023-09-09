@@ -1,6 +1,6 @@
 @import url(__global__/__global.css) layer(global);
 
-@import url(./\(main\)/__main.css) layer(main_page);
+@import url(./\(homepage\)/__homepage.css) layer(homepage);
 
 @import url(./\(article\)/__article.css) layer(article_page);
 
