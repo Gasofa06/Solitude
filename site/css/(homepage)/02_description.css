@@ -1,0 +1,77 @@
+.description {
+  padding: 142px 0 162px 0;
+}
+
+@layer quote {
+  .description .quote {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 auto;
+    max-width: 620px;
+  }
+
+  .description .quote label {
+    color: var(--c-secondary-100);
+  }
+
+  .description .quote h2 {
+    position: relative;
+
+    padding: 0;
+    margin: 28px 0;
+
+    text-align: center;
+  }
+
+  .description .quote h2::before {
+    content: '\275D';
+
+    position: absolute;
+    top: -50px;
+    left: -98px;
+
+    font-size: 4.3em;
+    color: rgba(0, 0, 0, 0.05);
+  }
+
+  .description .quote h2::after {
+    content: '\275E';
+
+    position: absolute;
+    bottom: -116px;
+    right: -98px;
+
+    font-size: 200px;
+    color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+@layer project_description {
+  .project_description {
+    width: 924px;
+
+    margin: 0 auto;
+    padding: 52px 34px 0 34px;
+
+    display: grid;
+    grid-row-gap: 4rem;
+    grid-column-gap: 4rem;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: start;
+    grid-auto-columns: 1fr;
+  }
+
+  .problems_introduction p,
+  .solutions_introduction p {
+    margin: 0 0 24px 0;
+    color: var(--c-secondary-350);
+  }
+
+  .solutions_introduction a.model_one {
+    padding-top: 8px;
+  }
+}
