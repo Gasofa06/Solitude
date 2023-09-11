@@ -1,3 +1,5 @@
+@import url(./homepage_nav.css) layer(homepage_nav);
+
 @import url(./01_hero.css) layer(hero_section);
 @import url(./02_description.css) layer(project_description);
 @import url(./03_benefits.css) layer(platform_benefits);
