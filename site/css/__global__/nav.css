@@ -9,7 +9,7 @@ nav.top_bar {
   top: 0;
 
   width: 100%;
-  height: 56px;
+  height: 74px;
   max-width: inherit;
 
   backdrop-filter: saturate(180%) blur(20px);
