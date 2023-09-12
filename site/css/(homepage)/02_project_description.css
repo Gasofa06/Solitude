@@ -1,0 +1,115 @@
+.sec_project_description {
+  padding: 142px 0 162px 0;
+}
+
+@layer section_title {
+  .sec_project_description .section_title {
+    padding-bottom: 32px;
+  }
+
+  .sec_project_description .section_title h2 {
+    max-width: 720px;
+  }
+}
+
+@layer double_column {
+  .double_column {
+    width: var(--homepage-width);
+
+    margin: 0 auto;
+    padding: 82px 34px 41px;
+
+    display: grid;
+    grid-row-gap: 4rem;
+    grid-column-gap: 4rem;
+    grid-auto-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .column p {
+    margin: 0 0 24px 0;
+    color: var(--c-secondary-350);
+  }
+
+  .column.img_container {
+    border-radius: 12px;
+    background-color: var(--c-secondary-010);
+  }
+
+  .column img {
+    width: 100%;
+  }
+}
+
+@layer quote {
+  .sec_project_description .quote {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 82px auto 41px;
+    max-width: 520px;
+    padding: 112px 202px 112px;
+    background-color: var(--c-secondary-500);
+    border-radius: 12px;
+  }
+
+  .sec_project_description .quote label {
+    color: var(--c-secondary-200);
+  }
+
+  .sec_project_description .quote h3 {
+    position: relative;
+    padding: 0;
+    margin: 48px 0 30px;
+    text-align: center;
+    white-space: break-spaces;
+    color: var(--c-bg) !important;
+  }
+
+  .sec_project_description .quote h3::before {
+    content: '\275D';
+    position: absolute;
+    top: -38px;
+    left: -20px;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.1);
+  }
+
+  .sec_project_description .quote h3::after {
+    content: '\275E';
+    position: absolute;
+    bottom: -80px;
+    right: -9px;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer project_description {
+  .project_description {
+    width: 924px;
+
+    margin: 0 auto;
+    padding: 52px 34px 0 34px;
+
+    display: grid;
+    grid-row-gap: 4rem;
+    grid-column-gap: 4rem;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: start;
+    grid-auto-columns: 1fr;
+  }
+
+  .problems_introduction p,
+  .solutions_introduction p {
+    margin: 0 0 24px 0;
+    color: var(--c-secondary-350);
+  }
+
+  .solutions_introduction a.model_one {
+    padding-top: 8px;
+  }
+}
