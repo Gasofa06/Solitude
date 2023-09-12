@@ -1,32 +1,42 @@
 @import url(./homepage_nav.css) layer(homepage_nav);
 
 @import url(./01_hero.css) layer(hero_section);
-@import url(./02_description.css) layer(project_description);
+@import url(./02_project_description.css) layer(project_description);
 @import url(./03_benefits.css) layer(platform_benefits);
 @import url(./04_search_types.css) layer(search_tpes);
 @import url(./05_faqs.css) layer(faqs);
 @import url(./06_acknowledgment.css) layer(acknowledgments);
 
+:root {
+  --homepage-width: 924px;
+}
+
 h1 {
   font-size: 5rem;
   color: var(--c-secondary-350);
-  line-height: 1.1;
+
   font-weight: 400;
+  line-height: 1.1;
   font-style: normal;
+
   letter-spacing: -0.02em;
   word-spacing: 0.06em;
+
   font-family: 'DM Serif Display', Georgia, serif;
 }
 
 h2 {
-  font-size: 2.78rem;
+  font-size: 3.48rem;
   color: var(--c-secondary-450);
+
   font-weight: bold;
   line-height: 1.15;
   font-style: normal;
-  word-spacing: 0.03em;
+
+  word-spacing: 0.06em;
   letter-spacing: 0.01em;
-  font-family: sans-serif, segoe ui, nunito-sans, Helvetica;
+
+  font-family: serif;
 }
 
 h3 {
@@ -38,6 +48,22 @@ h3 {
   letter-spacing: -0.02em;
   word-spacing: 0.04em;
   font-family: sans-serif, segoe ui, nunito-sans, Helvetica;
+}
+
+h5 {
+  margin: 0;
+
+  font-size: var(--text-ml);
+  color: var(--c-secondary-150);
+
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+
+  font-style: normal;
+  letter-spacing: 0.02em;
+
+  font-family: segoe ui, nunito-sans, Tahoma, 'Lucida Sans';
 }
 
 button.model_one {
@@ -63,6 +89,19 @@ button.model_two {
   font-size: var(--text-ml);
   margin: 0;
   padding: 12px 22px;
+  transition: var(--default-transition);
+}
+
+button.model_three {
+  background-color: var(--c-secondary-500);
+  width: 100%;
+  border-radius: 6px;
+  border-style: none;
+  color: var(--c-secondary-000);
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: var(--text-ml);
+  padding: 10px 0;
   transition: var(--default-transition);
 }
 
@@ -145,5 +184,18 @@ a.model_one {
     font-size: var(--text-ms);
     color: #9a9ea3;
     white-space: break-spaces;
+  }
+}
+
+@layer section_title {
+  .section_title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .section_title h2 {
+    margin: 12px 0 0 0;
+    text-align: center;
   }
 }
