@@ -2,9 +2,9 @@
 
 @import url(./\(homepage\)/__homepage.css) layer(homepage);
 
-@import url(./\(article\)/__article.css) layer(article_page);
+/* @import url(./\(article\)/__article.css) layer(article_page); */
 
-@import url(./\(index_articles\)/__index_articles.css) layer(__index_articles.css);
+/* @import url(./\(index_articles\)/__index_articles.css) layer(__index_articles.css); */
 
 /* ==================================================== */
 /* ==================================================== */
