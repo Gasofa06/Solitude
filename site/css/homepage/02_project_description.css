@@ -12,36 +12,6 @@
   }
 }
 
-@layer double_column {
-  .double_column {
-    width: var(--homepage-width);
-
-    margin: 0 auto;
-    padding: 82px 34px 41px;
-
-    display: grid;
-    grid-row-gap: 4rem;
-    grid-column-gap: 4rem;
-    grid-auto-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .column p {
-    margin: 0 0 24px 0;
-    color: var(--c-secondary-350);
-  }
-
-  .column.img_container {
-    border-radius: 12px;
-    background-color: var(--c-secondary-010);
-  }
-
-  .column img {
-    width: 100%;
-  }
-}
-
 @layer mobile_like_grid {
   .mobile_like_grid {
     width: var(--homepage-width);

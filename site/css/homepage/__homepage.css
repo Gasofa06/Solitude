@@ -1,14 +1,81 @@
-@import url(./homepage_nav.css) layer(homepage_nav);
+@import url(./00_homepage_nav.css) layer(homepage_nav);
 
 @import url(./01_hero.css) layer(hero_section);
+@import url(./02_brief_about.css) layer(brief_about);
 @import url(./02_project_description.css) layer(project_description);
 @import url(./03_benefits.css) layer(platform_benefits);
 @import url(./04_search_types.css) layer(search_tpes);
 @import url(./05_faqs.css) layer(faqs);
 @import url(./06_acknowledgment.css) layer(acknowledgments);
 
+@layer double_column {
+  .double_column {
+    width: var(--homepage-width);
+
+    margin: 0 auto;
+    padding: 82px 34px 41px;
+
+    display: grid;
+    grid-row-gap: 4rem;
+    grid-column-gap: 1.5rem;
+    grid-auto-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  /* COLUMNS */
+
+  .big_column_left {
+    grid-column: span 5 / span 5;
+  }
+
+  .big_column_right {
+    grid-column: span 5 / span 5;
+    grid-column-start: 6;
+  }
+
+  .little_column_left {
+    grid-column: span 4 / span 4;
+  }
+
+  .little_column_right {
+    grid-column: span 4 / span 4;
+    grid-column-start: 7;
+  }
+
+  /* COLUMN TEXT */
+
+  .double_column p {
+    margin: 0 0 24px 0;
+    color: var(--c-secondary-250);
+  }
+
+  /* COLUMN IMAGES */
+
+  .double_column .img_container,
+  .double_column .img_container_black {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+  }
+
+  .double_column .img_container {
+    background-color: var(--c-secondary-010);
+  }
+
+  .double_column .img_container_black {
+    background-color: var(--c-secondary-500);
+  }
+
+  .double_column img {
+    width: 64%;
+  }
+}
+
 :root {
-  --homepage-width: 924px;
+  --homepage-width: 1024px;
 }
 
 h1 {
@@ -53,15 +120,15 @@ h3 {
 h5 {
   margin: 0;
 
-  font-size: var(--text-ml);
-  color: var(--c-secondary-150);
+  font-size: var(--text-m);
+  color: var(--c-secondary-250);
 
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
-  font-style: normal;
 
   font-style: normal;
-  letter-spacing: 0.02em;
+  word-spacing: 0.2em;
+  letter-spacing: 0.03em;
 
   font-family: segoe ui, nunito-sans, Tahoma, 'Lucida Sans';
 }
