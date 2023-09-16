@@ -1,0 +1,84 @@
+.sec_brief_about {
+  padding-top: 146px;
+}
+
+@layer section_title {
+  .sec_brief_about .section_title {
+    max-width: var(--homepage-width);
+    margin: 0 auto;
+
+    align-items: flex-start !important;
+  }
+
+  .sec_brief_about .section_title h2 {
+    text-align: start !important;
+  }
+}
+
+.sec_brief_about .double_column {
+  padding: 24px 0 0 !important;
+}
+
+@layer keywords {
+  ul.keywords {
+    width: 100%;
+    display: inline-flex;
+
+    padding: 0;
+    margin: 0 0 24px;
+
+    border-top: 1px solid var(--c-secondary-050);
+    border-bottom: 1px solid var(--c-secondary-050);
+  }
+
+  ul.keywords li {
+    display: flex;
+    align-items: center;
+
+    padding: 12px 16px;
+    border-left: 1px solid var(--c-secondary-050);
+  }
+
+  ul.keywords li:first-child {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  ul.keywords li figure {
+    display: flex;
+    margin: 0 8px 0 0;
+  }
+
+  ul.keywords li figure svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  ul.keywords p {
+    margin: 0 !important;
+
+    font-size: var(--text-s);
+    color: var(--c-secondary-150) !important;
+  }
+}
+
+@layer keywords.secure_retrival {
+  ul.keywords li.secure_retrival figure svg path {
+    fill: var(--c-secondary-150);
+  }
+}
+
+@layer keywords.confidential_query {
+  ul.keywords li.confidential_query figure svg path {
+    fill: none;
+
+    stroke-width: 3px;
+    stroke: var(--c-secondary-150);
+  }
+}
+
+@layer keywords.data_sovereignty {
+  ul.keywords li.data_sovereignty figure svg path {
+    fill: var(--c-secondary-150);
+  }
+}
