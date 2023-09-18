@@ -32,6 +32,7 @@
     font-family: sans-serif, segoe ui, nunito-sans, Helvetica;
   }
 
+  /*
   pre,
   blockquote {
     margin: 58px auto;
@@ -47,7 +48,7 @@
   summary {
     border-radius: 9px;
     border: 1px solid var(--c-secondary-050);
-  }
+  }*/
 
   /*
   @media only screen and (max-width: 768px) {
