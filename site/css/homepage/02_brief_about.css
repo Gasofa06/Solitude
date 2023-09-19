@@ -57,7 +57,7 @@
   ul.keywords p {
     margin: 0 !important;
 
-    font-size: var(--text-s);
+    font-size: var(--text-s) !important;
     color: var(--c-secondary-150) !important;
   }
 }
