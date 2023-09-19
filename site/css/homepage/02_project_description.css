@@ -6,10 +6,10 @@
   .sec_project_description .section_title {
     padding-bottom: 32px;
   }
+}
 
-  .sec_project_description .section_title h2 {
-    max-width: 720px;
-  }
+.sec_project_description .columns_container > * {
+  grid-column-gap: 0 !important;
 }
 
 @layer mobile_like_grid {
