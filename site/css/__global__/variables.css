@@ -37,6 +37,8 @@
   --c-secondary-600: #17191c;
   --c-secondary-650: #101113;
 
+  --c-nav-bars: #ffffffb3;
+
   --shadow: rgba(0, 0, 0, 0.1);
 }
 
@@ -68,6 +70,8 @@
   --c-secondary-025: hsl(0, 0%, 14%);
   --c-secondary-010: hsl(0, 0%, 10%);
   --c-secondary-000: hsl(0, 0%, 8%);
+
+  --c-nav-bars: #1d1d1fb3;
 
   --shadow: rgba(0, 0, 0, 0);
 }
