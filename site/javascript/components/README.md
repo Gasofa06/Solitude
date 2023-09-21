@@ -1,0 +1,1 @@
+Esta carpeta contiene un seguido de componentes que son utilizados a lo largo de las diferentes paginas de la plataforma. Las clases de los diferentes componentes empiezan por `Comp__` de _components_ seguidos de su nombre (ej. Footer).
