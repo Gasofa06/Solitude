@@ -1,3 +1,5 @@
+@import url(__global__/__global.css) layer(global);
+
 nav.top_bar {
   z-index: 10;
 
@@ -18,11 +20,11 @@ nav.top_bar {
   border-bottom: 1px solid var(--c-secondary-050);
 }
 
-[theme='light'] nav.top_bar {
+nav.top_bar[theme='light'] {
   background-color: #ffffffb3;
 }
 
-[theme='dark'] nav.top_bar {
+nav.top_bar[theme='dark'] {
   background-color: #1d1d1fb3;
 }
 
