@@ -158,14 +158,14 @@
     font-family: sans-serif, segoe ui, nunito-sans, Helvetica;
   }
 
-  label.switch input:checked + .slider span:first-child {
+  label.switch input:not(:checked) + .slider span:first-child {
     border-radius: inherit;
 
     color: var(--c-secondary-000);
     background: var(--c-primary-200);
   }
 
-  label.switch input:not(:checked) + .slider span:last-child {
+  label.switch input:checked + .slider span:last-child {
     border-radius: inherit;
 
     color: var(--c-secondary-650);
