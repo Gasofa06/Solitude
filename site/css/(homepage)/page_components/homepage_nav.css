@@ -30,7 +30,7 @@
 }
 
 @layer homepage_resources {
-  .homepage_resources p {
+  .resources p {
     font-size: var(--text-s);
     font-weight: bold;
     margin: 0 32px 0 0;
