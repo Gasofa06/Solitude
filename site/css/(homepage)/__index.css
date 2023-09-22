@@ -1,6 +1,7 @@
 @import url(../__global__/__global.css) layer(cross_page_styles);
 
 @import url(./page_components/homepage_nav.css) layer(homepage_nav);
+@import url(./page_components/double_column.css) layer(double_column_layer);
 @import url(./page_components/__homepage.css) layer(trying);
 
 @import url(./page_sections/01_hero.css) layer(hero_section);
