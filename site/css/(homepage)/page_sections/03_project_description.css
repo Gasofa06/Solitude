@@ -8,8 +8,19 @@
   }
 }
 
-.sec_project_description .columns_container > * {
-  grid-column-gap: 0 !important;
+@layer brief_explication_problems_columns {
+  .brief_explication_columns_container > * {
+    grid-column-gap: 0 !important;
+  }
+
+  .brief_explication_columns_container img {
+    width: 74%;
+  }
+
+  .brief_explication_columns_container .img_container,
+  .brief_explication_columns_container .img_container_black {
+    height: 470px;
+  }
 }
 
 @layer mobile_like_grid {

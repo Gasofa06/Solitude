@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
 
-    padding: 12px 16px;
+    padding: 14px 16px;
     border-left: 1px solid var(--c-secondary-050);
   }
 
@@ -58,7 +58,7 @@
     margin: 0 !important;
 
     font-size: var(--text-s) !important;
-    color: var(--c-secondary-150) !important;
+    color: var(--c-secondary-250) !important;
   }
 }
 
