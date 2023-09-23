@@ -1,0 +1,207 @@
+@layer boxes_models {
+  @layer top_down_box {
+    pre.top_down_box {
+      margin: 0;
+    }
+
+    @media only screen and (min-width: 768px) {
+      pre.top_down_box {
+        width: 298px;
+        background-color: var(--c-secondary-450);
+        border-color: var(--c-secondary-450);
+        border-width: 1px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      pre.top_down_box {
+        width: 100%;
+      }
+    }
+
+    .box_figure_container {
+      display: flex;
+      padding: 24px 0;
+      background: var(--c-secondary-010);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .box_figure_container figure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+
+      margin: 0 auto;
+
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-secondary-050);
+
+      border-radius: 50%;
+    }
+
+    .box_figure_container figure svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .box_figure_container figure svg path {
+      fill: none;
+
+      stroke-width: 2px;
+      stroke: var(--c-secondary-300);
+    }
+
+    pre.top_down_box p.box_title {
+      margin: 0;
+      padding: 26px 24px 0 24px;
+      font-weight: bold;
+      font-size: var(--text-m);
+      color: var(--c-bg);
+      font-family: system-ui !important;
+    }
+
+    pre.top_down_box p.box_text {
+      padding: 0 24px;
+      margin: 18px 0 24px 0;
+      font-size: var(--text-ms);
+      color: #9a9ea3;
+      white-space: break-spaces;
+    }
+  }
+
+  @layer black_box {
+    .black_box {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      width: var(--homepage-width);
+
+      margin: 142px auto;
+      padding: 96px 0;
+
+      border-radius: 12px;
+      background-color: var(--c-secondary-500);
+    }
+
+    .black_box h3 {
+      max-width: 520px;
+
+      margin: 0px 0 24px;
+
+      color: var(--c-bg) !important;
+      text-align: center;
+    }
+
+    .black_box p {
+      margin: 0 0 46px;
+
+      width: max-content;
+      max-width: 512px;
+
+      text-align: center;
+      color: var(--c-secondary-150) !important;
+    }
+
+    .black_box .btns_container {
+      display: inline-flex;
+      align-items: center;
+
+      margin-top: 42px;
+    }
+
+    .black_box .btns_container a {
+      margin-left: 22px;
+    }
+  }
+}
+
+@layer buttons_models {
+  @layer model_one {
+    button.model_one {
+      background-color: var(--c-primary-200);
+      border-radius: 6px;
+      border-style: none;
+      color: var(--c-bg);
+      cursor: pointer;
+      font-family: sans-serif;
+      font-size: var(--text-ml);
+      margin: 0;
+      padding: 12px 22px;
+      transition: var(--default-transition);
+    }
+  }
+
+  @layer model_two {
+    button.model_two {
+      background-color: #e3e8fc;
+      border-radius: 6px;
+      border-style: none;
+      color: var(--c-primary-300);
+      cursor: pointer;
+      font-family: sans-serif;
+      font-size: var(--text-ml);
+      margin: 0;
+      padding: 12px 22px;
+      transition: var(--default-transition);
+    }
+  }
+
+  @layer model_three {
+    button.model_three {
+      background-color: var(--c-secondary-500);
+      width: 100%;
+      border-radius: 6px;
+      border-style: none;
+      color: var(--c-secondary-000);
+      cursor: pointer;
+      font-family: sans-serif;
+      font-size: var(--text-ml);
+      padding: 10px 0;
+      transition: var(--default-transition);
+    }
+  }
+
+  @layer model_four {
+    button.model_four {
+      background-color: var(--c-secondary-000);
+      margin: 0;
+      padding: 10px 22px;
+      border-radius: 6px;
+      border-style: none;
+      color: var(--c-secondary-450);
+      cursor: pointer;
+      font-family: sans-serif;
+      font-size: var(--text-ml);
+      transition: var(--default-transition);
+    }
+  }
+}
+
+@layer links {
+  @layer classic_link {
+    a.classic_link {
+      display: block;
+      text-align: initial;
+      white-space: break-spaces;
+
+      font-size: var(--text-m);
+      color: var(--c-primary-300);
+    }
+  }
+
+  @layer white_link {
+    a.white_link {
+      display: block;
+      text-align: initial;
+      white-space: break-spaces;
+
+      font-size: var(--text-m);
+      color: var(--c-secondary-000);
+    }
+  }
+}
