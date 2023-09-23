@@ -1,13 +1,16 @@
 @import url(../__global__/__global.css) layer(cross_page_styles);
 
-@import url(./page_components/homepage_nav.css) layer(homepage_nav);
-@import url(./page_components/double_column.css) layer(double_column_layer);
-@import url(./page_components/__homepage.css) layer(trying);
+@import url(./general/style_models.css) layer(models);
+@import url(./general/homepage_nav.css) layer(homepage_nav);
+@import url(./general/double_column.css) layer(double_column_layer);
+@import url(./general/gradients.css) layer(gradients);
+@import url(./general/text.css) layer(text);
+@import url(./general/__homepage.css) layer(trying);
 
-@import url(./page_sections/01_hero.css) layer(hero_section);
-@import url(./page_sections/02_brief_about.css) layer(brief_about);
-@import url(./page_sections/03_project_description.css) layer(project_description);
-@import url(./page_sections/04_benefits.css) layer(platform_benefits);
-@import url(./page_sections/05_search_types.css) layer(search_tpes);
-@import url(./page_sections/06_faqs.css) layer(faqs);
-@import url(./page_sections/07_acknowledgment.css) layer(acknowledgments);
+@import url(./sections/) layer(hero_section);
+@import url(./sections/sections/02_brief_about.css) layer(brief_about);
+@import url(./sections/sections/03_project_description.css) layer(project_description);
+@import url(./sections/sections/04_benefits.css) layer(platform_benefits);
+@import url(./sections/sections/05_search_types.css) layer(search_tpes);
+@import url(./sections/sections/06_faqs.css) layer(faqs);
+@import url(./sections/sections/07_acknowledgment.css) layer(acknowledgments);
