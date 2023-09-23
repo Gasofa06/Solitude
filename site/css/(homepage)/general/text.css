@@ -1,0 +1,19 @@
+@layer lateral_text {
+  .lateral_text {
+    width: var(--homepage-width);
+    margin: 0 auto;
+  }
+
+  .lateral_text h3 {
+    margin: 0 0 24px;
+  }
+
+  .lateral_text p {
+    max-width: 634px;
+
+    margin: 0;
+
+    font-size: var(--text-m);
+    color: var(--c-secondary-250);
+  }
+}
