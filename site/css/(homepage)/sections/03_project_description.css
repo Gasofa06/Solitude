@@ -1,0 +1,124 @@
+.sec_project_description {
+  padding: 142px 0 162px 0;
+}
+
+@layer section_title {
+  .sec_project_description .section_title {
+    padding-bottom: 32px;
+  }
+}
+
+@layer brief_explication_with_columns {
+  .brief_explication_columns_container > * {
+    grid-column-gap: 0 !important;
+  }
+
+  .brief_explication_columns_container img {
+    width: 74%;
+  }
+
+  .brief_explication_columns_container .img_container,
+  .brief_explication_columns_container .img_container_black {
+    height: 470px;
+  }
+}
+
+@layer blockquote {
+  blockquote {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0;
+  }
+
+  .quote_info {
+    font-size: var(--text-m);
+    color: var(--c-secondary-100);
+  }
+
+  .quote {
+    max-width: 520px;
+    position: relative;
+
+    padding: 0;
+    margin: 42px 0 0;
+
+    text-align: center;
+  }
+
+  .quote::before {
+    content: '\275D';
+
+    position: absolute;
+    top: -38px;
+    left: -26px;
+
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .quote::after {
+    content: '\275E';
+
+    position: absolute;
+    bottom: -80px;
+    right: -9px;
+
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer square_grid {
+  .square_grid {
+    width: var(--homepage-width);
+
+    margin: 0 auto;
+    padding: 54px 0 0;
+
+    display: grid;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-auto-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .square_grid > span {
+    width: 100%;
+
+    border-radius: 8px;
+    background-color: var(--c-secondary-010);
+  }
+}
+
+@layer square_grid.informative_box {
+  .informative_box {
+    width: calc(100% - 52px * 2);
+
+    margin: 0;
+    padding: 52px 46px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .informative_box h2 {
+    margin: 0 0 24px;
+  }
+
+  .informative_box label {
+    font-weight: bold;
+    font-size: var(--text-m);
+  }
+
+  .informative_box p {
+    max-width: 311px;
+    margin: 24px 0 0;
+
+    font-size: var(--text-ms);
+    color: var(--c-secondary-150);
+  }
+}
