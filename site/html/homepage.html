@@ -23,6 +23,22 @@
   <body>
     <comp-nav-top-bar></comp-nav-top-bar>
 
+    <div class="global_gradient_container">
+      <svg>
+        <defs>
+          <radialGradient id="radial-pink-gradient">
+            <stop stop-color="#7775D6"></stop>
+            <stop offset="1" stop-color="#ab6aff"></stop>
+          </radialGradient>
+
+          <radialGradient id="radial-blue-gradient">
+            <stop stop-color="#7775D6"></stop>
+            <stop offset="1" stop-color="#3e76fe"></stop>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+
     <main>
       <div class="hero">
         <div class="homepage_title">
@@ -140,12 +156,22 @@
             <button class="model_three" id="start_searching">Browse Articles</button>
           </div>
 
-          <div class="right_little_column img_container_black">
+          <div class="right_little_column img_black_container parent_circular_gradient">
             <img alt="A pair of keys." src="../assets/pictures/key_pair.png" />
+
+            <svg class="circular_gradient" viewBox="0 0 1024 1024">
+              <circle
+                cx="512"
+                cy="512"
+                r="512"
+                fill-opacity="0.7"
+                fill="url(#radial-pink-gradient)"
+              />
+            </svg>
           </div>
         </div>
 
-        <div class="box_circular_gradient">
+        <div class="black_box parent_circular_gradient" style="margin-bottom: 0">
           <h3>Power must move back<br />from the corporation to the individual.</h3>
 
           <p>
@@ -161,15 +187,14 @@
             >
           </div>
 
-          <svg viewBox="0 0 1024 1024" class="gradient_circle_container">
-            <circle cx="512" cy="512" r="512" fill-opacity="0.7" fill="url(#gradient-circle)" />
-
-            <defs>
-              <radialGradient id="gradient-circle">
-                <stop stop-color="#7775D6"></stop>
-                <stop offset="1" stop-color="#3e76fe"></stop>
-              </radialGradient>
-            </defs>
+          <svg class="circular_gradient" viewBox="0 0 1024 1024">
+            <circle
+              cx="512"
+              cy="512"
+              r="512"
+              fill-opacity="0.7"
+              fill="url(#radial-blue-gradient)"
+            />
           </svg>
         </div>
       </div>
@@ -180,7 +205,7 @@
           <h2>Why and how</h2>
         </div>
 
-        <div class="section_brief_introduction">
+        <div class="section_introduction">
           <p>
             incognito dB didn't just appear overnight; rather, it's a response to the alarming trend
             on the Internet of treating user information as mere raw material for exploitation. The
@@ -242,69 +267,101 @@
           </div>
         </div>
 
-        <div class="mobile_like_grid">
-          <div class="full">
-            <blockquote>
-              <label class="quote_info">In his 2012 TED talk, Gary Kovacs said</label>
+        <div class="black_box parent_circular_gradient">
+          <blockquote>
+            <label class="quote_info">In his 2012 TED talk, Gary Kovacs said</label>
 
-              <h3 class="quote">
-                Privacy is not an option, and it shouldn't be the price we accept for just getting
-                on the Internet.
-              </h3>
-            </blockquote>
+            <h3 class="quote">
+              Privacy is not an option, and it shouldn't be the price we accept for just getting on
+              the Internet.
+            </h3>
+          </blockquote>
+
+          <svg class="circular_gradient" viewBox="0 0 1024 1024">
+            <circle
+              cx="512"
+              cy="512"
+              r="512"
+              fill-opacity="0.7"
+              fill="url(#radial-blue-gradient)"
+            />
+          </svg>
+        </div>
+
+        <div>
+          <div class="lateral_text">
+            <h3>Learn It With Stadistics</h3>
+
+            <p>
+              incognito dB didn't just appear overnight; rather, it's a response to the alarming
+              trend on the Internet of treating user information as mere raw material for
+              exploitation. The value of incognito dB, along with its supporting technologies, lies
+              in safeguarding user privacy and sovereignty.
+            </p>
           </div>
 
-          <div>
-            <div class="informative_box">
-              <h2>1774</h2>
+          <div class="square_grid">
+            <span>
+              <div class="informative_box">
+                <h2>1774</h2>
 
-              <label>Data Breaches (2022)</label>
+                <label>Data Breaches (2022)</label>
 
-              <p>
-                2022 was a big year for data breaches with 4.8 per day, underscoring the need for a
-                shift in data protection strategies.
-              </p>
-            </div>
+                <p>
+                  2022 was a big year for data breaches with 4.8 per day, underscoring the need for
+                  a shift in data protection strategies.
+                </p>
+              </div>
+            </span>
+
+            <span>
+              <div class="informative_box">
+                <h2>442M</h2>
+
+                <label>People Affected by a Data Breach</label>
+
+                <p>
+                  Does this concern you? Perhaps you're among the 442 million affected in 2022. If
+                  not, it can get worse.
+                </p>
+              </div>
+            </span>
+
+            <span>
+              <div class="informative_box">
+                <h2>99%</h2>
+
+                <label>People Affected by a Data Breach</label>
+
+                <p>
+                  Does this concern you? Perhaps you're among the 442 million affected in 2022. If
+                  not, it can get worse.
+                </p>
+              </div>
+            </span>
+
+            <span>
+              <div class="informative_box">
+                <h2>2/3</h2>
+
+                <label>Data Control Concern</label>
+
+                <p>
+                  Two-thirds of global consumers feel that tech companies have too much control over
+                  their data. Maybe it's time for a change?
+                </p>
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <div class="centered_text">
+            <h2></h2>
+            <p></p>
           </div>
 
-          <div>
-            <div class="informative_box">
-              <h2>442M</h2>
-
-              <label>People Affected by a Data Breach</label>
-
-              <p>
-                Does this concern you? Perhaps you're among the 442 million affected in 2022. If
-                not, it can get worse.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <div class="informative_box">
-              <h2>99%</h2>
-
-              <label>People Affected by a Data Breach</label>
-
-              <p>
-                Does this concern you? Perhaps you're among the 442 million affected in 2022. If
-                not, it can get worse.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <div class="informative_box">
-              <h2>2/3</h2>
-
-              <label>Data Control Concern</label>
-
-              <p>
-                Two-thirds of global consumers feel that tech companies have too much control over
-                their data. Maybe it's time for a change?
-              </p>
-            </div>
-          </div>
+          <img class="img_container_model_one" />
         </div>
 
         <div class="double_column">
