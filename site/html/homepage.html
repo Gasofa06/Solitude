@@ -35,34 +35,51 @@
             <stop stop-color="#7775D6"></stop>
             <stop offset="1" stop-color="#3e76fe"></stop>
           </radialGradient>
+
+          <radialGradient id="radial-white-gradient">
+            <stop stop-color="#acadb3"></stop>
+            <stop offset="1" stop-color="#5d5f6c"></stop>
+          </radialGradient>
         </defs>
       </svg>
     </div>
 
     <main>
-      <section class="hero">
-        <div class="homepage_title">
-          <h1>It's about time to be the <span>owner</span> of your <span>own data.</span></h1>
-        </div>
+      <section class="sec_hero parent_circular_gradient">
+        <h1 class="page_title">Private search<br />builded for users.</h1>
 
-        <div class="web_introduction">
-          <p>
-            With the incognito dB platform, you can access a selection of articles while
-            safeguarding the most important information — information about you.
-          </p>
-        </div>
+        <p class="page_introduction">
+          Access articles while protecting the most important<br />information — information about
+          you.
+        </p>
 
-        <div class="hero_btns_container">
-          <button class="model_one" id="start_searching">Start Searching</button>
+        <form action="/search">
+          <button class="model_two start_searching" target="_self" href="/search">
+            <figure>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M20 20L15.8033 15.8033M18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C14.6421 18 18 14.6421 18 10.5Z"
+                />
+              </svg>
+            </figure>
 
-          <button class="model_two" id="view_github">View GitHub</button>
-        </div>
+            Start searching
+          </button>
+        </form>
 
-        <img
-          class="hero_image"
-          alt="Two devices displaying the incognito dB platform."
-          src="https://uploads-ssl.webflow.com/5e97941735e37a5ef19d10aa/64b77066500e0f611f0ecfd1_End%20data%20fraud%20and%20reduce%20verification%20costs.webp"
-        />
+        <figure class="hero_gradient">
+          <svg class="circular_gradient" viewBox="0 0 1024 1024">
+            <circle
+              cx="512"
+              cy="512"
+              r="512"
+              fill-opacity="0.7"
+              fill="url(#radial-white-gradient)"
+            />
+          </svg>
+        </figure>
       </section>
 
       <nav class="homepage_nav">
