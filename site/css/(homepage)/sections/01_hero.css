@@ -1,75 +1,61 @@
-.hero {
+.sec_hero {
   display: flex;
   align-items: center;
   flex-direction: column;
 
   margin: 0;
-  padding: 116px 0 142px 0;
+  padding: 176px 0;
 
-  background: var(--c-secondary-010);
-  border-bottom: 1px solid var(--c-secondary-050);
+  background: var(--c-secondary-650);
 }
 
-@layer title {
-  .homepage_title {
-    width: 100%;
-    max-width: 960px;
-  }
-
-  .homepage_title h1 {
+@layer page_title {
+  h1.page_title {
     margin: 0;
     padding: 0;
 
     text-align: center;
   }
-
-  .homepage_title h1 span {
-    color: var(--c-primary-200);
-  }
 }
 
-@layer introduction {
-  .web_introduction {
-    width: 100%;
-    max-width: 940px;
-
-    margin-top: 52px;
-  }
-
-  .web_introduction p {
-    width: 64%;
-
+@layer page_introduction {
+  .page_introduction {
     padding: 0;
-    margin: 0 auto 17px auto;
+    margin: 26px auto 39px;
 
-    font-size: var(--text-ml);
-    color: var(--c-secondary-100);
-
+    font-size: 20px;
     text-align: center;
-    white-space: break-spaces;
+    color: var(--c-secondary-100);
   }
 }
 
-@layer buttons {
-  .hero_btns_container {
-    margin: 32px auto 0 auto;
+@layer start_searching_btn {
+  button.model_two.start_searching figure {
+    display: flex;
+    align-items: center;
+
+    margin: 0 10px 0 0;
   }
 
-  .hero_btns_container button#start_searching_btn,
-  .hero_btns_container button#view_github_btn {
-    width: 164px;
+  button.model_two.start_searching figure svg {
+    width: 19px;
+    height: 19px;
   }
 
-  .hero_btns_container button#view_github_btn {
-    margin: 0 0 0 32px !important;
+  button.model_two.start_searching figure svg path {
+    fill: none;
+    stroke-width: 3px;
+    stroke: var(--c-secondary-000);
   }
 }
 
-@layer image {
-  .hero_image {
-    width: 960px;
+@layer hero_gradient {
+  .hero_gradient {
+    display: contents;
+  }
 
-    padding: 0;
-    margin-top: 116px;
+  .hero_gradient svg {
+    width: 116em;
+    height: 116em;
   }
 }

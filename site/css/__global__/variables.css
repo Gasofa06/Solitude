@@ -35,7 +35,7 @@
   --c-secondary-500: #292d32;
   --c-secondary-550: #1f2226;
   --c-secondary-600: #17191c;
-  --c-secondary-650: #101113;
+  --c-secondary-650: #151519;
 
   --c-nav-bars: #ffffffb3;
 
@@ -91,7 +91,9 @@
 :root {
   --summary-margin: 36px;
 
-  --table-of-contents-total-width: calc(var(--table-of-contents-width) + var(--table-of-contents-padding-left));
+  --table-of-contents-total-width: calc(
+    var(--table-of-contents-width) + var(--table-of-contents-padding-left)
+  );
 }
 
 /* @media only screen and (max-width: 768px) {*/
