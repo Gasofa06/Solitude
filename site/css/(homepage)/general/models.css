@@ -81,7 +81,7 @@
 
       width: var(--homepage-width);
 
-      margin: 142px auto;
+      margin: 116px auto;
       padding: 96px 0;
 
       border-radius: 12px;
@@ -116,6 +116,30 @@
 
     .black_box .btns_container a {
       margin-left: 22px;
+    }
+  }
+
+  @layer img_box_model_one {
+    .img_box_model_one {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      background-color: var(--c-secondary-010);
+    }
+  }
+
+  @layer img_box_model_two {
+    .img_box_model_two {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      background-color: var(--c-secondary-500);
     }
   }
 }
