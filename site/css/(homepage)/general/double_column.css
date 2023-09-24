@@ -52,23 +52,6 @@
 }
 
 @layer double_column_layer.column_image {
-  .double_column .img_container,
-  .double_column .img_black_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 12px;
-  }
-
-  .double_column .img_container {
-    background-color: var(--c-secondary-010);
-  }
-
-  .double_column .img_black_container {
-    background-color: var(--c-secondary-500);
-  }
-
   .double_column img {
     width: 64%;
   }
