@@ -67,13 +67,13 @@
 }
 
 @layer section_title {
-  .section_title {
+  .sec_title {
     display: flex;
     align-items: center;
     flex-direction: column;
   }
 
-  .section_title h2 {
+  .sec_title h2 {
     margin: 12px 0 0 0;
     text-align: center;
   }
