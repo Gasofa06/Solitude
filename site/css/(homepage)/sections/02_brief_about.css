@@ -3,14 +3,14 @@
 }
 
 @layer section_title {
-  .sec_brief_about .section_title {
+  .sec_brief_about .sec_title {
     max-width: var(--homepage-width);
     margin: 0 auto;
 
     align-items: flex-start !important;
   }
 
-  .sec_brief_about .section_title h2 {
+  .sec_brief_about .sec_title h2 {
     text-align: start !important;
   }
 }
