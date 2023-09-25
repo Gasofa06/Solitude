@@ -85,11 +85,16 @@
       padding: 96px 0;
 
       border-radius: 12px;
-      background-color: var(--c-secondary-500);
+      background-color: var(--c-secondary-650);
     }
 
     .black_box h3 {
-      max-width: 520px;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(145deg, #fff 65%, rgba(255, 255, 255, 0.43));
+
+      font-weight: 600;
 
       margin: 0px 0 24px;
 
@@ -140,6 +145,25 @@
       border-radius: 12px;
 
       background-color: var(--c-secondary-500);
+    }
+  }
+}
+
+@layer background_models {
+  @layer galaxy {
+    .galaxy_bg {
+      position: absolute;
+      top: 0%;
+      bottom: 0%;
+      left: 0%;
+      right: 0%;
+
+      z-index: -10;
+      overflow: hidden;
+
+      background-size: 1090px;
+      background-position: 50%;
+      background-image: url(../../../assets/pictures/stars_bg.png);
     }
   }
 }
