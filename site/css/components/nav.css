@@ -1,4 +1,4 @@
-@import url(__global__/__global.css) layer(global);
+@import url(../__global__/__global.css) layer(global);
 
 @layer nav_container {
   nav.top_bar {
@@ -46,7 +46,10 @@
 
   @media only screen and (min-width: 992px) {
     .nav_content {
-      width: calc(var(--article-max-width) + var(--table-of-contents-padding-left) * 2 + var(--switch-width) * 2);
+      width: calc(
+        var(--article-max-width) + var(--table-of-contents-padding-left) * 2 + var(--switch-width) *
+          2
+      );
     }
   }
 
