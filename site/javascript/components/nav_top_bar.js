@@ -1,7 +1,7 @@
 const NAVIGATION_TOP_BAR = document.createElement('template');
 
 NAVIGATION_TOP_BAR.innerHTML = `
-    <link rel="stylesheet" type="text/css" href="css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="css/components/nav.css" />
 
     <nav class="top_bar" id="main_container">
         <div class="nav_content">
@@ -45,25 +45,16 @@ class Comp__NavTopBar extends HTMLElement {
     }
 
     connectedCallback() {
-        this.shadow_root = this.attachShadow({ mode: 'closed' });
-        this.shadow_root.appendChild(NAVIGATION_TOP_BAR.content);
+        let shadow_root = this.attachShadow({ mode: 'closed' });
+        shadow_root.appendChild(NAVIGATION_TOP_BAR.content);
 
-        this.Initialize_Events();
+        this.Initialize_Events(shadow_root);
     }
 
-    Initialize_Events() {
-        this.shadow_root.getElementById('switch_theme_toggle').onclick = () => {
+    Initialize_Events(_shadow_root) {
+        _shadow_root.getElementById('switch_theme_toggle').onclick = () => {
             this.Toggle_Theme();
         };
-
-        this.observer = new MutationObserver(
-            this.Theme_Change_Observer.bind(this),
-        );
-
-        this.observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['theme'],
-        });
     }
 
     /**
@@ -85,27 +76,6 @@ class Comp__NavTopBar extends HTMLElement {
             alert(_error);
         }
     };
-
-    Theme_Change_Observer(_mutations_list) {
-        let mutation_record = _mutations_list[0];
-
-        if (
-            mutation_record.type !== 'attributes' &&
-            mutation_record.attributeName !== 'theme'
-        ) {
-            return;
-        }
-
-        let new_theme = mutation_record.target.getAttribute('theme');
-
-        this.On_Theme_Switch(new_theme);
-    }
-
-    On_Theme_Switch(_theme) {
-        this.shadow_root
-            .getElementById('main_container')
-            .setAttribute('theme', _theme);
-    }
 }
 
 customElements.define('comp-nav-top-bar', Comp__NavTopBar);
