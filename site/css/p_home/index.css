@@ -1,5 +1,3 @@
-@import url(../__global__/__global.css) layer(cross_page_styles);
-
 @import url(./general/text.css) layer(text);
 @import url(./general/models.css) layer(models);
 
