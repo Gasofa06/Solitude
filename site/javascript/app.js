@@ -30,4 +30,4 @@ async function App() {
     Stop_Loading('Client seted up');
 }
 
-document.addEventListener('DOMContentLoaded', App());
+// document.addEventListener('DOMContentLoaded', App());
