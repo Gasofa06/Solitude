@@ -6,7 +6,7 @@ export default function Set_HTML_Global_Variabels() {
     let nav = document.querySelector('nav.top_bar');
     window.faqs_nav_link = nav.querySelector('ul.nav_links li.faqs a');
     window.about_nav_link = nav.querySelector('ul.nav_links li.about a');
-    window.logo_nav_link = nav.querySelector('div.logo_nav_container a');
+    window.logo_nav_link = nav.querySelector('.nav_content .left a.logo');
     window.search_nav_link = nav.querySelector('ul.nav_links li.search a');
 
     window.loading_notifier = document.getElementById('loading_text');
