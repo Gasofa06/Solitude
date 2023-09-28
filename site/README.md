@@ -1,13 +1,17 @@
 # Website User Files
-Este documento ofrece una visión general de los archivos que componen la interfaz de usuario de _incognito dB_, abarcando además aquellos archivos que tienen interacción directa con el servidor. 
-
-Con el propósito de adquirir el artículo deseado de manera confidencial, estos archivos desempeñan funciones adicionales más allá de su labor en la presentación y estructuración del proyecto. En efecto, también llevan a cabo los procesos necesarios antes y después de solicitar el artículo específico que tenemos en mente.
+Este documento proporciona una descripción general de los archivos que conforman la interfaz de usuario de incognito dB, incluyendo aquellos archivos que interactúan directamente con el servidor.
 
 ## Files Structure
 ```
  site
+  ├── assets
+  │    ├── fonts
+  │    └── pictures
+  │
   ├── css
-  │    └── index.css
+  │    ├── __global__
+  │    ├── components
+  │    └── p_[name_of_the_page]
   │
   ├── javascript
   │    ├── articleCodeBook.js
@@ -18,10 +22,8 @@ Con el propósito de adquirir el artículo deseado de manera confidencial, estos
   ├── pkg
   │    └── ...
   │
-  ├── public
-  │    └── logo.png
-  │
-  └── index.html
+  └── public
+       └── logo.png
 ```
 
 ## Description
@@ -29,36 +31,6 @@ Con el propósito de adquirir el artículo deseado de manera confidencial, estos
 ### CSS folder
 
 La carpeta de CSS alberga el archivo `main.css``, el cual se encarga de dar estilo a la presentación visual de _incognito dB_. En este archivo, se pueden identificar diversas secciones que se encuentran delimitadas por diferentes comentarios:
-
-- Con el propósito de marcar divisiones más amplias, se utiliza el siguiente formato:
-
-```
-/* ================================================== */
-/* ================================================== */
-/* ================================================== */
-/*                                                    */
-/*                                                    */
-/*                  SOMETHING INSIDE                  */
-/*                                                    */
-/*                                                    */
-/* ================================================== */
-/* ================================================== */
-/* ================================================== */
-```
-
-- Para establecer separaciones entre las subcategorías dentro de estas secciones, se emplea la siguiente estructura:
-
-```
-/* ================================================== */
-/*                  SOMETHING INSIDE                  */
-/* ================================================== */
-```
-
-- Asimismo, para diferenciar las sub-subcategorías en estas secciones, se sigue la siguiente pauta:
-
-```
-/* ---------------- SOMETHING INSIDE ---------------- */
-```
 
 ### JavaScript folder
 
