@@ -1,4 +1,4 @@
-@import url(__global__/__global.css) layer(global);
+@import url(../__global__/__global.css) layer(global);
 
 footer {
   width: 100%;
