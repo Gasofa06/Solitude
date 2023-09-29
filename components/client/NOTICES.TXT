@@ -1,6 +1,6 @@
 The attached notices are provided for information only.
 
-License notice for spiral-rs.
+License notice for the client folder.
 
 -------------------------------
 
