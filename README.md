@@ -41,9 +41,21 @@
 
 ## Introduction
 
-With the sole purpose of achieving the level of privacy and confidentiality that we all wish to attain in our database queries, the [_incognito dB_]() platform utilizes homomorphic encryption for [private information retrieval](https://en.wikipedia.org/wiki/Private_information_retrieval). This approach guarantees that no individual, even including the server itself, possesses awareness of the specific information we have both requested and received.
+Today, we spend countless hours on the Internet, extracting vast amounts of information from the various platforms we access. But just as each and every one of us obtains information from these platforms, they obtain information from each and every one of us. And increasingly, the price we have to pay for being connected and having access to this amount of information is our own privacy. But as Gary Kovacs mentioned in his [2012 TED talk](https://www.ted.com/talks/gary_kovacs_tracking_our_online_trackers):
 
-Data is **now** cryptographically protected even throughout the process.
+<br/>
+
+<p align="center">
+    Privacy is not an option, and it <br/>
+    shouldn't be the price we accept for <br/>
+    just getting on the Internet.
+</p>
+
+<br/>
+    
+So as to attain the level of privacy and confidentiality that we all must have when accessing information through database queries, the [_incognito dB_]() platform employs homomorphic encryption for [private information retrieval](https://en.wikipedia.org/wiki/Private_information_retrieval). This approach ensures that no entity, including the server itself, possesses any awareness of the specific information we've both requested and received.
+
+Just because data is **now** cryptographically protected even throughout the process.
 
 <br/>
 
@@ -54,19 +66,21 @@ Data is **now** cryptographically protected even throughout the process.
 
 ## Table of Contents
 
-1. [Live Demo](#live-demo)
-2. [Platform Description](#platform-description)
+1. [Platform Description](#platform-description)
    * [Features and Benefits](#features-and-benefits)
    * [Limitations](#limitations)
+2. [Live Demo](#live-demo)
 3. [Run in Local Device](#run-in-local-device)
    * [Requirements](#requirements)
    * [Quick Start](#quick-start)
-4. [Disclamer](#disclamer)
-5. [Credits](#credits)
+4. [Learn More](#learn-more)
+5. [FAQs](#faqs)
+6. [Credits](#credits)
    * [External Contributions](#external-contributions)
    * [Acknowledgments](#acknowledgments)
-6. [Contact](#contact)
-7. [License](#license)
+7. [Related Projects](#related-projects)
+8. [Contact](#contact)
+9. [License](#license)
 
 <br />
 <br />
@@ -86,9 +100,11 @@ Data is **now** cryptographically protected even throughout the process.
 
 ## Live Demo
 
-You can quickly experience the _indognito dB_ platform by visiting its own [website]().
+You can quickly experience the _indognito dB_ platform by visiting its own [website](). Check out some snapshots of the platform.
 
-![](https://github.com/Gasofa06/incognito-db/blob/main/docs/static/gifs/search_example.gif)
+<br />
+
+<img src="https://github.com/Gasofa06/incognito-db/blob/main/docs/static/gifs/search_example.gif" width="100%"/>
 
 <br />
 <br />
