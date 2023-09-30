@@ -71,15 +71,6 @@ Data is **now** cryptographically protected even throughout the process.
 <br />
 <br />
 
-## Live Demo
-
-You can quickly experience the _indognito dB_ platform by visiting its own [website]().
-
-...
-
-<br />
-<br />
-
 ## Platform Description
 
 <br />
@@ -89,6 +80,15 @@ You can quickly experience the _indognito dB_ platform by visiting its own [webs
 <br />
 
 ### Limitations
+
+<br />
+<br />
+
+## Live Demo
+
+You can quickly experience the _indognito dB_ platform by visiting its own [website]().
+
+...
 
 <br />
 <br />
@@ -131,6 +131,16 @@ Now you are runing it in your own device in localhost port 8080.
 <br />
 <br />
 
+## Learn More
+
+<br />
+<br />
+
+## FAQs
+
+<br />
+<br />
+
 ## Credits
 
 **Project Author:** [Roger Rovira]().
@@ -157,6 +167,11 @@ While expressing my thanks to the contributors of Spiral and SpiralWiki, I would
 Their insightful guidance assisted me throughout the development phase, helping to establish the foundations of the project, the main ideas. Allowing me to materialize, with my own hands, the underlying structure of [_incognito dB_]() through programming.
 
 Thanks 😁.
+
+<br />
+<br />
+
+## Related Projects
 
 <br />
 <br />
