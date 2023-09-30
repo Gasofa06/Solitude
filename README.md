@@ -88,7 +88,7 @@ Data is **now** cryptographically protected even throughout the process.
 
 You can quickly experience the _indognito dB_ platform by visiting its own [website]().
 
-...
+![](https://github.com/Gasofa06/incognito-db/blob/main/docs/static/gifs/search_example.gif)
 
 <br />
 <br />
