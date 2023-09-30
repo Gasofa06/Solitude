@@ -32,7 +32,12 @@
   </a>
 </p>
 
---------------------------------------------------------------------------------
+<br />
+
+<img src="docs/static/imgs/platform_screen.png"></a>
+
+<br />
+<br />
 
 ## Introduction
 
@@ -43,6 +48,9 @@ Data is **now** cryptographically protected even throughout the process.
 <br/>
 
 <img src="docs/static/imgs/PIR.png"></a>
+
+<br />
+<br />
 
 ## Table of Contents
 
@@ -60,21 +68,38 @@ Data is **now** cryptographically protected even throughout the process.
 6. [Contact](#contact)
 7. [License](#license)
 
+<br />
+<br />
+
 ## Live Demo
 
 You can quickly experience the _indognito dB_ platform by visiting its own [website]().
 
 ...
 
+<br />
+<br />
+
 ## Platform Description
+
+<br />
 
 ### Features and Benefits
 
+<br />
+
 ### Limitations
+
+<br />
+<br />
 
 ## Run in Local Device
 
+<br />
+
 ### Requirements
+
+<br />
 
 ### Quick Start
 
@@ -103,11 +128,16 @@ cargo run build -- ../../server/database/db/preprocessed_db.txt 8080
 
 Now you are runing it in your own device in localhost port 8080.
 
+<br />
+<br />
+
 ## Credits
 
 **Project Author:** [Roger Rovira]().
 
 Emerging from the final stages of my high school education in Barcelona, Catalonia, this project has taken shape as the _Treball de Recerca_ that Catalan students are required to present during the last year of their studies.
+
+<br />
 
 ### External Contributions
 
@@ -118,6 +148,8 @@ The development of [_incognito dB_]() was enriched by the valuable contribution 
 
 It was thanks to these tools that I was able to successfully implement homomorphic encryption to achieve private information retrieval.
 
+<br />
+
 ### Acknowledgments
 
 While expressing my thanks to the contributors of Spiral and SpiralWiki, I would also like to extend my appreciation to my mentors and professors. 
@@ -126,12 +158,18 @@ Their insightful guidance assisted me throughout the development phase, helping 
 
 Thanks 😁.
 
+<br />
+<br />
+
 ## Contact
 
 Feel free to reach out if you have any questions, suggestions, or feedback regarding this project. You can contact me via email or connect with me on social media as well.
 
 - **Email**: [rogerrovi2006@gmail.com](mailto:rogerrovi2006@gmail.com)
 - **Twitter**: [@rovi_roger](https://twitter.com/rovi_roger)
+
+<br />
+<br />
 
 ## License
 
