@@ -100,11 +100,17 @@ Just because data is **now** cryptographically protected even throughout the pro
 
 ## Live Demo
 
-You can quickly experience the _indognito dB_ platform by visiting its own [website](). Check out some snapshots of the platform.
+You can quickly experience the _indognito dB_ platform by visiting its own [website](). There you will be able to access articles while safeguarding the most important information — information about you. With a minimalist yet precise design, _incognito dB_ aims to ensure a user-friendly experience, prioritizing both privacy and usability.
+
+Check out some snapshots and videos of the platform.
 
 <br />
 
 <img src="https://github.com/Gasofa06/incognito-db/blob/main/docs/static/gifs/search_example.gif" width="100%"/>
+
+<br />
+
+<img src="https://github.com/Gasofa06/incognito-db/blob/main/docs/static/imgs/homepage_hero_and_introduction.png" width="100%"/>
 
 <br />
 <br />
