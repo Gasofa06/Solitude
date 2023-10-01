@@ -1,2 +1,3 @@
-@import url(./variables.css) layer(variables);
 @import url(./general.css) layer(general);
+
+@import url(./variables.css) layer(variables);
