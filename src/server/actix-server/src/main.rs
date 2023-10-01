@@ -249,8 +249,8 @@ async fn main() -> std::io::Result<()> {
 
   let app_build = move ||
     App::new()
-      .wrap(middleware::Compress::default())
-      .wrap(cors_fn())
+      // .wrap(middleware::Compress::default())
+      // .wrap(cors_fn())
       .app_data(state.clone())
       .app_data(web::PayloadConfig::new(1 << 32))
       .service(setup) // POST
