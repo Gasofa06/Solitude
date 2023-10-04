@@ -5,7 +5,7 @@
 <br />
 
 <p align="center">
-  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, ensuring the privacy of users while delivering the requested content.
+  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, ensuring users privacy while delivering the requested content.
 </p>
 
 <br />
@@ -41,7 +41,7 @@
 
 ## Introduction
 
-Today, we spend countless hours on the Internet, extracting vast amounts of information from the various platforms we access. But just as each and every one of us obtains information from these platforms, they obtain information from each and every one of us. And increasingly, the price we have to pay for being connected and having access to this amount of information is our own privacy. But as Gary Kovacs mentioned in his [2012 TED talk](https://www.ted.com/talks/gary_kovacs_tracking_our_online_trackers):
+Today, we spend countless hours on the Internet, extracting vast amounts of information from the various platforms we access. However, just as each and every one of us obtains information from these platforms, they obtain information from each and every one of us. And increasingly, the price we have to pay for being connected and having access to this amount of information is our own privacy. But as Gary Kovacs mentioned in his [2012 TED talk](https://www.ted.com/talks/gary_kovacs_tracking_our_online_trackers):
 
 <br/>
 
