@@ -5,7 +5,7 @@
 <br />
 
 <p align="center">
-  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, ensuring the privacy of users while delivering the requested content.
+  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, ensuring users privacy while delivering the requested content.
 </p>
 
 <br />
