@@ -1,7 +1,6 @@
 # Security Policy
 
 <br />
-<br />
 
 ## Reporting a Vulnerability
 
@@ -13,7 +12,6 @@ Thank you for checking out _incognito dB_ project_. If you happen to spot someth
 
 Your feedback in improving _ingocnito dB_ is greatly appreciated. Thank you for your cooperation.
 
-<br />
 <br />
 
 ## Contact Information
