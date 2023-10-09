@@ -1,1 +1,0 @@
-In this directory, you'll find various main codes that are utilized across different pages of the website.
