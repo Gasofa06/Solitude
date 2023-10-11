@@ -1,9 +1,9 @@
 import {
     Start_Loading,
     Stop_Loading,
-} from '../../../../platform_utils/__utils.js';
+} from '../../../../platform_utils/index.js';
 
-import '../../../../platform_utils/decompression/bz2.js';
+import '../../../../platform_utils/bz2.js';
 
 import { api } from '../../../../server/api.js';
 import { generate_query, decode_response } from '../../../../../pkg/client.js';

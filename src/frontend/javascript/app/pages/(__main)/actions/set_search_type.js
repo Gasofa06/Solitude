@@ -3,7 +3,7 @@ import { SEARCH_TYPES } from '../../../__constants__/__constants.js';
 import {
     Find_Key_Index,
     Clear_Search_Text_Input,
-} from '../../../platform_utils/__utils.js';
+} from '../../../platform_utils/index.js';
 
 /**
  * @info Actualiza la barra de búsqueda con un nuevo marcador de posición

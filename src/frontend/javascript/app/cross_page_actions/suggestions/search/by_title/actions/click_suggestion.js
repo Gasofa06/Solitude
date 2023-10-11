@@ -1,4 +1,4 @@
-import { Clear_Suggestions } from '../../../../../platform_utils/__utils.js';
+import { Clear_Suggestions } from '../../../../../platform_utils/index.js';
 
 export const Click_Title_Suggestion = _e => {
     Clear_Suggestions();

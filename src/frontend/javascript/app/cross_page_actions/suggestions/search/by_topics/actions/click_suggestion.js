@@ -2,7 +2,7 @@ import {
     Clear_Suggestions,
     Clear_Search_Text_Input,
     Contains_Obj,
-} from '../../../../../platform_utils/__utils.js';
+} from '../../../../../platform_utils/index.js';
 
 import { Show_Selected_Topics } from '../constructors/selected_topics.js';
 
