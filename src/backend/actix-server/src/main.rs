@@ -23,8 +23,6 @@ const PUB_PARAMS_MAX: usize = 250;
 
 // Variables para la direccion y el nombre de archivos.
 
-const PATH_SITE: &str = "../../../frontend/";
-const HTML_FILENAME: &str = "layouts/incognitodb.com/homepage.html";
 const MAIN_DICT: &str = "../../database/shared_data/main_dict.json";
 const PATH_TITLE_INDICES: &str = "../../database/shared/title_and_idx.json";
 const PATH_TITLE_TOPICS: &str = "../../database/shared/title_and_topics.json";
@@ -152,22 +150,6 @@ async fn query<'a>(
   Ok(result)
 }
 
-// #[get("/data/title_and_idx.json")]
-// async fn article_indices() -> Result<NamedFile, std::io::Error> {
-//   match NamedFile::open(PATH_TITLE_INDICES) {
-//     Ok(file) => Ok(file),
-//     Err(err) => Err(err),
-//   }
-// }
-// 
-// #[get("/data/title_and_topics.json")]
-// async fn article_titles_and_topics() -> Result<NamedFile, std::io::Error> {
-//   match NamedFile::open(PATH_TITLE_TOPICS) {
-//     Ok(file) => Ok(file),
-//     Err(err) => Err(err),
-//   }
-// }
-
 #[get("/data/main_dict.json")]
 async fn main_dict() -> Result<NamedFile, std::io::Error> {
   match NamedFile::open(MAIN_DICT) {
@@ -260,7 +242,6 @@ async fn main() -> std::io::Result<()> {
       // .service(article_titles_and_topics) // GET
       .service(main_dict)
       .service(article_topics) // GET
-      .service(Files::new("/", PATH_SITE).index_file(HTML_FILENAME));
 
   HttpServer::new(app_build)
     .bind(("localhost", port.parse().unwrap()))
