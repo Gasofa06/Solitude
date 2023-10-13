@@ -1,10 +1,10 @@
-import { Start_Loading, Stop_Loading } from '../platform_utils/__utils.js';
+import { Start_Loading, Stop_Loading } from '../utils/index.js';
 
-import { PageController } from '../pages/__controller__/__controller.js';
+import { PageController } from '../app/pages/__controller__/__controller.js';
 
 import Initialize_Web_Assembly from '../../pkg/client.js';
 
-import Setup_Data from '../server/data_setup/__setup.js';
+import Setup_Data from '../api/data_setup/__setup.js';
 
 import { Setup_Client } from '../client/__setup.js';
 
@@ -30,4 +30,4 @@ async function App() {
     Stop_Loading('Client seted up');
 }
 
-// document.addEventListener('DOMContentLoaded', App());
+document.addEventListener('DOMContentLoaded', App());
