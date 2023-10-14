@@ -1,14 +1,12 @@
 <br/>
-    
-<h1 align="center">incognito dB</h1>
+
+<img src="res/imgs/main_title.png"></a>
 
 <br />
 
 <p align="center">
-  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, ensuring users privacy while delivering the requested content.
+    Welcome to the <a href="https://incognitodb.com">incognito dB</a> public repositrie.
 </p>
-
-<br />
 
 <p align="center">
   <a href="">Docs</a>
@@ -31,6 +29,17 @@
     <img alt="Static Badge" src="https://img.shields.io/badge/build-spiral-blue?label=powered%20by&color=blue">
   </a>
 </p>
+
+<br />
+<br />
+
+<h1>What is incognito dB?</h1>
+
+<p>
+  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, ensuring users privacy while delivering the requested content.
+</p>
+
+
 
 <br />
 
