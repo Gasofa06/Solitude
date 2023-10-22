@@ -1,7 +1,7 @@
 const FOOTER = document.createElement('template');
 
 FOOTER.innerHTML = `
-    <link rel="stylesheet" type="text/css" href="css/components/footer.css" />
+    <link rel="stylesheet" type="text/css" href="styles/components/footer.css" />
 
     <footer>
         <div class="footer_container">

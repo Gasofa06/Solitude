@@ -1,7 +1,7 @@
 const NAVIGATION_TOP_BAR = document.createElement('template');
 
 NAVIGATION_TOP_BAR.innerHTML = `
-    <link rel="stylesheet" type="text/css" href="css/components/nav.css" />
+    <link rel="stylesheet" type="text/css" href="styles/components/nav.css" />
 
     <nav class="top_bar" id="main_container">
         <div class="nav_content">
