@@ -1,4 +1,4 @@
-@import url(../general/index.css) layer(global);
+@import url(../cross-page/general.css) layer(global);
 
 @layer nav_container {
   nav.top_bar {
