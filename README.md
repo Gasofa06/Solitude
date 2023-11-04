@@ -10,6 +10,14 @@
 
 <p align="center">
   <a href="https://incognitodb.com">
+    <img src="res/imgs/platform_characteristics.png">
+  </a>
+</p>
+
+<br />
+
+<p align="center">
+  <a href="https://incognitodb.com">
     <img src="res/imgs/header.png">
   </a>
 </p>
