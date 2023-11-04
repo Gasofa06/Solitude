@@ -8,6 +8,12 @@
 
 <br />
 
+<p align="center">
+  <a href="https://incognitodb.com">
+    <img src="res/imgs/header.png">
+  </a>
+</p>
+
 <h2 align="center">A Private Search Engine</h3>
 
 <p align="center">
