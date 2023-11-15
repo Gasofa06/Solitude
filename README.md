@@ -1,235 +1,148 @@
-<br/>
+[website]: https://incognitodb.com
 
-<p align="center">
-  <a href="https://incognitodb.com">
-    <img src="res/imgs/main_title.png">
-  </a>
-</p>
+<div alt style="text-align: center;">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="..." />
+        <img alt="incognito_dB" src="res/imgs/main_title.png">
+    </picture>
+</div>
 
-<br />
+# incognito dB
 
-<p align="center">
-  <a href="https://incognitodb.com">
-    <img src="res/imgs/platform_characteristics.png">
-  </a>
-</p>
+Welcome to the open-source monorepository for [incognito dB][website], dedicated to ensuring user privacy.
 
-<br />
+> 🌏 The README file is available in [Spanish]() and [Catalan]() as well.
 
-<p align="center">
-  <a href="https://incognitodb.com">
-    <img src="res/imgs/header.png">
-  </a>
-</p>
-
-<h2 align="center">A Private Search Engine</h3>
-
-<p align="center">
-    Welcome to the <a href="https://incognitodb.com">incognito dB</a> public repositrie.
-</p>
-
-<p align="center">
-    🌐 <a href="">Website</a> · 📚 <a href="">Documentation</a> · 🔍 <a href="https://app.twenty.com/">Search</a> · 💬 <a href="mailto:rogerrovi2006@gmail.com">Contact</a>
-<p>
+> 📄 An article about the project is also available [here]().
 
 <br />
 
-<p align="center">
-  <a href="https://search.incognitodb.com">
-    <img src="res/imgs/platform_screen.png">
-  </a>
-</p>
+## What's for?
+
+> ✨ Incognito dB és un motor de cerca de bases de dades dissenyat amb l’objectiu de protegir la privadesa dels usuaris. 
+
+Mitjançant aquesta eina, qualsevol persona pot accedir a una àmplia varietat d’articles de manera confidencial. Totes les sol·licituds d’accés a informació es xifren de manera que ni el servidor, ni cap altra entitat externa, té accés a les cerques dels consumidors.
+
+Amb la finalitat contrarestar la falta de privacitat en Internet, Incognito dB es recolza en els principis de l’Homomorphic Encryption per garantir la Recuperació d’Informació Privada (Private Information Retrieval, PIR). És a dir, implementa algoritmes homomòrfics que asseguren que els usuaris aconsegueixin la informació que cerquen sense revelar cap detall personal o específic de la seva consulta, gràcies al suport del codi obert proporcionat per l’empresa [Blyss](https://github.com/blyssprivacy).
 
 <br />
 
-<p>
-  A private information retrival webpage powered by <a href="https://blyss.dev/">Spiral</a> that allows anonymous access to a comprehensive selection of articles, ensuring users privacy while delivering the requested content.
-</p>
-
-<br />
-<br />
-
-## Introduction
-
-Today, we spend countless hours on the Internet, extracting vast amounts of information from the various platforms we access. However, just as each and every one of us obtains information from these platforms, they obtain information from each and every one of us. And increasingly, the price we have to pay for being connected and having access to this amount of information is our own privacy. But as Gary Kovacs mentioned in his [2012 TED talk](https://www.ted.com/talks/gary_kovacs_tracking_our_online_trackers):
-
-<br/>
-
-<p align="center">
-    Privacy is not an option, and it <br/>
-    shouldn't be the price we accept for <br/>
-    just getting on the Internet.
-</p>
-
-<br/>
-    
-So as to attain the level of privacy and confidentiality that we all must have when accessing information through database queries, the [_incognito dB_]() platform employs homomorphic encryption for [private information retrieval](https://en.wikipedia.org/wiki/Private_information_retrieval). This approach ensures that no entity, including the server itself, possesses any awareness of the specific information we've both requested and received.
-
-Just because data is **now** cryptographically protected even throughout the process.
-
-<br/>
-
-<img src="res/imgs/PIR.png"></a>
-
-<br />
-<br />
-
-## Table of Contents
-
-1. [Platform Description](#platform-description)
-   * [Features and Benefits](#features-and-benefits)
-   * [Limitations](#limitations)
-2. [Live Demo](#live-demo)
-3. [Run in Local Device](#run-in-local-device)
-   * [Requirements](#requirements)
-   * [Quick Start](#quick-start)
-4. [Learn More](#learn-more)
-5. [FAQs](#faqs)
-6. [Credits](#credits)
-   * [External Contributions](#external-contributions)
-   * [Acknowledgments](#acknowledgments)
-7. [Related Projects](#related-projects)
-8. [Contact](#contact)
-9. [License](#license)
-
-<br />
-<br />
-
-## Platform Description
+<div alt style="text-align: center;">
+    <picture>
+        <a href="https://www.twenty.com">
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
+            <img alt="User view" src="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-light.png" />
+        </a>
+    </picture>
+</div>
 
 <br />
 
-### Features and Benefits
+És difícil mantenir secrets en l’era digital. Malgrat la criptografia i les diverses legislacions implementades, el problema de la privacitat continua assetjant als usuaris en Internet. 
+
+Amb cada missatge, cada cerca i cada interacció; les empreses aprenen quelcom més d’informació sobre nosaltres. Tot i que de manera aïllada pot semblar poc rellevant, quan es du a terme la suma total de la informació recopilada, les companyies esdevenen capaces de descobrir molts aspectes de la nostra persona.
+
+Avui en dia, més de 5000 milions de persones arreu del món estan interconnectades a través d’Internet per tal d’obtenir o enviar informació. No obstant això, a mesura que tots nosaltres aconseguim informació de les diverses plataformes a les quals accedim, aquestes també comencen a recavar informació sobre tots nosaltres. I, cada vegada més, el preu que hem de pagar per estar connectats és la nostra privacitat.
+
+Així doncs, per tal de preservar la sostenibilitat en Internet, és imperatiu que el poder retrocedeixi de l’empresa a l’individu i que aquest últim assoleixin la privacitat que li pertoca. Incognito dB es nomes una demo per intentar preservar la privacitat dels usuaris mentre és una eina util.
+
+Pots accedir al lloc web fent clic [aquí][website].
 
 <br />
 
-### Limitations
+## Features and Benefits
 
-<br />
-<br />
-
-## Live Demo
-
-You can quickly experience the _indognito dB_ platform by visiting its own [website](). There you will be able to access articles while safeguarding the most important information — information about you. With a minimalist yet precise design, _incognito dB_ aims to ensure a user-friendly experience, prioritizing both privacy and usability.
-
-Check out some snapshots and videos of the platform.
+* Built-in LSP ([Language Server Protocol](https://microsoft.github.io/language-server-protocol/)) support to give you intelligent code features such as: completion, diagnostics and code actions
+* Modal editing support as first class citizen (Vim-like, and toggleable)
+* Built-in remote development support inspired by [VSCode Remote Development](https://code.visualstudio.com/docs/remote/remote-overview). Enjoy the benefits of a "local" experience, and seamlessly gain the full power of a remote system.
+* Plugins can be written in programming languages that can compile to the [WASI](https://wasi.dev/) format (C, Rust, [AssemblyScript](https://www.assemblyscript.org/))
+* Built-in terminal, so you can execute commands in your workspace, without leaving Lapce.
 
 <br />
 
-<img src="res/gifs/search_example.gif" width="100%"/>
+## Workflow
+
+Through the above introduction and Demo demonstration, you must be curious about how DevOpsGPT achieves the entire process of automated requirement development in an existing project. Below is a brief overview of the entire process:
+
+![工作流程](https://github.com/kuafuai/DevOpsGPT/blob/master/docs/files/intro-flow-simple.png)
+
+- Clarify requirement documents: Interact with DevOpsGPT to clarify and confirm details in requirement documents.
+- Generate interface documentation: DevOpsGPT can generate interface documentation based on the requirements, facilitating interface design and implementation for developers.
+- Write pseudocode based on existing projects: Analyze existing projects to generate corresponding pseudocode, providing developers with references and starting points.
+- Refine and optimize code functionality: Developers improve and optimize functionality based on the generated code.
+- Continuous integration: Utilize DevOps tools for continuous integration to automate code integration and testing.
+- Software version release: Deploy software versions to the target environment using DevOpsGPT and DevOps tools.
 
 <br />
 
-<img src="res/imgs/homepage_hero_and_introduction.png" width="100%"/>
+## Limitations
+Although we strive to enhance enterprise-level software development efficiency and reduce barriers with the help of large-scale language models, there are still some limitations in the current version:
 
-<br />
-<br />
-
-## Run in Local Device
-
-<br />
-
-### Requirements
+- The generation of requirement and interface documentation may not be precise enough and might not meet developer intent in complex scenarios.
+- In the current version, automating the understanding of existing project code is not possible. We are exploring a new solution that has shown promising results during validation and will be introduced in a future version.
 
 <br />
 
-### Quick Start
+## About this repository
 
-1. Commence by cloning the repository to your local device:
-```
-git clone <repository_url>
-```
+### Top-level layout
 
-2. Proceed to the `components/client` directory and invoke the subsequent command to compile the WebAssembly code:
-```
-wasm-pack build --target web --out-dir ../../site/pkg
-```
+This repository's contents is divided across four primary sections:
 
-3. Within the `server/database` repository, employ the provided Python "build" script to establish the fundamental database components.
+- `/apps` contains the source for our applications
+- `/packages` contains the source for our public packages
+- `/scripts` contains scripts used for building and publishing
+- `/assets` contains icons and translations relied on by the app
+- `/docs` contains the content for our docs site at [tldraw.dev](https://tldraw.dev)
 
-4. Transition to the `components/spiral-rs` directory. Issue the ensuing command to preprocess the database:
-```
-cargo run --bin preprocess_db -- ../../server/database/db/db.txt ../../server/database/db/preprocessed_db.txt
-```
+### Applications
 
-5. Conclude by activating the local server. Navigate to the `server/actix-server/src` directory and implement the following command:
+- `examples`: our local development / examples project
+- `vscode`: our [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=tldraw-org.tldraw-vscode)
 
-```
-cargo run build -- ../../server/database/db/preprocessed_db.txt 8080
-```
+### Packages
 
-Now you are runing it in your own device in localhost port 8080.
-
-<br />
-<br />
-
-## Learn More
-
-<br />
-<br />
-
-## FAQs
-
-<br />
-<br />
-
-## Credits
-
-**Project Author:** [Roger Rovira]().
-
-Emerging from the final stages of my high school education in Barcelona, Catalonia, this project has taken shape as the _Treball de Recerca_ that Catalan students are required to present during the last year of their studies.
+- `assets`: a library for working with tldraw's fonts and translations
+- `editor`: the tldraw editor
+- `state`: a signals library, also known as signia
+- `store`: an in-memory reactive database
+- `tldraw`: the main tldraw package containing both the editor and the UI
+- `tlschema`: shape definitions and migrations
+- `utils`: low-level data utilities shared by other libraries
+- `validate`: a validation library used for run-time validation
 
 <br />
 
-### External Contributions
+## Feedback & Contact
 
-The development of [_incognito dB_]() was enriched by the valuable contribution of the open-source library Spiral and the SpiralWiki project.
+The most popular place for Lapce developers and users is on the [Discord server](https://discord.gg/n8tGJ6Rn6D).
 
-* **Spiral**: [company webpage](https://blyss.dev/).
-* **SpiralWiki**: [project web](https://spiralwiki.com/).
+Or, join the discussion on [Reddit](https://www.reddit.com/r/lapce/) where we are just getting started.
 
-It was thanks to these tools that I was able to successfully implement homomorphic encryption to achieve private information retrieval.
-
-<br />
-
-### Acknowledgments
-
-While expressing my thanks to the contributors of Spiral and SpiralWiki, I would also like to extend my appreciation to my mentors and professors. 
-
-Their insightful guidance assisted me throughout the development phase, helping to establish the foundations of the project, the main ideas. Allowing me to materialize, with my own hands, the underlying structure of [_incognito dB_]() through programming.
-
-Thanks 😁.
+There is also a [Matrix Space](https://matrix.to/#/#lapce-editor:matrix.org), which is linked to the content from the Discord server.
 
 <br />
-<br />
 
-## Related Projects
+## Disclaimer
 
-<br />
-<br />
+This project, DevOpsGPT, is an experimental application and is provided "as-is" without any warranty, express or implied. By using this software, you agree to assume all risks associated with its use, including but not limited to data loss, system failure, or any other issues that may arise.
 
-## Contact
+The developers and contributors of this project do not accept any responsibility or liability for any losses, damages, or other consequences that may occur as a result of using this software. You are solely responsible for any decisions and actions taken based on the information provided by DevOpsGPT.
 
-Feel free to reach out if you have any questions, suggestions, or feedback regarding this project. You can contact me via email or connect with me on social media as well.
+Please note that the use of the GPT language model can be expensive due to its token usage. By utilizing this project, you acknowledge that you are responsible for monitoring and managing your own token usage and the associated costs. It is highly recommended to check your OpenAI API usage regularly and set up any necessary limits or alerts to prevent unexpected charges.
 
-- **Email**: [rogerrovi2006@gmail.com](mailto:rogerrovi2006@gmail.com)
-- **Twitter**: [@rovi_roger](https://twitter.com/rovi_roger)
+As an autonomous experiment, DevOpsGPT may generate content or take actions that are not in line with real-world business practices or legal requirements. It is your responsibility to ensure that any actions or decisions made based on the output of this software comply with all applicable laws, regulations, and ethical standards. The developers and contributors of this project shall not be held responsible for any consequences arising from the use of this software.
 
-<br />
+By using DevOpsGPT, you agree to indemnify, defend, and hold harmless the developers, contributors, and any affiliated parties from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from your use of this software or your violation of these terms.
+
 <br />
 
 ## License
 
-This project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
+Lapce is released under the Apache License Version 2, which is an open source license. You may contribute to this project, or use the code as you please as long as you adhere to its conditions. You can find a copy of the license text here: [`LICENSE`](LICENSE).
 
-<p align="center">
-  <a href="https://github.com/Gasofa06/incognito-db/blob/main/LICENSE">
-    <img alt="GitHub" src="https://img.shields.io/github/license/Gasofa06/incognito-db?color=blue">
-  </a>
-  <a href="https://twitter.com/rovi_roger">
-    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/rovi_roger?label=@rovi_roger">
-  </a>
-  <a href="https://blyss.dev/">
-    <img alt="Static Badge" src="https://img.shields.io/badge/build-spiral-blue?label=powered%20by&color=blue">
-  </a>
-</p>
+**Note**: This software is not affiliated with OpenAI.
+
+> Having access to a junior programmer working at the speed of your fingertips ... can make new workflows effortless and efficient, as well as open the benefits of programming to new audiences.
+>
+> — _OpenAI's Code Interpreter Release_
