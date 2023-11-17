@@ -35,15 +35,13 @@ NAVIGATION_TOP_BAR.innerHTML = `
 
       <div class="lang_dropdown">
         <div class="lang_dropdown_btn">
-          <div>
-            <svg class="internet_globe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-              <g>
-                <circle cx="9" cy="9" r="8"></circle>
-                <ellipse cx="9" cy="9" rx="2.8" ry="8"></ellipse>
-                <path d="m1 9h16"></path>
-              </g>
-            </svg>
-          </div>
+          <svg class="internet_globe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+            <g>
+              <circle cx="9" cy="9" r="8"></circle>
+              <ellipse cx="9" cy="9" rx="2.8" ry="8"></ellipse>
+              <path d="m1 9h16"></path>
+            </g>
+          </svg>
 
           <a class="selected_lang">En</a>
         </div>
