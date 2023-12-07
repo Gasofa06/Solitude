@@ -1,9 +1,13 @@
 [website]: https://incognitodb.com
 [blyss]: https://github.com/blyssprivacy
 
-# Ignota Search
+<p align="right">
+    <a href="https://github.com/Gasofa06/incognito-db/blob/main/docs/README.es.md">Espanyol</a>
+    &nbsp;|&nbsp;
+    <a href="https://github.com/Gasofa06/incognito-db/blob/main/README.md">Anglès</a>
+</p>
 
-Incognito dB és un motor de cerca de bases de dades dissenyat amb l’objectiu de protegir la privadesa dels usuaris. Mitjançant Homomorphic Encryption i Private Information Retrival, la plataforma dissenyada permet l’accés confidencial a una gran selecció d’articles.
+# Ignota Search
 
 <br />
 
@@ -18,15 +22,15 @@ Incognito dB és un motor de cerca de bases de dades dissenyat amb l’objectiu 
 
 <br />
 
-> L'arxiu README està disponible tant en [espanyol](https://github.com/Gasofa06/incognito-db/blob/main/README.es.md) com en [anglès](https://github.com/Gasofa06/incognito-db/blob/main/README.md).
-
-> Un article sobre el projecte també està disponible [aquí](https://github.com/Gasofa06/Treball-de-Recerca).
+> Incognito dB és un motor de cerca de bases de dades dissenyat amb l’objectiu de protegir la privadesa dels usuaris. Mitjançant Homomorphic Encryption i Private Information Retrival, la plataforma dissenyada permet l’accés confidencial a una gran selecció d’articles.
 
 <br />
 
 ## :wave: Benvingut/da
 
 Benvingut/da al monorepositori de codi obert per a [incognito dB][website], dedicat a garantir la privacitat de l'usuari. S'utilitza el codi obert proporcionat per l'empresa [Blyss][blyss] amb l'objectiu de proporcionar accés totalment confidencial a una varietat d'articles. Ningú, ni tan sols el servidor en si mateix, serà capaç de conèixer el que estàs cercant; tot gràcies als principis de l'Homomorphic Encryption.
+
+> Un article sobre el projecte també està disponible [aquí](https://github.com/Gasofa06/Treball-de-Recerca).
 
 <br />
 
@@ -42,9 +46,9 @@ Si bé s’espera que siguem els propietaris de les nostres dades personals, per
 >
 > Cameron, K. (2005, maig 11). _The Laws of Identity_. [PDF link](https://www.identityblog.com/stories/2005/05/13/TheLawsOfIentity.pdf).
 
-<br />
+---
 
-### Confidencialitat de les cerques
+### Historial de navegació
 
 En el context de l'economia de vigilància, l'historial de cerca esdevé una eina magnífica per a les empreses per conèixer els elements definitoris de la nostra personalitat i els nostres gustos. És més:
 
@@ -52,31 +56,55 @@ En el context de l'economia de vigilància, l'historial de cerca esdevé una ein
 >
 > Mozilla Research. [PDF link](https://www.usenix.org/system/files/soups2020-bird.pdf).
 
-Aixo demostrar la unicitat i com els Browsing histories are unique enough to reliably identify users. Tot enfatitzant la necessitat d'un canvi cap a pràctiques més transparents i respectuoses davant la gestió de dades personals, o cap a un entorn on les proves criptografiques utilitzades siguin suficient justificacio com per asegura que l'empresa sigui incapaç de saber el que busquem.
+Això demostra la singularitat dels historials de cerca i com aquests són prou únics com per a identificar i comprendre als usuaris. Emfatitzant la necessitat d'adoptar pràctiques més transparents i respectuoses davant la gestió de dades personals, o la necessitat de dirigir-nos cap a un entorn on les proves criptogràfiques utilitzades siguin una justificació suficient per garantir que l'empresa no utilitzarà ni compartirà el contingut de les nostres cerques.
+
+---
+
+### Ignota Search com a eina confidencial
+
+Amb la finalitat contrarestar la falta de privacitat en Internet, Incognito dB es recolza en els principis de l’Homomorphic Encryption per garantir la Recuperació d’Informació Privada (Private Information Retrieval, PIR). És a dir, implementa algoritmes homomòrfics que asseguren que els usuaris aconsegueixin la informació que cerquen sense revelar cap detall personal o específic de la seva consulta, gràcies al suport del codi obert proporcionat per l’empresa [Blyss][blyss].
+
+Aquest fet impedeix que les empreses puguin analitzar, utilitzar, vendre o compartir les nostres dades de cerca. Les quals, recordem, són un 99% personals i molt definidores de la nostra identitat. Això es deu al fet que el servidor no té coneixement de la informació que l'usuari ha cercat, tot i haver-li proporcionat el contingut desitjat.
 
 <br />
 
-### What's for?
-
-> Incognito dB és un motor de cerca de bases de dades dissenyat amb l’objectiu de protegir la privadesa dels usuaris. 
-
-Mitjançant aquesta eina, qualsevol persona pot accedir a una àmplia varietat d’articles de manera confidencial. Totes les sol·licituds d’accés a informació es xifren de manera que ni el servidor, ni cap altra entitat externa, té accés a les cerques dels consumidors.
-
-Amb la finalitat contrarestar la falta de privacitat en Internet, Incognito dB es recolza en els principis de l’Homomorphic Encryption per garantir la Recuperació d’Informació Privada (Private Information Retrieval, PIR). És a dir, implementa algoritmes homomòrfics que asseguren que els usuaris aconsegueixin la informació que cerquen sense revelar cap detall personal o específic de la seva consulta, gràcies al suport del codi obert proporcionat per l’empresa [Blyss](https://github.com/blyssprivacy).
-
-Així doncs, per tal de preservar la sostenibilitat en Internet, és imperatiu que el poder retrocedeixi de l’empresa a l’individu i que aquest últim assoleixin la privacitat que li pertoca. Incognito dB es nomes una demo per intentar preservar la privacitat dels usuaris mentre és una eina util.
-
-Pots accedir al lloc web fent clic [aquí][website].
+<div alt style="text-align: center;">
+    <picture>
+        <a href="https://incognitodb.com">
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
+            <img alt="Device with the platform" src="https://raw.githubusercontent.com/twitter/communitynotes/main/documentation/images/help-rate-this-note-expanded.png" />
+        </a>
+    </picture>
+</div>
 
 <br />
 
-## :bulb: Features and Benefits
+> Pots accedir al lloc web fent clic [aquí][website].
+
+<br />
+
+## :bulb: Característiques i Avantatges
 
 * Built-in LSP ([Language Server Protocol](https://microsoft.github.io/language-server-protocol/)) support to give you intelligent code features such as: completion, diagnostics and code actions
 * Modal editing support as first class citizen (Vim-like, and toggleable)
 * Built-in remote development support inspired by [VSCode Remote Development](https://code.visualstudio.com/docs/remote/remote-overview). Enjoy the benefits of a "local" experience, and seamlessly gain the full power of a remote system.
 * Plugins can be written in programming languages that can compile to the [WASI](https://wasi.dev/) format (C, Rust, [AssemblyScript](https://www.assemblyscript.org/))
 * Built-in terminal, so you can execute commands in your workspace, without leaving Lapce.
+
+<br />
+
+## :hammer: Workflow
+
+<br />
+
+<div alt style="text-align: center;">
+    <picture>
+        <a href="https://incognitodb.com">
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
+            <img alt="Device with the platform" src="https://raw.githubusercontent.com/twitter/communitynotes/main/documentation/images/help-rate-this-note-expanded.png" />
+        </a>
+    </picture>
+</div>
 
 <br />
 
@@ -101,7 +129,7 @@ Although we strive to enhance enterprise-level software development efficiency a
 
 <br />
 
-## :open_file_folder: About this repository
+## :open_file_folder: Folder Structure
 
 ### Top-level layout
 
@@ -131,9 +159,9 @@ This repository's contents is divided across four primary sections:
 
 <br />
 
-## :mailbox_closed: Feedback & Contact
+## :mailbox_closed: _Feedback_ i Contacte
 
-Feel free to reach out if you have any questions, suggestions, or feedback regarding this project. You can contact me via email or connect with me on social media as well.
+No dubtis en posar-te en contacte si tens alguna pregunta, suggeriment o comentari sobre aquest projecte. Pots contactar-me per correu electrònic o connectar amb mi a través de les xarxes socials.
 
 Email: [rogerrovi2006@gmail.com](mailto:rogerrovi2006@gmail.com)
 
@@ -141,17 +169,17 @@ Twitter: [@rovi_roger](https://twitter.com/rovi_roger)
 
 <br />
 
-## :warning: Disclaimer
+## :triangular_flag_on_post: Exempció de Responsabilitat
 
-This project, DevOpsGPT, is an experimental application and is provided "as-is" without any warranty, express or implied. By using this software, you agree to assume all risks associated with its use, including but not limited to data loss, system failure, or any other issues that may arise.
+Aquest projecte, Ignota Search, és una aplicació experimental i es proporciona "tal com és", sense cap garantia, expressa o implícita. En utilitzar aquest programari, accepteu assumir tots els riscos associats amb la seva utilització, incloent-hi, però sense limitar-se, la pèrdua de dades, fallida del sistema o qualsevol altre problema que pugui sorgir.
 
 <br />
 
 ## :page_with_curl: License
 
-Lapce is released under the Apache License Version 2, which is an open source license. You may contribute to this project, or use the code as you please as long as you adhere to its conditions. You can find a copy of the license text here: [`LICENSE`](LICENSE).
+Ignota Search es publica sota la Llicència MIT, que és una llicència de codi obert. Podeu contribuir a aquest projecte o utilitzar el codi com vulgueu, sempre que es compleixin les seves condicions. Podeu trobar una còpia del text de la llicència aquí: [`LICENSE`](LICENSE).
 
-**Note**: This software is not affiliated with OpenAI.
+**Nota**: Aquest programa no està afiliat amb [Blyss][blyss].
 
 > Having access to a junior programmer working at the speed of your fingertips ... can make new workflows effortless and efficient, as well as open the benefits of programming to new audiences.
 >
