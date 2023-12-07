@@ -1,19 +1,32 @@
 [website]: https://incognitodb.com
 
-<div alt style="text-align: center;">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="..." />
-        <img alt="incognito_dB" src="res/imgs/main_title.png">
-    </picture>
-</div>
-
 # incognito dB
 
-Welcome to the open-source monorepository for [incognito dB][website], dedicated to ensuring user privacy.
+Welcome to the open-source monorepository for [incognito dB][website], dedicated to ensuring user privacy. S'utilitza el codi obert proporcionat per l'empresa [Blyss](https://github.com/blyssprivacy) amb l'objectiu de proporcionar accés totalment confidencial a una varietat d'articles. Ningú, ni tan sols el servidor en si mateix, serà capaç de conèixer el que estàs cercant; tot gràcies als principis de l'Homomorphic Encryption.
 
 > 🌏 The README file is available in [Spanish]() and [Catalan]() as well.
 
 > 📄 An article about the project is also available [here]().
+
+<br />
+
+## Why to care?
+
+És difícil mantenir secrets en l’era digital. Malgrat la criptografia i les diverses legislacions implementades, el problema de la privacitat continua assetjant als usuaris en Internet. 
+
+Amb cada missatge, cada cerca i cada interacció; les empreses aprenen quelcom més d’informació sobre nosaltres. Tot i que de manera aïllada pot semblar poc rellevant, quan es du a terme la suma total de la informació recopilada, les companyies esdevenen capaces de descobrir molts aspectes de la nostra persona.
+
+> I originally created this as a short to-do list of study topics for becoming a software engineer, but it grew to the large list you see today. After going through this study plan, I got hired as a Software Development Engineer at Amazon! You probably won't have to study as much as I did. Anyway, everything you need is here.
+>
+> I studied about 8-12 hours a day, for several months. This is my story: Why I studied full-time for 8 months for a Google interview
+>
+> Please Note: You won't need to study as much as I did. I wasted a lot of time on things I didn't need to know. More info about that is below. I'll help you get there without wasting your precious time.
+>
+> The items listed here will prepare you well for a technical interview at just about any software company, including the giants: Amazon, Facebook, Google, and Microsoft.
+>
+> Best of luck to you!
+
+Avui en dia, més de 5000 milions de persones arreu del món estan interconnectades a través d’Internet per tal d’obtenir o enviar informació. No obstant això, a mesura que tots nosaltres aconseguim informació de les diverses plataformes a les quals accedim, aquestes també comencen a recavar informació sobre tots nosaltres. I, cada vegada més, el preu que hem de pagar per estar connectats és la nostra privacitat.
 
 <br />
 
@@ -25,7 +38,13 @@ Mitjançant aquesta eina, qualsevol persona pot accedir a una àmplia varietat d
 
 Amb la finalitat contrarestar la falta de privacitat en Internet, Incognito dB es recolza en els principis de l’Homomorphic Encryption per garantir la Recuperació d’Informació Privada (Private Information Retrieval, PIR). És a dir, implementa algoritmes homomòrfics que asseguren que els usuaris aconsegueixin la informació que cerquen sense revelar cap detall personal o específic de la seva consulta, gràcies al suport del codi obert proporcionat per l’empresa [Blyss](https://github.com/blyssprivacy).
 
+Així doncs, per tal de preservar la sostenibilitat en Internet, és imperatiu que el poder retrocedeixi de l’empresa a l’individu i que aquest últim assoleixin la privacitat que li pertoca. Incognito dB es nomes una demo per intentar preservar la privacitat dels usuaris mentre és una eina util.
+
+Pots accedir al lloc web fent clic [aquí][website].
+
 <br />
+
+## Screenshots
 
 <div alt style="text-align: center;">
     <picture>
@@ -35,18 +54,6 @@ Amb la finalitat contrarestar la falta de privacitat en Internet, Incognito dB e
         </a>
     </picture>
 </div>
-
-<br />
-
-És difícil mantenir secrets en l’era digital. Malgrat la criptografia i les diverses legislacions implementades, el problema de la privacitat continua assetjant als usuaris en Internet. 
-
-Amb cada missatge, cada cerca i cada interacció; les empreses aprenen quelcom més d’informació sobre nosaltres. Tot i que de manera aïllada pot semblar poc rellevant, quan es du a terme la suma total de la informació recopilada, les companyies esdevenen capaces de descobrir molts aspectes de la nostra persona.
-
-Avui en dia, més de 5000 milions de persones arreu del món estan interconnectades a través d’Internet per tal d’obtenir o enviar informació. No obstant això, a mesura que tots nosaltres aconseguim informació de les diverses plataformes a les quals accedim, aquestes també comencen a recavar informació sobre tots nosaltres. I, cada vegada més, el preu que hem de pagar per estar connectats és la nostra privacitat.
-
-Així doncs, per tal de preservar la sostenibilitat en Internet, és imperatiu que el poder retrocedeixi de l’empresa a l’individu i que aquest últim assoleixin la privacitat que li pertoca. Incognito dB es nomes una demo per intentar preservar la privacitat dels usuaris mentre és una eina util.
-
-Pots accedir al lloc web fent clic [aquí][website].
 
 <br />
 
