@@ -1,32 +1,41 @@
 [website]: https://incognitodb.com
+[blyss]: https://github.com/blyssprivacy
 
 # incognito dB
 
-Welcome to the open-source monorepository for [incognito dB][website], dedicated to ensuring user privacy. S'utilitza el codi obert proporcionat per l'empresa [Blyss](https://github.com/blyssprivacy) amb l'objectiu de proporcionar accés totalment confidencial a una varietat d'articles. Ningú, ni tan sols el servidor en si mateix, serà capaç de conèixer el que estàs cercant; tot gràcies als principis de l'Homomorphic Encryption.
+Benvingut/da al monorepositori de codi obert per a [incognito dB][website], dedicat a garantir la privacitat de l'usuari. S'utilitza el codi obert proporcionat per l'empresa [Blyss][blyss] amb l'objectiu de proporcionar accés totalment confidencial a una varietat d'articles. Ningú, ni tan sols el servidor en si mateix, serà capaç de conèixer el que estàs cercant; tot gràcies als principis de l'Homomorphic Encryption.
 
-> 🌏 The README file is available in [Spanish]() and [Catalan]() as well.
+> 🌏 L'arxiu README està disponible tant en [espanyol](https://github.com/Gasofa06/incognito-db/blob/main/README.es.md) com en [anglès](https://github.com/Gasofa06/incognito-db/blob/main/README.md).
 
-> 📄 An article about the project is also available [here]().
+> 📄 Un article sobre el projecte també està disponible [aquí](https://github.com/Gasofa06/Treball-de-Recerca).
 
 <br />
 
-## Why to care?
+## Economia de vigilància
 
 És difícil mantenir secrets en l’era digital. Malgrat la criptografia i les diverses legislacions implementades, el problema de la privacitat continua assetjant als usuaris en Internet. 
 
-Amb cada missatge, cada cerca i cada interacció; les empreses aprenen quelcom més d’informació sobre nosaltres. Tot i que de manera aïllada pot semblar poc rellevant, quan es du a terme la suma total de la informació recopilada, les companyies esdevenen capaces de descobrir molts aspectes de la nostra persona.
-
-> I originally created this as a short to-do list of study topics for becoming a software engineer, but it grew to the large list you see today. After going through this study plan, I got hired as a Software Development Engineer at Amazon! You probably won't have to study as much as I did. Anyway, everything you need is here.
->
-> I studied about 8-12 hours a day, for several months. This is my story: Why I studied full-time for 8 months for a Google interview
->
-> Please Note: You won't need to study as much as I did. I wasted a lot of time on things I didn't need to know. More info about that is below. I'll help you get there without wasting your precious time.
->
-> The items listed here will prepare you well for a technical interview at just about any software company, including the giants: Amazon, Facebook, Google, and Microsoft.
->
-> Best of luck to you!
+Amb cada missatge, cada cerca i cada interacció; les empreses aprenen _quelcom_ més d’informació sobre nosaltres. Tot i que de manera aïllada pot semblar poc rellevant, quan es du a terme la suma total de la informació recopilada, les companyies esdevenen capaces de descobrir molts aspectes de la nostra persona.
 
 Avui en dia, més de 5000 milions de persones arreu del món estan interconnectades a través d’Internet per tal d’obtenir o enviar informació. No obstant això, a mesura que tots nosaltres aconseguim informació de les diverses plataformes a les quals accedim, aquestes també comencen a recavar informació sobre tots nosaltres. I, cada vegada més, el preu que hem de pagar per estar connectats és la nostra privacitat.
+
+Si bé s’espera que siguem els propietaris de les nostres dades personals, per poder participar mínimament en la vida moderna, ens veiem obligats a renunciar a aquest dret fonamental. Degut, en part, a la proliferació de grans i petites empreses tecnològiques que assumeixen el control de les nostres dades, amb l’únic objectiu d’obtenir-ne benefici.
+
+> Tanmateix, la implementació d’un sistema que no posa en control als usuaris serà, immediatament o amb el temps, rebutjat per tants d’ells que no pugui esdevenir i continuar essent una tecnologia unificadora.
+>
+> Cameron, K. (2005, maig 11). _The Laws of Identity_. [PDF link](https://www.identityblog.com/stories/2005/05/13/TheLawsOfIentity.pdf).
+
+## Per què preocupar-se per la confidencialitat de les cerques?
+
+En aquest sentit l'historial de cerca es una eina magnifica per a les empreses tot per saber els rasos definitoris de la nostra personalitat i els nostres gustos. Es mes:
+
+> L'any 2020, Mozilla va publicar una investigació en què afirmava que els historials de cerca són un 99% únics a l'usuari, tot després d'haver analitzat 48,103 historials diferents.
+>
+> Mozilla Research. [PDF link](https://www.usenix.org/system/files/soups2020-bird.pdf).
+
+Aixo demostrar la unicitat i com els Browsing histories are unique enough to reliably identify users.
+
+A aquesta manera d'aconseguir beneficis se li anomena _economia de vigilancia_.
 
 <br />
 
