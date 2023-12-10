@@ -20,7 +20,7 @@
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
 
-    background-color: #171719b3;
+    background-color: #0b0b0fcc;
     border-bottom: 1px solid var(--c-secondary-500);
   }
 
@@ -185,69 +185,6 @@
 
       color: var(--c-secondary-650);
       background: var(--c-primary-200);
-    }
-  }
-
-  @layer language_dropdown {
-    .lang_dropdown {
-      cursor: pointer;
-      height: 100%;
-    }
-
-    .lang_dropdown_btn {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      height: 100%;
-
-      padding: 0 8px;
-      margin-left: 22px;
-
-      border-radius: 4px;
-      background-color: var(--c-secondary-400);
-    }
-
-    svg.internet_globe {
-      width: 16px;
-      height: 16px;
-    }
-
-    svg.internet_globe g {
-      fill: none;
-      fill-rule: evenodd;
-
-      stroke-width: 1.2;
-      stroke: var(--c-secondary-000);
-    }
-
-    a.selected_lang {
-      margin-left: 10px;
-
-      font-size: var(--text-xs);
-      color: var(--c-secondary-150);
-    }
-
-    a.selected_lang:hover {
-      text-decoration: none;
-    }
-
-    .lang_dropdown_check {
-    }
-
-    .lang_menu {
-    }
-
-    #lang_english {
-    }
-
-    #lang_catalan {
-    }
-
-    #lang_italiano {
-    }
-
-    #lang_espanol {
     }
   }
 }
