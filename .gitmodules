@@ -1,0 +1,4 @@
+[submodule "docs/article"]
+path = "docs/article"
+url = "https://github.com/Gasofa06/Treball-de-Recerca"
+branch = master
