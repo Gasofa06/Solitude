@@ -1,7 +1,7 @@
 @layer general_styles {
   body {
     margin: 0;
-    background-color: var(--c-bg);
+    background-color: var(--c-secondary-650);
   }
 
   a {
@@ -31,36 +31,6 @@
 
     font-family: sans-serif, segoe ui, nunito-sans, Helvetica;
   }
-
-  /*
-  pre,
-  blockquote {
-    margin: 58px auto;
-  }
-
-  pre {
-    display: flex;
-    flex-direction: column;
-  }
-
-  pre,
-  blockquote,
-  summary {
-    border-radius: 9px;
-    border: 1px solid var(--c-secondary-050);
-  }*/
-
-  /*
-  @media only screen and (max-width: 768px) {
-    blockquote,
-    summary,
-    pre {
-      border-radius: 0 !important;
-
-      border-left: none !important;
-      border-right: none !important;
-    }
-  }*/
 }
 
 @layer headings {
