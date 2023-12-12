@@ -191,7 +191,3 @@ Aquest projecte, Ignota Search, és una aplicació experimental i es proporciona
 Ignota Search es publica sota la Llicència MIT, que és una llicència de codi obert. Podeu contribuir a aquest projecte o utilitzar el codi com vulgueu, sempre que es compleixin les seves condicions. Podeu trobar una còpia del text de la llicència aquí: [`LICENSE`](LICENSE).
 
 **Nota**: Aquest programa no està afiliat amb [Blyss][blyss].
-
-> Having access to a junior programmer working at the speed of your fingertips ... can make new workflows effortless and efficient, as well as open the benefits of programming to new audiences.
->
-> — _OpenAI's Code Interpreter Release_
