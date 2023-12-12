@@ -9,8 +9,6 @@
 
 # Ignota Search
 
-<br />
-
 <div alt style="text-align: center;">
     <picture>
         <a href="https://incognitodb.com">
@@ -29,6 +27,19 @@
 ## :wave: Benvingut/da
 
 Benvingut/da al monorepositori de codi obert per a [incognito dB][website], dedicat a garantir la privacitat de l'usuari. S'utilitza el codi obert proporcionat per l'empresa [Blyss][blyss] amb l'objectiu de proporcionar accés totalment confidencial a una varietat d'articles. Ningú, ni tan sols el servidor en si mateix, serà capaç de conèixer el que estàs cercant; tot gràcies als principis de l'Homomorphic Encryption.
+
+<br />
+
+<div alt style="text-align: center;">
+    <picture>
+        <a href="https://incognitodb.com">
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
+            <img alt="Device with the platform" src="https://github.com/Gasofa06/Treball-de-Recerca/blob/main/mockup/booklet_Mockup.jpg" />
+        </a>
+    </picture>
+</div>
+
+<br />
 
 > Un article sobre el projecte també està disponible [aquí](https://github.com/Gasofa06/Treball-de-Recerca).
 
