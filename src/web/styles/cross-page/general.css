@@ -1,7 +1,7 @@
 @layer general_styles {
   body {
     margin: 0;
-    background-color: var(--c-secondary-650);
+    background-color: var(--c-bg);
   }
 
   a {
@@ -29,9 +29,7 @@
     font-style: normal;
     letter-spacing: 0.03em;
 
-    font-family: sans-serif, segoe ui, nunito-sans, Helvetica;
+    font-weight: 300;
+    font-family: Inter, sans-serif, segoe ui, nunito-sans, Helvetica;
   }
-}
-
-@layer headings {
 }

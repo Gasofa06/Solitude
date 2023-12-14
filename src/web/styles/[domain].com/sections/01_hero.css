@@ -10,8 +10,8 @@
   margin: 0;
   padding: 0;
 
+  border-radius: 0 0 56px 56px;
   background: var(--c-secondary-650);
-  border-bottom: 3px solid var(--c-secondary-450);
 }
 
 @layer hero_content {
@@ -20,7 +20,7 @@
     align-items: center;
     flex-direction: column;
 
-    padding: 176px 0 0;
+    padding: 186px 0 0;
   }
 
   @layer title {
@@ -35,9 +35,9 @@
   @layer introduction {
     .platform_introduction {
       padding: 0;
-      margin: 26px auto 39px;
+      margin: 28px auto 39px;
 
-      font-size: 20px;
+      font-size: 17px;
       text-align: center;
       color: var(--c-secondary-100);
     }
@@ -70,7 +70,7 @@
     align-items: center;
     flex-direction: column;
 
-    margin-top: 190px;
+    margin-top: 64px;
   }
 
   @layer hero_img {
@@ -81,7 +81,7 @@
 
     .hero_img img {
       width: 75%;
-      max-width: 1384px;
+      max-width: 1524px;
     }
   }
 
