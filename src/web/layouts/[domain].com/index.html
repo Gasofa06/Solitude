@@ -2,7 +2,7 @@
 
 <html lang="en" theme="light">
   <head>
-    <meta charset="UTF-8" />
+    <title>Incognito dB</title>
 
     <meta
       name="description"
@@ -12,10 +12,10 @@
     <meta name="author" content="Roger Rovira" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Incognito dB</title>
+    <meta charset="UTF-8" />
 
     <link rel="stylesheet" type="text/css" href="../../styles/cross-page/index.css" />
-    <link rel="stylesheet" type="text/css" href="../../styles/incognitodb.com/index.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/[domain].com/index.css" />
 
     <script type="module" src="../javascript/app/before_DOM/theme_detection.js"></script>
 
@@ -24,6 +24,30 @@
   </head>
 
   <body>
+    <script>
+      window.addEventListener(
+        'scroll',
+        function (event) {
+          let section_height = document.getElementById('section-hero').offsetHeight;
+          let hero_content = document.getElementById('hero_content');
+
+          console.log(section_height);
+          console.log(this.scrollY);
+
+          if (this.scrollY > section_height) {
+            return;
+          }
+
+          let scale = (section_height - this.scrollY / 1.6) / section_height;
+          hero_content.style.transform = 'scale(' + scale + ')';
+
+          let opacity = (section_height - this.scrollY) / section_height;
+          hero_content.style.opacity = opacity;
+        },
+        false,
+      );
+    </script>
+
     <div class="global_gradient_container">
       <svg>
         <defs>
@@ -48,17 +72,25 @@
     <comp-nav-top-bar></comp-nav-top-bar>
 
     <main>
-      <section class="sec_hero parent_circular_gradient">
+      <section class="sec_hero parent_circular_gradient" id="section-hero">
+        <!--positiopn: fixed-->
         <div class="galaxy_bg"></div>
 
-        <div class="hero_content">
-          <h1 class="page_title">Private search<br />builded for users.</h1>
+        <!--positiopn: fixed-->
+        <div class="hero_content" id="hero_content">
+          <h1 class="page_title">
+            Search designed
+            <br />
+            for user privacy.
+          </h1>
 
           <p class="platform_introduction">
-            Access articles while protecting the most important<br />information — information about
-            you.
+            Access articles while protecting your own data.
+            <br />
+            Getting information has never been so confidential.
           </p>
 
+          <!--
           <form action="https://search.incognitodb.com/">
             <button class="model_two start_searching" target="_self" href="/search">
               <figure>
@@ -73,12 +105,12 @@
 
               Start searching
             </button>
-          </form>
+          </form>-->
         </div>
 
         <div class="hero_decoration">
           <div class="hero_img">
-            <img alt="The Earth." src="../assets/pictures/earth_half_top.png" />
+            <img alt="The Earth." src="../assets/imgs/earth_half_top.png" />
           </div>
 
           <figure class="hero_gradient">
@@ -95,6 +127,7 @@
         </div>
       </section>
 
+      <!--
       <nav class="homepage_nav">
         <div class="resources">
           <p>Resources:</p>
@@ -122,6 +155,7 @@
           </ul>
         </div>
       </nav>
+      -->
 
       <section class="sec_brief_about" id="section-brief-about">
         <hgroup>
