@@ -29,12 +29,15 @@
         'scroll',
         function (event) {
           let section_height = document.getElementById('section-hero').offsetHeight;
-          let hero_content = document.getElementById('hero_content');
+          let hero_content = document.getElementById('hero-content');
 
           console.log(section_height);
-          console.log(this.scrollY);
+          console.log(hero_content.offsetHeight);
 
-          if (this.scrollY > section_height) {
+          if (this.scrollY + hero_content.offsetHeight < section_height) {
+            hero_content.style.visibility = 'visible';
+          } else {
+            hero_content.style.visibility = 'hidden';
             return;
           }
 
@@ -73,39 +76,38 @@
 
     <main>
       <section class="sec_hero parent_circular_gradient" id="section-hero">
-        <!--positiopn: fixed-->
         <div class="galaxy_bg"></div>
 
-        <!--positiopn: fixed-->
-        <div class="hero_content" id="hero_content">
-          <h1 class="page_title">
-            Search designed
-            <br />
-            for user privacy.
-          </h1>
+        <div class="hero_content">
+          <div id="hero-content">
+            <h1 class="page_title">
+              Search designed
+              <br />
+              for user privacy.
+            </h1>
 
-          <p class="platform_introduction">
-            Access articles while protecting your own data.
-            <br />
-            Getting information has never been so confidential.
-          </p>
+            <p class="platform_introduction">
+              Access articles while protecting your own data.
+              <br />
+              Getting information has never been so confidential.
+            </p>
 
-          <!--
-          <form action="https://search.incognitodb.com/">
-            <button class="model_two start_searching" target="_self" href="/search">
-              <figure>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M20 20L15.8033 15.8033M18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C14.6421 18 18 14.6421 18 10.5Z"
-                  />
-                </svg>
-              </figure>
+            <form action="https://search.incognitodb.com/">
+              <button class="model_two start_searching" target="_self" href="/search">
+                <figure>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M20 20L15.8033 15.8033M18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C14.6421 18 18 14.6421 18 10.5Z"
+                    />
+                  </svg>
+                </figure>
 
-              Start searching
-            </button>
-          </form>-->
+                Start searching
+              </button>
+            </form>
+          </div>
         </div>
 
         <div class="hero_decoration">
