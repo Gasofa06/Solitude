@@ -6,7 +6,7 @@ import Initialize_Web_Assembly from '../../pkg/client.js';
 
 import Setup_Data from '../api/data_setup/__setup.js';
 
-import { Setup_Client } from '../client/__setup.js';
+import { Setup_Client } from '../client/client.js';
 
 /**
  * @info Función asincrónica que se encarga de ejecutar el código
