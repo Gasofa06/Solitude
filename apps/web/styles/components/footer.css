@@ -1,0 +1,42 @@
+@import url(../__global__/__global.css) layer(global);
+
+footer {
+  width: 100%;
+  max-width: 920px;
+
+  margin: 0 auto;
+  padding: 18px 0;
+}
+
+.footer_container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 0 6%;
+}
+
+footer .logo {
+  font-size: var(--text-l);
+}
+
+ul.footer_links {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+
+  padding: 0;
+  margin: 0 0 0 24px;
+}
+
+ul.footer_links li {
+  margin-left: 28px;
+}
+
+ul.footer_links li a {
+  font-size: var(--text-xs);
+  color: var(--c-secondary-150);
+}

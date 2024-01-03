@@ -1,0 +1,269 @@
+const NAVIGATION_TOP_BAR = document.createElement('template');
+
+NAVIGATION_TOP_BAR.innerHTML = `
+<link rel="stylesheet" type="text/css" href="styles/components/nav.css" />
+
+<nav class="nav_top_bar on_top_of_screen">
+  <div class="nav_top_bar_content">
+    <div class="left">
+      <svg class="platform_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 50">
+        <path
+          d="M72.4,14c6.61,0,10.87,3.7,11.26,9.71H78.92c-.24-3.46-2.69-5.48-6.56-5.48-4.36,0-7.19,2.21-7.19,5.62,0,2.78,1.58,4.47,4.84,5.23l5.7,1.35c5.65,1.3,8.52,4.37,8.52,9.27C84.23,45.92,79.4,49.9,72,49.9c-7,0-11.73-3.7-12-9.65h4.79c.09,3.31,2.87,5.42,7.23,5.42,4.6,0,7.52-2.16,7.52-5.62,0-2.73-1.49-4.46-4.79-5.23l-5.7-1.3C63.4,32.22,60.48,29,60.48,24,60.48,18,65.27,14,72.4,14Z"
+        ></path>
+        <path
+          d="M102,25.21c7,0,12.17,5.09,12.17,12.35S109,49.9,102,49.9,89.82,44.81,89.82,37.56,95,25.21,102,25.21Zm0,20.66c4.5,0,7.67-3.41,7.67-8.31s-3.17-8.31-7.67-8.31-7.66,3.41-7.66,8.31S97.48,45.87,102,45.87Z"
+        ></path>
+        <path d="M121.27,49.33V14h4.5V49.33Z"></path>
+        <path
+          d="M133.61,17.29a3,3,0,1,1,3,3A3,3,0,0,1,133.61,17.29Zm.77,8.55h4.5V49.33h-4.5Z"
+        ></path>
+        <path d="M149.5,49.33V29.63h-4.6V25.84h4.6V18.49H154v7.35h4.6v3.79H154v19.7Z"></path>
+        <path
+          d="M185.26,25.84V49.33h-4l-.48-3.56c-1.34,2.45-4.45,4.13-7.9,4.13-5.46,0-8.53-3.7-8.53-9.46V25.84h4.51V39c0,5,2.15,7,5.6,7,4.12,0,6.37-2.65,6.37-7.69V25.84Z"
+        ></path>
+        <path
+          d="M191.76,37.65c0-7.2,4.17-12.49,11.11-12.49a9,9,0,0,1,8.19,4.47V14h4.45V49.33h-4l-.38-4.28c-1.53,3.22-4.7,4.85-8.43,4.85C195.88,49.9,191.76,44.81,191.76,37.65ZM211,37.51c0-4.8-2.82-8.26-7.42-8.26s-7.28,3.46-7.28,8.26,2.68,8.31,7.28,8.31S211,42.41,211,37.51Z"
+        ></path>
+        <path
+          d="M222.49,37.6c0-7.34,4.65-12.44,11.45-12.44,6.65,0,11,4.62,11,11.58v1.68l-18.1,0c.34,5,2.92,7.69,7.38,7.69,3.49,0,5.79-1.45,6.56-4.14H245c-1.15,5-5.08,7.88-10.87,7.88C227.23,49.9,222.49,44.91,222.49,37.6ZM227,35.44h13.5A6.1,6.1,0,0,0,233.94,29C230,29,227.52,31.31,227,35.44Z"
+        ></path>
+        <path
+          d="M0,0V50H50V0ZM40,40H31.21L25,46.21,18.79,40H10V31.21L3.79,25,10,18.79V10h8.79L25,3.79,31.21,10H40v8.79L46.21,25,40,31.21Z"
+        ></path>
+      </svg>
+    </div>
+
+    <div class="center">
+      <ul class="menu">
+        <li>
+          <label class="nav_link">
+            <a>About</a>
+          </label>
+        </li>
+
+        <li>
+          <label class="nav_link">
+            <a>Resources</a>
+
+            <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.5 3.5L5 7L8.5 3.5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </label>
+
+          <ul class="submenu">
+            <li>
+              <a>Paper</a>
+            </li>
+
+            <li>
+              <a>FAQs</a>
+            </li>
+
+            <li>
+              <a>Brand Guidelines</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <label class="nav_link">
+            <a>Platform</a>
+
+            <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.5 3.5L5 7L8.5 3.5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </label>
+
+          <ul class="submenu">
+            <li>
+              <a>Features</a>
+            </li>
+
+            <li>
+              <a>Limitation</a>
+            </li>
+
+            <li>
+              <a>Workflow</a>
+            </li>
+
+            <li>
+              <a>Story</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <label class="nav_link">
+            <a>Developer</a>
+
+            <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.5 3.5L5 7L8.5 3.5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </label>
+
+          <ul class="submenu">
+            <li>
+              <a>My Website</a>
+            </li>
+
+            <li>
+              <a>GitHub</a>
+            </li>
+
+            <li>
+              <a>X User</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="right">
+      <div id="toggle_theme">
+        <input type="checkbox" id="toggle_input" />
+
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2" />
+
+            <rect width="2" height="3" x="11" y="1" fill="currentColor" rx="0.5" />
+            <rect width="2" height="3" x="11" y="20" fill="currentColor" rx="0.5" />
+
+            <rect
+              width="2"
+              height="3"
+              x="23"
+              y="11"
+              fill="currentColor"
+              rx="0.5"
+              transform="rotate(90 23 11)"
+            />
+            <rect
+              width="2"
+              height="3"
+              x="4"
+              y="11"
+              fill="currentColor"
+              rx="0.5"
+              transform="rotate(90 4 11)"
+            />
+
+            <rect
+              width="2"
+              height="3"
+              x="19.071"
+              y="3.515"
+              fill="currentColor"
+              rx="0.5"
+              transform="rotate(45 19.071 3.515)"
+            />
+            <rect
+              width="2"
+              height="3"
+              x="5.636"
+              y="16.95"
+              fill="currentColor"
+              rx="0.5"
+              transform="rotate(45 5.636 16.95)"
+            />
+
+            <rect
+              width="2"
+              height="3"
+              x="20.485"
+              y="19.071"
+              fill="currentColor"
+              rx="0.5"
+              transform="rotate(135 20.485 19.071)"
+            />
+            <rect
+              width="2"
+              height="3"
+              x="7.05"
+              y="5.636"
+              fill="currentColor"
+              rx="0.5"
+              transform="rotate(135 7.05 5.636)"
+            />
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M8.014 2.172c.035-.073-.025-.15-.096-.11a11.521 11.521 0 0 0-2.586 1.947C1.056 8.285.871 15.033 4.92 19.081s10.796 3.863 15.072-.413a11.517 11.517 0 0 0 1.948-2.586c.038-.07-.038-.13-.11-.096-3.85 1.83-8.594 1.15-11.78-2.035-3.186-3.186-3.864-7.93-2.035-11.78Z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <div>
+        <button class="model_four" target="_self" href="/search">
+          Search
+
+          <svg class="arrow" viewBox="0 0 17 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 0.5L16 7.5L9 14.5" stroke="currentColor" stroke-width="3"></path>
+            <line x1="16" y1="7.5" y2="7.5" stroke="currentColor" stroke-width="3"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+`;
+
+class Comp__NavTopBar extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        let shadow_root = this.attachShadow({ mode: 'closed' });
+        shadow_root.appendChild(NAVIGATION_TOP_BAR.content);
+
+        this.Initialize_Events(shadow_root);
+    }
+
+    Initialize_Events(_shadow_root) {
+        _shadow_root.getElementById('toggle_input').onclick = () => {
+            this.Toggle_Theme();
+        };
+    }
+
+    /**
+     * @info Actualiza el aspecto visual de la página y, si es posible,
+     * guarda un nuevo estilo predeterminado en el `localStorage` del
+     * usuario para que se mantenga incluso cuando cierre el navegador.
+     */
+    Toggle_Theme = () => {
+        let theme = document.documentElement.getAttribute('theme');
+
+        if (theme === 'light') theme = 'dark';
+        else if (theme === 'dark') theme = 'light';
+
+        document.documentElement.setAttribute('theme', theme);
+
+        try {
+            localStorage.setItem('data-theme', theme);
+        } catch (_error) {
+            alert(_error);
+        }
+    };
+}
+
+customElements.define('comp-nav-top-bar', Comp__NavTopBar);

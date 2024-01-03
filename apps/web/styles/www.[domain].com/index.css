@@ -1,0 +1,16 @@
+@import url(./general/text.css) layer(text);
+@import url(./general/models.css) layer(models);
+@import url(./general/double_column.css) layer(double_column_layer);
+@import url(./general/page_nav.css) layer(homepage_nav);
+
+@import url(./sections/01_hero.css) layer(hero_section);
+@import url(./sections/02_brief_about.css) layer(brief_about);
+@import url(./sections/03_project_description.css) layer(project_description);
+@import url(./sections/04_benefits.css) layer(platform_benefits);
+@import url(./sections/05_search_types.css) layer(search_types);
+@import url(./sections/06_faqs.css) layer(frequently_asked_questions);
+@import url(./sections/07_acknowledgment.css) layer(acknowledgments);
+
+:root {
+  --homepage-width: 1024px;
+}
