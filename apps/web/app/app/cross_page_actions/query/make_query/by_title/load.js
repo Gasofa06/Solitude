@@ -1,12 +1,15 @@
 import {
     Start_Loading,
     Stop_Loading,
-} from '../../../../platform_utils/index.js';
+} from '../../../../../utils/loading_information.js';
 
-import '../../../../platform_utils/bz2.js';
+import '../../../../../utils/bz2.js';
 
-import { api } from '../../../../server/api.js';
-import { generate_query, decode_response } from '../../../../../pkg/client.js';
+import { api } from '../../../../../services/api.js';
+import {
+    generate_query,
+    decode_response,
+} from '../../../../../../pkg/client.js';
 
 import { Find_Requested_Article } from './find.js';
 

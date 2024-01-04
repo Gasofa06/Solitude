@@ -1,4 +1,4 @@
-import '../../../platform_utils/decompression/bz2.js';
+import '../../utils/bz2.js';
 
 /**
  * @info Descomprime una cadena de texto codificada y la convierte en un

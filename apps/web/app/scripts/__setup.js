@@ -1,4 +1,4 @@
-import { Get_Data } from '../server_interaction/get_data.js';
+import { Get_Data } from '../services/get.js';
 
 import { Decompress_JSON_File } from './__decompress__/decomp_json.js';
 

@@ -1,4 +1,4 @@
-import { Contains_Obj } from '../../../../../platform_utils/index.js';
+import { Contains_Obj } from '../../../../../../utils/obj_handle.js';
 
 export function Build_Topics_Suggestions(_suggestions, _prefix) {
     let html_suggestions = _suggestions

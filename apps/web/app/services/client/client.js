@@ -2,10 +2,10 @@ import {
     KEY_SIZE,
     KEY_NAME,
     MAX_VALID_KEY_TIME,
-} from '../[constants]/constants.js';
+} from '../../[constants]/constants.js';
 
-import { api } from '../../server/api.js';
-import { initialize, generate_keys } from '../../pkg/client.js';
+import { api } from '../api.js';
+import { initialize, generate_keys } from '../../../pkg/client.js';
 
 /**
  * @info En localStorage, solo se almacenan textos. Para guardar datos

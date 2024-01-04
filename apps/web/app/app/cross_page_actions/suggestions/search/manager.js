@@ -1,4 +1,4 @@
-import { Clear_Suggestions } from '../../../platform_utils/index.js';
+import { Clear_Suggestions } from '../../../../utils/clear.js';
 
 import { Suggest_Titles } from './by_title/__suggest_titles.js';
 import { Suggest_Topics } from './by_topics/__suggest_topic.js';

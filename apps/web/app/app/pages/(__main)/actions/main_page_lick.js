@@ -1,4 +1,4 @@
-import { Clear_Suggestions } from '../../../platform_utils/index.js';
+import { Clear_Suggestions } from '../../../../utils/clear.js';
 
 /**
  * @info Función que se ejecutará en el evento `window.onclick`. Controla

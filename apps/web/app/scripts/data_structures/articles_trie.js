@@ -1,7 +1,5 @@
-import {
-    Contains_Obj,
-    Process_Title,
-} from '../../../platform_utils/__utils.js';
+import { Contains_Obj } from '../../utils/obj_handle.js';
+import { Process_Title } from '../../utils/title.js';
 
 /**
  * @class Trie Node.

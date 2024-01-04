@@ -1,4 +1,4 @@
-import { MAX_ARTICELS_IN_PAGE } from '../../../../__constants__/__constants.js';
+import { MAX_ARTICELS_IN_PAGE } from '../../../../../[constants]/constants.js';
 
 export function Add_Articles_List() {
     var arr_articles_list_content = [];

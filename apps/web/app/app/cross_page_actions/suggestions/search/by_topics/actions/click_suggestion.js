@@ -1,8 +1,9 @@
 import {
     Clear_Suggestions,
     Clear_Search_Text_Input,
-    Contains_Obj,
-} from '../../../../../platform_utils/index.js';
+} from '../../../../../../utils/clear.js';
+
+import { Contains_Obj } from '../../../../../../utils/obj_handle.js';
 
 import { Show_Selected_Topics } from '../constructors/selected_topics.js';
 

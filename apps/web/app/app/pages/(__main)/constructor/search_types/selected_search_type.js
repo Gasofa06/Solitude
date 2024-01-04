@@ -1,4 +1,4 @@
-import { SEARCH_TYPES } from '../../../../__constants__/__constants.js';
+import { SEARCH_TYPES } from '../../../../../[constants]/constants.js';
 
 /**
  * @info Esta función inicializa la variable global 'selected_search_type'

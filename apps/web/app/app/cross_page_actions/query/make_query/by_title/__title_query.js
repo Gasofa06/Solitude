@@ -1,4 +1,4 @@
-import { Upload_State } from '../../../../../client/client.js';
+import { Upload_State } from '../../../../../services/client/client.js';
 
 import { Load_Article } from './load.js';
 

@@ -1,9 +1,6 @@
-import { SEARCH_TYPES } from '../../../__constants__/__constants.js';
-
-import {
-    Find_Key_Index,
-    Clear_Search_Text_Input,
-} from '../../../platform_utils/index.js';
+import { SEARCH_TYPES } from '../../../../[constants]/constants.js';
+import { Clear_Search_Text_Input } from '../../../../utils/clear.js';
+import { Find_Key_Index } from '../../../../utils/obj_handle.js';
 
 /**
  * @info Actualiza la barra de búsqueda con un nuevo marcador de posición
