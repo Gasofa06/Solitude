@@ -6,9 +6,9 @@ import { ArticlesTrie } from './data_structures/articles_trie.js';
 import { TopicsInvertedIndex } from './data_structures/inverted_index.js';
 
 async function Setup_Data() {
-    let get_topics = Get_Data('data/topics.json', true);
+    let get_topics = Get_Data('api/topics.json', true);
 
-    let bz2_main_dict = await Get_Data('data/main_dict.json', true);
+    let bz2_main_dict = await Get_Data('api/main_dict.json', true);
     // let obj_main_dict = Decompress_JSON_File(bz2_main_dict['bz2']);
     let obj_main_dict = bz2_main_dict;
     window.trie_articles_data = new ArticlesTrie(obj_main_dict);
