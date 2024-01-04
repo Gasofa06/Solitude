@@ -13,12 +13,12 @@
     <link rel="stylesheet" type="text/css" href="../../styles/www.[domain].com/index.css" />
 
     <script type="module" src="../javascript/app/before_DOM/theme_detection.js"></script>
-
-    <script src="../javascript/components/nav_top_bar.js"></script>
-    <script src="../javascript/components/footer.js"></script>
   </head>
 
   <body>
+    <script type="module" src="../layouts/reusable/footer.js"></script>
+    <script type="module" src="../layouts/reusable/footer.js"></script>
+
     <script>
       window.addEventListener(
         'scroll',
@@ -26,8 +26,8 @@
           let section_height = document.getElementById('section-hero').offsetHeight;
           let hero_content = document.getElementById('hero-content');
 
-          console.log(section_height);
-          console.log(hero_content.offsetHeight);
+          // console.log(section_height);
+          // console.log(hero_content.offsetHeight);
 
           if (this.scrollY + hero_content.offsetHeight < section_height) {
             hero_content.style.visibility = 'visible';
@@ -66,8 +66,6 @@
         </defs>
       </svg>
     </div>
-    <script src="../layouts/reusable/footer.js"></script>
-    <comp-nav-top-bar></comp-nav-top-bar>
 
     <main>
       <section class="sec_hero parent_circular_gradient" id="section-hero">
@@ -693,9 +691,5 @@
         <div></div>
       </section>
     </main>
-
-    <comp-footer></comp-footer>
-
-    <script type="module" src="javascript/main/app_p_home.js"></script>
   </body>
 </html>
