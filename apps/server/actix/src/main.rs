@@ -23,10 +23,10 @@ const PUB_PARAMS_MAX: usize = 250;
 
 // Variables para la direccion y el nombre de archivos.
 
-const MAIN_DICT: &str = "../../database/shared_data/main_dict.json";
-const PATH_TITLE_INDICES: &str = "../../database/shared/title_and_idx.json";
-const PATH_TITLE_TOPICS: &str = "../../database/shared/title_and_topics.json";
-const PATH_TOPICS: &str = "../../database/shared_data/topics.json";
+const MAIN_DICT: &str = "../../data/shared-with-client/main_dict.json";
+const PATH_TITLE_INDICES: &str = "../../data/shared-with-client/title_and_idx.json";
+const PATH_TITLE_TOPICS: &str = "../../data/shared-with-client/title_and_topics.json";
+const PATH_TOPICS: &str = "../../data/shared-with-client/topics.json";
 
 struct ServerState<'a> {
   fname: String,
@@ -70,7 +70,7 @@ pub struct CheckUuid {
   uuid: String,
 }
 
-#[get("/api/check")]
+#[get("/check")]
 async fn check<'a>(
   web::Query(query_params): web::Query<CheckUuid>,
   data: web::Data<ServerState<'a>>
@@ -86,7 +86,7 @@ async fn check<'a>(
 
 // `data` es una instancia de datos compartidos entre los diferentes controladores y middlewares; la cual es de tipo `ServerState<'a>` (definido anteriormente). La instecia compartida se crea en la funcion `main()` de este mismo programa.
 
-#[post("/api/setup")]
+#[post("/setup")]
 async fn setup<'a>(
   body: web::Bytes,
   data: web::Data<ServerState<'a>>
@@ -114,7 +114,7 @@ async fn setup<'a>(
 
 const UUID_V4_STR_BYTES: usize = 36;
 
-#[post("/api/query")]
+#[post("/query")]
 async fn query<'a>(
   body: web::Payload,
   data: web::Data<ServerState<'a>>
@@ -150,7 +150,7 @@ async fn query<'a>(
   Ok(result)
 }
 
-#[get("/data/main_dict.json")]
+#[get("/main_dict.json")]
 async fn main_dict() -> Result<NamedFile, std::io::Error> {
   match NamedFile::open(MAIN_DICT) {
     Ok(file) => Ok(file),
@@ -158,8 +158,16 @@ async fn main_dict() -> Result<NamedFile, std::io::Error> {
   }
 }
 
-#[get("/data/topics.json")]
+#[get("/topics.json")]
 async fn article_topics() -> Result<NamedFile, std::io::Error> {
+  match NamedFile::open(PATH_TOPICS) {
+    Ok(file) => Ok(file),
+    Err(err) => Err(err),
+  }
+}
+
+#[get("/")]
+async fn aaa() -> Result<NamedFile, std::io::Error> {
   match NamedFile::open(PATH_TOPICS) {
     Ok(file) => Ok(file),
     Err(err) => Err(err),
@@ -241,7 +249,8 @@ async fn main() -> std::io::Result<()> {
       // .service(article_indices) // GET
       // .service(article_titles_and_topics) // GET
       .service(main_dict)
-      .service(article_topics) // GET
+      .service(article_topics)
+      .service(aaa); // GET
 
   HttpServer::new(app_build)
     .bind(("localhost", port.parse().unwrap()))
