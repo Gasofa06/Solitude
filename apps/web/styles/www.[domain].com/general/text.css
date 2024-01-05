@@ -91,14 +91,14 @@
     font-size: 3.48rem;
     color: var(--c-secondary-450);
 
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1.15;
     font-style: normal;
 
     word-spacing: 0.06em;
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
 
-    font-family: serif;
+    font-family: 'Inter';
   }
 
   h3 {
@@ -115,8 +115,8 @@
   h5 {
     margin: 0;
 
-    font-size: var(--text-m);
-    color: var(--c-secondary-250);
+    font-size: var(--text-xs);
+    color: var(--c-primary-400);
 
     font-weight: 600;
     line-height: 1.5;
@@ -125,7 +125,7 @@
     word-spacing: 0.2em;
     letter-spacing: 0.03em;
 
-    font-family: segoe ui, nunito-sans, Tahoma, 'Lucida Sans';
+    font-family: 'Inter';
   }
 }
 

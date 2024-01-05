@@ -124,27 +124,15 @@
     }
   }
 
-  @layer img_box_model_one {
-    .img_box_model_one {
+  @layer img_box {
+    .img_box {
       display: flex;
       align-items: center;
       justify-content: center;
 
+      min-height: 512px;
       border-radius: 12px;
-
       background-color: var(--c-secondary-010);
-    }
-  }
-
-  @layer img_box_model_two {
-    .img_box_model_two {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 12px;
-
-      background-color: var(--c-secondary-650);
     }
   }
 }
@@ -171,16 +159,26 @@
 @layer buttons_models {
   @layer model_one {
     button.model_one {
-      background-color: var(--c-primary-200);
+      cursor: pointer;
+
+      padding: 10px 24px;
       border-radius: 6px;
       border-style: none;
-      color: var(--c-bg);
-      cursor: pointer;
-      font-family: sans-serif;
+
+      font-family: 'Inter';
       font-size: var(--text-ml);
-      margin: 0;
-      padding: 12px 22px;
+      color: var(--c-primary-300);
+
+      background-color: #f7f9ff;
       transition: var(--default-transition);
+    }
+
+    button.model_one > .rotated_arrow {
+      width: 15;
+      height: 12;
+
+      margin-left: 8px;
+      transform: rotate(-45deg);
     }
   }
 

@@ -25,11 +25,11 @@
     font-size: var(--text-ml);
     color: var(--c-secondary-450);
 
-    line-height: 1.5;
+    line-height: 1.59;
     font-style: normal;
-    letter-spacing: 0.03em;
+    letter-spacing: -0.3em;
 
     font-weight: 300;
-    font-family: Inter, sans-serif, segoe ui, nunito-sans, Helvetica;
+    font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
   }
 }

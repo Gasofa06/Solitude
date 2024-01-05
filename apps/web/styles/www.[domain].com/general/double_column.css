@@ -44,10 +44,8 @@
   }
 
   .double_column p {
-    margin: 0 0 24px 0;
-
-    font-size: var(--text-m);
-    color: var(--c-secondary-250);
+    margin: 24px 0;
+    font-size: var(--text-l);
   }
 }
 

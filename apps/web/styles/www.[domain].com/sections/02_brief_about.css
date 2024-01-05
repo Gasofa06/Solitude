@@ -5,13 +5,10 @@
 @layer section_hgroup {
   @layer title {
     .sec_brief_about .sec_title {
-      max-width: var(--homepage-width);
-      margin: 0 auto;
-
       align-items: flex-start !important;
     }
 
-    .sec_brief_about .sec_title h2 {
+    .sec_brief_about .sec_title > h2 {
       text-align: start !important;
     }
   }
@@ -20,70 +17,6 @@
 @layer content {
   .sec_brief_about .double_column {
     padding: 24px 0 0 !important;
-  }
-
-  @layer keywords {
-    ul.keywords {
-      width: 100%;
-      display: inline-flex;
-
-      padding: 0;
-      margin: 0 0 36px;
-
-      border-top: 1px solid var(--c-secondary-050);
-      border-bottom: 1px solid var(--c-secondary-050);
-    }
-
-    ul.keywords li {
-      display: flex;
-      align-items: center;
-
-      padding: 20px;
-      border-left: 1px solid var(--c-secondary-050);
-    }
-
-    ul.keywords li:first-child {
-      padding-left: 0;
-      border-left: none;
-    }
-
-    ul.keywords li figure {
-      display: flex;
-      margin: 0 8px 0 0;
-    }
-
-    ul.keywords li figure svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    ul.keywords p {
-      margin: 0 !important;
-
-      font-size: var(--text-s) !important;
-      color: var(--c-secondary-250) !important;
-    }
-
-    @layer secure_retrival {
-      ul.keywords li.secure_retrival figure svg path {
-        fill: var(--c-secondary-150);
-      }
-    }
-
-    @layer confidential_query {
-      ul.keywords li.confidential_query figure svg path {
-        fill: none;
-
-        stroke-width: 3px;
-        stroke: var(--c-secondary-150);
-      }
-    }
-
-    @layer data_sovereignty {
-      ul.keywords li.data_sovereignty figure svg path {
-        fill: var(--c-secondary-150);
-      }
-    }
   }
 
   @layer user_picture {
@@ -96,6 +29,13 @@
       transform: translate(calc(50% - 7.83px * 8 * 2), calc(50% - 7.83px * 8 * 2)) scale(8);
 
       z-index: 1;
+    }
+  }
+
+  @layer button {
+    .sec_brief_about .left_big_column > form {
+      position: absolute;
+      bottom: 0;
     }
   }
 }
