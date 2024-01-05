@@ -16,56 +16,9 @@
   </head>
 
   <body>
-    <script type="module" src="../layouts/reusable/footer.js"></script>
     <script type="module" src="../layouts/reusable/nav.js"></script>
-
-    <script>
-      window.addEventListener(
-        'scroll',
-        function (event) {
-          let section_height = document.getElementById('section-hero').offsetHeight;
-          let hero_content = document.getElementById('hero-content');
-
-          // console.log(section_height);
-          // console.log(hero_content.offsetHeight);
-
-          if (this.scrollY + hero_content.offsetHeight < section_height) {
-            hero_content.style.visibility = 'visible';
-          } else {
-            hero_content.style.visibility = 'hidden';
-            return;
-          }
-
-          let scale = (section_height - this.scrollY / 1.6) / section_height;
-          hero_content.style.transform = 'scale(' + scale + ')';
-
-          let opacity = (section_height - this.scrollY) / section_height;
-          hero_content.style.opacity = opacity;
-        },
-        false,
-      );
-    </script>
-
-    <div class="global_gradient_container">
-      <svg>
-        <defs>
-          <radialGradient id="radial-pink-gradient">
-            <stop stop-color="#7775D6"></stop>
-            <stop offset="1" stop-color="#ab6aff"></stop>
-          </radialGradient>
-
-          <radialGradient id="radial-blue-gradient">
-            <stop stop-color="#7775D6"></stop>
-            <stop offset="1" stop-color="#3e76fe"></stop>
-          </radialGradient>
-
-          <radialGradient id="radial-white-gradient">
-            <stop stop-color="#acadb3"></stop>
-            <stop offset="1" stop-color="#5d5f6c"></stop>
-          </radialGradient>
-        </defs>
-      </svg>
-    </div>
+    <script type="module" src="../layouts/reusable/footer.js"></script>
+    <script type="module" src="../layouts/reusable/gradients.js"></script>
 
     <main>
       <section class="sec_hero parent_circular_gradient" id="section-hero">
@@ -122,399 +75,102 @@
         </div>
       </section>
 
-      <!--
-      <nav class="homepage_nav">
-        <div class="resources">
-          <p>Resources:</p>
-
-          <ul class="resource_links">
-            <li id="home-project-description">
-              <a role="button">Project Description</a>
-            </li>
-
-            <li id="home-benefits">
-              <a role="button">Benefits</a>
-            </li>
-
-            <li id="home-search-types">
-              <a role="button">Search Types</a>
-            </li>
-
-            <li id="home-faqs">
-              <a role="button">FAQs</a>
-            </li>
-
-            <li id="home-aknowledgments">
-              <a role="button">Acknowledgments</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      -->
-
       <section class="sec_brief_about" id="section-brief-about">
-        <hgroup>
-          <div class="sec_title">
-            <h5>BRIEF ABOUT</h5>
-            <h2>Solitude Search</h2>
-          </div>
-        </hgroup>
-
-        <div>
-          <div class="double_column">
-            <div class="left_big_column">
-              <ul class="keywords">
-                <li class="secure_retrival">
-                  <figure>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path
-                        d="M3 10.4167C3 7.21907 3 5.62028 3.37752 5.08241C3.75503 4.54454 5.25832 4.02996 8.26491 3.00079L8.83772 2.80472C10.405 2.26824 11.1886 2 12 2C12.8114 2 13.595 2.26824 15.1623 2.80472L15.7351 3.00079C18.7417 4.02996 20.245 4.54454 20.6225 5.08241C21 5.62028 21 7.21907 21 10.4167C21 10.8996 21 11.4234 21 11.9914C21 17.6294 16.761 20.3655 14.1014 21.5273C13.38 21.8424 13.0193 22 12 22C10.9807 22 10.62 21.8424 9.89856 21.5273C7.23896 20.3655 3 17.6294 3 11.9914C3 11.4234 3 10.8996 3 10.4167Z"
-                      ></path>
-                    </svg>
-                  </figure>
-
-                  <p>Secure Retrival</p>
-                </li>
-
-                <li class="confidential_query">
-                  <figure>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M20 20L15.8033 15.8033M18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C14.6421 18 18 14.6421 18 10.5Z"
-                      ></path>
-                    </svg>
-                  </figure>
-
-                  <p>Confidential Query</p>
-                </li>
-
-                <li class="data_sovereignty">
-                  <figure>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
-                      <path
-                        d="M 18.5 3 C 13.806 3 10 6.806 10 11.5 C 10 12.542294 10.19765 13.536204 10.541016 14.458984 L 3 22 L 3 27 L 8 27 L 8 24 L 11 24 L 11 21 L 14 21 L 15.541016 19.458984 C 16.463796 19.80235 17.457706 20 18.5 20 C 23.194 20 27 16.194 27 11.5 C 27 6.806 23.194 3 18.5 3 z M 20.5 7 C 21.881 7 23 8.119 23 9.5 C 23 10.881 21.881 12 20.5 12 C 19.119 12 18 10.881 18 9.5 C 18 8.119 19.119 7 20.5 7 z"
-                      ></path>
-                    </svg>
-                  </figure>
-
-                  <p>Data Sovereignty</p>
-                </li>
-              </ul>
-
-              <p>
-                incognito dB is a database search engine designed to ensure user privacy. With it,
-                you can access hundreds of articles with an unparalleled level of confidentiality.
-                The requests you make will be encrypted in such a way that neither the server itself
-                nor a third-party company will be able to learn about your browsing behavior.
-              </p>
-
-              <p>
-                Designed with Spiral and based on SpiralWiki, Incognito dB is a platform that aims
-                to counteract the abuse of data collection by companies through technology.
-              </p>
-
-              <form action="https://search.incognitodb.com/">
-                <button class="model_three" target="_self">Browse Articles</button>
-              </form>
-            </div>
-
-            <div class="right_little_column img_box_model_two parent_circular_gradient">
-              <div class="galaxy_bg"></div>
-
-              <svg class="user_main_pilar" viewBox="0 0 1024 1024">
-                <circle cx="512" cy="512" r="212" fill-opacity="1" fill="#f9fafb" />
-                <circle cx="512" cy="512" r="312" fill-opacity="0.25" fill="#f9fafb" />
-                <circle cx="512" cy="512" r="412" fill-opacity="0.15" fill="#f9fafb" />
-                <circle cx="512" cy="512" r="512" fill-opacity="0.05" fill="#f9fafb" />
-
-                <g>
-                  <path
-                    d="M16,29A13,13,0,1,1,29,16,13,13,0,0,1,16,29ZM16,5A11,11,0,1,0,27,16,11,11,0,0,0,16,5Z"
-                  />
-                  <path
-                    d="M16,17a5,5,0,1,1,5-5A5,5,0,0,1,16,17Zm0-8a3,3,0,1,0,3,3A3,3,0,0,0,16,9Z"
-                  />
-                  <path
-                    d="M25.55,24a1,1,0,0,1-.74-.32A11.35,11.35,0,0,0,16.46,20h-.92a11.27,11.27,0,0,0-7.85,3.16,1,1,0,0,1-1.38-1.44A13.24,13.24,0,0,1,15.54,18h.92a13.39,13.39,0,0,1,9.82,4.32A1,1,0,0,1,25.55,24Z"
-                  />
-                </g>
-              </svg>
-            </div>
-          </div>
-
-          <div class="black_box parent_circular_gradient" style="margin-bottom: 0">
-            <div class="galaxy_bg"></div>
-
-            <h3>Power must move back<br />from the corporation to the individual.</h3>
+        <div class="double_column">
+          <div class="left_big_column">
+            <hgroup>
+              <div class="sec_title">
+                <h5>BRIEF ABOUT</h5>
+                <h2>
+                  Privacy with
+                  <br />
+                  Solitude Search
+                </h2>
+              </div>
+            </hgroup>
 
             <p>
-              We are expected to be the owners of our personal data, however, in order to minimally
-              participate in modern life, we are forced to renunce this fundamental right.
+              Solitude Search is a database search engine designed to ensure user privacy. With it,
+              you can access hundreds of articles with an unparalleled level of confidentiality. The
+              requests you make will be encrypted in such a way that neither the server itself nor a
+              third-party company will be able to learn about your browsing behavior.
             </p>
 
-            <div class="btns_container">
-              <button class="model_four">Empower Users</button>
-
-              <a class="white_link" href="https://github.com/Gasofa06/incognito-db/tree/main/docs"
-                >Read the Docs →</a
-              >
-            </div>
-
-            <svg class="circular_gradient" viewBox="0 0 1024 1024">
-              <circle
-                cx="512"
-                cy="512"
-                r="512"
-                fill-opacity="0.7"
-                fill="url(#radial-white-gradient)"
-              />
-            </svg>
+            <form action="https://search.incognitodb.com/">
+              <button class="model_one" target="_self">
+                Browse Articles
+                <svg viewBox="0 0 18 15" xmlns="http://www.w3.org/2000/svg" class="rotated_arrow">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M9.94417 0.373474L17.2534 7.49997L9.94417 14.6265L8.7225 13.3735L13.8492 8.37497H0L0 6.62497L13.8492 6.62497L8.7225 1.62647L9.94417 0.373474Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </button>
+            </form>
           </div>
+
+          <div
+            class="right_little_column img_box parent_circular_gradient"
+            style="height: 638px"
+          ></div>
         </div>
-      </section>
 
-      <section class="sec_project_description" id="section-project-description">
-        <hgroup>
-          <div class="sec_title">
-            <h5>PROJECT DESCRIPTION</h5>
-            <h2>Why and how</h2>
+        <div
+          class="black_box parent_circular_gradient"
+          style="margin-bottom: 0; padding: 96px 0; background-color: var(--c-secondary-000)"
+        >
+          <h3
+            style="
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-image: linear-gradient(
+                145deg,
+                var(--c-secondary-450) 65%,
+                rgba(0, 0, 0, 0.43)
+              ); /* font-weight: 600; */
+              margin: 0px 0 24px;
+              color: var(--c-secondary-450);
+              text-align: center;
+            "
+          >
+            Power must move back<br />from the corporation to the individual.
+          </h3>
+
+          <p style="font-weight: 400; font-size: 1.06rem; color: var(--c-secondary-450) !important">
+            We are expected to be the owners of our personal data, however, in order to minimally
+            participate in modern life, we are forced to renunce this fundamental right.
+          </p>
+
+          <div class="btns_container">
+            <button class="model_four">Empower Users</button>
+
+            <a class="white_link" href="https://github.com/Gasofa06/incognito-db/tree/main/docs"
+              >Read the Docs →</a
+            >
           </div>
 
-          <div class="centered_text">
-            <p>
-              incognito dB didn't just appear overnight; rather, it's a response to the alarming
-              trend on the Internet of treating user information as mere raw material for
-              exploitation. The value of incognito dB, along with its supporting technologies, lies
-              in safeguarding user privacy and sovereignty.
-            </p>
-          </div>
-        </hgroup>
-
-        <div>
-          <div class="columns_container">
-            <div class="double_column">
-              <div class="left_big_column img_box_model_one">
-                <img alt="Users coin." src="../assets/pictures/users_coin.png" />
-              </div>
-
-              <div class="right_little_column">
-                <h3>Internet and Data</h3>
-
-                <p>
-                  Context fuels solutions, and solutions inspire hope and change, so it's important
-                  to understand the context to comprehend the solution.
-                </p>
-
-                <p>
-                  Today, we spend countless hours on the Internet, extracting vast amounts of
-                  information from the various platforms we access. But just as each and every one
-                  of us obtains information from these platforms, they obtain information from each
-                  and every one of us. And increasingly, the price we have to pay for being
-                  connected and having access to this amount of information is our own privacy.
-                </p>
-              </div>
-            </div>
-
-            <div class="double_column">
-              <div class="left_little_column">
-                <h3 style="max-width: 290px">Living Under Tech's Watchful Eye</h3>
-
-                <p>
-                  Today, many of us would like to believe that platforms like Google Search,
-                  Instagram, and TikTok are effectively free; but they are not. Because these
-                  platforms use our personal data as a form of compensation. We must sacrifice our
-                  confidentiality to access them.
-                </p>
-
-                <p>
-                  With each interaction we engage on countless platforms, we leave small traces
-                  about ourselves. We provide information about our relationships, our searches, our
-                  shopping habits, the places we frequent, our preferences, and so forth. These
-                  digital breadcrumbs, when analyzed collectively, unveil a significant amount of
-                  information about us.
-                </p>
-              </div>
-
-              <div class="right_big_column img_box_model_one">
-                <img
-                  alt="User and some eyes watching him."
-                  src="../assets/pictures/the_watchers.png"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="black_box parent_circular_gradient">
-            <div class="galaxy_bg"></div>
-
-            <blockquote>
-              <label class="quote_info">In his 2012 TED talk, Gary Kovacs said</label>
-
-              <div class="quote">
-                <h3>
-                  Privacy is not an option, and it <br />shouldn't be the price we accept for
-                  <br />just getting on the Internet.
-                </h3>
-              </div>
-            </blockquote>
-
-            <svg class="circular_gradient" viewBox="0 0 1024 1024">
-              <circle
-                cx="512"
-                cy="512"
-                r="512"
-                fill-opacity="0.7"
-                fill="url(#radial-white-gradient)"
-              />
-            </svg>
-          </div>
-
-          <div>
-            <div class="lateral_text">
-              <h3>Learn It With Stadistics</h3>
-
-              <p>
-                incognito dB didn't just appear overnight; rather, it's a response to the alarming
-                trend on the Internet of treating user information as mere raw material for
-                exploitation. The value of incognito dB, along with its supporting technologies,
-                lies in safeguarding user privacy and sovereignty.
-              </p>
-            </div>
-
-            <div class="square_grid">
-              <span>
-                <div class="informative_box">
-                  <h2>1774</h2>
-
-                  <label>Data Breaches (2022)</label>
-
-                  <p>
-                    2022 was a big year for data breaches with 4.8 per day, underscoring the need
-                    for a shift in data protection strategies.
-                  </p>
-
-                  <a class="classic_link" href="">See Reference →</a>
-                </div>
-              </span>
-
-              <span>
-                <div class="informative_box">
-                  <h2>442M</h2>
-
-                  <label>People Affected by a Data Breach</label>
-
-                  <p>
-                    Does this concern you? Perhaps you're among the 442 million affected in 2022. If
-                    not, it can get worse.
-                  </p>
-
-                  <a class="classic_link" href="">Show Reference →</a>
-                </div>
-              </span>
-
-              <span>
-                <div class="informative_box">
-                  <h2>99%</h2>
-
-                  <label>People Affected by a Data Breach</label>
-
-                  <p>
-                    Does this concern you? Perhaps you're among the 442 million affected in 2022. If
-                    not, it can get worse.
-                  </p>
-
-                  <a class="classic_link" href="">Show Reference →</a>
-                </div>
-              </span>
-
-              <span>
-                <div class="informative_box">
-                  <h2>2/3</h2>
-
-                  <label>Data Control Concern</label>
-
-                  <p>
-                    Two-thirds of global consumers feel that tech companies have too much control
-                    over their data. Maybe it's time for a change?
-                  </p>
-
-                  <a class="classic_link" href="">See Reference →</a>
-                </div>
-              </span>
-
-              <span>
-                <div class="centered_text">
-                  <h3>Privacy Concerns in Online Information Retrieval</h3>
-
-                  <p>
-                    When you search for online information, traditional servers might capture and
-                    analyze your queries, potentially compromising your privacy. Indeed, to ensure
-                    that only legitimate users can securely access their data, it's necessary to
-                    encrypt the information before transmitting it and refrain from sharing any
-                    secret key that enables its decryption.
-                  </p>
-                </div>
-              </span>
-            </div>
-          </div>
-
-          <div class="double_column">
-            <div class="left_little_column">
-              <h3>Privacy Concerns in Online Information Retrieval</h3>
-
-              <p>
-                When you search for online information, traditional servers might capture and
-                analyze your queries, potentially compromising your privacy. Indeed, to ensure that
-                only legitimate users can securely access their data, it's necessary to encrypt the
-                information before transmitting it and refrain from sharing any secret key that
-                enables its decryption.
-              </p>
-
-              <p>
-                However, an unfortunate drawback arises — while data encryption can effectively
-                prevent unauthorized access, it also entails the destruction of the underlying
-                semantic structure of the data, which makes it impossible to perform operations on
-                them. As a result, the outcomes of operations on encrypted messages lack meaning
-                when traditional encryption methods are used. This requires that, in either case,
-                online services must decrypt the message before performing operations on them, as
-                otherwise the result will have no meaning.
-              </p>
-
-              <p>
-                This need to decrypt the message before processing, allows online service providers
-                to collect information about our searches.
-              </p>
-            </div>
-
-            <div class="right_big_column">
-              <h3>The Solution — Homomorphic Encryption and PIR</h3>
-
-              <p>
-                Dock can solve all of these problems with game-changing Verifiable Credentials and
-                decentralized identity technology. We enable organizations to efficiently issue
-                fraud-proof Verifiable Credentials and to confirm their validity instantly. Dock
-                Certs provides a user-friendly, intuitive, and no-code platform to make it easy to
-                issue, verify, revoke, and manage Verifiable Credentials. The Certs API allows
-                companies to issue Verifiable Credentials from their existing system and allows easy
-                integration for developers.
-              </p>
-
-              <p>
-                Individuals can fully own and control their digital identity by using decentralized
-                identifiers (DIDs). DIDs allow individuals to securely manage and share their
-                verified data while preventing data tracking. No party can take away their DIDs.
-              </p>
-
-              <button class="model_three">Start Searching</button>
-            </div>
-          </div>
+          <svg class="circular_gradient" viewBox="0 0 1024 1024">
+            <circle
+              cx="512"
+              cy="512"
+              r="512"
+              fill-opacity="0.7"
+              fill="url(#radial-white-gradient)"
+            ></circle>
+          </svg>
         </div>
       </section>
 
       <section class="benefits">
-        <h2>Benefits.</h2>
+        <hgroup>
+          <div class="sec_title">
+            <h5>BENEFITS</h5>
+            <h2>100% Privacy</h2>
+          </div>
+        </hgroup>
 
         <ul class="benefits_list">
           <li>
@@ -627,54 +283,6 @@
         </div>
       </section>
 
-      <section class="faqs">
-        <h2>Any Questions? Look Here</h2>
-
-        <ul class="faqs_list">
-          <li class="faq">
-            <input type="radio" aria-label="frequently-asked-question" name="accordion" />
-
-            <label>What's new?</label>
-
-            <div class="content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore amet
-                fugiat blanditiis distinctio doloribus. Doloribus excepturi laborum dicta velit iure
-                adipisci, atque, sed error natus autem amet laudantium dolores.
-              </p>
-            </div>
-          </li>
-
-          <li class="faq">
-            <input type="radio" aria-label="frequently-asked-question" name="accordion" />
-
-            <label>What's new?</label>
-
-            <div class="content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore amet
-                fugiat blanditiis distinctio doloribus. Doloribus excepturi laborum dicta velit iure
-                adipisci, atque, sed error natus autem amet laudantium dolores.
-              </p>
-            </div>
-          </li>
-
-          <li class="faq">
-            <input type="radio" aria-label="frequently-asked-question" name="accordion" />
-
-            <label>What's new?</label>
-
-            <div class="content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore amet
-                fugiat blanditiis distinctio doloribus. Doloribus excepturi laborum dicta velit iure
-                adipisci, atque, sed error natus autem amet laudantium dolores.
-              </p>
-            </div>
-          </li>
-        </ul>
-      </section>
-
       <section class="acknowledgement">
         <h2>Acknowledgments.</h2>
 
@@ -691,5 +299,7 @@
         <div></div>
       </section>
     </main>
+
+    <script type="module" src="../app/www.[domain].com.js"></script>
   </body>
 </html>
