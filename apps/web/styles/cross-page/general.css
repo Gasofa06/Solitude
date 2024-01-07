@@ -27,9 +27,9 @@
 
     line-height: 1.59;
     font-style: normal;
-    letter-spacing: -0.3em;
+    letter-spacing: -0.3px;
 
-    font-weight: 300;
+    font-weight: 400;
     font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
   }
 }
