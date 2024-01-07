@@ -16,23 +16,31 @@
 
 @layer double_column_layer.columns {
   .left_big_column {
+    position: relative;
+
     grid-column: span 5 / span 5;
     grid-column-start: 1;
     grid-row: 1;
   }
 
   .left_little_column {
+    position: relative;
+
     grid-column: span 4 / span 4;
     grid-column-start: 1;
     grid-row: 1;
   }
 
   .right_big_column {
+    position: relative;
+
     grid-column: span 5 / span 5;
     grid-column-start: 6;
   }
 
   .right_little_column {
+    position: relative;
+
     grid-column: span 4 / span 4;
     grid-column-start: 7;
   }
