@@ -1,12 +1,300 @@
 @import url(./general/text.css) layer(text);
 @import url(./general/double_column.css) layer(double_column_layer);
 
-@import url(./sections/01_hero.css) layer(hero_section);
-@import url(./sections/02_brief_about.css) layer(brief_about);
-@import url(./sections/04_benefits.css) layer(platform_benefits);
-@import url(./sections/05_search_types.css) layer(search_types);
 @import url(./sections/07_acknowledgment.css) layer(acknowledgments);
 
 :root {
   --homepage-width: 1024px;
+}
+
+@layer hero_section {
+  .sec_hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    height: calc(100vh - 24px);
+    max-height: 1540px;
+
+    margin: 0 24px;
+    padding: 0;
+
+    border-radius: 0 0 56px 56px;
+    background: var(--c-secondary-650);
+  }
+
+  @layer hero_content {
+    .hero_content {
+      display: flex;
+      justify-content: center;
+
+      z-index: -5;
+    }
+
+    .hero_content > div {
+      position: fixed;
+
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      padding: 186px 0 0;
+    }
+
+    @layer title {
+      h1.page_title {
+        margin: 0;
+        padding: 0;
+
+        text-align: center;
+      }
+    }
+
+    @layer introduction {
+      .platform_introduction {
+        padding: 0;
+        margin: 28px auto 39px;
+
+        font-size: 17px;
+        text-align: center;
+        letter-spacing: 0.03em !important;
+        color: var(--c-secondary-100);
+      }
+    }
+
+    @layer start_searching_btn {
+      button.model_two.start_searching figure {
+        display: flex;
+        align-items: center;
+
+        margin: 0 10px 0 0;
+      }
+
+      button.model_two.start_searching figure svg {
+        width: 19px;
+        height: 19px;
+      }
+
+      button.model_two.start_searching figure svg path {
+        fill: none;
+        stroke-width: 3px;
+        stroke: var(--c-secondary-000);
+      }
+    }
+  }
+
+  @layer hero_decoration {
+    .hero_decoration {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      margin-top: 64px;
+    }
+
+    @layer hero_img {
+      .hero_img {
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero_img img {
+        width: 73%;
+      }
+    }
+
+    @layer hero_gradient {
+      .hero_gradient {
+        display: contents;
+      }
+
+      .hero_gradient svg {
+        width: 116em;
+        height: 116em;
+      }
+    }
+  }
+}
+
+@layer brief_about_section {
+  .sec_brief_about {
+    padding-top: 146px;
+  }
+
+  @layer title {
+    .sec_brief_about .sec_title {
+      align-items: flex-start !important;
+    }
+
+    .sec_brief_about .sec_title > h2 {
+      text-align: start !important;
+    }
+  }
+
+  @layer content {
+    .sec_brief_about .double_column {
+      padding: 24px 0 0 !important;
+    }
+
+    @layer button {
+      .sec_brief_about .left_big_column > form {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+@layer benefits_section {
+  .sec_benefits {
+    display: flex;
+    flex-direction: column;
+
+    width: var(--homepage-width);
+    margin: 0 auto;
+  }
+
+  @layer title {
+    .sec_benefits .sec_title {
+      align-items: flex-start;
+    }
+
+    .sec_benefits .sec_title > h2 {
+      text-align: left;
+    }
+  }
+
+  @layer content {
+    ul.benefits_grid {
+      width: 100%;
+
+      display: grid;
+      gap: 34px;
+      grid-auto-rows: 4fr;
+      grid-template:
+        'left . .' 1fr
+        'left . .' 1fr / 1fr 1fr 1fr;
+
+      padding: 0;
+      margin: 76px 0;
+
+      --pad: 24px;
+      --n-pad: -24px;
+    }
+
+    ul.benefits_grid > li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      margin: 0;
+      padding: 0 var(--pad) 14px;
+
+      border-radius: 12px;
+      background-color: var(--c-secondary-000);
+
+      overflow: hidden;
+    }
+
+    ul.benefits_grid > li:first-child {
+      grid-area: left;
+    }
+
+    ul.benefits_grid > li > div:first-child {
+    }
+
+    ul.benefits_grid > li > div:last-child span {
+      font-size: var(--text-ml);
+      color: var(--c-secondary-550);
+
+      letter-spacing: -0.22px;
+      line-height: 26px;
+      font-weight: 600;
+
+      font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
+    }
+
+    ul.benefits_grid > li > div:last-child p {
+      font-size: var(--text-m);
+      color: var(--c-secondary-200);
+
+      letter-spacing: -0.13px;
+      line-height: 22px;
+    }
+  }
+}
+
+@layer search_types_section {
+  .sec_search_types {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 92px 0px;
+
+    background: var(--c-secondary-000);
+    border-top: 1px solid var(--c-secondary-025);
+    border-bottom: 1px solid var(--c-secondary-025);
+  }
+
+  @layer title {
+    .sec_search_types .sec_title {
+      padding: 0 0 96px;
+    }
+  }
+
+  @layer content {
+    .sec_search_types .double_column:first-of-type {
+      padding-bottom: 48px;
+      padding-top: 0;
+    }
+
+    .sec_search_types .double_column:nth-of-type(2) {
+      padding-top: 48px;
+      padding-bottom: 0;
+    }
+
+    .sec_search_types .double_column form {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+@layer sec_solitude_definition {
+  .sec_solitude_definition {
+    height: 100vh;
+  }
+
+  .aa {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    bottom: 0px;
+    z-index: 0;
+  }
+
+  .sec_solitude_definition hgroup {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 70%;
+  }
+
+  .sec_solitude_definition .sec_title {
+    display: flex;
+    flex-direction: column;
+    width: 64rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+    position: relative;
+  }
 }
