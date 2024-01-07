@@ -108,6 +108,7 @@
       font-size: var(--text-m);
       color: var(--c-secondary-050);
       text-decoration: none !important;
+      letter-spacing: 0.03em !important;
 
       transition: var(--default-transition);
     }
@@ -241,7 +242,7 @@
   }
 
   @layer search_button {
-    button.model_four > svg.arrow {
+    button.btn_model_three > svg.arrow {
       color: var(--c-secondary-400);
 
       width: 12px;
@@ -254,23 +255,23 @@
       transition-duration: 130ms !important;
     }
 
-    button.model_four > svg.arrow path {
+    button.btn_model_three > svg.arrow path {
       transform-origin: 12.5px 7.5px;
       transform: translateX(-4px);
 
       transition: inherit;
     }
 
-    button.model_four:hover > svg.arrow path {
+    button.btn_model_three:hover > svg.arrow path {
       transform: none;
     }
 
-    button.model_four > svg.arrow line {
+    button.btn_model_three > svg.arrow line {
       opacity: 0;
       transition: inherit;
     }
 
-    button.model_four:hover > svg.arrow line {
+    button.btn_model_three:hover > svg.arrow line {
       opacity: 1;
     }
   }

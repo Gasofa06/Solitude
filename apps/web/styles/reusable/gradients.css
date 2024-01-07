@@ -12,22 +12,15 @@
   svg.circular_gradient {
     position: absolute;
 
-    top: 50%;
+    top: 57%;
     padding: 0 !important;
 
-    width: 72rem;
-    height: 72rem;
+    width: 90rem;
+    height: 90rem;
 
     mask-image: radial-gradient(closest-side, #fff, transparent);
     -webkit-mask-image: radial-gradient(closest-side, #fff, transparent);
 
     z-index: -10;
-  }
-
-  .parent_circular_gradient {
-    position: relative;
-
-    overflow: hidden;
-    isolation: isolate;
   }
 }
