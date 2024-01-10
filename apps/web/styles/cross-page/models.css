@@ -1,78 +1,4 @@
 @layer boxes_models {
-  @layer top_down_box {
-    pre.top_down_box {
-      margin: 0;
-    }
-
-    @media only screen and (min-width: 768px) {
-      pre.top_down_box {
-        width: 298px;
-        background-color: var(--c-secondary-450);
-        border-color: var(--c-secondary-450);
-        border-width: 1px;
-      }
-    }
-
-    @media only screen and (max-width: 768px) {
-      pre.top_down_box {
-        width: 100%;
-      }
-    }
-
-    .box_figure_container {
-      display: flex;
-      padding: 24px 0;
-      background: var(--c-secondary-010);
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-    }
-
-    .box_figure_container figure {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 40px;
-      height: 40px;
-
-      margin: 0 auto;
-
-      background-color: var(--c-bg);
-      border: 1px solid var(--c-secondary-050);
-
-      border-radius: 50%;
-    }
-
-    .box_figure_container figure svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .box_figure_container figure svg path {
-      fill: none;
-
-      stroke-width: 2px;
-      stroke: var(--c-secondary-300);
-    }
-
-    pre.top_down_box p.box_title {
-      margin: 0;
-      padding: 26px 24px 0 24px;
-      font-weight: bold;
-      font-size: var(--text-m);
-      color: var(--c-bg);
-      font-family: system-ui !important;
-    }
-
-    pre.top_down_box p.box_text {
-      padding: 0 24px;
-      margin: 18px 0 24px 0;
-      font-size: var(--text-ms);
-      color: #9a9ea3;
-      white-space: break-spaces;
-    }
-  }
-
   @layer box_model_two {
     .box_model_two {
       display: flex;
@@ -164,6 +90,146 @@
       .box_model_two > .btns_container > a {
         color: var(--c-secondary-450);
       }
+    }
+  }
+
+  @layer box_model_three {
+    .box_model_three > form {
+      width: 100%;
+
+      display: flex;
+      -webkit-box-pack: start;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+
+      gap: 20px;
+      cursor: pointer;
+    }
+
+    .box_model_three > form > div {
+      width: 100%;
+    }
+
+    .box_model_three .top_part > div {
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .box_model_three .top_part > div > img {
+      display: block;
+      position: relative;
+
+      width: 100%;
+
+      transition: var(--default-transition);
+    }
+
+    .box_model_three .top_part > div:hover > img {
+      transform: scale(1.02);
+    }
+
+    .box_model_three .top_part > p {
+      margin: 24px 0 0;
+
+      letter-spacing: -0.13px;
+      font-size: var(--text-m);
+      color: var(--c-secondary-150);
+    }
+
+    .box_model_three .bottom_part > div {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+    }
+
+    .box_model_three .bottom_part > div > p {
+      margin: 8px 0 0;
+      font-size: var(--text-l);
+    }
+
+    .box_model_three .bottom_part > p {
+      margin: 0;
+
+      font-size: 1.438em;
+      font-weight: 500;
+      letter-spacing: -0.4px;
+    }
+  }
+
+  @layer top_down_box {
+    pre.top_down_box {
+      margin: 0;
+    }
+
+    @media only screen and (min-width: 768px) {
+      pre.top_down_box {
+        width: 298px;
+        background-color: var(--c-secondary-450);
+        border-color: var(--c-secondary-450);
+        border-width: 1px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      pre.top_down_box {
+        width: 100%;
+      }
+    }
+
+    .box_figure_container {
+      display: flex;
+      padding: 24px 0;
+      background: var(--c-secondary-010);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .box_figure_container figure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+
+      margin: 0 auto;
+
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-secondary-050);
+
+      border-radius: 50%;
+    }
+
+    .box_figure_container figure svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .box_figure_container figure svg path {
+      fill: none;
+
+      stroke-width: 2px;
+      stroke: var(--c-secondary-300);
+    }
+
+    pre.top_down_box p.box_title {
+      margin: 0;
+      padding: 26px 24px 0 24px;
+      font-weight: bold;
+      font-size: var(--text-m);
+      color: var(--c-bg);
+      font-family: system-ui !important;
+    }
+
+    pre.top_down_box p.box_text {
+      padding: 0 24px;
+      margin: 18px 0 24px 0;
+      font-size: var(--text-ms);
+      color: #9a9ea3;
+      white-space: break-spaces;
     }
   }
 

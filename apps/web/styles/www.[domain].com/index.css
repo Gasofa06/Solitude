@@ -7,8 +7,13 @@
   --homepage-width: 1024px;
 }
 
+section {
+  background-color: var(--c-bg);
+  padding: 92px 0;
+}
+
 @layer hero_section {
-  .sec_hero {
+  #section-hero {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -25,7 +30,7 @@
     padding: 0;
 
     border-radius: 0 0 56px 56px;
-    background: var(--c-secondary-650);
+    background-color: var(--c-secondary-650) !important;
   }
 
   @layer hero_content {
@@ -122,27 +127,31 @@
 }
 
 @layer brief_about_section {
-  .sec_brief_about {
+  #section-brief-about {
     padding-top: 146px;
   }
 
   @layer title {
-    .sec_brief_about .sec_title {
+    #section-brief-about .sec_title {
       align-items: flex-start !important;
     }
 
-    .sec_brief_about .sec_title > h2 {
+    #section-brief-about .sec_title > h2 {
       text-align: start !important;
     }
   }
 
   @layer content {
-    .sec_brief_about .double_column {
+    #section-brief-about .double_column {
       padding: 24px 0 0 !important;
     }
 
+    #section-brief-about .box_model_two.gray {
+      margin-bottom: 0 !important;
+    }
+
     @layer button {
-      .sec_brief_about .left_big_column > form {
+      #section-brief-about .left_big_column > form {
         position: absolute;
         bottom: 0;
       }
@@ -151,7 +160,7 @@
 }
 
 @layer benefits_section {
-  .sec_benefits {
+  #section-benefits {
     display: flex;
     flex-direction: column;
 
@@ -160,11 +169,11 @@
   }
 
   @layer title {
-    .sec_benefits .sec_title {
+    #section-benefits .sec_title {
       align-items: flex-start;
     }
 
-    .sec_benefits .sec_title > h2 {
+    #section-benefits .sec_title > h2 {
       text-align: left;
     }
   }
@@ -205,9 +214,6 @@
       grid-area: left;
     }
 
-    ul.benefits_grid > li > div:first-child {
-    }
-
     ul.benefits_grid > li > div:last-child span {
       font-size: var(--text-ml);
       color: var(--c-secondary-550);
@@ -230,7 +236,7 @@
 }
 
 @layer search_types_section {
-  .sec_search_types {
+  #section-search-types {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -244,57 +250,91 @@
   }
 
   @layer title {
-    .sec_search_types .sec_title {
+    #section-search-types .sec_title {
       padding: 0 0 96px;
     }
   }
 
   @layer content {
-    .sec_search_types .double_column:first-of-type {
+    #section-search-types .double_column:first-of-type {
       padding-bottom: 48px;
       padding-top: 0;
     }
 
-    .sec_search_types .double_column:nth-of-type(2) {
+    #section-search-types .double_column:nth-of-type(2) {
       padding-top: 48px;
       padding-bottom: 0;
     }
 
-    .sec_search_types .double_column form {
+    #section-search-types .double_column form {
       position: absolute;
       bottom: 0;
     }
   }
 }
 
-@layer sec_solitude_definition {
-  .sec_solitude_definition {
-    height: 100vh;
+@layer paper_section {
+  #section-paper > div {
+    width: var(--homepage-width);
+    margin: 0 auto;
   }
 
-  .aa {
+  @layer title {
+    #section-paper .sec_title {
+      align-items: flex-start;
+    }
+  }
+
+  @layer content {
+    #section-paper > div > ul {
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 1fr 1fr;
+
+      position: relative;
+
+      padding: 44px 0;
+    }
+  }
+}
+
+@layer solitude_definition_section {
+  #section-solitude-definition {
+    height: 100vh;
+
+    background-color: transparent !important;
+  }
+
+  #section-solitude-definition > div {
     position: fixed;
+    bottom: 0px;
+
     height: 100vh;
     width: 100vw;
-    bottom: 0px;
-    z-index: 0;
+
+    z-index: -999;
   }
 
-  .sec_solitude_definition hgroup {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    height: 70%;
-  }
+  @layer title {
+    #section-solitude-definition hgroup {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      height: 70%;
+    }
 
-  .sec_solitude_definition .sec_title {
-    display: flex;
-    flex-direction: column;
-    width: 64rem;
-    padding-inline-start: 1.5rem;
-    padding-inline-end: 1.5rem;
-    position: relative;
+    #section-solitude-definition .sec_title {
+      display: flex;
+      flex-direction: column;
+
+      position: relative;
+
+      width: 64rem;
+
+      padding-inline-start: 1.5rem;
+      padding-inline-end: 1.5rem;
+    }
   }
 }
