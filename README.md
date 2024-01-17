@@ -7,7 +7,7 @@
     <a href="https://github.com/Gasofa06/incognito-db/blob/main/README.md">Anglès</a>
 </p>
 
-# Ignota Search
+# Solitude Search
 
 <div alt style="text-align: center;">
     <picture>
