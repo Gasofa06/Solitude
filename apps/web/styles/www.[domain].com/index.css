@@ -298,6 +298,217 @@ section {
           color: var(--c-secondary-200);
         }
       }
+
+      @layer protection {
+        /* 
+         *  These are some common characteristics of the animation,
+         *  shared across different @keyframes::
+         *
+         *  From 0% to 20%, the animation is in its initial stage.
+         *  From 20% to 40%, the animation is undergoing a change.
+         *  From 40% to 100%, the animation enters its second stage.
+         */
+
+        ul.benefits_grid .protection {
+          --dur: 4s;
+        }
+
+        @layer protection-container {
+          ul.benefits_grid .protection {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 40px;
+            background-color: #4cc37b;
+
+            animation: change-protection-size var(--dur) infinite alternate ease;
+          }
+
+          @keyframes change-protection-size {
+            0%,
+            20% {
+              width: 130px;
+              height: 42px;
+            }
+
+            40%,
+            100% {
+              width: 200px;
+              height: 46px;
+            }
+          }
+
+          ul.benefits_grid .protection::after {
+            content: '';
+
+            color: #fff;
+            font-size: var(--text-xl);
+
+            line-height: 1.59;
+            font-style: normal;
+            letter-spacing: -0.3px;
+
+            font-weight: 400;
+            font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
+
+            animation: change-protection-text var(--dur) infinite alternate ease;
+          }
+
+          @keyframes change-protection-text {
+            0%,
+            20% {
+              content: 'Protect';
+
+              opacity: 100%;
+              padding-left: 0;
+            }
+
+            28% {
+              opacity: 0%;
+              padding-left: 0;
+            }
+
+            28.01% {
+              /* Immediately. */
+              padding-left: 16px;
+            }
+
+            32% {
+              opacity: 100%;
+              padding-left: 16px;
+            }
+
+            40%,
+            100% {
+              content: 'Protecting';
+
+              opacity: 100%;
+              padding-left: 16px;
+            }
+          }
+        }
+
+        @layer protection-loading {
+          .protection_loading {
+            width: 16px;
+            padding: 4px;
+
+            aspect-ratio: 1;
+            border-radius: 50%;
+
+            background: radial-gradient(farthest-side, #fff 100%, transparent) top/0 no-repeat,
+              conic-gradient(transparent 18%, #fff);
+
+            animation: rotate-protection-loading 0.5s infinite linear,
+              loading-protection-opacity var(--dur) infinite alternate ease;
+          }
+
+          @keyframes rotate-protection-loading {
+            to {
+              transform: rotate(1turn);
+            }
+          }
+
+          @keyframes loading-protection-opacity {
+            0%,
+            20% {
+              display: none;
+            }
+
+            28% {
+              opacity: 0%;
+              display: none;
+            }
+
+            32% {
+              opacity: 100%;
+              display: block;
+            }
+
+            40%,
+            100% {
+              opacity: 100%;
+              display: block;
+            }
+          }
+        }
+
+        @layer protection-layers {
+          ul.benefits_grid .protection > .protection_layers {
+            position: absolute;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 100%;
+
+            animation: opacity-protection-layers var(--dur) infinite alternate ease;
+          }
+
+          @keyframes opacity-protection-layers {
+            0%,
+            15% {
+              opacity: 0%;
+            }
+
+            30%,
+            100% {
+              opacity: 100%;
+            }
+          }
+
+          ul.benefits_grid .protection > .protection_layers::before,
+          ul.benefits_grid .protection > .protection_layers::after {
+            content: '';
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 40px;
+
+            animation-duration: 0.4s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+          }
+
+          ul.benefits_grid .protection > .protection_layers::before {
+            padding: 5px;
+            animation-name: first-protection-layer;
+          }
+
+          @keyframes first-protection-layer {
+            from {
+              border: 3.5px solid #4cc37b;
+            }
+
+            to {
+              border: 3.5px solid #9be4bd;
+            }
+          }
+
+          ul.benefits_grid .protection > .protection_layers::after {
+            padding: 13px;
+            animation-name: second-protection-layer;
+          }
+
+          @keyframes second-protection-layer {
+            from {
+              border: 3.5px solid #9be4bd;
+            }
+
+            to {
+              border: 3.5px solid #ddf6e8;
+            }
+          }
+        }
+      }
     }
   }
 }
