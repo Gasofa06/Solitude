@@ -57,12 +57,6 @@
   }
 }
 
-@layer double_column_layer.column_image {
-  .double_column img {
-    width: 64%;
-  }
-}
-
 @layer double_column_layer.column_btn {
   .double_column button {
     margin-top: 24px;

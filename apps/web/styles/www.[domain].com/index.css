@@ -10,6 +10,8 @@
 section {
   background-color: var(--c-bg);
   padding: 92px 0;
+
+  border-bottom: 1px solid var(--c-secondary-025);
 }
 
 @layer hero_section {
@@ -162,10 +164,12 @@ section {
 @layer benefits_section {
   #section-benefits {
     display: flex;
+    align-items: center;
     flex-direction: column;
+  }
 
+  #section-benefits > * {
     width: var(--homepage-width);
-    margin: 0 auto;
   }
 
   @layer title {
@@ -180,8 +184,6 @@ section {
 
   @layer content {
     ul.benefits_grid {
-      width: 100%;
-
       display: grid;
       gap: 34px;
       grid-auto-rows: 4fr;
@@ -190,7 +192,7 @@ section {
         'left . .' 1fr / 1fr 1fr 1fr;
 
       padding: 0;
-      margin: 76px 0;
+      margin: 52px 0;
 
       --pad: 24px;
       --n-pad: -24px;
@@ -214,7 +216,18 @@ section {
       grid-area: left;
     }
 
-    ul.benefits_grid > li > div:last-child span {
+    ul.benefits_grid > li > div:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
+
+      padding: 25px 0px 16px 0;
+    }
+
+    ul.benefits_grid > li > div:last-child > span {
       font-size: var(--text-ml);
       color: var(--c-secondary-550);
 
@@ -225,12 +238,66 @@ section {
       font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
     }
 
-    ul.benefits_grid > li > div:last-child p {
+    ul.benefits_grid > li > div:last-child > p {
       font-size: var(--text-m);
       color: var(--c-secondary-200);
 
       letter-spacing: -0.13px;
       line-height: 22px;
+
+      margin: 4px 0 8px;
+    }
+
+    @layer decoration {
+      @layer search_bar {
+        ul.benefits_grid .search_bar {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+
+          width: 100%;
+          height: 46px;
+
+          padding: 0 12px;
+
+          border-radius: 12px;
+          background-color: var(--c-secondary-025);
+        }
+
+        ul.benefits_grid .search_bar > div:first-child {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          width: 32px;
+          height: 32px;
+
+          border-radius: 6px;
+          background-color: var(--c-primary-300);
+        }
+
+        ul.benefits_grid .search_bar > div:first-child > svg {
+          width: 18px;
+        }
+
+        ul.benefits_grid .search_bar > div:first-child > svg > path {
+          fill: none;
+          stroke-width: 3px;
+          stroke: var(--c-secondary-010);
+        }
+
+        ul.benefits_grid .search_bar > div:last-child {
+          margin-left: 12px;
+        }
+
+        ul.benefits_grid .search_bar > div:last-child > p {
+          margin: 0;
+
+          font-size: var(--text-ms);
+          color: var(--c-secondary-200);
+        }
+      }
     }
   }
 }
@@ -244,9 +311,7 @@ section {
     margin: 0;
     padding: 92px 0px;
 
-    background: var(--c-secondary-000);
-    border-top: 1px solid var(--c-secondary-025);
-    border-bottom: 1px solid var(--c-secondary-025);
+    background: var(--c-secondary-000) !important;
   }
 
   @layer title {

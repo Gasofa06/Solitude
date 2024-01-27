@@ -241,7 +241,9 @@
 
       min-height: 512px;
       border-radius: 12px;
-      background-color: var(--c-secondary-010);
+      background-color: var(--c-secondary-000);
+
+      overflow: hidden;
     }
   }
 }
