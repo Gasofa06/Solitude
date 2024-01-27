@@ -183,69 +183,71 @@ section {
   }
 
   @layer content {
-    ul.benefits_grid {
-      display: grid;
-      gap: 34px;
-      grid-auto-rows: 4fr;
-      grid-template:
-        'left . .' 1fr
-        'left . .' 1fr / 1fr 1fr 1fr;
+    @layer benefits-grid {
+      ul.benefits_grid {
+        display: grid;
+        gap: 34px;
+        grid-auto-rows: 4fr;
+        grid-template:
+          'left . .' 1fr
+          'left . .' 1fr / 1fr 1fr 1fr;
 
-      padding: 0;
-      margin: 52px 0;
+        padding: 0;
+        margin: 52px 0;
 
-      --pad: 24px;
-      --n-pad: -24px;
-    }
+        --pad: 24px;
+        --n-pad: -24px;
+      }
 
-    ul.benefits_grid > li {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      ul.benefits_grid > li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-      margin: 0;
-      padding: 0 var(--pad) 14px;
+        margin: 0;
+        padding: 0 var(--pad) 14px;
 
-      border-radius: 12px;
-      background-color: var(--c-secondary-000);
+        border-radius: 12px;
+        background-color: var(--c-secondary-000);
 
-      overflow: hidden;
-    }
+        overflow: hidden;
+      }
 
-    ul.benefits_grid > li:first-child {
-      grid-area: left;
-    }
+      ul.benefits_grid > li:first-child {
+        grid-area: left;
+      }
 
-    ul.benefits_grid > li > div:first-child {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      ul.benefits_grid > li > div:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      width: 100%;
-      height: 100%;
+        width: 100%;
+        height: 100%;
 
-      padding: 25px 0px 16px 0;
-    }
+        padding: 25px 0px 16px 0;
+      }
 
-    ul.benefits_grid > li > div:last-child > span {
-      font-size: var(--text-ml);
-      color: var(--c-secondary-550);
+      ul.benefits_grid > li > div:last-child > span {
+        font-size: var(--text-ml);
+        color: var(--c-secondary-550);
 
-      letter-spacing: -0.22px;
-      line-height: 26px;
-      font-weight: 600;
+        letter-spacing: -0.22px;
+        line-height: 26px;
+        font-weight: 600;
 
-      font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
-    }
+        font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
+      }
 
-    ul.benefits_grid > li > div:last-child > p {
-      font-size: var(--text-m);
-      color: var(--c-secondary-200);
+      ul.benefits_grid > li > div:last-child > p {
+        font-size: var(--text-m);
+        color: var(--c-secondary-200);
 
-      letter-spacing: -0.13px;
-      line-height: 22px;
+        letter-spacing: -0.13px;
+        line-height: 22px;
 
-      margin: 4px 0 8px;
+        margin: 4px 0 8px;
+      }
     }
 
     @layer decoration {
@@ -371,22 +373,19 @@ section {
               padding-left: 0;
             }
 
-            28.01% {
-              /* Immediately. */
+            28.01%,
+            100% {
               padding-left: 16px;
             }
 
             32% {
               opacity: 100%;
-              padding-left: 16px;
             }
 
             40%,
             100% {
               content: 'Protecting';
-
               opacity: 100%;
-              padding-left: 16px;
             }
           }
         }
