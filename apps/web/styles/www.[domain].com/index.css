@@ -14,7 +14,7 @@ section {
   border-bottom: 1px solid var(--c-secondary-025);
 }
 
-@layer hero_section {
+@layer hero-section {
   #section-hero {
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@ section {
     background-color: var(--c-secondary-650) !important;
   }
 
-  @layer hero_content {
+  @layer hero-content {
     .hero_content {
       display: flex;
       justify-content: center;
@@ -53,28 +53,24 @@ section {
       padding: 186px 0 0;
     }
 
-    @layer title {
-      h1.page_title {
-        margin: 0;
-        padding: 0;
+    h1.page_title {
+      margin: 0;
+      padding: 0;
 
-        text-align: center;
-      }
+      text-align: center;
     }
 
-    @layer introduction {
-      .platform_introduction {
-        padding: 0;
-        margin: 28px auto 39px;
+    .platform_introduction {
+      padding: 0;
+      margin: 28px auto 39px;
 
-        font-size: 17px;
-        text-align: center;
-        letter-spacing: 0.03em !important;
-        color: var(--c-secondary-100);
-      }
+      font-size: 17px;
+      text-align: center;
+      letter-spacing: 0.03em !important;
+      color: var(--c-secondary-100);
     }
 
-    @layer start_searching_btn {
+    @layer searching-btn {
       button.model_two.start_searching figure {
         display: flex;
         align-items: center;
@@ -95,7 +91,7 @@ section {
     }
   }
 
-  @layer hero_decoration {
+  @layer hero-decoration {
     .hero_decoration {
       display: flex;
       align-items: center;
@@ -104,7 +100,7 @@ section {
       margin-top: 64px;
     }
 
-    @layer hero_img {
+    @layer hero-img {
       .hero_img {
         display: flex;
         justify-content: center;
@@ -115,7 +111,7 @@ section {
       }
     }
 
-    @layer hero_gradient {
+    @layer hero-gradient {
       .hero_gradient {
         display: contents;
       }
@@ -128,7 +124,7 @@ section {
   }
 }
 
-@layer brief_about_section {
+@layer brief-about-section {
   #section-brief-about {
     padding-top: 146px;
   }
@@ -152,16 +148,14 @@ section {
       margin-bottom: 0 !important;
     }
 
-    @layer button {
-      #section-brief-about .left_big_column > form {
-        position: absolute;
-        bottom: 0;
-      }
+    #section-brief-about .left_big_column > form {
+      position: absolute;
+      bottom: 0;
     }
   }
 }
 
-@layer benefits_section {
+@layer benefits-section {
   #section-benefits {
     display: flex;
     align-items: center;
@@ -251,7 +245,7 @@ section {
     }
 
     @layer decoration {
-      @layer search_bar {
+      @layer search-bar {
         ul.benefits_grid .search_bar {
           display: flex;
           flex-direction: row;
@@ -298,6 +292,39 @@ section {
 
           font-size: var(--text-ms);
           color: var(--c-secondary-200);
+        }
+      }
+
+      @layer ecryption {
+        ul.benefits_grid .encryption {
+          display: flex;
+          position: relative;
+          align-items: center;
+          justify-content: space-between;
+
+          width: 100%;
+        }
+
+        ul.benefits_grid .encryption > span {
+          z-index: 5;
+
+          width: 26px;
+          height: 26px;
+
+          border-radius: 50%;
+          background-color: var(--c-secondary-100);
+        }
+
+        ul.benefits_grid .encryption > div {
+          position: absolute;
+
+          display: flex;
+          align-items: center;
+
+          width: 100%;
+        }
+
+        @layer tranferation {
         }
       }
 
@@ -391,7 +418,7 @@ section {
         }
 
         @layer protection-loading {
-          .protection_loading {
+          ul.benefits_grid .protection > .protection_loading {
             width: 16px;
             padding: 4px;
 
@@ -512,7 +539,7 @@ section {
   }
 }
 
-@layer search_types_section {
+@layer search-types-section {
   #section-search-types {
     display: flex;
     align-items: center;
@@ -548,7 +575,7 @@ section {
   }
 }
 
-@layer paper_section {
+@layer paper-section {
   #section-paper > div {
     width: var(--homepage-width);
     margin: 0 auto;
@@ -573,7 +600,7 @@ section {
   }
 }
 
-@layer solitude_definition_section {
+@layer solitude-definition-section {
   #section-solitude-definition {
     height: 100vh;
 
