@@ -1,47 +1,9 @@
 [website]: https://incognitodb.com
 [blyss]: https://github.com/blyssprivacy
 
-<p align="right">
-    <a href="https://github.com/Gasofa06/incognito-db/blob/main/docs/README.es.md">Espanyol</a>
-    &nbsp;|&nbsp;
-    <a href="https://github.com/Gasofa06/incognito-db/blob/main/README.md">Anglès</a>
-</p>
-
 # Solitude Search
 
-<div alt style="text-align: center;">
-    <picture>
-        <a href="https://incognitodb.com">
-            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
-            <img alt="Device with the platform" src="https://raw.githubusercontent.com/twitter/communitynotes/main/documentation/images/help-rate-this-note-expanded.png" />
-        </a>
-    </picture>
-</div>
-
-<br />
-
-> Incognito dB és un motor de cerca de bases de dades dissenyat amb l’objectiu de protegir la privadesa dels usuaris. Mitjançant Homomorphic Encryption i Private Information Retrival, la plataforma dissenyada permet l’accés confidencial a una gran selecció d’articles.
-
-<br />
-
-## :wave: Benvingut/da
-
-Benvingut/da al monorepositori de codi obert per a [incognito dB][website], dedicat a garantir la privacitat de l'usuari. S'utilitza el codi obert proporcionat per l'empresa [Blyss][blyss] amb l'objectiu de proporcionar accés totalment confidencial a una varietat d'articles. Ningú, ni tan sols el servidor en si mateix, serà capaç de conèixer el que estàs cercant; tot gràcies als principis de l'Homomorphic Encryption.
-
-<br />
-
-<div alt style="text-align: center;">
-    <picture>
-        <a href="https://incognitodb.com">
-            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
-            <img alt="Device with the platform" src="https://github.com/Gasofa06/Treball-de-Recerca/blob/main/mockup/booklet_Mockup.jpg" />
-        </a>
-    </picture>
-</div>
-
-<br />
-
-> Un article sobre el projecte també està disponible [aquí](https://github.com/Gasofa06/Treball-de-Recerca).
+Benvingut/da al monorepositori de codi obert per a [Solitude Search][website], dedicat a garantir la privacitat de l'usuari. S'utilitza el codi obert proporcionat per l'empresa [Blyss][blyss] amb l'objectiu de proporcionar accés totalment confidencial a una varietat d'articles. Ningú, ni tan sols el servidor en si mateix, serà capaç de conèixer el que estàs cercant; tot gràcies als principis de l'Homomorphic Encryption.
 
 <br />
 
@@ -76,97 +38,6 @@ Això demostra la singularitat dels historials de cerca i com aquests són prou 
 Amb la finalitat contrarestar la falta de privacitat en Internet, Incognito dB es recolza en els principis de l’Homomorphic Encryption per garantir la Recuperació d’Informació Privada (Private Information Retrieval, PIR). És a dir, implementa algoritmes homomòrfics que asseguren que els usuaris aconsegueixin la informació que cerquen sense revelar cap detall personal o específic de la seva consulta, gràcies al suport del codi obert proporcionat per l’empresa [Blyss][blyss].
 
 Aquest fet impedeix que les empreses puguin analitzar, utilitzar, vendre o compartir les nostres dades de cerca. Les quals, recordem, són un 99% personals i molt definidores de la nostra identitat. Això es deu al fet que el servidor no té coneixement de la informació que l'usuari ha cercat, tot i haver-li proporcionat el contingut desitjat.
-
-<br />
-
-<div alt style="text-align: center;">
-    <picture>
-        <a href="https://incognitodb.com">
-            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
-            <img alt="Device with the platform" src="https://raw.githubusercontent.com/twitter/communitynotes/main/documentation/images/help-rate-this-note-expanded.png" />
-        </a>
-    </picture>
-</div>
-
-<br />
-
-> Pots accedir al lloc web fent clic [aquí][website].
-
-<br />
-
-## :bulb: Característiques i Avantatges
-
-* Built-in LSP ([Language Server Protocol](https://microsoft.github.io/language-server-protocol/)) support to give you intelligent code features such as: completion, diagnostics and code actions
-* Modal editing support as first class citizen (Vim-like, and toggleable)
-* Built-in remote development support inspired by [VSCode Remote Development](https://code.visualstudio.com/docs/remote/remote-overview). Enjoy the benefits of a "local" experience, and seamlessly gain the full power of a remote system.
-* Plugins can be written in programming languages that can compile to the [WASI](https://wasi.dev/) format (C, Rust, [AssemblyScript](https://www.assemblyscript.org/))
-* Built-in terminal, so you can execute commands in your workspace, without leaving Lapce.
-
-<br />
-
-## :hammer: Workflow
-
-<br />
-
-<div alt style="text-align: center;">
-    <picture>
-        <a href="https://incognitodb.com">
-            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
-            <img alt="Device with the platform" src="https://raw.githubusercontent.com/twitter/communitynotes/main/documentation/images/help-rate-this-note-expanded.png" />
-        </a>
-    </picture>
-</div>
-
-<br />
-
-## :camera: Screenshots
-
-<div alt style="text-align: center;">
-    <picture>
-        <a href="https://www.twenty.com">
-            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-dark.png">
-            <img alt="User view" src="https://raw.githubusercontent.com/twentyhq/twenty/main/docs/static/img/preview-light.png" />
-        </a>
-    </picture>
-</div>
-
-<br />
-
-## :construction: Limitations
-Although we strive to enhance enterprise-level software development efficiency and reduce barriers with the help of large-scale language models, there are still some limitations in the current version:
-
-- The generation of requirement and interface documentation may not be precise enough and might not meet developer intent in complex scenarios.
-- In the current version, automating the understanding of existing project code is not possible. We are exploring a new solution that has shown promising results during validation and will be introduced in a future version.
-
-<br />
-
-## :open_file_folder: Folder Structure
-
-### Top-level layout
-
-This repository's contents is divided across four primary sections:
-
-- `/apps` contains the source for our applications
-- `/packages` contains the source for our public packages
-- `/scripts` contains scripts used for building and publishing
-- `/assets` contains icons and translations relied on by the app
-- `/docs` contains the content for our docs site at [tldraw.dev](https://tldraw.dev)
-
-### Applications
-
-- `examples`: our local development / examples project
-- `vscode`: our [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=tldraw-org.tldraw-vscode)
-
-### Packages
-
-- `assets`: a library for working with tldraw's fonts and translations
-- `editor`: the tldraw editor
-- `state`: a signals library, also known as signia
-- `store`: an in-memory reactive database
-- `tldraw`: the main tldraw package containing both the editor and the UI
-- `tlschema`: shape definitions and migrations
-- `utils`: low-level data utilities shared by other libraries
-- `validate`: a validation library used for run-time validation
 
 <br />
 
