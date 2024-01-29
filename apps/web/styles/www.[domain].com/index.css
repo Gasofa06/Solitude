@@ -796,6 +796,31 @@ section {
   }
 }
 
+@layer details-section {
+  #section-details > div {
+    width: var(--homepage-width);
+    margin: 0 auto;
+  }
+
+  @layer title {
+    #section-paper .sec_title {
+      align-items: flex-start;
+    }
+  }
+
+  @layer content {
+    #section-paper > div > ul {
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 1fr 1fr;
+
+      position: relative;
+
+      padding: 44px 0;
+    }
+  }
+}
+
 @layer paper-section {
   #section-paper > div {
     width: var(--homepage-width);
