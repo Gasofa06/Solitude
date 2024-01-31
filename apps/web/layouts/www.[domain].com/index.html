@@ -12,13 +12,175 @@
     <link rel="stylesheet" type="text/css" href="../../styles/cross-page/index.css" />
     <link rel="stylesheet" type="text/css" href="../../styles/www.[domain].com/index.css" />
 
-    <script type="module" src="../javascript/app/before_DOM/theme_detection.js"></script>
+    <script defer type="module" src="../javascript/app/before_DOM/theme_detection.js"></script>
   </head>
 
   <body>
     <script type="module" src="../layouts/reusable/nav.js"></script>
     <script type="module" src="../layouts/reusable/footer.js"></script>
     <script type="module" src="../layouts/reusable/gradients.js"></script>
+
+    <div class="loading-container">
+      <div class="loading-screen" style="top: 100%">
+        <div class="rounded-div-wrap top" style="height: 0vh">
+          <div class="rounded-div"></div>
+        </div>
+        <div class="loading-words" style="transform: translate(0px, -50px); opacity: 0">
+          <h2 class="home-active home-active-first">
+            Hello
+            <div class="dot"></div>
+          </h2>
+          <h2 class="home-active">
+            Bonjour
+            <div class="dot"></div>
+          </h2>
+          <h2 class="home-active">
+            स्वागत हे
+            <div class="dot"></div>
+          </h2>
+          <h2 class="home-active">
+            Ciao
+            <div class="dot"></div>
+          </h2>
+          <h2 class="home-active">
+            Olá
+            <div class="dot"></div>
+          </h2>
+          <h2 class="home-active jap">
+            おい
+            <div class="dot"></div>
+          </h2>
+          <h2 class="home-active">
+            Hallå
+            <div class="dot"></div>
+          </h2>
+          <h2 class="home-active">
+            Guten tag
+            <div class="dot"></div>
+          </h2>
+          <h2 class="home-active-last">
+            Hallo
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Home
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Work
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            FABRIC™
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Aanstekelijk
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Base Create
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            AVVR
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            GraphicHunters
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Future Goals
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Atypikal
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            MicDrop Agency
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Tapsody
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Emble Studio
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            One:Nil
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Andy Hardy
+            <div class="dot"></div>
+          </h2>
+          <h2 class="active">
+            About
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Contact
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Success
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Archive
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Error
+            <div class="dot"></div>
+          </h2>
+          <h2>
+            Styleguide
+            <div class="dot"></div>
+          </h2>
+        </div>
+        <div class="rounded-div-wrap bottom" style="height: 10vh">
+          <div class="rounded-div"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="loading-container loaded">
+      <div
+        class="transition-screen"
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          transform: translate(0%, -100%) rotate(0.001deg);
+          opacity: 1;
+        "
+      >
+        <div class="shape-round bottom"></div>
+        <div
+          class="shape-round top"
+          style="translate: none; rotate: none; scale: none; transform: scale(1, 0)"
+        ></div>
+      </div>
+      <div class="transition-words">
+        <div
+          class="wrap"
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0%, -120%);
+          "
+        >
+          <h3 data-change-page-title="">FAQ</h3>
+        </div>
+      </div>
+    </div>
 
     <main>
       <section id="section-hero">
@@ -335,7 +497,7 @@
         </div>
 
         <div class="double_column">
-          <div class="left_little_column">
+          <div class="left_little_column img_box">
             <img
               alt="Must be changed."
               src="https://uploads-ssl.webflow.com/5e97941735e37a5ef19d10aa/64b7fd9f8782ffeb646158a2_Make%20your%20data%20fraud-proof%20mockup.webp"
@@ -430,7 +592,7 @@
         </div>
       </section>
 
-      <section class="sec faqs" id="section-faqs">
+      <section id="section-faqs">
         <hgroup>
           <div class="sec_title">
             <h5>FAQs</h5>
@@ -439,7 +601,7 @@
         </hgroup>
       </section>
 
-      <section class="sec acknowledgement">
+      <section id="section-acknowledgments">
         <h2>Acknowledgments.</h2>
 
         <label>
