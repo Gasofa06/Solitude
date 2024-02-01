@@ -33,143 +33,120 @@
 }
 
 @layer loading {
-  .no-scroll-overlay {
+  #loading-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 900;
-    display: none;
-  }
 
-  .loading-container {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    z-index: 800;
+
+    z-index: 100;
     pointer-events: none;
     background: transparent;
   }
 
-  .loading-screen {
-    position: relative;
-    padding: 0;
+  #loading-container > .transition_screen,
+  #loading-container > .transition_screen > label,
+  #loading-container > .transition_screen > div {
+    animation-duration: 1.08s;
+    animation-fill-mode: forwards;
+  }
+
+  #loading-container > .transition_screen {
     width: 100%;
     height: 100%;
-    left: 0;
-    will-change: top;
+
+    background-color: #141517;
+
+    animation-name: transition-loading-screen;
+    animation-timing-function: cubic-bezier(0.75, 0, 0.5, 1);
   }
 
-  .loading-screen,
-  .loading-container .rounded-div-wrap.top .rounded-div,
-  .loading-container .rounded-div-wrap.bottom .rounded-div {
-    background: var(--color-dark-dark);
+  @keyframes transition-loading-screen {
+    0%,
+    60% {
+      transform: translateY(0%);
+    }
+
+    100% {
+      transform: translateY(-100%);
+    }
   }
 
-  .loading-container .rounded-div-wrap.top .rounded-div,
-  .loading-container .rounded-div-wrap.bottom .rounded-div {
-    height: 745%;
-  }
-
-  .loading-container .rounded-div-wrap.top {
-    top: 0;
+  #loading-container > .transition_screen > label {
     position: absolute;
-    transform: translateY(-99%) scale(1, -1);
-    z-index: 2;
-    height: 0vh;
-    will-change: height;
+    width: 100%;
+
+    animation-name: transition-loading-text;
+    animation-timing-function: cubic-bezier(0.9, 0, 1, 1);
   }
 
-  .loading-container .rounded-div-wrap.bottom {
-    top: unset;
-    bottom: 0;
-    position: absolute;
-    transform: translateY(99%);
-    z-index: 2;
-    height: 0vh;
-    will-change: height;
+  @keyframes transition-loading-text {
+    0%,
+    60% {
+      top: 50%;
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 0.6;
+    }
+
+    100% {
+      top: 70%;
+      opacity: 0;
+    }
   }
 
-  .loading-container .loading-words {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    pointer-events: none;
-    display: block;
-    will-change: opacity;
-  }
-
-  .loading-container .loading-words h2 {
+  #loading-container > .transition_screen > label > h2 {
     margin: 0;
     padding: 0;
-    color: var(--color-white);
+
+    color: white;
+    font-weight: 450;
+    text-align: center;
+    font-family: sans-serif, 'Inter', 'Satoshi';
+  }
+
+  #loading-container > .transition_screen > div {
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: none;
-    padding-left: 0.6em;
-    white-space: nowrap;
-    padding-right: 0.4em;
-    will-change: opacity;
-  }
+    bottom: 0;
 
-  .loading-container .loading-words h2.jap {
-    font-size: calc(clamp(3.25em, 5vw, 4.5em) * 0.65);
-    transform: translate(-50%, 10%);
-  }
-
-  .loading-container .dot {
-    display: block;
-    position: absolute;
-    border-radius: 50%;
-    background: var(--color-white);
-    left: 0;
-    top: 47%;
-    bottom: auto;
-    width: calc(clamp(16px, 1.2vw, 19px) / 1.65);
-    height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
-    transform: translate(0, 0) scale(1);
-  }
-
-  .loading-container .loading-words h2.active {
-    display: block;
-  }
-
-  .loading-container .loading-words .home-active,
-  .loading-container .loading-words .home-active-last {
-    opacity: 0;
-    display: none;
-  }
-
-  .loading-fade {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100vh;
+
+    z-index: 2;
     overflow: hidden;
-    z-index: 90;
-    background: #fff;
-    visibility: hidden;
-    opacity: 0;
+    transform: translateY(99%);
+
+    animation-name: rounded-end-loading-screen;
+    animation-timing-function: cubic-bezier(0.75, 0, 0.5, 1);
   }
 
-  .once-in {
-    will-change: transform;
-  }
-
-  @media screen and (max-width: 540px) {
-    .loading-container .dot {
-      top: 42%;
+  @keyframes rounded-end-loading-screen {
+    0%,
+    60% {
+      height: 18vh;
     }
+
+    100% {
+      height: 0vh;
+    }
+  }
+
+  #loading-container > .transition_screen > div > span {
+    position: absolute;
+    left: 50%;
+
+    width: 150%;
+    height: 750%;
+
+    border-radius: 50%;
+    background: #141517;
+
+    z-index: 1;
+    transform: translate(-50%, -86.666%);
   }
 }
 
