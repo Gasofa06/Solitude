@@ -151,6 +151,10 @@
 
 @layer sections {
   section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
     background-color: var(--c-bg);
     border-bottom: 1px solid var(--c-secondary-025);
   }
@@ -166,6 +170,10 @@
       padding: 62px 24px;
       width: calc(100% - 48px);
     }
+  }
+
+  section > * {
+    max-width: var(--homepage-width);
   }
 
   .sec_title {
@@ -274,7 +282,6 @@
         align-items: center;
         flex-direction: column;
 
-        width: 1268px;
         margin: 85px 0;
       }
 
@@ -1018,11 +1025,6 @@
   }
 
   @layer details-section {
-    #section-details > div {
-      width: var(--homepage-width);
-      margin: 0 auto;
-    }
-
     @layer title {
     }
 
@@ -1031,11 +1033,6 @@
   }
 
   @layer paper-section {
-    #section-paper > div {
-      width: var(--homepage-width);
-      margin: 0 auto;
-    }
-
     @layer title {
       #section-paper .sec_title {
         align-items: flex-start;
@@ -1175,7 +1172,7 @@
   }
 
   @layer acknowledgments-section {
-    #section-acknowledgments > div {
+    #section-acknowledgments {
       width: var(--homepage-width);
       margin: 0 auto;
     }
@@ -1186,45 +1183,10 @@
     @layer content {
     }
   }
+}
 
-  @layer solitude-definition-section {
-    #section-solitude-definition {
-      height: 100vh;
-
-      background-color: transparent !important;
-    }
-
-    #section-solitude-definition > div {
-      position: fixed;
-      bottom: 0px;
-
-      height: 100vh;
-      width: 100vw;
-
-      z-index: -999;
-    }
-
-    @layer title {
-      #section-solitude-definition hgroup {
-        display: flex;
-        -webkit-box-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        justify-content: center;
-        height: 70%;
-      }
-
-      #section-solitude-definition .sec_title {
-        display: flex;
-        flex-direction: column;
-
-        position: relative;
-
-        width: 64rem;
-
-        padding-inline-start: 1.5rem;
-        padding-inline-end: 1.5rem;
-      }
-    }
-  }
+.caca {
+  height: 90vh;
+  padding: 0;
+  background-color: #1c1d20;
 }
