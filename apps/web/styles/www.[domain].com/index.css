@@ -1,27 +1,32 @@
 :root {
-  --homepage-width: 1024px;
+  --homepage-width: 1268px;
+}
+
+::selection {
+  background: #d8ecfc;
+  color: #008cff;
 }
 
 @layer scrollbar {
-  *::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
 
-  *::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  *::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0);
     border-radius: 100px;
   }
 
-  *:hover::-webkit-scrollbar-thumb {
+  :hover::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.3);
   }
 
-  *::-webkit-scrollbar-thumb:hover {
+  ::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 0, 0, 0.5);
   }
 }
@@ -163,6 +168,17 @@
     }
   }
 
+  .sec_title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .sec_title h2 {
+    margin: 12px 0 0 0;
+    text-align: center;
+  }
+
   @layer hero-section {
     #section-hero {
       display: flex;
@@ -226,22 +242,28 @@
       }
 
       @layer searching-btn {
-        button.btn_model_two.start_searching figure {
+        .btn_model_two.start_searching figure {
           display: flex;
           align-items: center;
 
           margin: 0 10px 0 0;
         }
 
-        button.btn_model_two.start_searching figure svg {
+        .btn_model_two.start_searching figure svg {
           width: 16px;
           height: 16px;
         }
 
-        button.btn_model_two.start_searching figure svg path {
+        .btn_model_two.start_searching figure svg path {
           fill: none;
           stroke-width: 3px;
           stroke: var(--c-secondary-200);
+
+          transition: var(--default-transition);
+        }
+
+        .btn_model_two.start_searching:hover figure svg path {
+          stroke: #fff;
         }
       }
     }
@@ -270,7 +292,7 @@
           height: 720px;
 
           border-radius: 4px;
-          background: #ebebec !important;
+          background: #bfbdbf !important;
         }
 
         .hero_decoration > form > video {
@@ -1034,15 +1056,121 @@
   }
 
   @layer faqs-section {
-    #section-faqs > div {
-      width: var(--homepage-width);
-      margin: 0 auto;
-    }
-
     @layer title {
+      #section-faqs .sec_title {
+        align-items: flex-start !important;
+      }
+
+      #section-faqs .sec_title > h2 {
+        text-align: left !important;
+      }
     }
 
     @layer content {
+      .faqs_sample {
+        margin-top: 34px;
+      }
+
+      @layer accordion {
+        ol.accordion {
+          padding: 0;
+          margin: 0;
+        }
+
+        ol.accordion > li {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          gap: 1.5rem;
+          padding-bottom: 24px;
+          margin: 0px auto 24px;
+
+          border-bottom: 1px solid var(--c-secondary-025);
+        }
+
+        @layer input {
+          .faq_input {
+            position: absolute;
+            margin: 0px;
+            z-index: -1;
+            opacity: 0;
+          }
+        }
+
+        @layer question-answer {
+          .question_and_answer > label {
+            width: 100%;
+            gap: 1.5rem;
+            display: flex;
+            cursor: pointer;
+          }
+
+          .question_and_answer > div {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+          }
+
+          .faq_input:checked ~ .question_and_answer > div {
+            max-height: 90px;
+          }
+
+          .question_and_answer > div p {
+            margin: 0;
+            padding-top: 12px;
+            color: var(--c-secondary-250);
+          }
+        }
+
+        @layer plus-minus {
+          .plus_minus {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+
+            width: 14px;
+            height: 14px;
+
+            padding: 4px 0px;
+            margin-top: 0px;
+
+            border: none;
+            background: none;
+          }
+
+          .plus_minus::before,
+          .plus_minus::after {
+            content: '';
+
+            position: absolute;
+            border-radius: 2px;
+            background: var(--c-secondary-450);
+
+            transition: all 0.3s ease-in-out;
+          }
+
+          .plus_minus::before {
+            width: 14px;
+            height: 2px;
+          }
+
+          .plus_minus::after {
+            width: 2px;
+            height: 14px;
+
+            transform: translateX(6px) scale(1) rotateZ(0deg) translateZ(0px);
+          }
+
+          .faq_input:checked ~ .plus_minus::before {
+            transform: rotateZ(180deg) translateZ(0px);
+          }
+
+          .faq_input:checked ~ .plus_minus::after {
+            transform: translateX(6px) scale(0) rotateZ(80deg) translateZ(0px);
+          }
+        }
+      }
     }
   }
 

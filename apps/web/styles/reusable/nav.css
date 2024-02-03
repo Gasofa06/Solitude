@@ -240,40 +240,5 @@
         display: block;
       }
     }
-
-    @layer search-button {
-      button.btn_model_three > svg.arrow {
-        color: var(--c-secondary-000);
-
-        width: 12px;
-        height: 12px;
-
-        margin-left: 8px;
-
-        fill: none;
-        transition: var(--default-transition);
-        transition-duration: 130ms !important;
-      }
-
-      button.btn_model_three > svg.arrow path {
-        transform-origin: 12.5px 7.5px;
-        transform: translateX(-4px);
-
-        transition: inherit;
-      }
-
-      button.btn_model_three:hover > svg.arrow path {
-        transform: none;
-      }
-
-      button.btn_model_three > svg.arrow line {
-        opacity: 0;
-        transition: inherit;
-      }
-
-      button.btn_model_three:hover > svg.arrow line {
-        opacity: 1;
-      }
-    }
   }
 }

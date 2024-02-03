@@ -130,17 +130,18 @@
     letter-spacing: 0.05em;
     font-family: 'Inter', sans-serif;
   }
-}
 
-@layer section-title {
-  .sec_title {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+  h5 {
+    margin: 0;
 
-  .sec_title h2 {
-    margin: 12px 0 0 0;
-    text-align: center;
+    font-size: 1.2rem;
+    color: var(--c-secondary-450);
+
+    line-height: 1.24;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+
+    word-spacing: 0.04em;
+    font-family: 'Inter', sans-serif;
   }
 }
