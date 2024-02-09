@@ -1,4 +1,4 @@
-@layer text_sizes {
+@layer text-sizes {
   :root {
     --text-xs: 0.76rem;
     --text-s: 0.82rem;
@@ -18,6 +18,15 @@
 
 @layer light_theme_pallette {
   :root {
+    --white: white;
+
+    --light-gray: #fbfaf9;
+    --gray: #f3f3f4;
+    --dark-gray: #e9e9ed;
+
+    --green: #4cc37b;
+    --dark-green: #3f9b64;
+
     --c-bg: white;
 
     --c-primary-000: #bac8ff;

@@ -1,10 +1,5 @@
 @layer fonts {
   @font-face {
-    font-family: 'Satoshi';
-    src: url('../../../assets/fonts/Satoshi-Bold.ttf') format('truetype');
-  }
-
-  @font-face {
     font-family: 'Inter';
     src: url('../../../assets/fonts/Inter-Regular.ttf') format('truetype');
 
@@ -29,6 +24,7 @@
 @layer general-font-styles {
   p,
   a,
+  span,
   label,
   input,
   input::placeholder {
@@ -52,96 +48,96 @@
     text-decoration: underline;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-style: normal;
-  }
 
-  h1 {
-    font-weight: 700;
-    word-spacing: 0.06em;
-    letter-spacing: -0.2px;
 
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow: 0 0px rgba(0, 0, 0, 0.6);
-    background-image: linear-gradient(127deg, rgb(128, 128, 128) 65%, rgba(255, 255, 255, 1));
-
-    font-family: 'Satoshi', 'Inter', sans-serif;
-  }
-
-  @media (min-width: 1080px) {
-    h1 {
-      font-size: 4.25rem;
-      line-height: 1.16;
+  @layer heading {
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      font-style: normal;
     }
-  }
 
-  @media (min-width: 480px) and (max-width: 1080px) {
     h1 {
-      font-size: 3.65rem;
-      line-height: 1.16;
+      font-weight: 500;
+      color: var(--c-secondary-450);
+
+      word-spacing: 0.06em;
+      letter-spacing: -0.6px;
+
+      font-family: 'Inter', sans-serif;
     }
-  }
 
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 2.85rem;
-      line-height: 1.06;
+    @media (min-width: 1080px) {
+      h1 {
+        font-size: 3rem;
+        line-height: 1.16;
+      }
     }
-  }
 
-  h2 {
-    font-size: 3rem;
-    line-height: 1.12;
+    @media (min-width: 480px) and (max-width: 1080px) {
+      h1 {
+        font-size: 2.1rem;
+        line-height: 1.16;
+      }
+    }
 
-    font-weight: 600;
-    word-spacing: 0.06em;
-    letter-spacing: -1.35px;
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.76rem;
+        line-height: 1.06;
+      }
+    }
 
-    color: var(--c-secondary-450);
-    font-family: 'Inter', sans-serif;
-  }
+    h2 {
+      font-size: 3rem;
+      line-height: 1.12;
 
-  h3 {
-    font-size: 1.95rem;
-    color: var(--c-secondary-450);
-    line-height: 1.24;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    word-spacing: 0.04em;
-    font-family: sans-serif, 'Inter';
-  }
+      font-weight: 600;
+      word-spacing: 0.06em;
+      letter-spacing: -1.35px;
 
-  h4 {
-    margin: 0;
+      color: var(--c-secondary-450);
+      font-family: 'Inter', sans-serif;
+    }
 
-    font-size: var(--text-xs);
-    color: var(--c-secondary-075);
+    h3 {
+      font-size: 1.95rem;
+      color: var(--c-secondary-450);
+      line-height: 1.24;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      word-spacing: 0.04em;
+      font-family: sans-serif, 'Inter';
+    }
 
-    font-weight: 500;
-    line-height: 1.5;
-    word-spacing: 0.2em;
+    h4 {
+      margin: 0;
 
-    letter-spacing: 0.05em;
-    font-family: 'Inter', sans-serif;
-  }
+      font-size: var(--text-xs);
+      color: var(--c-secondary-075);
 
-  h5 {
-    margin: 0;
+      font-weight: 500;
+      line-height: 1.5;
+      word-spacing: 0.2em;
 
-    font-size: 1.2rem;
-    color: var(--c-secondary-450);
+      letter-spacing: 0.05em;
+      font-family: 'Inter', sans-serif;
+    }
 
-    line-height: 1.24;
-    font-weight: 600;
-    letter-spacing: -0.3px;
+    h5 {
+      margin: 0;
 
-    word-spacing: 0.04em;
-    font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      color: var(--c-secondary-450);
+
+      line-height: 1.24;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+
+      word-spacing: 0.04em;
+      font-family: 'Inter', sans-serif;
+    }
   }
 }
