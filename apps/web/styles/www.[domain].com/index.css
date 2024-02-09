@@ -1025,15 +1025,11 @@ main > * {
 
   @layer privacy-problems-section {
     #section-privacy-problems {
-      background: var(--gray);
       border: none !important;
+      background: linear-gradient(to bottom, var(--gray) 10%, var(--light-gray) 90%);
     }
 
     @layer title {
-      #section-privacy-problems .sec-title {
-        padding: 0 0 96px;
-      }
-
       #section-privacy-problems .sec-title > h4 {
         color: var(--c-secondary-100);
       }
@@ -1046,7 +1042,8 @@ main > * {
         column-gap: 48px;
         grid-template-columns: repeat(3, minmax(0, 1fr));
 
-        margin-bottom: 24px;
+        padding: 0;
+        margin: 86px 0 24px;
       }
 
       .problems-list > li > span {
