@@ -48,8 +48,6 @@
     text-decoration: underline;
   }
 
-
-
   @layer heading {
     h1,
     h2,
@@ -91,7 +89,7 @@
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       line-height: 1.12;
 
       font-weight: 600;

@@ -428,6 +428,15 @@ main > * {
           bottom: 0;
         }
       }
+
+      @layer image {
+        #section-brief-about .image-container {
+          border-radius: 4px;
+          background-color: var(--gray);
+
+          min-height: 720px;
+        }
+      }
     }
   }
 
@@ -449,28 +458,46 @@ main > * {
     }
 
     @layer content {
+      #section-benefits > .double-column {
+        padding: 24px 0 0;
+      }
+
       @layer benefits-grid {
-        ul.benefits_grid {
-          gap: 28px;
-
-          padding: 0;
-          margin: 52px 0;
-
+        ul.benefits-grid {
           --pad: 24px;
         }
 
-        @media (min-width: 992px) {
-          ul.benefits_grid {
+        ul.benefits-grid {
+          padding: 0;
+          margin: 0;
+        }
+
+        @media (min-width: 1080px) {
+          ul.benefits-grid {
             display: grid;
-            grid-auto-rows: 4fr;
-            grid-template:
-              'left . .' 1fr
-              'left . .' 1fr / 1fr 1fr 1fr;
+            gap: 4px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
           }
         }
 
-        @media (min-width: 648px) and (max-width: 992px) {
-          ul.benefits_grid {
+        ul.benefits-grid span {
+          color: var(--c-secondary-550);
+          font-weight: 600;
+        }
+
+        ul.benefits-grid p {
+          margin: 4px 0 8px;
+
+          font-size: var(--text-m);
+          color: var(--c-secondary-200);
+
+          letter-spacing: -0.13px;
+          line-height: 22px;
+        }
+
+        /* AQUI */
+        @media (min-width: 768px) and (max-width: 1080px) {
+          ul.benefits-grid {
             display: grid;
             grid-auto-rows: 4fr;
             grid-template-columns: 1fr 1fr;
@@ -481,93 +508,71 @@ main > * {
           }
         }
 
-        @media (max-width: 648px) {
-          ul.benefits_grid {
+        @media (max-width: 768px) {
+          ul.benefits-grid {
             display: flex;
             flex-direction: column;
           }
         }
 
-        ul.benefits_grid > li {
+        ul.benefits-grid > li {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
 
+          min-height: 314px; /* AQUI */
           margin: 0;
           padding: 0 var(--pad) 14px;
 
-          border-radius: 8px;
-          background-color: #fbfaf9;
-
           overflow: hidden;
+          border-radius: 4px;
+          background-color: var(--gray);
         }
 
-        ul.benefits_grid > li:first-child {
-          grid-area: left;
-        }
-
-        ul.benefits_grid > li > div:first-child {
+        ul.benefits-grid > li > div:first-child {
           display: flex;
           align-items: center;
           justify-content: center;
 
           width: 100%;
           height: 100%;
-
-          padding: 25px 0px 16px 0;
-        }
-
-        @media (max-width: 648px) {
-          ul.benefits_grid > li > div:first-child {
-            min-height: 240px;
-          }
-        }
-
-        ul.benefits_grid > li > div:last-child > span {
-          font-size: var(--text-ml);
-          color: var(--c-secondary-550);
-
-          letter-spacing: -0.22px;
-          line-height: 26px;
-          font-weight: 600;
-
-          font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
-        }
-
-        ul.benefits_grid > li > div:last-child > p {
-          font-size: var(--text-m);
-          color: var(--c-secondary-200);
-
-          letter-spacing: -0.13px;
-          line-height: 22px;
-
-          margin: 4px 0 8px;
+          padding: 25px 0 16px;
         }
       }
 
-      @layer benefits {
-        @layer data-privacy {
-          #ben-data-privacy > div:first-child {
-            width: calc(100% + var(--pad));
+      @layer benefits-illustrations {
+        @layer confidential-search {
+          #confidential-search > div:first-child {
+            width: calc(100% + var(--pad)) !important;
           }
 
-          #ben-data-privacy .changing_characteristics {
-            display: grid;
-            gap: 3px;
-
-            margin-bottom: 6px;
+          #confidential-search .confidentiality {
             padding: 4px 0px 4px 0;
 
-            overflow: hidden;
             background-color: black;
             border-radius: 24px 0 0 24px;
             box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 24px;
           }
 
-          #ben-data-privacy .changing_characteristics > div {
+          #confidential-search .confidentiality span {
+            font-size: var(--text-xl);
+            color: var(--white);
+            line-height: 26px;
+          }
+
+          #confidential-search .confidentiality p {
+            margin: 2px 0 6px;
+
+            font-weight: 500;
+            line-height: 18px;
+            font-size: var(--text-ms);
+            color: var(--c-secondary-200);
+          }
+
+          #confidential-search .confidentiality > div {
             display: inline-flex;
             align-items: flex-start;
             justify-content: flex-start;
+            gap: 18px;
 
             margin-left: 4px;
             padding: 12px 16px;
@@ -576,240 +581,24 @@ main > * {
             border-radius: 18px 0 0 18px;
           }
 
-          @layer characteristic-illustration {
-            #ben-data-privacy .changing_characteristics form {
-              width: 20px;
-              height: 20px;
-              padding: 8px;
-              border-radius: 50%;
+          #confidential-search .confidentiality > div > form {
+            width: 20px;
+            height: 20px;
+            padding: 8px;
+            border-radius: 50%;
 
-              flex: 0 0 auto;
-            }
-
-            #ben-data-privacy .changing_characteristics path {
-              fill: none;
-              stroke-width: 3px;
-              stroke: var(--c-secondary-000);
-            }
-
-            #ben-data-privacy .changing_characteristics > div:nth-child(1) > form {
-              background-color: #3ec44e;
-            }
-
-            #ben-data-privacy .changing_characteristics > div:nth-child(2) > form {
-              background-color: #747485;
-            }
-
-            #ben-data-privacy .changing_characteristics > div:nth-child(3) > form {
-              background-color: #2a8cff;
-            }
-
-            #ben-data-privacy .changing_characteristics > div:nth-child(4) > form {
-              background-color: #f670ae;
-            }
+            flex: 0 0 auto;
+            background-color: #3ec44e;
           }
 
-          @layer characteristic-text {
-            #ben-data-privacy .changing_characteristics label {
-              margin: 0 0 0 18px;
-            }
-
-            #ben-data-privacy .changing_characteristics label > span {
-              font-size: var(--text-xl);
-              color: var(--c-secondary-000);
-              line-height: 26px;
-
-              font-family: 'Inter';
-            }
-
-            #ben-data-privacy .changing_characteristics label > p {
-              margin: 2px 0 6px;
-
-              font-weight: 500;
-              line-height: 18px;
-              font-size: var(--text-ms);
-              color: var(--c-secondary-200);
-            }
-          }
-        }
-
-        @layer confidential-search {
-          ul.benefits_grid .search_bar {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-
-            width: 100%;
-            height: 46px;
-
-            padding: 0 12px;
-
-            border-radius: 12px;
-            background-color: var(--c-secondary-025);
-          }
-
-          ul.benefits_grid .search_bar > div:first-child {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            width: 32px;
-            height: 32px;
-
-            border-radius: 6px;
-            background-color: var(--c-primary-300);
-          }
-
-          ul.benefits_grid .search_bar > div:first-child > svg {
-            width: 18px;
-          }
-
-          ul.benefits_grid .search_bar > div:first-child > svg > path {
+          #confidential-search .confidentiality > div > form path {
             fill: none;
             stroke-width: 3px;
-            stroke: var(--c-secondary-010);
-          }
-
-          ul.benefits_grid .search_bar > div:last-child {
-            margin-left: 12px;
-          }
-
-          ul.benefits_grid .search_bar > div:last-child > p {
-            margin: 0;
-
-            font-size: var(--text-ms);
-            color: var(--c-secondary-200);
+            stroke: var(--c-secondary-000);
           }
         }
 
         @layer ecryption {
-          #ben-encryption .encryption {
-            --ball-size: 23px;
-          }
-
-          #ben-encryption .encryption {
-            position: relative;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            width: 85%;
-            height: 80%;
-          }
-
-          @layer sender-receiver-points {
-            #ben-encryption .encryption > span {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              position: absolute;
-              bottom: 0;
-
-              width: var(--ball-size);
-              height: var(--ball-size);
-
-              z-index: 5;
-              border-radius: 50%;
-              background-color: var(--c-secondary-100);
-            }
-
-            #ben-encryption .encryption > span:last-child {
-              right: 0;
-            }
-
-            #ben-encryption .encryption > span::before {
-              content: '';
-
-              position: absolute;
-
-              width: 100%;
-              height: 100%;
-
-              opacity: 0.4;
-              border-radius: 50%;
-              border-style: solid;
-              border-color: var(--c-secondary-100);
-
-              animation: expansive-wave 0.5s infinite alternate linear;
-            }
-
-            @keyframes expansive-wave {
-              0% {
-                border-width: 8px;
-              }
-
-              100% {
-                border-width: 0px;
-              }
-            }
-          }
-
-          @layer encrypted-data-transaction {
-            #ben-encryption .encryption > .data_transaction {
-              position: relative;
-
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              width: 100%;
-              height: 100%;
-            }
-
-            #ben-encryption .encryption .encrypted_data {
-              --bottom-shift: -28px;
-
-              z-index: 3;
-              position: absolute;
-              bottom: var(--bottom-shift);
-
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-
-              height: var(--ball-size);
-              width: calc(100% + 11.7796px - 5px);
-
-              animation: encrypted-data-rotation 2s infinite alternate ease-in-out;
-            }
-
-            @keyframes encrypted-data-rotation {
-              0%,
-              10% {
-                transform: rotate(15deg);
-              }
-
-              90%,
-              100% {
-                transform: rotate(165deg);
-              }
-            }
-
-            #ben-encryption .encryption .encrypted_data > span {
-              width: calc(var(--ball-size) - 2px);
-              height: calc(var(--ball-size) - 2px);
-
-              border-radius: 50%;
-              background-color: #ff4e4e;
-            }
-
-            #ben-encryption .encryption .data_route {
-              overflow: hidden;
-              position: absolute;
-
-              width: 100%;
-              height: 100%;
-
-              margin-bottom: 5px;
-            }
-
-            #ben-encryption .encryption .data_route > svg {
-              transform: scale(0.92);
-            }
-          }
         }
 
         @layer data-breach-protection {
@@ -822,87 +611,85 @@ main > * {
            *  From 40% to 100%, the animation enters its second stage.
            */
 
-          #ben-data-breach-protection .protection {
+          #data-breach-protection .protection {
             --dur: 4s;
           }
 
-          @layer protection-container {
-            #ben-data-breach-protection .protection {
-              position: relative;
+          #data-breach-protection .protection {
+            position: relative;
 
-              display: flex;
-              align-items: center;
-              justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-              border-radius: 40px;
-              background-color: #4cc37b;
+            border-radius: 40px;
+            background-color: #4cc37b;
 
-              animation: change-protection-size var(--dur) infinite alternate ease;
+            animation: change-protection-size var(--dur) infinite alternate ease;
+          }
+
+          @keyframes change-protection-size {
+            0%,
+            20% {
+              width: 130px;
+              height: 42px;
             }
 
-            @keyframes change-protection-size {
-              0%,
-              20% {
-                width: 130px;
-                height: 42px;
-              }
-
-              40%,
-              100% {
-                width: 200px;
-                height: 46px;
-              }
-            }
-
-            #ben-data-breach-protection .protection::after {
-              content: '';
-
-              color: #fff;
-              font-size: var(--text-xl);
-
-              line-height: 1.59;
-              font-style: normal;
-              letter-spacing: -0.3px;
-
-              font-weight: 400;
-              font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
-
-              animation: change-protection-text var(--dur) infinite alternate ease;
-            }
-
-            @keyframes change-protection-text {
-              0%,
-              20% {
-                content: 'Protect';
-
-                opacity: 100%;
-                padding-left: 0;
-              }
-
-              28% {
-                opacity: 0%;
-                padding-left: 0;
-              }
-
-              28.01%,
-              100% {
-                padding-left: 16px;
-              }
-
-              32% {
-                opacity: 100%;
-              }
-
-              40%,
-              100% {
-                content: 'Protecting';
-                opacity: 100%;
-              }
+            40%,
+            100% {
+              width: 200px;
+              height: 46px;
             }
           }
 
-          @layer protection-loading {
-            #ben-data-breach-protection .protection_loading {
+          #data-breach-protection .protection::after {
+            content: '';
+
+            color: #fff;
+            font-size: var(--text-xl);
+
+            line-height: 1.59;
+            font-style: normal;
+            letter-spacing: -0.3px;
+
+            font-weight: 400;
+            font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
+
+            animation: change-protection-text var(--dur) infinite alternate ease;
+          }
+
+          @keyframes change-protection-text {
+            0%,
+            20% {
+              content: 'Protect';
+
+              opacity: 100%;
+              padding-left: 0;
+            }
+
+            28% {
+              opacity: 0%;
+              padding-left: 0;
+            }
+
+            28.01%,
+            100% {
+              padding-left: 16px;
+            }
+
+            32% {
+              opacity: 100%;
+            }
+
+            40%,
+            100% {
+              content: 'Protecting';
+              opacity: 100%;
+            }
+          }
+
+          @layer loading {
+            #data-breach-protection .loading {
               width: 16px;
               padding: 4px;
 
@@ -946,8 +733,8 @@ main > * {
             }
           }
 
-          @layer protection-layers {
-            #ben-data-breach-protection .protection_layers {
+          @layer layers {
+            #data-breach-protection .layers {
               position: absolute;
 
               display: flex;
@@ -972,8 +759,8 @@ main > * {
               }
             }
 
-            #ben-data-breach-protection .protection_layers::before,
-            #ben-data-breach-protection .protection_layers::after {
+            #data-breach-protection .layers::before,
+            #data-breach-protection .layers::after {
               content: '';
 
               position: absolute;
@@ -988,7 +775,7 @@ main > * {
               animation-iteration-count: infinite;
             }
 
-            #ben-data-breach-protection .protection_layers::before {
+            #data-breach-protection .layers::before {
               padding: 5px;
               animation-name: first-protection-layer;
             }
@@ -1003,7 +790,7 @@ main > * {
               }
             }
 
-            #ben-data-breach-protection .protection_layers::after {
+            #data-breach-protection .layers::after {
               padding: 13px;
               animation-name: second-protection-layer;
             }
@@ -1018,6 +805,9 @@ main > * {
               }
             }
           }
+        }
+
+        @layer open-source {
         }
       }
     }
