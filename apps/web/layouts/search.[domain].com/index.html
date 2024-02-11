@@ -9,17 +9,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../../styles/cross-page/index.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
     <link rel="stylesheet" type="text/css" href="../../styles/search.[domain].com/index.css" />
 
-    <script type="module" src="../javascript/app/before_DOM/theme_detection.js"></script>
-
-    <script src="../javascript/components/nav_top_bar.js"></script>
-    <script src="../javascript/components/footer.js"></script>
+    <script type="module" src="../app/app/before_DOM/theme_detection.js"></script>
   </head>
 
   <body>
-    <comp-nav-top-bar></comp-nav-top-bar>
+    <script type="module" src="../layouts/reusable/nav.js"></script>
+
+    <div id="loading-container">
+      <div class="transition_screen">
+        <label>
+          <h2>⋆ Search</h2>
+        </label>
+
+        <div class="rounded">
+          <span></span>
+        </div>
+      </div>
+    </div>
 
     <main>
       <div class="homepage_container">
@@ -94,8 +103,6 @@
         </div>
       </div>
     </main>
-
-    <comp-footer></comp-footer>
 
     <script type="module" src="../../app/search.[domain].com.js"></script>
   </body>
