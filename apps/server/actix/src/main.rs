@@ -158,16 +158,24 @@ async fn main_dict() -> Result<NamedFile, std::io::Error> {
   }
 }
 
-#[get("/topics.json")]
-async fn article_topics() -> Result<NamedFile, std::io::Error> {
-  match NamedFile::open(PATH_TOPICS) {
+#[get("/title_and_idx.json")]
+async fn title_and_idx() -> Result<NamedFile, std::io::Error> {
+  match NamedFile::open(PATH_TITLE_INDICES) {
     Ok(file) => Ok(file),
     Err(err) => Err(err),
   }
 }
 
-#[get("/")]
-async fn aaa() -> Result<NamedFile, std::io::Error> {
+#[get("/title_and_topics.json")]
+async fn title_and_topics() -> Result<NamedFile, std::io::Error> {
+  match NamedFile::open(PATH_TITLE_TOPICS) {
+    Ok(file) => Ok(file),
+    Err(err) => Err(err),
+  }
+}
+
+#[get("/topics.json")]
+async fn article_topics() -> Result<NamedFile, std::io::Error> {
   match NamedFile::open(PATH_TOPICS) {
     Ok(file) => Ok(file),
     Err(err) => Err(err),
@@ -246,11 +254,10 @@ async fn main() -> std::io::Result<()> {
       .service(setup) // POST
       .service(query) // POST
       .service(check) // GET
-      // .service(article_indices) // GET
-      // .service(article_titles_and_topics) // GET
+      .service(title_and_topics) // GET
+      .service(title_and_idx) // GET
       .service(main_dict)
-      .service(article_topics)
-      .service(aaa); // GET
+      .service(article_topics);
 
   HttpServer::new(app_build)
     .bind(("localhost", port.parse().unwrap()))

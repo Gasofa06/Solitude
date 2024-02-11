@@ -165,6 +165,7 @@ export async function Setup_Client() {
  */
 export async function Upload_State() {
     console.log('Sending public parameters...');
+    console.log(window.public_parameters);
     let setup_response = await api.setup(window.public_parameters);
     console.log('Sent.');
 

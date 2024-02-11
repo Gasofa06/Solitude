@@ -1,3 +1,5 @@
+import { Set_Progress } from '../utils/loading_information.js';
+
 export async function Post_Data(url = '', data = {}, json = false) {
     const xhr = new XMLHttpRequest();
     xhr.responseType = json ? 'json' : 'arraybuffer';

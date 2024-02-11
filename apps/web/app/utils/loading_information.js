@@ -69,7 +69,7 @@ export function Set_Progress(_loaded, _total_to_load) {
         );
     }
 
-    if (!is_valid) return;
+    // if (!is_valid) return;
 
     let progress = Math.round((_loaded / _total_to_load) * 130);
     window.loading_spinner.style.stroke_dasharray = progress + ', 130';

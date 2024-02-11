@@ -1,3 +1,6 @@
+@import '../search.[domain].com/others.css';
+@import '../search.[domain].com/general/variables.css';
+
 .homepage_container {
   display: flex;
   align-items: center;
@@ -90,7 +93,12 @@
   }
 }
 
-.homepage_container .search_box form #search_types_dropdown .container_selected_content p.selected_content {
+.homepage_container
+  .search_box
+  form
+  #search_types_dropdown
+  .container_selected_content
+  p.selected_content {
   margin-right: 16px;
 
   /* color: var(--c-secondary-350); */
@@ -99,12 +107,22 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .homepage_container .search_box form #search_types_dropdown .container_selected_content p.selected_content {
+  .homepage_container
+    .search_box
+    form
+    #search_types_dropdown
+    .container_selected_content
+    p.selected_content {
     display: none !important;
   }
 }
 
-.homepage_container .search_box form #search_types_dropdown .container_selected_content svg.dropdown_arrow {
+.homepage_container
+  .search_box
+  form
+  #search_types_dropdown
+  .container_selected_content
+  svg.dropdown_arrow {
   width: 28px;
   transform: var(--rotate_arrow_search_types);
 
@@ -112,16 +130,32 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .homepage_container .search_box form #search_types_dropdown .container_selected_content svg.dropdown_arrow {
+  .homepage_container
+    .search_box
+    form
+    #search_types_dropdown
+    .container_selected_content
+    svg.dropdown_arrow {
     width: 34px !important;
   }
 }
 
-.homepage_container .search_box form #search_types_dropdown .container_selected_content svg.dropdown_arrow path {
+.homepage_container
+  .search_box
+  form
+  #search_types_dropdown
+  .container_selected_content
+  svg.dropdown_arrow
+  path {
   fill: var(--c-primary-200);
 }
 
-.homepage_container .search_box form #search_types_dropdown .container_selected_content input.dropdown_check {
+.homepage_container
+  .search_box
+  form
+  #search_types_dropdown
+  .container_selected_content
+  input.dropdown_check {
   position: absolute;
   left: 0;
   right: 0;
@@ -153,12 +187,25 @@
   }
 }
 
-.homepage_container .search_box form #search_types_dropdown .floating_box ul.dropdown_sub li.dropdown_li {
+.homepage_container
+  .search_box
+  form
+  #search_types_dropdown
+  .floating_box
+  ul.dropdown_sub
+  li.dropdown_li {
   margin: 20px 0;
   width: 85%;
 }
 
-.homepage_container .search_box form #search_types_dropdown .floating_box ul.dropdown_sub li.dropdown_li input {
+.homepage_container
+  .search_box
+  form
+  #search_types_dropdown
+  .floating_box
+  ul.dropdown_sub
+  li.dropdown_li
+  input {
   display: flex;
   justify-content: flex-start;
 
@@ -205,7 +252,12 @@
   height: 100%;
 }
 
-.homepage_container .search_box form li.search_bar div.search_bar_container input.search_bar_input_text {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  input.search_bar_input_text {
   padding: 0;
 
   width: 100%;
@@ -259,31 +311,70 @@
   }
 }
 
-.homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg.magnifying_glass {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query
+  svg.magnifying_glass {
   display: none;
 
   width: 22px;
 }
 
 @media only screen and (max-width: 768px) {
-  .homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg.magnifying_glass {
+  .homepage_container
+    .search_box
+    form
+    li.search_bar
+    div.search_bar_container
+    button.make_query
+    svg.magnifying_glass {
     width: 18px;
   }
 }
 
-.homepage_container .search_box form li.search_bar div.search_bar_container button.make_query:not(.loading) svg.magnifying_glass {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query:not(.loading)
+  svg.magnifying_glass {
   display: block !important;
 }
 
-.homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg.magnifying_glass path {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query
+  svg.magnifying_glass
+  path {
   fill: var(--c-secondary-000);
 }
 
-[theme='dark'] .homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg.magnifying_glass path {
+[theme='dark']
+  .homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query
+  svg.magnifying_glass
+  path {
   fill: var(--c-secondary-600) !important;
 }
 
-.homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg#loading_spinner {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query
+  svg#loading_spinner {
   position: absolute;
 
   width: 27px;
@@ -293,7 +384,13 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg#loading_spinner {
+  .homepage_container
+    .search_box
+    form
+    li.search_bar
+    div.search_bar_container
+    button.make_query
+    svg#loading_spinner {
     width: 20px;
     height: 20px;
   }
@@ -305,11 +402,24 @@
   }
 }
 
-.homepage_container .search_box form li.search_bar div.search_bar_container button.make_query:not(.loading) svg#loading_spinner {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query:not(.loading)
+  svg#loading_spinner {
   display: none !important;
 }
 
-.homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg#loading_spinner circle.path {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query
+  svg#loading_spinner
+  circle.path {
   stroke-width: 6px;
   stroke-linecap: round;
   stroke: var(--c-secondary-000);
@@ -317,12 +427,27 @@
   animation: dash 1.5s ease-in-out infinite;
 }
 
-[theme='dark'] .homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg#loading_spinner circle.path {
+[theme='dark']
+  .homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query
+  svg#loading_spinner
+  circle.path {
   stroke: var(--c-secondary-600) !important;
 }
 
 @media only screen and (max-width: 768px) {
-  .homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg#loading_spinner circle.path {
+  .homepage_container
+    .search_box
+    form
+    li.search_bar
+    div.search_bar_container
+    button.make_query
+    svg#loading_spinner
+    circle.path {
     stroke-width: 4px;
   }
 }
@@ -342,7 +467,14 @@
   }
 }
 
-.homepage_container .search_box form li.search_bar div.search_bar_container button.make_query svg#loading_spinner.manually_progress circle.path {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  div.search_bar_container
+  button.make_query
+  svg#loading_spinner.manually_progress
+  circle.path {
   /* 
        * Si el `svg#loading_spinner` tiene un 
        * `.manually_progress` quedra decir que
@@ -363,7 +495,14 @@
   --side-suggestions-sapce: 16px;
 }
 
-.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container p.short_title {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  p.short_title {
   margin: 14px var(--side-suggestions-sapce) 0 var(--side-suggestions-sapce);
   padding-left: var(--side-suggestions-sapce);
   padding-bottom: 4px;
@@ -375,7 +514,14 @@
   font-family: segoe ui, nunito-sans, Tahoma, 'Lucida Sans';
 }
 
-.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  li.suggestion {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -390,17 +536,38 @@
   --rows_search_suggestions: 1fr;
 }
 
-.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion:hover {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  li.suggestion:hover {
   background: hsl(210 11% 95%);
 }
 
 @media only screen and (max-width: 768px) {
-  .homepage_container .search_box form li.search_bar .floating_box .search_suggestions li.suggestion {
+  .homepage_container
+    .search_box
+    form
+    li.search_bar
+    .floating_box
+    .search_suggestions
+    li.suggestion {
     margin: 12px 0;
   }
 }
 
-.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion input {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  li.suggestion
+  input {
   position: absolute;
 
   display: flex;
@@ -414,7 +581,15 @@
   cursor: pointer;
 }
 
-.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion p {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  li.suggestion
+  p {
   color: var(--c-secondary-100);
   text-decoration: none;
 
@@ -428,27 +603,70 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion p {
+  .homepage_container
+    .search_box
+    form
+    li.search_bar
+    .floating_box
+    .search_suggestions
+    .search_suggestions_container
+    li.suggestion
+    p {
     font-size: var(--text-m);
     letter-spacing: 0.03em;
   }
 }
 
-.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion p b {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  li.suggestion
+  p
+  b {
   color: var(--c-secondary-150);
 }
 
-[theme='dark'] .homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion p b {
+[theme='dark']
+  .homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  li.suggestion
+  p
+  b {
   color: var(--c-secondary-200) !important;
 }
 
-.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion div.select {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  li.suggestion
+  div.select {
   margin-left: auto;
   margin-right: 20px;
   width: max-content;
 }
 
-.homepage_container .search_box form li.search_bar .floating_box .search_suggestions .search_suggestions_container li.suggestion:hover div.select::before {
+.homepage_container
+  .search_box
+  form
+  li.search_bar
+  .floating_box
+  .search_suggestions
+  .search_suggestions_container
+  li.suggestion:hover
+  div.select::before {
   content: 'Select';
 
   letter-spacing: 0.03em;

@@ -8,9 +8,10 @@ import { TopicsInvertedIndex } from './data_structures/inverted_index.js';
 async function Setup_Data() {
     let get_topics = Get_Data('api/topics.json', true);
 
-    let bz2_main_dict = await Get_Data('api/main_dict.json', true);
-    // let obj_main_dict = Decompress_JSON_File(bz2_main_dict['bz2']);
-    let obj_main_dict = bz2_main_dict;
+    let bz2_main_dict = await Get_Data('api/title_and_topics.json', true);
+    let obj_main_dict = Decompress_JSON_File(bz2_main_dict['bz2']);
+    // let obj_main_dict = bz2_main_dict;
+    console.log(obj_main_dict);
     window.trie_articles_data = new ArticlesTrie(obj_main_dict);
 
     let topics = await get_topics;
