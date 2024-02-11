@@ -12,13 +12,11 @@
     display: inline-flex;
 
     position: fixed;
-    position: -webkit-sticky;
+    position: -webkit-fixed;
     top: 0;
 
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
-
-    /* background-color: #0b0b0fcc; */
   }
 
   #navigation-top-bar > div {

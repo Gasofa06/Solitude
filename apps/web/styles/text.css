@@ -28,15 +28,48 @@
   label,
   input,
   input::placeholder {
-    font-size: var(--text-ml);
-    color: var(--c-secondary-450);
-
-    line-height: 1.59;
     font-style: normal;
     letter-spacing: -0.3px;
 
     font-weight: 400;
+    color: var(--c-secondary-450);
     font-family: 'Inter', sans-serif;
+  }
+
+  @media (min-width: 1080px) {
+    p,
+    a,
+    span,
+    label,
+    input,
+    input::placeholder {
+      font-size: 1.02rem;
+      line-height: 1.59;
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 1080px) {
+    p,
+    a,
+    span,
+    label,
+    input,
+    input::placeholder {
+      font-size: 0.94rem;
+      line-height: 1.52;
+    }
+  }
+
+  @media (max-width: 480px) {
+    p,
+    a,
+    span,
+    label,
+    input,
+    input::placeholder {
+      font-size: 0.88rem;
+      line-height: 1.48;
+    }
   }
 
   a {
@@ -89,15 +122,33 @@
     }
 
     h2 {
-      font-size: 2.5rem;
-      line-height: 1.12;
-
       font-weight: 600;
       word-spacing: 0.06em;
       letter-spacing: -1.35px;
 
       color: var(--c-secondary-450);
       font-family: 'Inter', sans-serif;
+    }
+
+    @media (min-width: 1080px) {
+      h2 {
+        font-size: 2.5rem;
+        line-height: 1.12;
+      }
+    }
+
+    @media (min-width: 480px) and (max-width: 1080px) {
+      h2 {
+        font-size: 2.32rem;
+        line-height: 1.06;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.92rem;
+        line-height: 1.06;
+      }
     }
 
     h3 {

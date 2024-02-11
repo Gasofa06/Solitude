@@ -307,7 +307,7 @@
     grid-column-gap: 1.5rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1080px) {
     .double-column {
       display: grid;
       grid-auto-columns: 1fr;
@@ -316,7 +316,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     .double-column {
       display: flex;
       flex-direction: column;
@@ -358,7 +358,14 @@
     }
   }
 
-  .double_column p {
-    margin: 24px 0;
+  .double-column p {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 480px) and (max-width: 1080px) {
+    .double-column p {
+      margin-right: 82px;
+    }
   }
 }

@@ -7,9 +7,18 @@
   color: #008cff;
 }
 
-main > * {
-  padding-left: 54px;
-  padding-right: 54px;
+@media (min-width: 768px) {
+  main > * {
+    padding-left: 54px;
+    padding-right: 54px;
+  }
+}
+
+@media (max-width: 768px) {
+  main > * {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @layer scrollbar {
@@ -194,21 +203,21 @@ main > * {
     #section-hero {
       isolation: isolate;
       overflow: hidden;
-
       padding-bottom: 0 !important;
-      border-bottom: none !important;
-      background: linear-gradient(to bottom, var(--white) 45%, var(--gray) 80%);
     }
 
     @media (min-width: 480px) {
       #section-hero {
         padding-top: 238px !important;
+        border-bottom: none !important;
+        background: linear-gradient(to bottom, var(--white) 45%, var(--gray) 80%);
       }
     }
 
     @media (max-width: 480px) {
       #section-hero {
         padding-top: 172px !important;
+        background: var(--white);
       }
     }
 
@@ -242,24 +251,24 @@ main > * {
     }
 
     @layer hero-content {
-      .hero_content {
+      .hero-content {
         width: 100%;
         align-items: start !important;
       }
 
       @media (min-width: 1080px) {
-        .hero_content > h1 {
+        .hero-content > h1 {
           max-width: 900px;
         }
       }
 
       @media (min-width: 480px) and (max-width: 1080px) {
-        .hero_content > h1 {
+        .hero-content > h1 {
           max-width: 600px;
         }
       }
 
-      .hero_content > p {
+      .hero-content > p {
         max-width: 498px;
         margin: 48px 0 39px;
       }
@@ -284,7 +293,7 @@ main > * {
 
       @media (max-width: 480px) {
         .hero_decoration {
-          margin: 68px 0;
+          margin: 48px 0;
         }
       }
 
@@ -375,7 +384,7 @@ main > * {
 
         @media (max-width: 480px) {
           .hero_decoration > form > img {
-            width: 100%;
+            width: 132%;
             padding: 34px 0;
           }
         }
@@ -423,9 +432,17 @@ main > * {
       }
 
       @layer button {
-        #section-brief-about > .double-column > div:first-of-type > form {
-          position: absolute;
-          bottom: 0;
+        @media (min-width: 1080px) {
+          #section-brief-about > .double-column > div:first-of-type > form {
+            position: absolute;
+            bottom: 0;
+          }
+        }
+
+        @media (max-width: 1080px) {
+          #section-brief-about > .double-column > div:first-of-type > form {
+            padding-top: 45px;
+          }
         }
       }
 
@@ -433,8 +450,18 @@ main > * {
         #section-brief-about .image-container {
           border-radius: 4px;
           background-color: var(--gray);
+        }
 
-          min-height: 720px;
+        @media (min-width: 768px) {
+          #section-brief-about .image-container {
+            min-height: 720px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          #section-brief-about .image-container {
+            min-height: 420px;
+          }
         }
       }
     }
@@ -468,15 +495,22 @@ main > * {
         }
 
         ul.benefits-grid {
+          display: grid;
+
           padding: 0;
           margin: 0;
         }
 
-        @media (min-width: 1080px) {
+        @media (min-width: 768px) {
           ul.benefits-grid {
-            display: grid;
             gap: 4px;
             grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        @media (max-width: 768px) {
+          ul.benefits-grid {
+            gap: 8px;
           }
         }
 
@@ -493,26 +527,6 @@ main > * {
 
           letter-spacing: -0.13px;
           line-height: 22px;
-        }
-
-        /* AQUI */
-        @media (min-width: 768px) and (max-width: 1080px) {
-          ul.benefits-grid {
-            display: grid;
-            grid-auto-rows: 4fr;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-template-areas:
-              'left .'
-              'left .';
-          }
-        }
-
-        @media (max-width: 768px) {
-          ul.benefits-grid {
-            display: flex;
-            flex-direction: column;
-          }
         }
 
         ul.benefits-grid > li {
@@ -828,12 +842,37 @@ main > * {
     @layer content {
       .problems-list {
         display: grid;
-        row-gap: 56px;
         column-gap: 48px;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
 
         padding: 0;
-        margin: 86px 0 24px;
+        margin-bottom: 24px;
+      }
+
+      @media (min-width: 1080px) {
+        .problems-list {
+          margin-top: 86px;
+
+          row-gap: 56px;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 1080px) {
+        .problems-list {
+          margin-top: 74px;
+
+          row-gap: 56px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 480px) {
+        .problems-list {
+          margin-top: 54px;
+
+          row-gap: 42px;
+          grid-template-columns: 1fr;
+        }
       }
 
       .problems-list > li > span {
@@ -875,24 +914,16 @@ main > * {
     }
   }
 
-  @layer paper-section {
-    @layer content {
-      #section-paper > div > ul {
-        display: grid;
-        gap: 36px;
-        grid-template-columns: 1fr 1fr;
-
-        position: relative;
-
-        padding: 44px 0;
-      }
-    }
-  }
-
   @layer faqs-section {
     @layer content {
-      .faqs_sample {
-        margin-top: 34px;
+      #section-faqs > .double-column {
+        padding: 0;
+      }
+
+      @media (min-width: 1080px) {
+        .faqs_sample {
+          margin-top: 34px;
+        }
       }
 
       @layer accordion {
