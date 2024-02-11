@@ -23,10 +23,10 @@ const PUB_PARAMS_MAX: usize = 250;
 
 // Variables para la direccion y el nombre de archivos.
 
-const MAIN_DICT: &str = "../../data/shared-with-client/main_dict.json";
-const PATH_TITLE_INDICES: &str = "../../data/shared-with-client/title_and_idx.json";
-const PATH_TITLE_TOPICS: &str = "../../data/shared-with-client/title_and_topics.json";
-const PATH_TOPICS: &str = "../../data/shared-with-client/topics.json";
+const MAIN_DICT: &str = "../data/shared-with-client/main_dict.json";
+const PATH_TITLE_INDICES: &str = "../data/shared-with-client/title_and_idx.json";
+const PATH_TITLE_TOPICS: &str = "../data/shared-with-client/title_and_topics.json";
+const PATH_TOPICS: &str = "../data/shared-with-client/topics.json";
 
 struct ServerState<'a> {
   fname: String,
