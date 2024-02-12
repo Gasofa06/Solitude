@@ -1,5 +1,7 @@
 async function Add_Footer() {
-    const response = await fetch('reusable/footer.html');
+    const response = await fetch(
+        'https://incognitodb.com/reusable/footer.html',
+    );
 
     if (response.ok) {
         const html = await response.text();

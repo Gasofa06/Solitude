@@ -1,5 +1,5 @@
 async function Add_Navigation_Bar() {
-    const response = await fetch('reusable/nav.html');
+    const response = await fetch('https://incognitodb.com/reusable/nav.html');
 
     if (response.ok) {
         const html = await response.text();
