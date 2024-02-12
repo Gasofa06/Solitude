@@ -2,9 +2,56 @@
 @import '/styles/models.css';
 @import '/styles/text.css';
 
+:root {
+  --max-width: 1468px;
+}
+
+@layer scrollbar {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 100px;
+  }
+
+  :hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+::selection {
+  background: #d8ecfc;
+  color: #008cff;
+}
+
+@media (min-width: 768px) {
+  main > * {
+    padding-left: 54px;
+    padding-right: 54px;
+  }
+}
+
+@media (max-width: 768px) {
+  main > * {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
 body {
   margin: 0;
-  background-color: var(--c-bg);
+  background-color: var(--white);
 }
 
 li {
@@ -126,29 +173,5 @@ li {
 
     z-index: 1;
     transform: translate(-50%, -86.666%);
-  }
-}
-
-@layer scrollbar {
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0);
-    border-radius: 100px;
-  }
-
-  :hover::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.3);
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.5);
   }
 }

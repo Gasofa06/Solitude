@@ -1,25 +1,4 @@
-:root {
-  --homepage-width: 1468px;
-}
-
-::selection {
-  background: #d8ecfc;
-  color: #008cff;
-}
-
-@media (min-width: 768px) {
-  main > * {
-    padding-left: 54px;
-    padding-right: 54px;
-  }
-}
-
-@media (max-width: 768px) {
-  main > * {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
+@import '/styles/www.[domain].com/accordion.css';
 
 @layer sections {
   section {
@@ -45,7 +24,7 @@
   }
 
   section > * {
-    max-width: var(--homepage-width);
+    max-width: var(--max-width);
   }
 
   hgroup.sec-title {
@@ -332,7 +311,7 @@
 
     @media (min-width: 1080px) {
       #section-benefits > * {
-        width: var(--homepage-width);
+        width: var(--max-width);
       }
     }
 
@@ -781,107 +760,6 @@
       @media (min-width: 1080px) {
         .faqs_sample {
           margin-top: 34px;
-        }
-      }
-
-      @layer accordion {
-        ol.accordion {
-          padding: 0;
-          margin: 0;
-        }
-
-        ol.accordion > li {
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
-
-          gap: 1.5rem;
-          padding-bottom: 24px;
-          margin: 0px auto 24px;
-
-          border-bottom: 1px solid var(--c-secondary-025);
-        }
-
-        @layer input {
-          .faq_input {
-            position: absolute;
-            margin: 0px;
-            z-index: -1;
-            opacity: 0;
-          }
-        }
-
-        @layer question-answer {
-          .question_and_answer > label {
-            width: 100%;
-            gap: 1.5rem;
-            display: flex;
-            cursor: pointer;
-          }
-
-          .question_and_answer > div {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease-in-out;
-          }
-
-          .faq_input:checked ~ .question_and_answer > div {
-            max-height: 90px;
-          }
-
-          .question_and_answer > div p {
-            margin: 0;
-            padding-top: 12px;
-            color: var(--c-secondary-250);
-          }
-        }
-
-        @layer plus-minus {
-          .plus_minus {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-
-            width: 14px;
-            height: 14px;
-
-            padding: 4px 0px;
-            margin-top: 0px;
-
-            border: none;
-            background: none;
-          }
-
-          .plus_minus::before,
-          .plus_minus::after {
-            content: '';
-
-            position: absolute;
-            border-radius: 2px;
-            background: var(--c-secondary-450);
-
-            transition: all 0.3s ease-in-out;
-          }
-
-          .plus_minus::before {
-            width: 14px;
-            height: 2px;
-          }
-
-          .plus_minus::after {
-            width: 2px;
-            height: 14px;
-
-            transform: translateX(6px) scale(1) rotateZ(0deg) translateZ(0px);
-          }
-
-          .faq_input:checked ~ .plus_minus::before {
-            transform: rotateZ(180deg) translateZ(0px);
-          }
-
-          .faq_input:checked ~ .plus_minus::after {
-            transform: translateX(6px) scale(0) rotateZ(80deg) translateZ(0px);
-          }
         }
       }
     }
