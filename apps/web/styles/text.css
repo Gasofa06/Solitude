@@ -43,7 +43,7 @@
     label,
     input,
     input::placeholder {
-      font-size: 1.02rem;
+      font-size: 0.94rem;
       line-height: 1.59;
     }
   }
@@ -55,7 +55,7 @@
     label,
     input,
     input::placeholder {
-      font-size: 0.94rem;
+      font-size: 0.88rem;
       line-height: 1.52;
     }
   }
@@ -67,7 +67,7 @@
     label,
     input,
     input::placeholder {
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       line-height: 1.48;
     }
   }

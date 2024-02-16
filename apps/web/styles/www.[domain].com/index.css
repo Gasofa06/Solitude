@@ -118,13 +118,13 @@
 
       @media (min-width: 1080px) {
         .hero_decoration {
-          margin: 132px 0;
+          margin: 132px 0 66px;
         }
       }
 
       @media (min-width: 480px) and (max-width: 1080px) {
         .hero_decoration {
-          margin: 102px 0;
+          margin: 102px 0 51px;
         }
       }
 
@@ -162,15 +162,9 @@
           grid-template-columns: repeat(12, minmax(0, 1fr));
 
           padding: 0;
-          width: 100%;
-        }
-
-        .hero_decoration > ol:first-of-type {
           margin: 0 0 14px;
-        }
 
-        .hero_decoration > ol:last-of-type {
-          margin: 14px 0 0;
+          width: 100%;
         }
 
         .hero_decoration > ol p,
@@ -181,16 +175,6 @@
         .hero_decoration > ol > li:last-of-type > p,
         .hero_decoration > ol > li:last-of-type > span {
           text-align: right;
-        }
-
-        @media (max-width: 1080px) {
-          .hero_decoration > ol:last-of-type > li:nth-child(2) {
-            display: none;
-          }
-
-          .hero_decoration > ol:last-of-type > li:nth-child(3) {
-            grid-column: span 6 !important;
-          }
         }
       }
 
@@ -285,6 +269,10 @@
 
       @layer image {
         #section-brief-about .image-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
           border-radius: 4px;
           background-color: var(--gray);
         }
@@ -292,12 +280,20 @@
         @media (min-width: 768px) {
           #section-brief-about .image-container {
             min-height: 720px;
+
+            & img {
+              height: 564px;
+            }
           }
         }
 
         @media (max-width: 768px) {
           #section-brief-about .image-container {
             min-height: 420px;
+
+            & img {
+              height: 264px;
+            }
           }
         }
       }
@@ -324,6 +320,16 @@
     @layer content {
       #section-benefits > .double-column {
         padding: 24px 0 0;
+      }
+
+      #section-benefits a {
+        color: #1f8f4b;
+
+        margin: 0 1px;
+        padding: 1px 10px;
+
+        border-radius: 4px;
+        background: #dbf7e8;
       }
 
       @layer benefits-grid {
@@ -772,10 +778,4 @@
     @layer content {
     }
   }
-}
-
-.try {
-  height: 100vh;
-  padding: 0;
-  background-color: #1c1d20;
 }
