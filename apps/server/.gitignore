@@ -1,5 +1,6 @@
-/etc
-/articles-db
+__pycache__/
+articles/
+shared-with-client/
+server-only/
 
-data/shared-with-client/
-data/server-only/
+etc/
