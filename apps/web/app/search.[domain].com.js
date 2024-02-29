@@ -3,13 +3,8 @@ import { PageController } from './search/pages/__controller__/__controller.js';
 
 import { Setup_Client } from './services/client/client.js';
 import Initialize_Web_Assembly from '../pkg/client.js';
-import Setup_Data from './scripts/__setup.js';
+import Setup_Data from './scripts/set-data.js';
 
-/**
- * @info Función asincrónica que se encarga de ejecutar el código
- * principal. Se espera a que se cargue completamente el `DOM` antes
- * de ser llamada.
- */
 async function App() {
     window.page_controller = new PageController();
 

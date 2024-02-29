@@ -1,4 +1,4 @@
-import { SEARCH_TYPES } from '../../../../../[constants]/constants.js';
+import { SEARCH_TYPES } from '../../../../../constants.js';
 
 /**
  * @info Genera el contenido para el menú desplegable que permite

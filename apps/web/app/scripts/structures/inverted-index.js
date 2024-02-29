@@ -1,10 +1,10 @@
 export class TopicsInvertedIndex {
-    constructor(_dict_title_information, _valid_topics) {
+    constructor(dict_titles, _valid_topics) {
         this.valid_topics = _valid_topics;
         this.dict_topic_titles = {};
 
         this.build_structure();
-        this.insert_data(_dict_title_information);
+        this.insert_data(dict_titles);
     }
 
     build_structure() {
@@ -29,12 +29,11 @@ export class TopicsInvertedIndex {
         }
     }
 
-    insert_data(_dict_title_information) {
+    insert_data(dict_titles) {
         let idx_topics_arr = 1;
 
-        for (let article_title in _dict_title_information) {
-            let arr_article_topics =
-                _dict_title_information[article_title][idx_topics_arr];
+        for (let article_title in dict_titles) {
+            let arr_article_topics = dict_titles[article_title][idx_topics_arr];
 
             if (arr_article_topics.length === 0) {
                 console.log('No topics associated.');

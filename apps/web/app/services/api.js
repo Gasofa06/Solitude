@@ -1,9 +1,4 @@
-import {
-    API_URL,
-    CHECK_URL,
-    SETUP_URL,
-    QUERY_URL,
-} from '../[constants]/constants.js';
+import { API_URL, CHECK_URL, SETUP_URL, QUERY_URL } from '../constants.js';
 
 import { Get_Data } from './get.js';
 import { Post_Data } from './post.js';

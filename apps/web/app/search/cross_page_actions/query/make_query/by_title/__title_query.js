@@ -21,7 +21,7 @@ export async function Article_Query_By_Title() {
     let article_title = window.search_bar.value;
 
     let article_group_idx =
-        window.trie_articles_data.search_server_index(article_title);
+        window.trie_articles_data.get_server_idx(article_title);
 
     await Load_Article(article_group_idx, 'Centralización del Poder');
 }

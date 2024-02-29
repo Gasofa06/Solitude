@@ -1,8 +1,4 @@
-import {
-    KEY_SIZE,
-    KEY_NAME,
-    MAX_VALID_KEY_TIME,
-} from '../../[constants]/constants.js';
+import { KEY_SIZE, KEY_NAME, MAX_VALID_KEY_TIME } from '../../constants.js';
 
 import { api } from '../api.js';
 import { initialize, generate_keys } from '../../../pkg/client.js';
@@ -74,6 +70,7 @@ function Set_Client_State_From_Key(key, should_generate_pub_params) {
         should_generate_pub_params,
     );
     console.log(`Done.`);
+    console.log(window.public_parameters);
 }
 
 /**

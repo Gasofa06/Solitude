@@ -1,6 +1,3 @@
-/**
- * El tamaño (en `bytes`) de la clave.
- */
 export const KEY_SIZE = 32;
 
 /**

@@ -1,17 +1,31 @@
+import '../utils/bz2.js';
 import { Get_Data } from '../services/get.js';
 
-import { Decompress_JSON_File } from './__decompress__/decomp_json.js';
+import { ArticlesTrie } from './structures/articles-trie.js';
+import { TopicsInvertedIndex } from './structures/inverted-index.js';
 
-import { ArticlesTrie } from './data_structures/articles_trie.js';
-import { TopicsInvertedIndex } from './data_structures/inverted_index.js';
+function Decompress(compressed_str) {
+    let decoded_str = atob(compressed_str);
 
-async function Setup_Data() {
+    let char_num_arr = decoded_str.split('').map(_x => {
+        return _x.charCodeAt(0);
+    });
+    let byte_arr = new Uint8Array(char_num_arr);
+
+    let decompressed_str = bz2.decompress(byte_arr);
+    let decoded_decompressed_str = new TextDecoder('utf-8').decode(
+        decompressed_str,
+    );
+
+    return JSON.parse(decoded_decompressed_str);
+}
+
+async function Set_Data() {
     let get_topics = Get_Data('api/topics.json', true);
 
     let bz2_main_dict = await Get_Data('api/title_and_topics.json', true);
-    let obj_main_dict = Decompress_JSON_File(bz2_main_dict['bz2']);
-    // let obj_main_dict = bz2_main_dict;
-    console.log(obj_main_dict);
+    let obj_main_dict = Decompress(bz2_main_dict['bz2']);
+
     window.trie_articles_data = new ArticlesTrie(obj_main_dict);
 
     let topics = await get_topics;
@@ -41,4 +55,4 @@ async function Setup_Data() {
     console.log(window.inverted_index_topics_title);
 }
 
-export default Setup_Data;
+export default Set_Data;

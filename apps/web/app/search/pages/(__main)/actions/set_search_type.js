@@ -1,4 +1,4 @@
-import { SEARCH_TYPES } from '../../../../[constants]/constants.js';
+import { SEARCH_TYPES } from '../../../../constants.js';
 import { Clear_Search_Text_Input } from '../../../../utils/clear.js';
 import { Find_Key_Index } from '../../../../utils/obj_handle.js';
 

@@ -1,4 +1,4 @@
-import { MAX_ARTICELS_IN_PAGE } from '../../../../../[constants]/constants.js';
+import { MAX_ARTICELS_IN_PAGE } from '../../../../../constants.js';
 
 export function Add_Articles_List() {
     var arr_articles_list_content = [];
@@ -18,7 +18,7 @@ export function Add_Articles_List() {
         let html_title = `<h6>${article_title}</h6>`;
 
         let arr_article_topics =
-            window.trie_articles_data.search_topics(article_title);
+            window.trie_articles_data.get_topics(article_title);
 
         let html_topics =
             '<div class="topics">' +
@@ -28,7 +28,7 @@ export function Add_Articles_List() {
             '</div>';
 
         let article_release_date =
-            window.trie_articles_data.search_release_date(article_title);
+            window.trie_articles_data.get_release_date(article_title);
 
         let html_date = `<a class="date">${article_release_date}</a>`;
 
