@@ -112,24 +112,24 @@
     }
 
     @layer hero-decoration {
-      .hero_decoration {
+      .hero-decoration {
         width: 100%;
       }
 
       @media (min-width: 1080px) {
-        .hero_decoration {
+        .hero-decoration {
           margin: 132px 0 66px;
         }
       }
 
       @media (min-width: 480px) and (max-width: 1080px) {
-        .hero_decoration {
+        .hero-decoration {
           margin: 102px 0 51px;
         }
       }
 
       @media (max-width: 480px) {
-        .hero_decoration {
+        .hero-decoration {
           margin: 48px 0;
         }
       }
@@ -157,7 +157,7 @@
       }
 
       @layer grid {
-        .hero_decoration > ol {
+        .hero-decoration > ol {
           display: grid;
           grid-template-columns: repeat(12, minmax(0, 1fr));
 
@@ -167,19 +167,19 @@
           width: 100%;
         }
 
-        .hero_decoration > ol p,
-        .hero_decoration > ol span {
+        .hero-decoration > ol p,
+        .hero-decoration > ol span {
           margin: 0;
         }
 
-        .hero_decoration > ol > li:last-of-type > p,
-        .hero_decoration > ol > li:last-of-type > span {
+        .hero-decoration > ol > li:last-of-type > p,
+        .hero-decoration > ol > li:last-of-type > span {
           text-align: right;
         }
       }
 
       @layer hero-image {
-        .hero_decoration > form {
+        .hero-decoration > form {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -190,21 +190,21 @@
         }
 
         @media (min-width: 1080px) {
-          .hero_decoration > form > img {
+          .hero-decoration > form > img {
             width: 1180px;
             padding: 94px 0;
           }
         }
 
         @media (min-width: 480px) and (max-width: 1080px) {
-          .hero_decoration > form > img {
+          .hero-decoration > form > img {
             width: 100%;
             padding: 56px 0;
           }
         }
 
         @media (max-width: 480px) {
-          .hero_decoration > form > img {
+          .hero-decoration > form > img {
             width: 132%;
             padding: 34px 0;
           }
@@ -768,14 +768,6 @@
           margin-top: 34px;
         }
       }
-    }
-  }
-
-  @layer acknowledgments-section {
-    @layer title {
-    }
-
-    @layer content {
     }
   }
 }

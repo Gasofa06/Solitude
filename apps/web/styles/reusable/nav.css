@@ -1,13 +1,10 @@
-@layer navigation-container {
+@layer navigation-bar {
   #navigation-top-bar {
     z-index: 10;
 
     width: 100%;
     height: 36px;
     max-width: inherit;
-
-    margin: 0;
-    padding: 26px 0;
 
     display: inline-flex;
 
@@ -19,14 +16,47 @@
     -webkit-backdrop-filter: saturate(180%) blur(20px);
   }
 
+  @media (min-width: 1080px) {
+    #navigation-top-bar {
+      margin: 0;
+      padding: 26px 0;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1080px) {
+    #navigation-top-bar {
+      margin: 0;
+      padding: 18px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #navigation-top-bar {
+      margin: 0;
+      padding: 9px 0;
+    }
+  }
+
   #navigation-top-bar > div {
     display: flex;
     justify-content: space-between;
 
-    width: 1472px;
+    width: 100%;
+    max-width: 1472px;
+  }
 
-    padding: 0;
-    margin: 0 auto;
+  @media (min-width: 768px) {
+    #navigation-top-bar > div {
+      margin: 0 auto;
+      padding: 0 36px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #navigation-top-bar > div {
+      margin: 0 auto;
+      padding: 0 18px;
+    }
   }
 
   @layer left {
@@ -39,12 +69,12 @@
       width: 35%;
     }
 
-    @layer platform_logo {
-      #navigation-top-bar svg.logo {
+    @layer platform-logo {
+      .logo > svg {
         height: 22px;
       }
 
-      #navigation-top-bar svg.logo > path {
+      .logo > svg > path {
         fill: var(--c-secondary-500);
       }
     }
@@ -63,15 +93,21 @@
       margin: 0;
     }
 
+    @media (min-width: 1080px) {
+      #navigation-top-bar > div > .center {
+        display: none !important;
+      }
+    }
+
     @layer navigation-menu {
-      .menu {
+      .nav-menu {
         display: inline-flex;
 
         padding: 0;
         margin: 0;
       }
 
-      .menu > li {
+      .nav-menu > li {
         position: relative;
 
         padding: 0;
@@ -80,15 +116,15 @@
         transition: var(--default-transition);
       }
 
-      .menu:hover > li {
+      .nav-menu:hover > li {
         opacity: 0.7;
       }
 
-      .menu:hover > li:hover {
+      .nav-menu:hover > li:hover {
         opacity: 1 !important;
       }
 
-      label.nav_link {
+      label.nav-link {
         display: flex;
         align-items: center;
 
@@ -96,8 +132,8 @@
         padding: 0;
       }
 
-      label.nav_link a,
-      .submenu li a {
+      label.nav-link a,
+      .nav-submenu li a {
         display: flex;
         align-items: center;
 
@@ -109,7 +145,7 @@
         transition: var(--default-transition);
       }
 
-      label.nav_link svg {
+      label.nav-link svg {
         width: 10px;
         height: 10px;
 
@@ -120,16 +156,16 @@
         transition: var(--default-transition);
       }
 
-      label.nav_link svg path {
+      label.nav-link svg path {
         stroke: var(--c-secondary-050);
       }
 
-      .menu > li:hover label.nav_link svg {
+      .nav-menu > li:hover label.nav-link svg {
         transform: rotate(180deg);
       }
 
-      @layer submenu {
-        .submenu {
+      @layer navigation-submenu {
+        .nav-submenu {
           opacity: 0;
           transform: scale(0.96) translateZ(1px);
 
@@ -150,7 +186,7 @@
           box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 16px;
         }
 
-        ul.submenu:before {
+        ul.nav-submenu:before {
           content: '';
 
           position: absolute;
@@ -161,16 +197,16 @@
           height: 8px;
         }
 
-        ul.submenu li a {
+        ul.nav-submenu li a {
           padding: 9px 12px;
           border-radius: 6px;
         }
 
-        ul.submenu li a:hover {
+        ul.nav-submenu li a:hover {
           background: var(--c-secondary-010);
         }
 
-        .menu > li:hover ul.submenu {
+        .nav-menu > li:hover ul.nav-submenu {
           opacity: 1;
           transform: translateZ(1px);
 
@@ -188,6 +224,8 @@
 
       height: 100%;
       width: 35%;
+
+      gap: 18px;
     }
 
     @layer toggle-theme {
@@ -196,9 +234,7 @@
 
         display: flex;
         align-items: center;
-
         height: 100%;
-        margin-right: 18px;
       }
 
       #toggle-theme input {
@@ -239,4 +275,7 @@
       }
     }
   }
+}
+
+@layer mobile-navigation {
 }
