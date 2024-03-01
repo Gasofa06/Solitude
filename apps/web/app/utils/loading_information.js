@@ -2,21 +2,18 @@
  * @info Realiza las acciones necesarias
  * al iniciar la carga.
  *
- * @param {string} _message - El mensaje a mostrar
- * en la interfaz mientras la carga es ejecutada.
- *
  * @param {boolean} _is_manually_progress - Indica
  * si se asignará la longitud de la barra de progreso
  * manualmente en JavaScript (true) o automáticamente
  * en CSS (false).
  */
-export function Start_Loading(_message, _is_manually_progress) {
+export function Start_Loading(msg, _is_manually_progress) {
     window.make_query.disabled = true;
     window.make_query.classList.add('loading');
 
-    window.search_bar.readOnly = true;
+    console.log(msg);
 
-    window.loading_notifier.innerHTML = _message;
+    window.search_bar.readOnly = true;
 
     /*
      * Si `_is_manually_progress == true`,
@@ -29,20 +26,13 @@ export function Start_Loading(_message, _is_manually_progress) {
     }
 }
 
-/**
- * @info Realiza las acciones necesarias al
- * detener la carga.
- *
- * @param {string} _message - El mensaje a mostrar
- * en la interfaz cuando la carga es detenida.
- */
-export function Stop_Loading(_message) {
+export function Stop_Loading(msg) {
     window.make_query.disabled = false;
     window.make_query.classList.remove('loading');
 
     window.search_bar.readOnly = false;
 
-    window.loading_notifier.innerHTML = _message;
+    console.log(msg);
 
     /*
      * Si `html_loading_spinner` tiene

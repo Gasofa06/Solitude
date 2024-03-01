@@ -16,10 +16,10 @@ export const Main_Page_Click = _event => {
      */
     if (
         !clicked_element.matches(
-            '.dropdown_li input, .container_selected_content input, #dropdown_search_type_content_sub',
+            '#search-types-list, #selected-search-type > *',
         )
     ) {
-        document.getElementById('checkbox_drop_search_types').checked = false;
+        document.querySelector('#selected-search-type input').checked = false;
     }
 
     /*

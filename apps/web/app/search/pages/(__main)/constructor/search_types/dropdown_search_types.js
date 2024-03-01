@@ -5,16 +5,14 @@ import { SEARCH_TYPES } from '../../../../../constants.js';
  * seleccionar el tipo de búsqueda deseado.
  */
 export function Build_Dropdown_Search_Types() {
-    let container = document.getElementById('dropdown_search_type_content_sub');
+    let container = document.getElementById('search-types-list');
 
     let arr_search_types_names = Object.keys(SEARCH_TYPES);
 
     let dopdown_components = arr_search_types_names
         .map(_name => {
             var search_type =
-                '<li class="dropdown_li">' +
-                `<input type="button" value="${_name}"/>` +
-                '</li>';
+                '<li>' + `<input type="button" value="${_name}"/>` + '</li>';
 
             return search_type;
         })
@@ -22,6 +20,7 @@ export function Build_Dropdown_Search_Types() {
 
     container.insertAdjacentHTML('beforeend', dopdown_components);
 
-    window.arr_search_types_inputs =
-        container.querySelectorAll('.dropdown_li input');
+    window.arr_search_types_inputs = container.querySelectorAll(
+        '#search-types-list li input',
+    );
 }
