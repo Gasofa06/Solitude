@@ -100,7 +100,6 @@ async fn setup<'a>(
   let uuid = uuid::Uuid::new_v4();
   let mut pub_params_map = data.pub_params_map.lock().map_err(other_io_err)?;
   pub_params_map.0.push_back(uuid.to_string());
-  println!("Hi");
   pub_params_map.1.insert(uuid.to_string(), pub_params);
 
   // If too many public parameters, remove by LRU
