@@ -6,7 +6,7 @@ export default function Set_HTML_Global_Variabels() {
     window.make_query = document.getElementById('make_query_button');
     window.loading_spinner = document.getElementById('loading_spinner');
 
-    window.search_bar = document.getElementById('search_bar_input_text');
+    window.search_bar = document.querySelector('.write-bar input');
     window.search_suggestions = document.getElementById(
         'search-suggestions-list',
     );

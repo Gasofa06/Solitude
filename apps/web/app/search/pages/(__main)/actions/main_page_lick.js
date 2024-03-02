@@ -26,9 +26,7 @@ export const Main_Page_Click = _event => {
      * Si se presiona fuera del desplegable que muestra las sugerencias
      * de busqueda, el despleable desaparecera.
      */
-    if (
-        !clicked_element.matches('#search_bar_input_text, #search_suggestions')
-    ) {
+    if (!clicked_element.matches('.write-bar, #search_suggestions')) {
         Clear_Suggestions();
     }
 };

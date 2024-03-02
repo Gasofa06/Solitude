@@ -30,7 +30,7 @@ export function Show_Selected_Topics() {
     '</ul>';
 
     document
-        .querySelector('.bar')
+        .querySelector('.write-bar')
         .insertAdjacentHTML('afterbegin', new_html_selected_topics);
 
     let all_topics_cross_btns = document.querySelectorAll('.cross_topic_btn');
