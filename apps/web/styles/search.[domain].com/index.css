@@ -315,7 +315,7 @@
           background-color: var(--gray);
         }
 
-        @layer writebar {
+        @layer write-bar {
           .write-bar {
             position: relative;
 
@@ -327,137 +327,151 @@
             height: 100%;
           }
 
-          .write-bar input {
-            padding: 0;
+          @layer write {
+            .write-bar input {
+              padding: 0;
 
-            width: 100%;
-            flex: 1 1 0%;
+              width: 100%;
+              flex: 1 1 0%;
 
-            margin-left: 16px;
-            padding-right: 12px;
+              margin-left: 16px;
+              padding-right: 12px;
 
-            border: none;
-            color: var(--black);
-            background-color: transparent;
+              border: none;
+              color: var(--black);
+              background-color: transparent;
 
-            outline: none;
+              outline: none;
+            }
+
+            .write-bar input::placeholder {
+              color: var(--dark-gray);
+            }
+
+            .write-bar input::-ms-input-placeholder {
+              color: var(--dark-gray);
+            }
+
+            .write-bar input::-ms-input-placeholder {
+              color: var(--dark-gray);
+            }
           }
 
-          .write-bar input::placeholder,
-          .write-bar input:-ms-input-placeholder,
-          .write-bar input::-ms-input-placeholder {
-            color: var(--dark-gray);
-          }
-
-          @layer make-query-button {
-            .write-bar button.make_query {
+          @layer make-query {
+            #make-query {
               display: flex;
               align-items: center;
               justify-content: center;
 
-              background: var(--soft-black);
-              height: 41px;
-              width: 41px;
-
-              box-sizing: border-box;
-              border-radius: 6px;
               border: none;
+              border-radius: 4px;
+              background: var(--soft-black);
+            }
 
-              cursor: pointer;
+            @media (min-width: 768px) {
+              #make-query {
+                height: 41px;
+                width: 41px;
+              }
             }
 
             @media (max-width: 768px) {
-              .write-bar button.make_query {
+              #make-query {
                 height: 36px;
                 width: 36px;
               }
             }
 
-            .write-bar button.make_query svg.magnifying_glass {
-              display: none;
+            @layer search-svg {
+              #make-query svg.search {
+                display: none;
+              }
 
-              width: 22px;
-            }
+              @media (min-width: 768px) {
+                #make-query svg.search {
+                  width: 22px;
+                }
+              }
 
-            @media (max-width: 768px) {
-              .write-bar button.make_query svg.magnifying_glass {
-                width: 18px;
+              @media (max-width: 768px) {
+                #make-query svg.search {
+                  width: 18px;
+                }
+              }
+
+              #make-query:not(.loading) svg.search {
+                display: block !important;
+              }
+
+              #make-query svg.search path {
+                fill: var(--white);
               }
             }
 
-            .write-bar button.make_query:not(.loading) svg.magnifying_glass {
-              display: block !important;
-            }
-
-            .write-bar button.make_query svg.magnifying_glass path {
-              fill: var(--white);
-            }
-
-            [theme='dark'] .write-bar button.make_query svg.magnifying_glass path {
-              fill: var(--black) !important;
-            }
-
-            .write-bar button.make_query svg#loading_spinner {
-              position: absolute;
-
-              width: 27px;
-              height: 27px;
-
-              animation: rotate 2s linear infinite;
-            }
-
-            @media (max-width: 768px) {
-              .write-bar button.make_query svg#loading_spinner {
-                width: 20px;
-                height: 20px;
+            @layer loading-spinner-svg {
+              #loading-spinner {
+                position: absolute;
+                animation: rotate 2s linear infinite;
               }
-            }
 
-            @keyframes rotate {
-              100% {
-                transform: rotate(360deg);
+              @media (min-width: 768px) {
+                #loading-spinner {
+                  width: 27px;
+                  height: 27px;
+                }
               }
-            }
 
-            .write-bar button.make_query:not(.loading) svg#loading_spinner {
-              display: none !important;
-            }
-
-            .write-bar button.make_query svg#loading_spinner circle.path {
-              stroke-width: 6px;
-              stroke-linecap: round;
-              stroke: var(--soft-link-water);
-
-              animation: dash 1.5s ease-in-out infinite;
-            }
-
-            [theme='dark'] .write-bar button.make_query svg#loading_spinner circle.path {
-              stroke: var(--black) !important;
-            }
-
-            @media (max-width: 768px) {
-              .write-bar button.make_query svg#loading_spinner circle.path {
-                stroke-width: 4px;
+              @media (max-width: 768px) {
+                #loading-spinner {
+                  width: 20px;
+                  height: 20px;
+                }
               }
-            }
 
-            @keyframes dash {
-              0% {
-                stroke-dasharray: 1, 130;
-                stroke-dashoffset: 0;
+              @keyframes rotate {
+                100% {
+                  transform: rotate(360deg);
+                }
               }
-              50% {
-                stroke-dasharray: 90, 130;
-                stroke-dashoffset: -35;
-              }
-              100% {
-                stroke-dasharray: 90, 130;
-                stroke-dashoffset: -124;
-              }
-            }
 
-            .write-bar button.make_query svg#loading_spinner.manually_progress circle.path {
-              animation: none !important;
+              #make-query:not(.loading) #loading-spinner {
+                display: none !important;
+              }
+
+              #loading-spinner circle {
+                stroke: var(--white);
+                stroke-linecap: round;
+                animation: dash 1.5s ease-in-out infinite;
+              }
+
+              @media (min-width: 768px) {
+                #loading-spinner circle {
+                  stroke-width: 6px;
+                }
+              }
+
+              @media (max-width: 768px) {
+                #loading-spinner circle {
+                  stroke-width: 4px;
+                }
+              }
+
+              @keyframes dash {
+                0% {
+                  stroke-dasharray: 1, 130;
+                  stroke-dashoffset: 0;
+                }
+
+                50% {
+                  stroke-dasharray: 90, 130;
+                  stroke-dashoffset: -35;
+                }
+
+                100% {
+                  stroke-dasharray: 90, 130;
+                  stroke-dashoffset: -124;
+                }
+              }
             }
           }
         }

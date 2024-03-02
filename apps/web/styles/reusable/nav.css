@@ -414,7 +414,7 @@
     }
 
     .mobile__menu li p {
-      color: var(--ultra-soft-black);
+      color: var(--dark-gray);
     }
 
     @media (min-width: 480px) {
