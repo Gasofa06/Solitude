@@ -47,6 +47,7 @@
 
 @layer dropdown-menu {
   .dropdown-menu {
+    position: absolute;
     display: grid;
 
     width: 100%;
@@ -71,12 +72,31 @@
 @layer sections {
   @layer search-section {
     #section-search {
-      height: 85vh;
-
       display: flex;
       align-items: center;
       flex-direction: column;
       justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      #section-search {
+        height: 85vh;
+        padding: 0 12px;
+      }
+    }
+
+    @media (min-width: 480px) and (max-width: 768px) {
+      #section-search {
+        height: 74vh;
+        padding: 0 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #section-search {
+        height: 62vh;
+        padding: 0;
+      }
     }
 
     @layer content {
@@ -84,27 +104,42 @@
         margin: 0 0 46px 0;
       }
 
+      @media (max-width: 1080px) {
+        #section-search hgroup h1 {
+          font-size: 3rem;
+        }
+      }
+
       #section-search .search-box {
         display: flex;
         align-items: center;
         flex-direction: row;
+
+        margin: 8px 0;
+        padding: 0;
+
+        width: 100%;
+        max-width: 912px;
       }
 
       @media (min-width: 1080px) {
         #section-search .search-box {
-          width: 912px;
           height: 58px;
-
-          --side-margin: 12px;
+          --side-pad: 12px;
         }
       }
 
-      @media (max-width: 1080px) {
+      @media (min-width: 768px) and (max-width: 1080px) {
         #section-search .search-box {
-          width: 88vw;
           height: 54px;
+          --side-pad: 8px;
+        }
+      }
 
-          --side-margin: 8px;
+      @media (max-width: 768px) {
+        #section-search .search-box {
+          height: 48px;
+          --side-pad: 8px;
         }
       }
 
@@ -114,17 +149,24 @@
 
       @layer search-type {
         .search-types {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-
+          position: relative;
           height: 100%;
-          margin-right: 32px;
+        }
+
+        @media (min-width: 768px) {
+          .search-types {
+            margin-right: 32px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .search-types {
+            margin-right: 12px;
+          }
         }
 
         .search-types:has(:checked) {
           --num-rows: 1fr;
-          --arrow-rotation: rotate(180deg);
         }
 
         @layer selected-type {
@@ -134,17 +176,23 @@
             display: flex;
             align-items: center;
 
-            padding-right: 12px;
-            padding-left: calc(var(--side-margin) + 8px);
+            height: 100%;
 
             border-radius: inherit;
             background-color: var(--soft-black);
           }
 
+          @media (min-width: 768px) {
+            #selected-search-type {
+              padding-right: 12px;
+              padding-left: calc(var(--side-pad) + 8px);
+            }
+          }
+
           @media (max-width: 768px) {
             #selected-search-type {
-              padding-left: calc(var(--side-margin) + 3px) !important;
-              padding-right: calc(var(--side-margin) + 3px) !important;
+              padding-left: calc(var(--side-pad));
+              padding-right: calc(var(--side-pad));
             }
           }
 
@@ -159,29 +207,39 @@
             }
           }
 
-          #selected-search-type svg {
-            width: 28px;
-            transform: var(--arrow-rotation);
-            transition: all 0.3s ease-in-out;
-          }
+          #selected-search-type input {
+            z-index: 50;
 
-          @media (max-width: 768px) {
-            #selected-search-type svg {
-              width: 34px !important;
-            }
-          }
-
-          #selected-search-type svg path {
-            fill: var(--white);
-          }
-
-          #selected-search-type input[type='checkbox'] {
             position: absolute;
             inset: 0;
 
             margin: 0;
             opacity: 0;
             cursor: pointer;
+          }
+
+          #selected-search-type input:checked + svg {
+            transform: rotate(180deg);
+          }
+
+          #selected-search-type svg {
+            transition: all 0.3s ease-in-out;
+          }
+
+          @media (min-width: 768px) {
+            #selected-search-type svg {
+              width: 28px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            #selected-search-type svg {
+              width: 34px;
+            }
+          }
+
+          #selected-search-type svg path {
+            fill: var(--white);
           }
         }
 
@@ -193,7 +251,7 @@
 
           @media (max-width: 768px) {
             .search-types .dropdown-menu {
-              width: 100px;
+              width: 112px;
             }
           }
 
@@ -204,13 +262,17 @@
             overflow: hidden;
 
             padding: 0;
-            margin: 0 0 0 calc(var(--side-margin) + 8px);
+            margin: 0 0 0 calc(var(--side-pad) + 8px);
           }
 
           @media (max-width: 768px) {
             #search-types-list {
-              margin: 0 0 0 calc(var(--side-margin) + 8.75px);
+              margin: 0 0 0 calc(var(--side-pad) + 8.75px);
             }
+          }
+
+          #search-types-list li {
+            padding-bottom: 12px;
           }
 
           #search-types-list li:first-child {
@@ -248,13 +310,13 @@
 
           width: 100%;
           height: 100%;
-          padding-right: var(--side-margin);
+          padding-right: var(--side-pad);
 
           background-color: var(--gray);
         }
 
-        @layer bar {
-          .search-bar div.bar {
+        @layer writebar {
+          .write-bar {
             position: relative;
 
             display: flex;
@@ -265,7 +327,7 @@
             height: 100%;
           }
 
-          .search-bar div.bar input.search_bar_input_text {
+          .write-bar input {
             padding: 0;
 
             width: 100%;
@@ -275,143 +337,128 @@
             padding-right: 12px;
 
             border: none;
-            color: var(--soft-black);
+            color: var(--black);
             background-color: transparent;
 
-            outline: none !important;
+            outline: none;
+          }
 
-            &::placeholder {
-              /* Chrome, Firefox, Opera, Safari 10.1+ */
-              color: var(--link-water);
+          .write-bar input::placeholder,
+          .write-bar input:-ms-input-placeholder,
+          .write-bar input::-ms-input-placeholder {
+            color: var(--dark-gray);
+          }
+
+          @layer make-query-button {
+            .write-bar button.make_query {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              background: var(--soft-black);
+              height: 41px;
+              width: 41px;
+
+              box-sizing: border-box;
+              border-radius: 6px;
+              border: none;
+
+              cursor: pointer;
             }
 
-            &:-ms-input-placeholder {
-              /* Internet Explorer 10-11 */
-              color: var(--link-water);
+            @media (max-width: 768px) {
+              .write-bar button.make_query {
+                height: 36px;
+                width: 36px;
+              }
             }
 
-            &::-ms-input-placeholder {
-              /* Microsoft Edge */
-              color: var(--link-water);
+            .write-bar button.make_query svg.magnifying_glass {
+              display: none;
+
+              width: 22px;
             }
-          }
 
-          .search-bar div.bar button.make_query {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: var(--soft-black);
-            height: 41px;
-            width: 41px;
-
-            box-sizing: border-box;
-            border-radius: 6px;
-            border: none;
-
-            cursor: pointer;
-          }
-
-          @media (max-width: 768px) {
-            .search-bar div.bar button.make_query {
-              height: 36px;
-              width: 36px;
+            @media (max-width: 768px) {
+              .write-bar button.make_query svg.magnifying_glass {
+                width: 18px;
+              }
             }
-          }
 
-          .search-bar div.bar button.make_query svg.magnifying_glass {
-            display: none;
-
-            width: 22px;
-          }
-
-          @media (max-width: 768px) {
-            .search-bar div.bar button.make_query svg.magnifying_glass {
-              width: 18px;
+            .write-bar button.make_query:not(.loading) svg.magnifying_glass {
+              display: block !important;
             }
-          }
 
-          .search-bar div.bar button.make_query:not(.loading) svg.magnifying_glass {
-            display: block !important;
-          }
-
-          .search-bar div.bar button.make_query svg.magnifying_glass path {
-            fill: var(--white);
-          }
-
-          [theme='dark'] .search-bar div.bar button.make_query svg.magnifying_glass path {
-            fill: var(--black) !important;
-          }
-
-          .search-bar div.bar button.make_query svg#loading_spinner {
-            position: absolute;
-
-            width: 27px;
-            height: 27px;
-
-            animation: rotate 2s linear infinite;
-          }
-
-          @media (max-width: 768px) {
-            .search-bar div.bar button.make_query svg#loading_spinner {
-              width: 20px;
-              height: 20px;
+            .write-bar button.make_query svg.magnifying_glass path {
+              fill: var(--white);
             }
-          }
 
-          @keyframes rotate {
-            100% {
-              transform: rotate(360deg);
+            [theme='dark'] .write-bar button.make_query svg.magnifying_glass path {
+              fill: var(--black) !important;
             }
-          }
 
-          .search-bar div.bar button.make_query:not(.loading) svg#loading_spinner {
-            display: none !important;
-          }
+            .write-bar button.make_query svg#loading_spinner {
+              position: absolute;
 
-          .search-bar div.bar button.make_query svg#loading_spinner circle.path {
-            stroke-width: 6px;
-            stroke-linecap: round;
-            stroke: var(--soft-link-water);
+              width: 27px;
+              height: 27px;
 
-            animation: dash 1.5s ease-in-out infinite;
-          }
-
-          [theme='dark'] .search-bar div.bar button.make_query svg#loading_spinner circle.path {
-            stroke: var(--black) !important;
-          }
-
-          @media (max-width: 768px) {
-            .search-bar div.bar button.make_query svg#loading_spinner circle.path {
-              stroke-width: 4px;
+              animation: rotate 2s linear infinite;
             }
-          }
 
-          @keyframes dash {
-            0% {
-              stroke-dasharray: 1, 130;
-              stroke-dashoffset: 0;
+            @media (max-width: 768px) {
+              .write-bar button.make_query svg#loading_spinner {
+                width: 20px;
+                height: 20px;
+              }
             }
-            50% {
-              stroke-dasharray: 90, 130;
-              stroke-dashoffset: -35;
-            }
-            100% {
-              stroke-dasharray: 90, 130;
-              stroke-dashoffset: -124;
-            }
-          }
 
-          .search-bar div.bar button.make_query svg#loading_spinner.manually_progress circle.path {
-            /* 
-       * Si el `svg#loading_spinner` tiene un 
-       * `.manually_progress` quedra decir que
-       * no se debera hacer la animacion `dash`. 
-       *
-       * Ya que la longitud de la barra se generara
-       * y se pondra directamente en JS.
-       */
-            animation: none !important;
+            @keyframes rotate {
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+
+            .write-bar button.make_query:not(.loading) svg#loading_spinner {
+              display: none !important;
+            }
+
+            .write-bar button.make_query svg#loading_spinner circle.path {
+              stroke-width: 6px;
+              stroke-linecap: round;
+              stroke: var(--soft-link-water);
+
+              animation: dash 1.5s ease-in-out infinite;
+            }
+
+            [theme='dark'] .write-bar button.make_query svg#loading_spinner circle.path {
+              stroke: var(--black) !important;
+            }
+
+            @media (max-width: 768px) {
+              .write-bar button.make_query svg#loading_spinner circle.path {
+                stroke-width: 4px;
+              }
+            }
+
+            @keyframes dash {
+              0% {
+                stroke-dasharray: 1, 130;
+                stroke-dashoffset: 0;
+              }
+              50% {
+                stroke-dasharray: 90, 130;
+                stroke-dashoffset: -35;
+              }
+              100% {
+                stroke-dasharray: 90, 130;
+                stroke-dashoffset: -124;
+              }
+            }
+
+            .write-bar button.make_query svg#loading_spinner.manually_progress circle.path {
+              animation: none !important;
+            }
           }
         }
 

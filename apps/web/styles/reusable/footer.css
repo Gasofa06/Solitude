@@ -1,4 +1,4 @@
-footer {
+footer.footer {
   width: 100%;
   max-width: 920px;
 
@@ -16,7 +16,7 @@ footer {
   margin: 0 6%;
 }
 
-footer .logo {
+footer.footer .logo {
   font-size: var(--text-l);
 }
 

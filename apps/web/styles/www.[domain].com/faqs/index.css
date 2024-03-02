@@ -9,7 +9,7 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-bottom: 1px solid var(--dark-gray);
+    border-bottom: 1px solid var(--gray);
   }
 
   section > * {

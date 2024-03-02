@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
 
-    border-bottom: 1px solid var(--dark-gray);
+    border-bottom: 1px solid var(--gray);
   }
 
   @media (min-width: 768px) {
@@ -673,7 +673,7 @@
   @layer privacy-problems-section {
     #section-privacy-problems {
       border: none !important;
-      background: linear-gradient(to bottom, var(--gray) 10%, var(--light-gray) 90%);
+      background: var(--gray);
     }
 
     @layer title {

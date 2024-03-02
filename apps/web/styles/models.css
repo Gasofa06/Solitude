@@ -133,38 +133,6 @@
     }
   }
 
-  @layer btn-model-four {
-    button.btn_model_three {
-      display: inline-flex;
-      align-items: center;
-
-      height: 100%;
-
-      margin: 0;
-      padding: 10px 16px;
-
-      border: none;
-      border-radius: 32px;
-
-      font-weight: 600;
-      font-size: var(--text-m);
-    }
-
-    @layer black {
-      button.btn_model_three.black {
-        color: var(--soft-link-water);
-        background-color: var(--dark-gray-blue);
-      }
-    }
-
-    @layer white {
-      button.btn_model_three.white {
-        color: var(--dark-gray-blue);
-        background-color: var(--soft-link-water);
-      }
-    }
-  }
-
   @layer btn-model-five {
     button.btn_model_five {
       display: inline-flex;

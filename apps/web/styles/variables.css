@@ -14,15 +14,14 @@
   :root {
     --white: white;
 
+    --green: #4cc37b;
+
+    --dark-gray: #e7e7e9;
+    --gray: #f3f3f4;
+
     --black: black;
     --soft-black: #141414;
     --ultra-soft-black: #86868b;
-
-    --light-gray: #fbfaf9;
-    --gray: #f3f3f4;
-    --dark-gray: #e9e9ed;
-
-    --green: #4cc37b;
 
     --soft-link-water: #f5f6f7;
     --link-water: #d5dbe2;
@@ -37,5 +36,8 @@
 
 @layer dark {
   [theme='dark'] {
+    --white: white;
+    --gray: #f3f3f4;
+    --green: #4cc37b;
   }
 }
