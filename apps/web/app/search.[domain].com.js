@@ -1,4 +1,4 @@
-import { Start_Loading, Stop_Loading } from './utils/loading_information.js';
+import { StartLoading, StopLoading } from './utils/loading-info.js';
 import { PageController } from './search/pages/__controller__/__controller.js';
 
 import { Setup_Client } from './services/client/client.js';
@@ -8,18 +8,18 @@ import Setup_Data from './scripts/set-data.js';
 async function App() {
     window.page_controller = new PageController();
 
-    Start_Loading('Initializing WebAssembly');
+    StartLoading('Initializing WebAssembly');
     await Initialize_Web_Assembly();
-    Stop_Loading('Done');
+    StopLoading('Done');
 
-    Start_Loading('Geting server data');
+    StartLoading('Geting server data');
     await Setup_Data();
-    Stop_Loading('Server data loaded');
+    StopLoading('Server data loaded');
 
-    Start_Loading('Seting up the client');
+    StartLoading('Seting up the client');
     let client = Setup_Client();
     window.client_has_set_up = await client;
-    Stop_Loading('Client seted up');
+    StopLoading('Client seted up');
 }
 
 document.addEventListener('DOMContentLoaded', App());

@@ -1,5 +1,5 @@
 import '../utils/bz2.js';
-import { Get_Data } from '../services/get.js';
+import { GetData } from '../services/api.js';
 
 import { ArticlesTrie } from './structures/articles-trie.js';
 import { TopicsInvertedIndex } from './structures/inverted-index.js';
@@ -21,9 +21,9 @@ function Decompress(compressed_str) {
 }
 
 async function Set_Data() {
-    let get_topics = Get_Data('api/topics.json', true);
+    let get_topics = GetData('api/topics.json', true);
 
-    let bz2_main_dict = await Get_Data('api/title_and_topics.json', true);
+    let bz2_main_dict = await GetData('api/title_and_topics.json', true);
     let obj_main_dict = Decompress(bz2_main_dict['bz2']);
 
     window.trie_articles_data = new ArticlesTrie(obj_main_dict);

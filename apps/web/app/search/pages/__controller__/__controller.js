@@ -11,9 +11,10 @@ import Initialize_Cross_Page_Events from '../../cross_page_actions/start.js';
 
 export class PageController {
     constructor() {
+        window.homepage_container = document.querySelector('#section-search');
+
         this.MAIN = 'main';
         this.ARTICLE = 'article';
-        this.INDEX_ARTICLES = 'index_articles';
 
         this.curr_page = 'main';
 
@@ -28,9 +29,6 @@ export class PageController {
         switch (true) {
             case _page === this.MAIN:
                 window.homepage_container.classList.add('disactive');
-                window.about_container.classList.add('disactive');
-                window.faqs_container.classList.add('disactive');
-
                 window.removeEventListener('click', Main_Page_Click);
 
                 break;
@@ -48,9 +46,6 @@ export class PageController {
                 window.removeEventListener('scroll', Article_Scroll);
 
                 break;
-
-            case _page === this.INDEX_ARTICLES:
-                break;
         }
     }
 
@@ -61,8 +56,6 @@ export class PageController {
         this.close_page(previous_page);
 
         window.homepage_container.classList.remove('disactive');
-        window.about_container.classList.remove('disactive');
-        window.faqs_container.classList.remove('disactive');
 
         document.body.scrollIntoView({ behavior: 'smooth' });
 
@@ -97,11 +90,6 @@ export class PageController {
 
     in_article_page() {
         let response = this.curr_page === this.ARTICLE ? true : false;
-        return response;
-    }
-
-    in_index_articles_page() {
-        let response = this.curr_page === this.INDEX_ARTICLES ? true : false;
         return response;
     }
 }

@@ -1,11 +1,5 @@
 export default function Set_HTML_Global_Variabels() {
-    window.homepage_container = document.querySelector('#section-search');
-    window.about_container = document.querySelector('.about_container');
-    window.faqs_container = document.querySelector('.faqs_container');
-
-    window.make_query = document.getElementById('make_query_button');
-    window.loading_spinner = document.getElementById('loading_spinner');
-
+    window.make_query = document.getElementById('make-query');
     window.search_bar = document.querySelector('.write-bar input');
     window.search_suggestions = document.getElementById(
         'search-suggestions-list',
@@ -15,7 +9,7 @@ export default function Set_HTML_Global_Variabels() {
         '#selected-search-type p',
     );
 
-    window.query_result_container = document.querySelector(
-        '.query_result_container',
+    window.query_result_container = document.getElementById(
+        'section-query-result',
     );
 }

@@ -1,7 +1,9 @@
-import { KEY_SIZE, KEY_NAME, MAX_VALID_KEY_TIME } from '../../constants.js';
+import { api } from '/app/services/api.js';
+import { initialize, generate_keys } from '/pkg/client.js';
 
-import { api } from '../api.js';
-import { initialize, generate_keys } from '../../../pkg/client.js';
+export const KEY_SIZE = 32;
+export const KEY_NAME = 'spiralKey';
+export const MAX_VALID_KEY_TIME = 604800000;
 
 /**
  * @info En localStorage, solo se almacenan textos. Para guardar datos
@@ -160,7 +162,7 @@ export async function Setup_Client() {
  *
  * @return {string} El identificador único asignado por el servidor al cliente.
  */
-export async function Upload_State() {
+export async function UploadClientState() {
     console.log('Sending public parameters...');
     console.log(window.public_parameters);
     let setup_response = await api.setup(window.public_parameters);
