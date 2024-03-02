@@ -1,18 +1,3 @@
-let Toggle_Theme = () => {
-    let theme = document.documentElement.getAttribute('theme');
-
-    if (theme === 'light') theme = 'dark';
-    else if (theme === 'dark') theme = 'light';
-
-    document.documentElement.setAttribute('theme', theme);
-
-    try {
-        localStorage.setItem('data-theme', theme);
-    } catch (_error) {
-        alert(_error);
-    }
-};
-
 let CloseMobileNavigation = (menu, name) => {
     if (menu.classList.contains(name)) {
         menu.classList.remove(name);
@@ -37,8 +22,33 @@ function SetMobileNavigation() {
     );
 }
 
-// TODO
-function SetToggleTheme() {}
+let ToggleTheme = () => {
+    let theme = document.documentElement.getAttribute('theme');
+
+    if (theme === 'light') theme = 'dark';
+    else if (theme === 'dark') theme = 'light';
+
+    document.documentElement.setAttribute('theme', theme);
+
+    try {
+        localStorage.setItem('data-theme', theme);
+    } catch (_error) {
+        alert(_error);
+    }
+};
+
+function SetToggleTheme() {
+    let laptop__checkbox = document.querySelector(
+        '.laptop__toggle-theme input',
+    );
+    let mobile__checkbox = document.querySelector(
+        '.mobile__toggle-theme input',
+    );
+
+    [laptop__checkbox, mobile__checkbox].forEach(obj =>
+        obj.addEventListener('change', () => ToggleTheme()),
+    );
+}
 
 async function AddNavigationMenu() {
     const response = await fetch('http://192.168.1.201/reusable/nav.html');

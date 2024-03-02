@@ -1,9 +1,4 @@
-/**
- * @info Esta función detecta y aplica automáticamente el esquema de
- * colores del tema del sitio web antes de cargar los elementos HTML,
- * evitando parpadeos incómodos de blanco a negro en la página.
- */
-function Detect_Theme_Scheme() {
+function DetectTheme() {
     let theme = 'light';
 
     if (localStorage.getItem('data-theme')) {
@@ -19,4 +14,4 @@ function Detect_Theme_Scheme() {
     document.documentElement.setAttribute('theme', theme);
 }
 
-Detect_Theme_Scheme();
+DetectTheme();
