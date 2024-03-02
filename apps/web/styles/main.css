@@ -6,6 +6,18 @@
   --max-width: 1468px;
 }
 
+@media (min-width: 768px) {
+  :root {
+    --borders-pad: 54px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --borders-pad: 32px;
+  }
+}
+
 @layer scrollbar {
   ::-webkit-scrollbar {
     width: 6px;
@@ -35,23 +47,14 @@
   color: #008cff;
 }
 
-@media (min-width: 768px) {
-  main > * {
-    padding-left: 54px;
-    padding-right: 54px;
-  }
-}
-
-@media (max-width: 768px) {
-  main > * {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
 body {
   margin: 0;
   background-color: var(--white);
+}
+
+main > * {
+  padding-left: var(--borders-pad);
+  padding-right: var(--borders-pad);
 }
 
 li {

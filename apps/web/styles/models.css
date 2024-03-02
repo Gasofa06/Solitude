@@ -1,89 +1,8 @@
-@layer boxes {
-  @layer box-model-three {
-    .box_model_three > form {
-      width: 100%;
-
-      display: flex;
-      -webkit-box-pack: start;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-
-      gap: 20px;
-      cursor: pointer;
-    }
-
-    .box_model_three > form > div {
-      width: 100%;
-    }
-
-    .box_model_three .top_part > div {
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .box_model_three .top_part > div > img {
-      display: block;
-      position: relative;
-
-      width: 100%;
-
-      transition: var(--default-transition);
-    }
-
-    .box_model_three .top_part > div:hover > img {
-      transform: scale(1.02);
-    }
-
-    .box_model_three .top_part > p {
-      margin: 24px 0 0;
-
-      letter-spacing: -0.13px;
-      font-size: var(--text-m);
-      color: var(--c-secondary-150);
-    }
-
-    .box_model_three .bottom_part > div {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-
-      overflow: hidden;
-    }
-
-    .box_model_three .bottom_part > div > p {
-      margin: 8px 0 0;
-      font-size: var(--text-l);
-    }
-
-    .box_model_three .bottom_part > p {
-      margin: 0;
-
-      font-size: 1.438em;
-      font-weight: 500;
-      letter-spacing: -0.4px;
-    }
-  }
-
-  @layer box-img {
-    .box_img {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 4px;
-      background-color: #fbfaf9;
-
-      overflow: hidden;
-    }
-  }
-}
-
 @layer buttons {
   button {
     cursor: pointer;
     font-family: 'Inter', sans-serif;
-    transition: var(--default-transition);
+    transition: all 0.3s ease-in-out;
   }
 
   @layer model-green {
@@ -92,7 +11,7 @@
       align-items: center;
 
       font-weight: 500;
-      color: white;
+      color: var(--white);
 
       border: none;
       border-radius: 4px;
@@ -100,7 +19,7 @@
     }
 
     button.model-green:hover {
-      background-color: var(--dark-green);
+      opacity: 0.8;
     }
 
     @media (min-width: 768px) {
@@ -125,7 +44,7 @@
       border-style: none;
 
       font-size: var(--text-ml);
-      color: var(--c-secondary-300);
+      color: var(--gray-blue);
 
       background-color: #fbfaf9;
     }
@@ -162,7 +81,7 @@
       margin-left: 8px;
 
       fill: none;
-      transition: var(--default-transition);
+      transition: all 0.3s ease-in-out;
       transition-duration: 130ms !important;
     }
 
@@ -193,23 +112,23 @@
 
     @layer black {
       button.btn_model_three.black {
-        color: var(--c-secondary-000);
-        background-color: var(--c-secondary-450);
+        color: var(--white);
+        background-color: var(--black);
       }
 
       button.btn_model_three.black > svg {
-        color: var(--c-secondary-000);
+        color: var(--white);
       }
     }
 
     @layer white {
       button.btn_model_three.white {
-        color: var(--c-secondary-450);
-        background-color: var(--c-secondary-000);
+        color: var(--black);
+        background-color: var(--white);
       }
 
       button.btn_model_three.white > svg {
-        color: var(--c-secondary-450);
+        color: var(--black);
       }
     }
   }
@@ -233,15 +152,15 @@
 
     @layer black {
       button.btn_model_three.black {
-        color: var(--c-secondary-000);
-        background-color: var(--c-secondary-450);
+        color: var(--soft-link-water);
+        background-color: var(--dark-gray-blue);
       }
     }
 
     @layer white {
       button.btn_model_three.white {
-        color: var(--c-secondary-450);
-        background-color: var(--c-secondary-000);
+        color: var(--dark-gray-blue);
+        background-color: var(--soft-link-water);
       }
     }
   }
@@ -256,7 +175,7 @@
 
       font-weight: 400;
       font-size: var(--text-ms);
-      color: var(--c-secondary-150);
+      color: var(--dark-link-water);
     }
 
     button.btn_model_five > svg {
@@ -264,10 +183,10 @@
       height: 10px;
       margin-left: 8px;
 
-      color: var(--c-secondary-150);
+      color: var(--dark-link-water);
 
       fill: none;
-      transition: var(--default-transition);
+      transition: all 0.3s ease-in-out;
       transition-duration: 130ms !important;
     }
 

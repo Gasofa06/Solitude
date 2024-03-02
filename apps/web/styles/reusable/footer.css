@@ -36,5 +36,5 @@ ul.footer_links li {
 
 ul.footer_links li a {
   font-size: var(--text-xs);
-  color: var(--c-secondary-150);
+  color: var(--dark-link-water);
 }

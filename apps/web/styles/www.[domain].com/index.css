@@ -64,7 +64,7 @@
 
     #section-hero span {
       display: block;
-      color: var(--c-secondary-450);
+      color: var(--dark-gray-blue);
     }
 
     @media (min-width: 480px) {
@@ -152,7 +152,7 @@
           stroke-width: 3px;
           stroke: white;
 
-          transition: var(--default-transition);
+          transition: all 0.3s ease-in-out;
         }
       }
 
@@ -224,7 +224,7 @@
           display: flex;
           flex-direction: column;
 
-          color: var(--c-secondary-100);
+          color: var(--dark-link-water);
           padding: 20px 0 0;
           gap: 12px;
         }
@@ -358,7 +358,7 @@
         }
 
         ul.benefits-grid span {
-          color: var(--c-secondary-550);
+          color: var(--black);
           font-weight: 600;
         }
 
@@ -434,7 +434,7 @@
             margin-left: 4px;
             padding: 12px 16px;
 
-            background-color: #141414;
+            background-color: var(--soft-black);
             border-radius: 18px 0 0 18px;
           }
 
@@ -445,13 +445,13 @@
             border-radius: 50%;
 
             flex: 0 0 auto;
-            background-color: #3ec44e;
+            background-color: var(--green);
           }
 
           #confidential-search .confidentiality > div > form path {
             fill: none;
             stroke-width: 3px;
-            stroke: var(--c-secondary-000);
+            stroke: var(--soft-link-water);
           }
         }
 
@@ -480,7 +480,7 @@
             justify-content: center;
 
             border-radius: 40px;
-            background-color: #4cc37b;
+            background-color: var(--green);
 
             animation: change-protection-size var(--dur) infinite alternate ease;
           }
@@ -639,7 +639,7 @@
 
             @keyframes first-protection-layer {
               from {
-                border: 3.5px solid #4cc37b;
+                border: 3.5px solid var(--green);
               }
 
               to {
@@ -678,7 +678,7 @@
 
     @layer title {
       #section-privacy-problems .sec-title > h4 {
-        color: var(--c-secondary-100);
+        color: var(--dark-link-water);
       }
     }
 
@@ -720,14 +720,14 @@
 
       .problems-list > li > span {
         font-size: var(--text-s);
-        color: var(--c-secondary-100);
+        color: var(--dark-link-water);
       }
 
       .problems-list > li > p {
         margin: 12px 0 0;
 
         font-size: var(--text-m);
-        color: var(--c-secondary-250);
+        color: var(--gray-blue);
       }
 
       .problems-list > li > p > a {
