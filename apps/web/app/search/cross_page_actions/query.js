@@ -134,6 +134,6 @@ async function Article_Query_By_Reference() {
     return;
 }
 
-export default function Initialize_Query_Events() {
+export function Query() {
     window.make_query.onclick = () => MakeQuery();
 }

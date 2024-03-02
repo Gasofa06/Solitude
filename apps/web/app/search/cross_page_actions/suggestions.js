@@ -232,6 +232,6 @@ const Click_Title_Suggestion = _e => {
     window.make_query.click();
 };
 
-export default function Initialize_Suggestions_Events() {
+export function Suggestions() {
     window.search_bar.addEventListener('input', _e => SearchSuggestions(_e));
 }
