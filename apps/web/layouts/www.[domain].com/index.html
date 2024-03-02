@@ -9,15 +9,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
-    <link rel="stylesheet" type="text/css" href="../../styles/www.[domain].com/index.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/www.[domain].com/index.css" />
 
-    <script defer type="module" src="../javascript/app/before_DOM/theme_detection.js"></script>
+    <script defer type="module" src="/app/detect-theme.js"></script>
   </head>
 
   <body>
-    <script type="module" src="../layouts/reusable/nav.js"></script>
-    <script type="module" src="../layouts/reusable/footer.js"></script>
+    <script type="module" src="/app/navigation-menu.js"></script>
+    <script type="module" src="/app/footer.js"></script>
 
     <div id="loading-container">
       <div class="transition_screen">
@@ -322,7 +322,7 @@
           </hgroup>
           <div style="display: flex; flex-direction: column; gap: 4.4625rem">
             <div style="display: flex; flex-direction: column; gap: 0.75rem">
-              <div style="min-height: 276px" class="box_img"></div>
+              <div style="min-height: 276px"></div>
               <div style="display: flex; flex-direction: column; gap: 0.4375rem">
                 <p style="color: var(--blue)" class="Typography__Paragraph-sc-p3xo6h-6 cLTQcg">
                   Monitor In Real-Time

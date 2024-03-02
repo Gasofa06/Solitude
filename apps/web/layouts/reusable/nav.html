@@ -4,7 +4,7 @@
   <nav class="top-bar">
     <div>
       <div class="left">
-        <div class="logo">
+        <a href="http://192.168.1.201" class="logo">
           <svg viewBox="0 0 245 50">
             <path
               d="M72.4,14c6.61,0,10.87,3.7,11.26,9.71H78.92c-.24-3.46-2.69-5.48-6.56-5.48-4.36,0-7.19,2.21-7.19,5.62,0,2.78,1.58,4.47,4.84,5.23l5.7,1.35c5.65,1.3,8.52,4.37,8.52,9.27C84.23,45.92,79.4,49.9,72,49.9c-7,0-11.73-3.7-12-9.65h4.79c.09,3.31,2.87,5.42,7.23,5.42,4.6,0,7.52-2.16,7.52-5.62,0-2.73-1.49-4.46-4.79-5.23l-5.7-1.3C63.4,32.22,60.48,29,60.48,24,60.48,18,65.27,14,72.4,14Z"
@@ -30,14 +30,14 @@
               d="M0,0V50H50V0ZM40,40H31.21L25,46.21,18.79,40H10V31.21L3.79,25,10,18.79V10h8.79L25,3.79,31.21,10H40v8.79L46.21,25,40,31.21Z"
             ></path>
           </svg>
-        </div>
+        </a>
       </div>
 
       <div class="laptop__nav">
         <ul class="laptop__menu">
           <li>
             <label>
-              <a>About</a>
+              <a href="http://192.168.1.201/about">About</a>
             </label>
           </li>
 
@@ -56,9 +56,9 @@
             </label>
 
             <ul class="laptop__submenu">
-              <a>Paper</a>
-              <a>FAQs</a>
-              <a>Brand Guidelines</a>
+              <a href="http://192.168.1.201/resources/paper">Paper</a>
+              <a href="http://192.168.1.201/resources/faqs">FAQs</a>
+              <a href="http://192.168.1.201/resources/brand-guidelines">Brand Guidelines</a>
             </ul>
           </li>
 
@@ -77,9 +77,9 @@
             </label>
 
             <ul class="laptop__submenu">
-              <a>Features</a>
-              <a>Limitation</a>
-              <a>Workflow</a>
+              <a href="http://192.168.1.201/platform/features">Features</a>
+              <a href="http://192.168.1.201/platform/limitation">Limitation</a>
+              <a href="http://192.168.1.201/platform/workflow">Workflow</a>
             </ul>
           </li>
 
@@ -98,9 +98,9 @@
             </label>
 
             <ul class="laptop__submenu">
-              <a>My Website</a>
-              <a>GitHub</a>
-              <a>X User</a>
+              <a>Roger's Website</a>
+              <a href="https://github.com/Gasofa06/Solitude" target="_blank">GitHub</a>
+              <a href="https://twitter.com/rovi_roger" target="_blank">X User</a>
             </ul>
           </li>
         </ul>
@@ -108,18 +108,17 @@
 
       <div class="right">
         <div class="laptop__toggle-theme">
-          <div id="toggle-theme">
+          <div class="toggle-theme">
             <input type="checkbox" />
-
             <div>
-              <img src="../../assets/Light-Theme.svg" />
-              <img src="../../assets/Dark-Theme.svg" />
+              <img src="/assets/svgs/laptop-theme-light.svg" />
+              <img src="/assets/svgs/laptop-theme-dark.svg" />
             </div>
           </div>
         </div>
 
         <div class="laptop__search-btn">
-          <form action="https://search.incognitodb.com/">
+          <form action="http://192.168.1.201:5555">
             <button class="btn_model_three black">
               Search
               <svg viewBox="0 0 17 15">
@@ -148,26 +147,52 @@
         <li>
           <p>Important</p>
 
-          <a>Search</a>
-          <a>About</a>
+          <a href="http://192.168.1.201:5555">Search</a>
+          <a href="http://192.168.1.201/about">About</a>
         </li>
 
         <li>
           <p>Resources</p>
 
-          <a>Paper</a>
-          <a>FAQs</a>
-          <a>Brand Guidelines</a>
+          <a href="http://192.168.1.201/resources/paper">Paper</a>
+          <a href="http://192.168.1.201/resources/faqs">FAQs</a>
+          <a href="http://192.168.1.201/resources/brand-guidelines">Brand Guidelines</a>
         </li>
 
         <li>
           <p>Platform</p>
 
-          <a>Features</a>
-          <a>Limitation</a>
-          <a>Workflow</a>
+          <a href="http://192.168.1.201/platform/features">Features</a>
+          <a href="http://192.168.1.201/platform/limitation">Limitation</a>
+          <a href="http://192.168.1.201/platform/workflow">Workflow</a>
         </li>
       </ul>
+
+      <footer class="mobile__footer-menu">
+        <div>
+          <div class="mobile__toggle-theme">
+            <div class="toggle-theme">
+              <input type="checkbox" />
+              <div>
+                <img src="/assets/svgs/mobile-theme-light.svg" />
+                <img src="/assets/svgs/mobile-theme-dark.svg" />
+              </div>
+            </div>
+          </div>
+
+          <a class="github" href="https://github.com/Gasofa06/Solitude" target="_blank">
+            <img alt="GitHub" src="/assets/svgs/github-mark-white.svg" />
+          </a>
+
+          <a class="x" href="https://twitter.com/rovi_roger" target="_blank">
+            <img alt="X" src="/assets/svgs/x-mark-white.svg" />
+          </a>
+        </div>
+
+        <div>
+          <a>Roger's Website</a>
+        </div>
+      </footer>
     </div>
   </div>
 </div>
