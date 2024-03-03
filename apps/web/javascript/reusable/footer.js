@@ -1,16 +1,21 @@
-async function Add_Footer() {
+async function AddFooter() {
     const response = await fetch('http://192.168.1.201/reusable/footer.html');
 
     if (response.ok) {
-        const html = await response.text();
-        document.body.insertAdjacentHTML('afterend', html);
+        let layout = await response.text();
+        let body = document.body;
+        let main = body.getElementsByTagName('main')[0];
 
-        return;
-    } else {
-        console.log("Error, the footer couldn't be found.");
+        main.insertAdjacentHTML('afterend', layout);
 
         return;
     }
+
+    console.log("Error, the footer couldn't be found.");
 }
 
-Add_Footer();
+function Main() {
+    AddFooter();
+}
+
+Main();

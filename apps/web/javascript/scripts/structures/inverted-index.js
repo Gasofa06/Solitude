@@ -18,9 +18,9 @@ export class TopicsInvertedIndex {
             let contains_topic = !this.dict_topic_titles[article_topic];
 
             if (contains_topic === true) {
-                console.log(
-                    'The article is associated with a topic does not exist.',
-                );
+                // console.log(
+                //     'The article is associated with a topic does not exist.',
+                // );
 
                 break;
             }

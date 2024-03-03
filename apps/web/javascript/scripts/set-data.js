@@ -23,8 +23,10 @@ function Decompress(compressed_str) {
 async function Set_Data() {
     let get_topics = GetData('api/topics.json', true);
 
-    let bz2_main_dict = await GetData('api/title_and_topics.json', true);
+    let bz2_main_dict = await GetData('api/main-dict.json', true);
     let obj_main_dict = Decompress(bz2_main_dict['bz2']);
+
+    console.log(obj_main_dict);
 
     window.trie_articles_data = new ArticlesTrie(obj_main_dict);
 

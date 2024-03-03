@@ -1,12 +1,6 @@
-/**
- * @info Genera un enlace para volver arriba que puede ser utilizado en la interfaz.
- *
- * @returns {string} El fragmento de código HTML que representa el enlace para
- * volver arriba.
- */
-export function Add_Back_Top() {
+function AddGoTopButton() {
     // prettier-ignore
-    let back_top =
+    let go_top =
         '<a class="back_to_top">' +
             '<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">' +
                 '<g>' +
@@ -15,5 +9,10 @@ export function Add_Back_Top() {
             '</svg>' +
         '</a>';
 
-    return back_top;
+    return go_top;
+}
+
+export function Footer() {
+    let footer = '<footer>' + AddGoTopButton() + '</footer>';
+    return footer;
 }

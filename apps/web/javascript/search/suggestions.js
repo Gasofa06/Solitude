@@ -1,8 +1,8 @@
 import {
     Clear_Suggestions,
     Clear_Search_Text_Input,
-} from '/app/utils/clear.js';
-import { Contains_Obj } from '/app/utils/obj_handle.js';
+} from '/javascript/utils/clear.js';
+import { Contains_Obj } from '/javascript/utils/obj_handle.js';
 
 function Suggest_Topics(_prefix, _max_suggestions) {
     if (!window.selected_topics) {

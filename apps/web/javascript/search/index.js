@@ -1,13 +1,31 @@
-import Initialize_Main_Page from '../(__main)/start.js';
-import { Main_Page_Click } from '../(__main)/actions/main_page_lick.js';
+import { InitQuery } from '/javascript/search/query.js';
+import { InitSuggestions } from '/javascript/search/suggestions.js';
 
-import Initialize_Article_Page from '../(__article)/start.js';
-import { Article_Scroll } from '../(__article)/actions/scroll.js';
+import { OpenArticle } from '/javascript/search/page-article/index.js';
 
-import Initialize_Index_Articles_Page from '../(__index_articles)/__initialize.js';
+import Initialize_Main_Page from '/javascript/search/pages/(__main)/start.js';
+import { Main_Page_Click } from '/javascript/search/pages/(__main)/actions/main_page_lick.js';
 
-import Set_HTML_Global_Variabels from '../../html_locator/start.js';
-import Initialize_Cross_Page_Events from '../../cross_page_actions/start.js';
+import Initialize_Index_Articles_Page from '/javascript/search/pages/(__index_articles)/__initialize.js';
+
+function Search() {
+    InitQuery();
+    InitSuggestions();
+}
+
+function Set_HTML_Global_Variabels() {
+    window.make_query = document.getElementById('make-query');
+    window.search_bar = document.querySelector('.write-bar input');
+    window.search_suggestions = document.getElementById(
+        'search-suggestions-list',
+    );
+
+    window.html_selected_search_type = document.querySelector(
+        '#selected-search-type p',
+    );
+
+    window.article = document.getElementById('section-article');
+}
 
 export class PageController {
     constructor() {
@@ -22,29 +40,19 @@ export class PageController {
 
         Set_HTML_Global_Variabels();
         Initialize_Main_Page();
-        Initialize_Cross_Page_Events();
+        Search();
     }
 
-    close_page(_page) {
+    close_page(page) {
         switch (true) {
-            case _page === this.MAIN:
+            case page === this.MAIN:
                 window.homepage_container.classList.add('disactive');
                 window.removeEventListener('click', Main_Page_Click);
 
                 break;
 
-            case _page === this.ARTICLE:
-                window.aricle_sections = null;
-                window.table_contents_links = null;
-
-                let article =
-                    window.query_result_container.querySelector('article');
-                if (!!article) {
-                    article.remove();
-                }
-
-                window.removeEventListener('scroll', Article_Scroll);
-
+            case page === this.ARTICLE:
+                CloseArticle();
                 break;
         }
     }
@@ -70,7 +78,7 @@ export class PageController {
 
         document.body.scrollIntoView({ behavior: 'smooth' });
 
-        Initialize_Article_Page(_article);
+        OpenArticle(_article);
     }
 
     load_index_articles_page(_article_titles) {

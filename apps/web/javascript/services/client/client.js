@@ -1,4 +1,4 @@
-import { api } from '/app/services/api.js';
+import { api } from '/javascript/services/api.js';
 import { initialize, generate_keys } from '/pkg/client.js';
 
 export const KEY_SIZE = 32;

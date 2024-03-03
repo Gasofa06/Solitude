@@ -56,10 +56,11 @@ async function AddNavigationMenu() {
     );
 
     if (response.ok) {
-        let menu = await response.text();
+        let layout = await response.text();
         let body = document.body;
+        let main = body.getElementsByTagName('main')[0];
 
-        body.insertAdjacentHTML('beforeBegin', menu);
+        main.insertAdjacentHTML('beforebegin', layout);
 
         SetMobileNavigation();
         SetToggleTheme();

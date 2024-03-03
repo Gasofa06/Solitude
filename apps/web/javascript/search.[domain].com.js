@@ -1,5 +1,5 @@
 import { StartLoading, StopLoading } from './utils/loading-info.js';
-import { PageController } from './search/pages/__controller__/__controller.js';
+import { PageController } from '/javascript/search/index.js';
 
 import { Setup_Client } from './services/client/client.js';
 import Initialize_Web_Assembly from '../pkg/client.js';

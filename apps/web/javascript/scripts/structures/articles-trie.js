@@ -1,11 +1,4 @@
-function Process_Title(title) {
-    let processed_title = title
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/\p{Diacritic}/gu, '');
-
-    return processed_title;
-}
+import { ProcessTitle } from '/javascript/utils/process-title.js';
 
 class TrieNode {
     constructor() {
@@ -31,7 +24,7 @@ export class ArticlesTrie {
     build_trie(dict_titles) {
         for (let title in dict_titles) {
             let node = this.root;
-            let processed_title = Process_Title(title);
+            let processed_title = ProcessTitle(title);
 
             for (let char of processed_title) {
                 if (node.children[char] == undefined) {
@@ -47,7 +40,7 @@ export class ArticlesTrie {
 
     search_data(title) {
         let node = this.root;
-        let processed_title = Process_Title(title);
+        let processed_title = ProcessTitle(title);
 
         for (let char of processed_title) {
             if (node.children[char] == undefined) return;
@@ -67,13 +60,6 @@ export class ArticlesTrie {
     get_topics(_title) {
         let arr_data = this.search_data(_title);
         let date = arr_data[1];
-
-        return date;
-    }
-
-    get_release_date(_title) {
-        let arr_data = this.search_data(_title);
-        let date = arr_data[2];
 
         return date;
     }
@@ -116,7 +102,7 @@ export class ArticlesTrie {
      */
     suggest(prefix, max_suggestions) {
         let node = this.root;
-        let processed_prefix = Process_Title(prefix);
+        let processed_prefix = ProcessTitle(prefix);
 
         let curr = '';
 
