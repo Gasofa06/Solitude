@@ -31,14 +31,13 @@ def Load_Articles(articles_path):
     return arr_articles
 
 
-def Pack_Articles(_articles, target_size):
-    sorted_articles = sorted(_articles, key=lambda article: len(article), reverse=True)
+def Pack_Articles(articles, target_size):
+    sorted_articles = sorted(articles, key=lambda article: len(article), reverse=True)
 
     curr_group = ""
     arr_groups = []
 
-    dict_title_and_idx = {}
-    dict_title_and_topics = {}
+    dict_title_idx_topics = {}
 
     for article in sorted_articles:
         compressed_group = Compress(curr_group + article)
@@ -64,47 +63,38 @@ def Pack_Articles(_articles, target_size):
         title_match = re.search(title_regex, article)
 
         if title_match:
-            # Si hay coincidencia, agregamos un
-            # par título-índice.
             title = title_match.group(1)
             idx = len(arr_groups)
-            dict_title_and_idx[title] = idx
 
             # En el artículo, los temas a los que
             # pertenece están entre "C:" y "‽".
             # Y se separan entre sí por "&".
             topic_regex = r"C:(.*?)‽"
             topic_match = re.search(topic_regex, article)
-
             arr_topics = topic_match.group(1).split("&") if topic_match else []
-            dict_title_and_topics[title] = arr_topics
+
+            dict_title_idx_topics[title] = [idx, arr_topics]
 
     spaces = b" " * (target_size - size + 33)
     compressed_group += spaces
 
     arr_groups.append(compressed_group)
 
-    return (arr_groups, dict_title_and_idx, dict_title_and_topics)
+    return (arr_groups, dict_title_idx_topics)
 
 
 def Main(target_size):
     articles_path = os.getcwd() + "/articles/"
     arr_articles = Load_Articles(articles_path)
 
-    (arr_groups, dict_title_and_idx, dict_title_and_topics) = Pack_Articles(
-        arr_articles, target_size
-    )
+    (arr_groups, dict_title_idx_topics) = Pack_Articles(arr_articles, target_size)
 
     with open(os.getcwd() + "/server-only/db.txt", "wb") as f:
         f.write(b"".join(arr_groups))
 
-    with open(os.getcwd() + "/shared-with-client/title_and_idx.json", "w") as json_f:
-        comp_dict_title_and_idx = Compress_JSON(dict_title_and_idx)
-        json.dump(comp_dict_title_and_idx, json_f)
-
     with open(
-        os.getcwd() + "/shared-with-client/title_and_topics.json",
+        os.getcwd() + "\\shared-with-client\\main-dict.json",
         "w",
     ) as json_f:
-        comp_dict_title_and_topics = Compress_JSON(dict_title_and_topics)
-        json.dump(comp_dict_title_and_topics, json_f)
+        comp_dict_title_idx_topics = Compress_JSON(dict_title_idx_topics)
+        json.dump(comp_dict_title_idx_topics, json_f)

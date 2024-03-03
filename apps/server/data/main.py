@@ -1,6 +1,7 @@
 import fill
 import build
 
+# Need to be run from apps/server/data directory.
 if __name__ == "__main__":
     fill.Main()
 

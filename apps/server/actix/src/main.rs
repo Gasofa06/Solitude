@@ -23,9 +23,7 @@ const PUB_PARAMS_MAX: usize = 250;
 
 // Variables para la direccion y el nombre de archivos.
 
-const MAIN_DICT: &str = "../data/shared-with-client/main_dict.json";
-const PATH_TITLE_INDICES: &str = "../data/shared-with-client/title_and_idx.json";
-const PATH_TITLE_TOPICS: &str = "../data/shared-with-client/title_and_topics.json";
+const MAIN_DICT: &str = "../data/shared-with-client/main-dict.json";
 const PATH_TOPICS: &str = "../data/shared-with-client/topics.json";
 
 struct ServerState<'a> {
@@ -149,25 +147,9 @@ async fn query<'a>(
   Ok(result)
 }
 
-#[get("/main_dict.json")]
+#[get("/main-dict.json")]
 async fn main_dict() -> Result<NamedFile, std::io::Error> {
   match NamedFile::open(MAIN_DICT) {
-    Ok(file) => Ok(file),
-    Err(err) => Err(err),
-  }
-}
-
-#[get("/title_and_idx.json")]
-async fn title_and_idx() -> Result<NamedFile, std::io::Error> {
-  match NamedFile::open(PATH_TITLE_INDICES) {
-    Ok(file) => Ok(file),
-    Err(err) => Err(err),
-  }
-}
-
-#[get("/title_and_topics.json")]
-async fn title_and_topics() -> Result<NamedFile, std::io::Error> {
-  match NamedFile::open(PATH_TITLE_TOPICS) {
     Ok(file) => Ok(file),
     Err(err) => Err(err),
   }
@@ -253,8 +235,6 @@ async fn main() -> std::io::Result<()> {
       .service(setup) // POST
       .service(query) // POST
       .service(check) // GET
-      .service(title_and_topics) // GET
-      .service(title_and_idx) // GET
       .service(main_dict)
       .service(article_topics);
 
