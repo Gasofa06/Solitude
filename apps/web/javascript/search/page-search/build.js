@@ -1,20 +1,18 @@
-import { SEARCH_TYPES } from '../../../../constants.js';
-
 /**
  * @info Esta función inicializa la variable global 'selected_search_type'
  * y realiza acciones (en la interfaz) relacionadas con la elección del
  * tipo de búsqueda.
  */
-export function Build_Selected_Search_Type() {
+function Build_Selected_Search_Type(search_types) {
     let default_idx = 0;
 
-    let arr_search_types_names = Object.keys(SEARCH_TYPES);
+    let arr_search_types_names = Object.keys(search_types);
     let type_name = arr_search_types_names[default_idx];
 
     let input = window.arr_search_types_inputs[default_idx];
     input.classList.add('selected');
 
-    let placeholder = SEARCH_TYPES[type_name].placeholder;
+    let placeholder = search_types[type_name].placeholder;
     window.search_bar.setAttribute('placeholder', placeholder);
 
     window.html_selected_search_type.innerHTML = type_name.toUpperCase();
@@ -26,10 +24,10 @@ export function Build_Selected_Search_Type() {
  * @info Genera el contenido para el menú desplegable que permite
  * seleccionar el tipo de búsqueda deseado.
  */
-export function Build_Dropdown_Search_Types() {
+function Build_Dropdown_Search_Types(search_types) {
     let container = document.getElementById('search-types-list');
 
-    let arr_search_types_names = Object.keys(SEARCH_TYPES);
+    let arr_search_types_names = Object.keys(search_types);
 
     let dopdown_components = arr_search_types_names
         .map(_name => {
@@ -47,7 +45,7 @@ export function Build_Dropdown_Search_Types() {
     );
 }
 
-export default function Construct() {
-    Build_Dropdown_Search_Types();
-    Build_Selected_Search_Type();
+export function BuildSearch(search_types) {
+    Build_Dropdown_Search_Types(search_types);
+    Build_Selected_Search_Type(search_types);
 }

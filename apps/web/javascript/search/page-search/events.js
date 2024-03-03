@@ -1,12 +1,9 @@
-import { Main_Page_Click } from './actions/main_page_lick.js';
-
-import { SEARCH_TYPES } from '../../../constants.js';
-import { Find_Key_Index } from '../../../utils/obj_handle.js';
+import { Find_Key_Index } from '/javascript/utils/obj_handle.js';
 
 import {
     Clear_Suggestions,
     Clear_Search_Text_Input,
-} from '../../../utils/clear.js';
+} from '/javascript/utils/clear.js';
 
 /**
  * @info Actualiza la barra de búsqueda con un nuevo marcador de posición
@@ -15,7 +12,7 @@ import {
  * @param {string} _placeholder - El nuevo marcador de posición para la
  * sbarra de búsqueda.
  */
-const Update_Search_Bar_Type = _placeholder => {
+let Update_Search_Bar_Type = _placeholder => {
     let input = window.search_bar;
 
     Clear_Search_Text_Input();
@@ -31,9 +28,9 @@ const Update_Search_Bar_Type = _placeholder => {
  *
  * @param {string} _new_type - El nuevo tipo de búsqueda seleccionado.
  */
-export function Set_Search_Type(_new_type) {
-    let new_idx = Find_Key_Index(SEARCH_TYPES, _new_type);
-    let curr_idx = Find_Key_Index(SEARCH_TYPES, window.selected_search_type);
+function Set_Search_Type(_new_type, search_types) {
+    let new_idx = Find_Key_Index(search_types, _new_type);
+    let curr_idx = Find_Key_Index(search_types, window.selected_search_type);
 
     if (new_idx !== -1) {
         let curr_input = window.arr_search_types_inputs[curr_idx];
@@ -42,7 +39,7 @@ export function Set_Search_Type(_new_type) {
         let new_input = window.arr_search_types_inputs[new_idx];
         new_input.classList.add('selected');
 
-        let new_placeholder = SEARCH_TYPES[_new_type].placeholder;
+        let new_placeholder = search_types[_new_type].placeholder;
         Update_Search_Bar_Type(new_placeholder);
 
         window.html_selected_search_type.innerHTML = _new_type.toUpperCase();
@@ -82,13 +79,13 @@ export const Main_Page_Click = _event => {
     }
 };
 
-export default function Initialize_Events(_re) {
+export function InitEvents(_re, search_types) {
     if (_re === false) {
         window.arr_search_types_inputs.forEach(_input => {
             _input.onclick = _e => {
                 let type = _e.target.value;
 
-                Set_Search_Type(type);
+                Set_Search_Type(type, search_types);
             };
         });
     }

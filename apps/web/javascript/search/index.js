@@ -1,10 +1,15 @@
 import { InitQuery } from '/javascript/search/query.js';
 import { InitSuggestions } from '/javascript/search/suggestions.js';
 
-import { OpenArticle } from '/javascript/search/page-article/index.js';
+import {
+    OpenArticle,
+    CloseArticle,
+} from '/javascript/search/page-article/index.js';
 
-import Initialize_Main_Page from '/javascript/search/pages/(__main)/start.js';
-import { Main_Page_Click } from '/javascript/search/pages/(__main)/actions/main_page_lick.js';
+import {
+    OpenMainPage,
+    CloseMainPage,
+} from '/javascript/search/page-search/index.js';
 
 import Initialize_Index_Articles_Page from '/javascript/search/pages/(__index_articles)/__initialize.js';
 
@@ -39,16 +44,14 @@ export class PageController {
         document.body.scrollIntoView({ behavior: 'smooth' });
 
         Set_HTML_Global_Variabels();
-        Initialize_Main_Page();
+        OpenMainPage();
         Search();
     }
 
     close_page(page) {
         switch (true) {
             case page === this.MAIN:
-                window.homepage_container.classList.add('disactive');
-                window.removeEventListener('click', Main_Page_Click);
-
+                CloseMainPage();
                 break;
 
             case page === this.ARTICLE:
@@ -67,7 +70,7 @@ export class PageController {
 
         document.body.scrollIntoView({ behavior: 'smooth' });
 
-        Initialize_Main_Page(true);
+        OpenMainPage(true);
     }
 
     go_article_page(_article) {

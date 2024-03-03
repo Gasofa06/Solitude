@@ -1,4 +1,4 @@
-import { MAX_ARTICELS_IN_PAGE } from '../../../../../constants.js';
+let max_article_in_page = 40;
 
 export function Add_Articles_List() {
     var arr_articles_list_content = [];
@@ -6,8 +6,8 @@ export function Add_Articles_List() {
     let curr_page = window.curr_page_in_index_articles;
 
     for (
-        var curr_idx = MAX_ARTICELS_IN_PAGE * curr_page;
-        curr_idx <= MAX_ARTICELS_IN_PAGE * (curr_page + 1);
+        var curr_idx = max_article_in_page * curr_page;
+        curr_idx <= max_article_in_page * (curr_page + 1);
         curr_idx++
     ) {
         if (curr_idx >= window.article_titles_list.length) {

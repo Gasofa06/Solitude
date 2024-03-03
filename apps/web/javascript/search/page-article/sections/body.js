@@ -4,24 +4,25 @@ function AddContentsMenu() {
     let sections_links = arr_sections
         .map(_sec_name => {
             let link = `<a>${_sec_name}</a>`;
-
             return `<li>${link}</li>`;
         })
         .join('');
 
     let table_of_contents =
         '<nav class="contents-menu">' +
-        '<p class="title">In This Article</p>' +
-        '<ul class="contents">' +
+        '<div>' +
+        '<p>Content Menu</p>' +
+        '<ul>' +
         sections_links +
         '</ul>' +
+        '</div>' +
         '</nav>';
 
     return table_of_contents;
 }
 
 function AddSectionTitle(num, title) {
-    let section_title = '<h4>' + `${num}.&nbsp;&nbsp;&nbsp;${title}` + '</h4>';
+    let section_title = '<h3>' + `${num}.&nbsp;&nbsp;&nbsp;${title}` + '</h3>';
     return section_title;
 }
 

@@ -20,7 +20,7 @@ function Decompress(compressed_str) {
     return JSON.parse(decoded_decompressed_str);
 }
 
-async function Set_Data() {
+export async function SetData() {
     let get_topics = GetData('api/topics.json', true);
 
     let bz2_main_dict = await GetData('api/main-dict.json', true);
@@ -56,5 +56,3 @@ async function Set_Data() {
     );
     console.log(window.inverted_index_topics_title);
 }
-
-export default Set_Data;
