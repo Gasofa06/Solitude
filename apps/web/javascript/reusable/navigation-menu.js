@@ -51,7 +51,9 @@ function SetToggleTheme() {
 }
 
 async function AddNavigationMenu() {
-    const response = await fetch('http://192.168.1.201/reusable/nav.html');
+    const response = await fetch(
+        'http://192.168.1.201/reusable/navigation-menu.html',
+    );
 
     if (response.ok) {
         let menu = await response.text();
