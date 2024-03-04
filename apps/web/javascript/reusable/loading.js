@@ -1,10 +1,10 @@
 let GetPageName = () => {
-    let script = document.querySelector('script#load');
+    let script = document.getElementById('reusable-components');
     let name = '⋆ ' + script.getAttribute('name');
     return name;
 };
 
-async function AddLoading() {
+export async function AddLoading() {
     const response = await fetch('http://192.168.1.201/reusable/loading.html');
 
     if (response.ok) {
@@ -22,9 +22,3 @@ async function AddLoading() {
 
     console.log("Error, the loading layout couldn't be found.");
 }
-
-function Main() {
-    AddLoading();
-}
-
-Main();

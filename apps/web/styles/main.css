@@ -76,6 +76,22 @@ main > * {
   padding-right: var(--borders-pad);
 }
 
+body > main:before {
+  content: '';
+
+  z-index: 9999;
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  background: var(--soft-black);
+}
+
+body > .reusable-loading ~ main:before {
+  content: none !important;
+}
+
 li {
   list-style: none;
 }

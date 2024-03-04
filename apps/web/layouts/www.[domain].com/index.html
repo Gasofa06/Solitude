@@ -12,13 +12,16 @@
     <link rel="stylesheet" type="text/css" href="/styles/main.css" />
     <link rel="stylesheet" type="text/css" href="/styles/www.[domain].com/index.css" />
 
-    <script defer type="module" src="/javascript/utils/detect-theme.js"></script>
+    <script defer src="/javascript/utils/detect-theme.js"></script>
   </head>
 
   <body>
-    <script id="load" name="Home" type="module" src="/javascript/reusable/loading.js"></script>
-    <script type="module" src="/javascript/reusable/navigation-menu.js"></script>
-    <script type="module" src="/javascript/reusable/footer.js"></script>
+    <script
+      type="module"
+      id="reusable-components"
+      name="Home"
+      src="/javascript/reusable/index.js"
+    ></script>
 
     <main>
       <section id="section-hero">

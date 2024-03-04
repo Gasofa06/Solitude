@@ -50,7 +50,32 @@ function SetToggleTheme() {
     );
 }
 
-async function AddNavigationMenu() {
+let OnScroll = (name, menu, footer) => {
+    let offest = 12;
+    let y = window.scrollY;
+
+    let footer_height = footer.clientHeight;
+    let footer_top = footer.offsetTop;
+
+    if (y >= footer_top - offest && y < footer_top + footer_height - offest) {
+        menu.classList.add(name);
+    } else if (menu.classList.contains(name)) {
+        menu.classList.remove(name);
+    }
+};
+
+function SetFooterDetection() {
+    let class_name = 'footer-detected';
+    let navigation_menu = document.getElementById('navigation-menu');
+    let footer = document.getElementById('footer-page');
+
+    window.addEventListener(
+        'scroll',
+        OnScroll(class_name, navigation_menu, footer),
+    );
+}
+
+export async function AddNavigationMenu() {
     const response = await fetch(
         'http://192.168.1.201/reusable/navigation-menu.html',
     );
@@ -64,15 +89,10 @@ async function AddNavigationMenu() {
 
         SetMobileNavigation();
         SetToggleTheme();
+        SetFooterDetection();
 
         return;
     }
 
     console.log("Error, the navigation bar couldn't be found.");
 }
-
-function Main() {
-    AddNavigationMenu();
-}
-
-Main();

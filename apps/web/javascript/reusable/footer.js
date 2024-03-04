@@ -1,4 +1,4 @@
-async function AddFooter() {
+export async function AddFooter() {
     const response = await fetch('http://192.168.1.201/reusable/footer.html');
 
     if (response.ok) {
@@ -13,9 +13,3 @@ async function AddFooter() {
 
     console.log("Error, the footer couldn't be found.");
 }
-
-function Main() {
-    AddFooter();
-}
-
-Main();
