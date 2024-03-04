@@ -46,10 +46,10 @@
     @media (min-width: 480px) {
       #section-hero {
         padding-top: 238px !important;
-        border-bottom: none !important;
       }
 
       [theme='light'] #section-hero {
+        border-bottom: none !important;
         background: linear-gradient(to bottom, var(--white) 45%, var(--white-smoke) 80%);
       }
 
@@ -290,27 +290,19 @@
           align-items: center;
           justify-content: center;
 
+          min-height: 720px;
+
           border-radius: 4px;
           background-color: var(--white-smoke);
         }
 
-        @media (min-width: 768px) {
-          #section-brief-about .image-container {
-            min-height: 720px;
-
-            & img {
-              height: 564px;
-            }
-          }
+        #section-brief-about .image-container img {
+          height: 564px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1080px) {
           #section-brief-about .image-container {
-            min-height: 420px;
-
-            & img {
-              height: 264px;
-            }
+            display: none !important;
           }
         }
       }
@@ -322,21 +314,21 @@
       border: none !important;
     }
 
-    @media (min-width: 1080px) {
-      #section-benefits > * {
-        width: var(--max-width);
-      }
-    }
-
-    @media (max-width: 1080px) {
-      #section-benefits > * {
-        padding: 0 24px;
-      }
-    }
-
     @layer content {
       #section-benefits .double-column {
+        width: 100%;
         padding: 24px 0 0;
+      }
+
+      @media (max-width: 1480px) {
+        #section-benefits > * {
+          display: flex !important;
+          flex-direction: column !important;
+        }
+      }
+
+      #section-benefits > div > div:first-child p {
+        max-width: 584px;
       }
 
       #section-benefits > div > div:first-child a {
@@ -388,6 +380,7 @@
 
         ul.benefits-grid p {
           margin: 4px 0 8px;
+          max-width: 324px;
 
           font-size: 0.94rem;
           color: var(--dark-gray);
@@ -440,6 +433,12 @@
             background-color: var(--white);
           }
 
+          @media (min-width: 1080px) and (max-width: 1480px) {
+            #confidential-search .confidentiality {
+              border-radius: 24px !important;
+            }
+          }
+
           #confidential-search .confidentiality div {
             display: inline-flex;
             align-items: flex-start;
@@ -460,6 +459,13 @@
             background: var(--white);
           }
 
+          @media (min-width: 1080px) and (max-width: 1480px) {
+            #confidential-search .confidentiality div {
+              border-radius: 18px !important;
+              margin-right: 4px;
+            }
+          }
+
           #confidential-search .confidentiality span {
             font-size: 1.12rem;
             line-height: 26px;
@@ -475,6 +481,7 @@
 
           #confidential-search .confidentiality p {
             margin: 2px 0 6px;
+            max-width: 276px;
 
             font-weight: 500;
             line-height: 18px;
@@ -972,33 +979,16 @@
         }
       }
 
-      .problems-list > li > span {
+      .problems-list li span {
         font-size: 0.82rem;
         color: var(--gray);
       }
 
-      .problems-list > li > p {
+      .problems-list li p {
         margin: 12px 0 0;
 
         font-size: 0.94rem;
         color: var(--dark-gray);
-      }
-
-      .problems-list > li > p > a {
-        color: currentColor;
-
-        margin: 0 1px;
-        padding: 1px 10px;
-
-        border-radius: 4px;
-        background: var(--soft-gray);
-      }
-
-      .problems-list > li > p > a::after {
-        content: '\2192';
-
-        margin-left: 8px;
-        font-size: 0.82rem;
       }
     }
   }
@@ -1008,6 +998,64 @@
     }
 
     @layer content {
+      #section-details .double-column > div:first-child {
+        display: flex;
+        align-self: flex-start;
+        flex-direction: column;
+      }
+
+      @media (min-width: 1080px) {
+        #section-details .double-column > div:first-child {
+          position: sticky;
+          top: 184px;
+        }
+      }
+
+      #section-details .double-column > div:first-child p {
+        max-width: 584px;
+      }
+
+      @layer details-list {
+        .details-list {
+          display: flex;
+          flex-direction: column;
+
+          padding: 0;
+          margin: 0;
+          gap: 74px;
+        }
+
+        .details-list li {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .details-list li > div:first-child {
+          min-height: 364px;
+          background-color: var(--white-smoke);
+        }
+
+        .details-list li > div:last-child {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .details-list li > div:last-child span {
+          color: var(--black);
+          font-weight: 600;
+        }
+
+        .details-list li > div:last-child p {
+          margin: 0;
+
+          line-height: 22px;
+          font-size: 0.86rem;
+          color: var(--dark-gray);
+          letter-spacing: -0.13px;
+        }
+      }
     }
   }
 
@@ -1018,7 +1066,7 @@
       }
 
       @media (min-width: 1080px) {
-        .faqs_sample {
+        .faqs-sample {
           margin-top: 34px;
         }
       }

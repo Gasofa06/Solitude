@@ -40,22 +40,13 @@
     }
 
     .faq-input:checked ~ .question-answer > div {
-      max-height: 90px;
+      max-height: 162px;
     }
 
     .question-answer > div p {
       margin: 0;
       padding-top: 12px;
-    }
-
-    [theme='light'] .question-answer > div p {
       color: var(--dark-gray);
-    }
-
-    [theme='light'] .question-answer > div p {
-      margin: 0;
-      padding-top: 12px;
-      color: var(--soft-gray);
     }
   }
 

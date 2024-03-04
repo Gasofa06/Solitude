@@ -21,7 +21,7 @@
   }
 }
 
-@layer general-font-styles {
+@layer font-styles {
   p,
   a,
   span,
@@ -169,39 +169,47 @@
     }
 
     @media (min-width: 480px) and (max-width: 1080px) {
-      h2 {
+      h3 {
         font-size: 1.22rem;
         line-height: 1.06;
       }
     }
 
     @media (max-width: 480px) {
-      h2 {
+      h3 {
         font-size: 1.02rem;
         line-height: 1.06;
       }
     }
 
     h4 {
-      font-size: 0.76rem;
-      color: var(--soft-gray);
-
       font-weight: 500;
-      line-height: 1.5;
       word-spacing: 0.2em;
-
       letter-spacing: 0.05em;
+
+      color: var(--gray);
       font-family: 'Inter', sans-serif;
     }
 
-    h5 {
-      font-size: 1.4rem;
-      color: var(--black);
-      line-height: 1.24;
-      font-weight: 600;
-      letter-spacing: -0.3px;
-      word-spacing: 0.04em;
-      font-family: 'Inter', sans-serif;
+    @media (min-width: 1080px) {
+      h4 {
+        font-size: 0.76rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (min-width: 480px) and (max-width: 1080px) {
+      h4 {
+        font-size: 0.74rem;
+        line-height: 1.4;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h4 {
+        font-size: 0.7rem;
+        line-height: 1.3;
+      }
     }
   }
 }
