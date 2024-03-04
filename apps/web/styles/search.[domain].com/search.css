@@ -197,7 +197,7 @@
 
           @media (max-width: 768px) {
             .search-types .dropdown-menu {
-              width: 112px;
+              width: 112px !important;
             }
           }
 
@@ -435,7 +435,7 @@
 
         @layer suggestions {
           .search-bar .dropdown-menu {
-            grid-template-rows: var(--num-rows, 0fr);
+            display: block !important;
             background-color: var(--white-smoke);
           }
 
@@ -446,19 +446,7 @@
             --side-suggestions-sapce: 16px;
           }
 
-          #search-suggestions-list .search_suggestions_container p.short_title {
-            margin: 14px var(--side-suggestions-sapce) 0 var(--side-suggestions-sapce);
-            padding-left: var(--side-suggestions-sapce);
-            padding-bottom: 4px;
-
-            border-bottom: 1px solid var(--soft-gray);
-
-            font-size: 0.82rem;
-            color: var(--soft-gray);
-            font-family: segoe ui, nunito-sans, Tahoma, 'Lucida Sans';
-          }
-
-          #search-suggestions-list .search_suggestions_container li.suggestion {
+          #search-suggestions-list li {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -469,21 +457,19 @@
             margin: 10px var(--side-suggestions-sapce) 10px var(--side-suggestions-sapce);
 
             border-radius: 4px;
-
-            --num-rows: 1fr;
           }
 
-          #search-suggestions-list .search_suggestions_container li.suggestion:hover {
+          #search-suggestions-list li:hover {
             background: var(--soft-gray);
           }
 
           @media (max-width: 768px) {
-            #search-suggestions-list li.suggestion {
+            #search-suggestions-list li {
               margin: 12px 0;
             }
           }
 
-          #search-suggestions-list .search_suggestions_container li.suggestion input {
+          #search-suggestions-list li input {
             position: absolute;
 
             display: flex;
@@ -497,7 +483,7 @@
             cursor: pointer;
           }
 
-          #search-suggestions-list .search_suggestions_container li.suggestion p {
+          #search-suggestions-list li p {
             color: var(--gray);
             text-decoration: none;
 
@@ -511,26 +497,23 @@
           }
 
           @media (max-width: 768px) {
-            #search-suggestions-list .search_suggestions_container li.suggestion p {
+            #search-suggestions-list li p {
               font-size: 0.94rem;
               letter-spacing: 0.03em;
             }
           }
 
-          #search-suggestions-list .search_suggestions_container li.suggestion p b {
+          #search-suggestions-list li p b {
             color: var(--gray);
           }
 
-          #search-suggestions-list .search_suggestions_container li.suggestion div.select {
+          #search-suggestions-list li div.select {
             margin-left: auto;
             margin-right: 20px;
             width: max-content;
           }
 
-          #search-suggestions-list
-            .search_suggestions_container
-            li.suggestion:hover
-            div.select::before {
+          #search-suggestions-list li:hover div.select::before {
             content: 'Select';
 
             letter-spacing: 0.03em;

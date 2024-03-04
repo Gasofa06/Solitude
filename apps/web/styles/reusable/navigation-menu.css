@@ -363,40 +363,25 @@
   .mobile__nav {
     z-index: 50;
 
+    display: block;
     position: fixed;
     top: -100%;
     bottom: auto;
     left: 0%;
     right: 0%;
 
-    width: calc(100% - var(--borders-pad) * 2);
-    height: calc(100vh - var(--top-pad) - var(--bottom-pad));
-
-    margin: 0;
-    padding: var(--top-pad) var(--borders-pad) var(--bottom-pad);
+    width: 100%;
+    height: 100vh;
 
     opacity: 0;
-    transition: all 0.32s;
     background-color: var(--black);
+
+    transition: all 0.32s;
   }
 
   @media (min-width: 1080px) {
     .mobile__nav {
       display: none !important;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .mobile__nav {
-      --top-pad: 232px;
-      --bottom-pad: 104px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .mobile__nav {
-      --top-pad: 162px;
-      --bottom-pad: 84px;
     }
   }
 
@@ -407,13 +392,31 @@
 
   .mobile__nav > div {
     position: static;
+    box-sizing: border-box;
 
     display: flex;
     align-items: stretch;
     flex-direction: column;
     justify-content: space-between;
 
+    padding-left: var(--borders-pad);
+    padding-right: var(--borders-pad);
+
     height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .mobile__nav > div {
+      padding-top: 232px;
+      padding-bottom: 104px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mobile__nav > div {
+      padding-top: 162px;
+      padding-bottom: 84px;
+    }
   }
 
   @layer menu {
@@ -475,8 +478,6 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-
-      max-width: 512px;
     }
 
     @layer logos {
@@ -503,6 +504,16 @@
 
       .mobile__footer-menu div:first-of-type .x img {
         height: 16px;
+      }
+
+      [theme='light'] .mobile__footer-menu div:first-of-type .github img:last-child,
+      [theme='light'] .mobile__footer-menu div:first-of-type .x img:last-child {
+        display: none !important;
+      }
+
+      [theme='dark'] .mobile__footer-menu div:first-of-type .github img:first-child,
+      [theme='dark'] .mobile__footer-menu div:first-of-type .x img:first-child {
+        display: none !important;
       }
     }
 

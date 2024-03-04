@@ -1,9 +1,5 @@
 @import '/styles/www.[domain].com/accordion.css';
 
-main {
-  padding-top: 238px;
-}
-
 @layer sections {
   section {
     display: flex;
@@ -20,13 +16,55 @@ main {
     display: flex;
     align-items: start;
     flex-direction: column;
+
     gap: 12px;
     width: 100%;
   }
 
   @layer faqs-section {
-  }
+    #section-faqs {
+      padding-top: 238px;
+      border: none !important;
+    }
 
-  @layer contact-setion {
+    @layer content {
+      @media (min-width: 1080px) {
+        #section-faqs > div {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+
+          gap: 84px;
+          padding-top: 58px;
+        }
+      }
+
+      @media (max-width: 1080px) {
+        #section-faqs > div {
+          display: flex;
+          flex-direction: column;
+
+          padding-top: 46px;
+        }
+      }
+
+      @media (min-width: 1080px) {
+        #section-faqs .accordion li:last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+
+      .separation-line {
+        border-left: 1px solid var(--soft-gray);
+        border-right: 1px solid var(--soft-gray);
+        width: 8px;
+      }
+
+      @media (max-width: 1080px) {
+        .separation-line {
+          display: none !important;
+        }
+      }
+    }
   }
 }

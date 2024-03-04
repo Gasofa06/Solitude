@@ -66,7 +66,7 @@
   }
 
   @layer btn-model-three {
-    button.btn_model_three {
+    button.btn-model-three {
       display: inline-flex;
       align-items: center;
 
@@ -82,7 +82,7 @@
       font-size: 0.94rem;
     }
 
-    button.btn_model_three > svg {
+    button.btn-model-three > svg {
       width: 12px;
       height: 12px;
       margin-left: 8px;
@@ -92,49 +92,49 @@
       transition-duration: 130ms !important;
     }
 
-    button.btn_model_three > svg path,
-    button.btn_model_three > svg line {
+    button.btn-model-three > svg path,
+    button.btn-model-three > svg line {
       stroke-width: 3;
       stroke: currentColor;
     }
 
-    button.btn_model_three > svg path {
+    button.btn-model-three > svg path {
       transform-origin: 12.5px 7.5px;
       transform: translateX(-4px);
       transition: inherit;
     }
 
-    button.btn_model_three:hover > svg path {
+    button.btn-model-three:hover > svg path {
       transform: none;
     }
 
-    button.btn_model_three > svg line {
+    button.btn-model-three > svg line {
       opacity: 0;
       transition: inherit;
     }
 
-    button.btn_model_three:hover > svg line {
+    button.btn-model-three:hover > svg line {
       opacity: 1;
     }
 
     @layer black {
-      button.btn_model_three.black {
+      button.btn-model-three.black {
         color: var(--white);
         background-color: var(--black);
       }
 
-      button.btn_model_three.black > svg {
+      button.btn-model-three.black > svg {
         color: var(--white);
       }
     }
 
     @layer white {
-      button.btn_model_three.white {
+      button.btn-model-three.white {
         color: var(--black);
         background-color: var(--white);
       }
 
-      button.btn_model_three.white > svg {
+      button.btn-model-three.white > svg {
         color: var(--black);
       }
     }
