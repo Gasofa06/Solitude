@@ -13,21 +13,27 @@
     background: transparent;
   }
 
-  #loading > .transition-screen,
-  #loading > .transition-screen > label,
-  #loading > .transition-screen > div {
+  #loading .transition-screen,
+  #loading .transition-screen label,
+  #loading .transition-screen div {
     animation-duration: 1.08s;
     animation-fill-mode: forwards;
   }
 
-  #loading > .transition-screen {
+  #loading .transition-screen {
     width: 100%;
     height: 100%;
 
-    background-color: var(--soft-black);
-
     animation-name: transition-loading-screen;
     animation-timing-function: cubic-bezier(0.75, 0, 0.5, 1);
+  }
+
+  [theme='light'] #loading .transition-screen {
+    background-color: var(--soft-black);
+  }
+
+  [theme='dark'] #loading .transition-screen {
+    background-color: var(--soft-gray);
   }
 
   @keyframes transition-loading-screen {
@@ -41,7 +47,7 @@
     }
   }
 
-  #loading > .transition-screen > label {
+  #loading .transition-screen label {
     position: absolute;
     width: 100%;
 
@@ -66,17 +72,24 @@
     }
   }
 
-  #loading > .transition-screen > label > h2 {
+  #loading .transition-screen label h2 {
     margin: 0;
     padding: 0;
 
-    color: var(--white);
     font-weight: 450;
     text-align: center;
     font-family: sans-serif, 'Inter';
   }
 
-  #loading > .transition-screen > div {
+  [theme='light'] #loading .transition-screen label h2 {
+    color: var(--white);
+  }
+
+  [theme='dark'] #loading .transition-screen label h2 {
+    color: var(--black);
+  }
+
+  #loading .transition-screen div {
     position: absolute;
     bottom: 0;
 
@@ -101,17 +114,23 @@
     }
   }
 
-  #loading > .transition-screen > div > span {
+  #loading .transition-screen div span {
     position: absolute;
     left: 50%;
 
     width: 150%;
     height: 750%;
 
-    border-radius: 50%;
-    background: #141517;
-
     z-index: 1;
+    border-radius: 50%;
     transform: translate(-50%, -86.666%);
+  }
+
+  [theme='light'] #loading .transition-screen div span {
+    background-color: var(--soft-black);
+  }
+
+  [theme='dark'] #loading .transition-screen div span {
+    background-color: var(--soft-gray);
   }
 }

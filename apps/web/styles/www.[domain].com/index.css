@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
 
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--white-smoke);
   }
 
   @media (min-width: 768px) {
@@ -47,7 +47,14 @@
       #section-hero {
         padding-top: 238px !important;
         border-bottom: none !important;
-        background: linear-gradient(to bottom, var(--white) 45%, var(--gray) 80%);
+      }
+
+      [theme='light'] #section-hero {
+        background: linear-gradient(to bottom, var(--white) 45%, var(--white-smoke) 80%);
+      }
+
+      [theme='light'] #section-hero {
+        background: var(--white);
       }
     }
 
@@ -59,25 +66,29 @@
     }
 
     #section-hero p {
-      color: #aaa;
+      color: var(--gray);
+    }
+
+    [theme='dark'] #section-hero p {
+      font-weight: 500;
     }
 
     #section-hero span {
       display: block;
-      color: var(--dark-gray-blue);
+      color: var(--soft-black);
     }
 
     @media (min-width: 480px) {
       #section-hero p,
       #section-hero span {
-        font-size: var(--text-ms);
+        font-size: 0.88rem;
       }
     }
 
     @media (max-width: 480px) {
       #section-hero p,
       #section-hero span {
-        font-size: var(--text-xs);
+        font-size: 0.76rem;
       }
     }
 
@@ -150,9 +161,15 @@
         .model-green figure svg path {
           fill: none;
           stroke-width: 3px;
-          stroke: white;
-
           transition: all 0.3s ease-in-out;
+        }
+
+        [theme='light'] .model-green figure svg path {
+          stroke: var(--white);
+        }
+
+        [theme='dark'] .model-green figure svg path {
+          stroke: var(--black);
         }
       }
 
@@ -186,7 +203,7 @@
 
           width: 100%;
           border-radius: 4px;
-          background: var(--gray);
+          background: var(--white-smoke);
         }
 
         @media (min-width: 1080px) {
@@ -224,7 +241,7 @@
           display: flex;
           flex-direction: column;
 
-          color: var(--dark-link-water);
+          color: var(--gray);
           padding: 20px 0 0;
           gap: 12px;
         }
@@ -274,7 +291,7 @@
           justify-content: center;
 
           border-radius: 4px;
-          background-color: var(--gray);
+          background-color: var(--white-smoke);
         }
 
         @media (min-width: 768px) {
@@ -323,13 +340,20 @@
       }
 
       #section-benefits a {
-        color: #1f8f4b;
+        color: currentColor;
 
         margin: 0 1px;
         padding: 1px 10px;
 
         border-radius: 4px;
-        background: #dbf7e8;
+        background: var(--white-smoke);
+      }
+
+      #section-benefits a::after {
+        content: '\2192';
+
+        margin-left: 8px;
+        font-size: 0.82rem;
       }
 
       @layer benefits-grid {
@@ -365,8 +389,8 @@
         ul.benefits-grid p {
           margin: 4px 0 8px;
 
-          font-size: var(--text-m);
-          color: var(--c-secondary-200);
+          font-size: 0.94rem;
+          color: var(--dark-gray);
 
           letter-spacing: -0.13px;
           line-height: 22px;
@@ -382,7 +406,7 @@
 
           overflow: hidden;
           border-radius: 4px;
-          background-color: var(--gray);
+          background-color: var(--white-smoke);
         }
 
         ul.benefits-grid > li > div:first-child {
@@ -404,16 +428,29 @@
 
           #confidential-search .confidentiality {
             padding: 4px 0px 4px 0;
-
-            background-color: black;
             border-radius: 24px 0 0 24px;
+          }
+
+          [theme='light'] #confidential-search .confidentiality {
+            background-color: var(--black);
             box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 24px;
           }
 
+          [theme='dark'] #confidential-search .confidentiality {
+            background-color: var(--white);
+          }
+
           #confidential-search .confidentiality span {
-            font-size: var(--text-xl);
-            color: var(--white);
+            font-size: 1.12rem;
             line-height: 26px;
+          }
+
+          [theme='light'] #confidential-search .confidentiality span {
+            color: var(--white);
+          }
+
+          [theme='dark'] #confidential-search .confidentiality span {
+            color: var(--black);
           }
 
           #confidential-search .confidentiality p {
@@ -421,8 +458,15 @@
 
             font-weight: 500;
             line-height: 18px;
-            font-size: var(--text-ms);
-            color: var(--c-secondary-200);
+            font-size: 0.88rem;
+          }
+
+          [theme='light'] #confidential-search .confidentiality p {
+            color: var(--dark-gray);
+          }
+
+          [theme='dark'] #confidential-search .confidentiality p {
+            color: var(--gray);
           }
 
           #confidential-search .confidentiality > div {
@@ -434,8 +478,15 @@
             margin-left: 4px;
             padding: 12px 16px;
 
-            background-color: var(--soft-black);
             border-radius: 18px 0 0 18px;
+          }
+
+          [theme='light'] #confidential-search .confidentiality > div {
+            background-color: var(--soft-black);
+          }
+
+          [theme='dark'] #confidential-search .confidentiality > div {
+            background: var(--soft-gray);
           }
 
           #confidential-search .confidentiality > div > form {
@@ -451,11 +502,16 @@
           #confidential-search .confidentiality > div > form path {
             fill: none;
             stroke-width: 3px;
-            stroke: var(--soft-link-water);
+            stroke: var(--white-smoke);
           }
-        }
 
-        @layer ecryption {
+          [theme='light'] #confidential-search .confidentiality path {
+            stroke: var(--white-smoke);
+          }
+
+          [theme='dark'] #confidential-search .confidentiality path {
+            stroke: var(--black);
+          }
         }
 
         @layer data-breach-protection {
@@ -502,9 +558,7 @@
           #data-breach-protection .protection::after {
             content: '';
 
-            color: #fff;
-            font-size: var(--text-xl);
-
+            font-size: 1.12rem;
             line-height: 1.59;
             font-style: normal;
             letter-spacing: -0.3px;
@@ -513,6 +567,14 @@
             font-family: 'Inter', sans-serif, segoe ui, nunito-sans, Helvetica;
 
             animation: change-protection-text var(--dur) infinite alternate ease;
+          }
+
+          [theme='light'] #data-breach-protection .protection::after {
+            color: var(--white);
+          }
+
+          [theme='dark'] #data-breach-protection .protection::after {
+            color: var(--black);
           }
 
           @keyframes change-protection-text {
@@ -542,6 +604,92 @@
             100% {
               content: 'Protecting';
               opacity: 100%;
+            }
+          }
+
+          @layer layers {
+            #data-breach-protection .layers {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 100%;
+              animation: opacity-protection-layers var(--dur) infinite alternate ease;
+            }
+
+            @keyframes opacity-protection-layers {
+              0%,
+              15% {
+                opacity: 0%;
+              }
+
+              30%,
+              100% {
+                opacity: 100%;
+              }
+            }
+
+            #data-breach-protection .layers::before,
+            #data-breach-protection .layers::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              border-radius: 40px;
+              animation-duration: 0.4s;
+              animation-direction: alternate;
+              animation-iteration-count: infinite;
+            }
+
+            #data-breach-protection .layers::before {
+              padding: 5px;
+              animation-name: first-protection-layer;
+            }
+
+            [theme='light'] #data-breach-protection .layers::before {
+              --start-first-layer-color: var(--green);
+              --finish-first-layer-color: #9be4bd;
+            }
+
+            [theme='dark'] #data-breach-protection .layers::before {
+              --start-first-layer-color: var(--green);
+              --finish-first-layer-color: #284e3a;
+            }
+
+            @keyframes first-protection-layer {
+              from {
+                border: 3.5px solid var(--start-first-layer-color);
+              }
+
+              to {
+                border: 3.5px solid var(--finish-first-layer-color);
+              }
+            }
+
+            #data-breach-protection .layers::after {
+              padding: 13px;
+              animation-name: second-protection-layer;
+            }
+
+            [theme='light'] #data-breach-protection .layers {
+              --start-second-layer-color: #9be4bd;
+              --finish-second-layer-color: #ddf6e8;
+            }
+
+            [theme='dark'] #data-breach-protection .layers {
+              --start-second-layer-color: #284e3a;
+              --finish-second-layer-color: #112d1d;
+            }
+
+            @keyframes second-protection-layer {
+              from {
+                border: 3.5px solid var(--start-second-layer-color);
+              }
+
+              to {
+                border: 3.5px solid var(--finish-second-layer-color);
+              }
             }
           }
 
@@ -589,82 +737,6 @@
               }
             }
           }
-
-          @layer layers {
-            #data-breach-protection .layers {
-              position: absolute;
-
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              width: 100%;
-              height: 100%;
-
-              animation: opacity-protection-layers var(--dur) infinite alternate ease;
-            }
-
-            @keyframes opacity-protection-layers {
-              0%,
-              15% {
-                opacity: 0%;
-              }
-
-              30%,
-              100% {
-                opacity: 100%;
-              }
-            }
-
-            #data-breach-protection .layers::before,
-            #data-breach-protection .layers::after {
-              content: '';
-
-              position: absolute;
-
-              width: 100%;
-              height: 100%;
-
-              border-radius: 40px;
-
-              animation-duration: 0.4s;
-              animation-direction: alternate;
-              animation-iteration-count: infinite;
-            }
-
-            #data-breach-protection .layers::before {
-              padding: 5px;
-              animation-name: first-protection-layer;
-            }
-
-            @keyframes first-protection-layer {
-              from {
-                border: 3.5px solid var(--green);
-              }
-
-              to {
-                border: 3.5px solid #9be4bd;
-              }
-            }
-
-            #data-breach-protection .layers::after {
-              padding: 13px;
-              animation-name: second-protection-layer;
-            }
-
-            @keyframes second-protection-layer {
-              from {
-                border: 3.5px solid #9be4bd;
-              }
-
-              to {
-                border: 3.5px solid #ddf6e8;
-              }
-            }
-          }
-        }
-
-        @layer open-source {
         }
       }
     }
@@ -673,12 +745,12 @@
   @layer privacy-problems-section {
     #section-privacy-problems {
       border: none !important;
-      background: var(--gray);
+      background: var(--white-smoke);
     }
 
     @layer title {
       #section-privacy-problems .sec-title > h4 {
-        color: var(--dark-link-water);
+        color: var(--gray);
       }
     }
 
@@ -719,15 +791,15 @@
       }
 
       .problems-list > li > span {
-        font-size: var(--text-s);
-        color: var(--dark-link-water);
+        font-size: 0.82rem;
+        color: var(--gray);
       }
 
       .problems-list > li > p {
         margin: 12px 0 0;
 
-        font-size: var(--text-m);
-        color: var(--gray-blue);
+        font-size: 0.94rem;
+        color: var(--dark-gray);
       }
 
       .problems-list > li > p > a {
@@ -737,14 +809,14 @@
         padding: 1px 10px;
 
         border-radius: 4px;
-        background: #e5e5e9;
+        background: var(--soft-gray);
       }
 
       .problems-list > li > p > a::after {
         content: '\2192';
 
         margin-left: 8px;
-        font-size: var(--text-s);
+        font-size: 0.82rem;
       }
     }
   }

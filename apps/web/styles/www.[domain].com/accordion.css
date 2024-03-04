@@ -13,7 +13,7 @@
     padding-bottom: 24px;
     margin: 0px auto 24px;
 
-    border-bottom: 1px solid var(--link-water);
+    border-bottom: 1px solid var(--soft-gray);
   }
 
   @layer input {
@@ -46,7 +46,16 @@
     .question-answer > div p {
       margin: 0;
       padding-top: 12px;
-      color: var(--gray-blue);
+    }
+
+    [theme='light'] .question-answer > div p {
+      color: var(--dark-gray);
+    }
+
+    [theme='light'] .question-answer > div p {
+      margin: 0;
+      padding-top: 12px;
+      color: var(--soft-gray);
     }
   }
 
@@ -72,7 +81,7 @@
 
       position: absolute;
       border-radius: 2px;
-      background: var(--dark-gray-blue);
+      background: var(--soft-black);
 
       transition: all 0.3s ease-in-out;
     }

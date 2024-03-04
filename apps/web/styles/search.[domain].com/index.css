@@ -17,11 +17,6 @@
     transition: all 0.3s ease-in-out;
   }
 
-  [theme='dark'] .dropdown-menu {
-    border: 1px solid var(--link-water) !important;
-    background-color: var(--link-water) !important;
-  }
-
   @media (max-width: 768px) {
     .dropdown-menu {
       margin-top: 8px;

@@ -85,14 +85,15 @@
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    h5 {
       margin: 0;
       font-style: normal;
     }
 
     h1 {
       font-weight: 500;
-      color: var(--soft-black);
+      color: var(--black);
 
       word-spacing: 0.06em;
       letter-spacing: -0.6px;
@@ -126,7 +127,7 @@
       word-spacing: 0.06em;
       letter-spacing: -1.35px;
 
-      color: var(--dark-gray-blue);
+      color: var(--black);
       font-family: 'Inter', sans-serif;
     }
 
@@ -152,20 +153,38 @@
     }
 
     h3 {
-      font-size: 1.95rem;
-      color: var(--dark-gray-blue);
-      line-height: 1.24;
       font-weight: 600;
-      letter-spacing: -0.02em;
-      word-spacing: 0.04em;
-      font-family: sans-serif, 'Inter';
+      word-spacing: 0.06em;
+      letter-spacing: -0.55px;
+
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+    }
+
+    @media (min-width: 1080px) {
+      h3 {
+        font-size: 1.4rem;
+        line-height: 1.12;
+      }
+    }
+
+    @media (min-width: 480px) and (max-width: 1080px) {
+      h2 {
+        font-size: 1.22rem;
+        line-height: 1.06;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.02rem;
+        line-height: 1.06;
+      }
     }
 
     h4 {
-      margin: 0;
-
-      font-size: var(--text-xs);
-      color: var(--link-water);
+      font-size: 0.76rem;
+      color: var(--soft-gray);
 
       font-weight: 500;
       line-height: 1.5;
@@ -176,15 +195,11 @@
     }
 
     h5 {
-      margin: 0;
-
-      font-size: 1.2rem;
-      color: var(--dark-gray-blue);
-
+      font-size: 1.4rem;
+      color: var(--black);
       line-height: 1.24;
       font-weight: 600;
       letter-spacing: -0.3px;
-
       word-spacing: 0.04em;
       font-family: 'Inter', sans-serif;
     }

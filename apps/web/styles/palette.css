@@ -1,0 +1,31 @@
+@layer light-palette {
+  :root {
+    --white: white;
+    --white-smoke: whitesmoke;
+
+    --green: #4cc37b;
+
+    --dark-gray: #818181;
+    --gray: #ababab;
+    --soft-gray: #dadada;
+
+    --black: black;
+    --soft-black: #141414;
+  }
+}
+
+@layer dark-palette {
+  [theme='dark'] {
+    --white: #0b0b0b;
+    --white-smoke: #141414;
+
+    --green: #3a8c5b;
+
+    --dark-gray: #a1a1a6;
+    --gray: #959595;
+    --soft-gray: #373737;
+
+    --black: white;
+    --soft-black: #a1a1a6;
+  }
+}

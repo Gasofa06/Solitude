@@ -54,6 +54,16 @@
     transition: all 0.2s;
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
+
+    border-bottom: 1px solid var(--white-smoke);
+  }
+
+  [theme='light'] .top-bar {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  [theme='dark'] .top-bar {
+    background-color: rgba(12, 12, 14, 0.8);
   }
 
   #navigation-menu.mobile-menu__opened > .top-bar {
@@ -168,8 +178,8 @@
           display: flex;
           align-items: center;
 
-          font-size: var(--text-m);
-          color: var(--c-secondary-200);
+          font-size: 0.94rem;
+          color: var(--dark-gray);
           text-decoration: none !important;
           letter-spacing: 0.03em !important;
 
@@ -187,7 +197,7 @@
         }
 
         .laptop__menu label svg path {
-          stroke: var(--link-water);
+          stroke: var(--soft-gray);
         }
 
         .laptop__menu > li:hover label svg {
@@ -213,8 +223,15 @@
           transition-duration: 100ms !important;
 
           border-radius: 8px;
-          background: #fff;
+          background: var(--white);
+        }
+
+        [theme='light'] .laptop__submenu {
           box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 16px;
+        }
+
+        [theme='dark'] .laptop__submenu {
+          border: 2px solid var(--white-smoke);
         }
 
         .laptop__submenu:before {
@@ -234,7 +251,7 @@
         }
 
         .laptop__submenu a:hover {
-          background: var(--soft-link-water);
+          background: var(--white-smoke);
         }
 
         .laptop__menu > li:hover .laptop__submenu {
@@ -414,7 +431,7 @@
     }
 
     .mobile__menu li p {
-      color: var(--dark-gray);
+      color: var(--gray);
     }
 
     @media (min-width: 480px) {

@@ -1,4 +1,4 @@
-@import '/styles/variables.css';
+@import '/styles/palette.css';
 @import '/styles/models.css';
 @import '/styles/text.css';
 
@@ -42,9 +42,14 @@
   }
 }
 
-::selection {
-  background: #d8ecfc;
-  color: #008cff;
+[theme='light'] ::selection {
+  background: #ebfef3;
+  color: #28b460;
+}
+
+[theme='dark'] ::selection {
+  background: #073018;
+  color: #a5e6bf;
 }
 
 body {

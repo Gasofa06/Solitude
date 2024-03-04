@@ -17,7 +17,7 @@ footer.footer {
 }
 
 footer.footer .logo {
-  font-size: var(--text-l);
+  font-size: 1.06rem;
 }
 
 ul.footer_links {
@@ -35,6 +35,6 @@ ul.footer_links li {
 }
 
 ul.footer_links li a {
-  font-size: var(--text-xs);
-  color: var(--dark-link-water);
+  font-size: 0.76rem;
+  color: var(--gray);
 }
