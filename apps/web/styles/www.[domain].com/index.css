@@ -53,7 +53,7 @@
         background: linear-gradient(to bottom, var(--white) 45%, var(--white-smoke) 80%);
       }
 
-      [theme='light'] #section-hero {
+      [theme='dark'] #section-hero {
         background: var(--white);
       }
     }
@@ -335,11 +335,11 @@
     }
 
     @layer content {
-      #section-benefits > .double-column {
+      #section-benefits .double-column {
         padding: 24px 0 0;
       }
 
-      #section-benefits a {
+      #section-benefits > div > div:first-child a {
         color: currentColor;
 
         margin: 0 1px;
@@ -349,7 +349,7 @@
         background: var(--white-smoke);
       }
 
-      #section-benefits a::after {
+      #section-benefits > div > div:first-child a::after {
         content: '\2192';
 
         margin-left: 8px;
@@ -440,6 +440,26 @@
             background-color: var(--white);
           }
 
+          #confidential-search .confidentiality div {
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 18px;
+
+            margin-left: 4px;
+            padding: 12px 16px;
+
+            border-radius: 18px 0 0 18px;
+          }
+
+          [theme='light'] #confidential-search .confidentiality div {
+            background-color: var(--soft-black);
+          }
+
+          [theme='dark'] #confidential-search .confidentiality div {
+            background: var(--white);
+          }
+
           #confidential-search .confidentiality span {
             font-size: 1.12rem;
             line-height: 26px;
@@ -469,44 +489,24 @@
             color: var(--gray);
           }
 
-          #confidential-search .confidentiality > div {
-            display: inline-flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: 18px;
-
-            margin-left: 4px;
-            padding: 12px 16px;
-
-            border-radius: 18px 0 0 18px;
-          }
-
-          [theme='light'] #confidential-search .confidentiality > div {
-            background-color: var(--soft-black);
-          }
-
-          [theme='dark'] #confidential-search .confidentiality > div {
-            background: var(--soft-gray);
-          }
-
-          #confidential-search .confidentiality > div > form {
+          #confidential-search .confidentiality form {
             width: 20px;
             height: 20px;
             padding: 8px;
             border-radius: 50%;
 
             flex: 0 0 auto;
-            background-color: var(--green);
+            opacity: 0.4;
+            background-color: var(--dark-gray);
           }
 
-          #confidential-search .confidentiality > div > form path {
+          #confidential-search .confidentiality path {
             fill: none;
             stroke-width: 3px;
-            stroke: var(--white-smoke);
           }
 
           [theme='light'] #confidential-search .confidentiality path {
-            stroke: var(--white-smoke);
+            stroke: var(--white);
           }
 
           [theme='dark'] #confidential-search .confidentiality path {
@@ -515,15 +515,6 @@
         }
 
         @layer data-breach-protection {
-          /* 
-           *  These are some common characteristics of the animation,
-           *  shared across different @keyframes::
-           *
-           *  From 0% to 20%, the animation is in its initial stage.
-           *  From 20% to 40%, the animation is undergoing a change.
-           *  From 40% to 100%, the animation enters its second stage.
-           */
-
           #data-breach-protection .protection {
             --dur: 4s;
           }
@@ -736,6 +727,197 @@
                 display: block;
               }
             }
+          }
+        }
+
+        @layer encryption {
+          #encryption .encrypted-message {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            width: 80%;
+            gap: 17px;
+          }
+
+          #encryption .encrypted-message > div {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+
+            background: var(--white);
+            border: 1px solid var(--soft-gray);
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 12px;
+          }
+
+          @layer top-box {
+            #encryption .encrypted-message > div:first-child {
+              width: 100%;
+              max-width: 276px;
+
+              gap: 16px;
+              padding: 12px 14px;
+              border-radius: 16px;
+
+              align-items: flex-start !important;
+            }
+
+            #encryption .encrypted-message > div:first-child div {
+              height: 100%;
+
+              display: flex;
+              flex-direction: column;
+            }
+
+            #encryption .encrypted-message > div:first-child div:first-child {
+              flex: 0 0 auto;
+              align-items: center;
+              justify-content: center;
+
+              width: 74px;
+              height: 76px;
+
+              border-radius: 16px;
+              background: var(--green);
+            }
+
+            #encryption .encrypted-message > div:first-child svg {
+              height: 28px;
+              width: 29px;
+            }
+
+            [theme='light'] #encryption .encrypted-message > div:first-child svg {
+              fill: var(--white);
+            }
+
+            [theme='dark'] #encryption .encrypted-message > div:first-child svg {
+              fill: var(--black);
+            }
+
+            #encryption .encrypted-message > div:first-child div:last-child {
+              align-items: flex-start;
+              justify-content: flex-start;
+
+              padding-top: 10px;
+              padding-right: 6px;
+            }
+
+            #encryption .encrypted-message > div:first-child p {
+              margin: 2px 0 6px;
+              line-height: 18px;
+              font-size: 0.88rem;
+            }
+          }
+
+          @layer bottom-box {
+            #encryption .encrypted-message > div:last-child {
+              width: 80%;
+              height: 12px;
+              max-width: 154px;
+
+              padding: 7px 8px;
+
+              border-radius: 18px;
+              justify-content: space-between !important;
+            }
+
+            #encryption .encrypted-message > div:last-child::after {
+              content: 'Message Encrypted';
+
+              margin: 0;
+              padding-left: 8px;
+              padding-right: 8px;
+
+              font-style: normal;
+              color: var(--green);
+              letter-spacing: -0.13px;
+
+              font-weight: 500;
+              font-size: 0.76rem;
+              font-family: 'Inter';
+            }
+
+            #encryption .encrypted-message > div:last-child svg {
+              height: 20px;
+              width: 20px;
+
+              fill: var(--green);
+            }
+          }
+        }
+
+        @layer open-source {
+          #open-source .expansion {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+          }
+
+          #open-source .expansion div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: absolute;
+
+            border-radius: 124px;
+            border: 1px solid var(--soft-gray);
+          }
+
+          #open-source .expansion div:first-of-type {
+            width: 140%;
+            height: 140%;
+
+            animation: orbit-rotation 5s infinite linear;
+          }
+
+          #open-source .expansion div:last-of-type {
+            width: 192%;
+            height: 192%;
+
+            animation: orbit-rotation 11s infinite linear;
+          }
+
+          @keyframes orbit-rotation {
+            100% {
+              transform: rotate(1turn);
+            }
+          }
+
+          #open-source .expansion div::after {
+            content: '';
+
+            position: absolute;
+            left: -6px;
+
+            width: 12px;
+            height: 12px;
+
+            border-radius: 12px;
+            background: var(--soft-gray);
+          }
+
+          #open-source .expansion img {
+            z-index: 50;
+
+            width: 54px;
+            height: 54px;
+
+            padding: 12px;
+            border-radius: 84px;
+          }
+
+          [theme='light'] #open-source .expansion img {
+            background: var(--soft-black);
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 24px;
+          }
+
+          [theme='dark'] #open-source .expansion img {
+            background: var(--white);
+            border: 2px solid var(--soft-gray);
           }
         }
       }
