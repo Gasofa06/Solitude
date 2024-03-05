@@ -269,21 +269,6 @@
         }
       }
 
-      @layer button {
-        @media (min-width: 1080px) {
-          #section-brief-about > .double-column > div:first-of-type > form {
-            position: absolute;
-            bottom: 0;
-          }
-        }
-
-        @media (max-width: 1080px) {
-          #section-brief-about > .double-column > div:first-of-type > form {
-            padding-top: 45px;
-          }
-        }
-      }
-
       @layer image {
         #section-brief-about .image-container {
           display: flex;
@@ -301,7 +286,7 @@
         }
 
         @media (max-width: 1080px) {
-          #section-brief-about .image-container {
+          #section-brief-about .double-column > div:last-child {
             display: none !important;
           }
         }

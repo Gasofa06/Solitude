@@ -51,7 +51,7 @@ function SetToggleTheme() {
 }
 
 let OnScroll = (name, menu, footer) => {
-    let offest = 12;
+    let offest = 642;
     let y = window.scrollY;
 
     let footer_height = footer.clientHeight;
@@ -69,8 +69,7 @@ function SetFooterDetection() {
     let navigation_menu = document.getElementById('navigation-menu');
     let footer = document.getElementById('footer-page');
 
-    window.addEventListener(
-        'scroll',
+    window.addEventListener('scroll', () =>
         OnScroll(class_name, navigation_menu, footer),
     );
 }
@@ -89,6 +88,7 @@ export async function AddNavigationMenu() {
 
         SetMobileNavigation();
         SetToggleTheme();
+        console.log('HI');
         SetFooterDetection();
 
         return;

@@ -30,11 +30,10 @@
     @layer content {
       @media (min-width: 1080px) {
         #section-faqs > div {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
+          display: grid;
+          grid-template-columns: repeat(13, 1fr);
 
-          gap: 84px;
+          gap: 12px;
           padding-top: 58px;
         }
       }
@@ -48,6 +47,14 @@
         }
       }
 
+      #section-faqs .accordion:first-child {
+        grid-column: 1 / 7;
+      }
+
+      #section-faqs .accordion:last-child {
+        grid-column: 8 / 14;
+      }
+
       @media (min-width: 1080px) {
         #section-faqs .accordion li:last-child {
           margin-bottom: 0 !important;
@@ -55,9 +62,13 @@
       }
 
       .separation-line {
+        width: 8px;
+        grid-column: 7;
+
+        margin: 0 auto;
+
         border-left: 1px solid var(--soft-gray);
         border-right: 1px solid var(--soft-gray);
-        width: 8px;
       }
 
       @media (max-width: 1080px) {

@@ -44,27 +44,6 @@
     }
   }
 
-  @layer btn-model-one {
-    button.btn_model_one {
-      padding: 10px 24px;
-      border-radius: 6px;
-      border-style: none;
-
-      font-size: 1.02rem;
-      color: var(--dark-gray);
-
-      background-color: var(--white-smoke);
-    }
-
-    button.btn_model_one > .rotated_arrow {
-      width: 15px;
-      height: 12px;
-
-      margin-left: 8px;
-      transform: rotate(-45deg);
-    }
-  }
-
   @layer btn-model-three {
     button.btn-model-three {
       display: inline-flex;
