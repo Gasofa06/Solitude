@@ -10,13 +10,11 @@ export async function AddLoading() {
     if (response.ok) {
         let layout = await response.text();
         let body = document.body;
-        let main = body.getElementsByTagName('main')[0];
 
         let name = GetPageName();
         layout = layout.replace('</h2>', name + '</h2>');
 
-        main.insertAdjacentHTML('beforebegin', layout);
-
+        body.insertAdjacentHTML('beforebegin', layout);
         return;
     }
 

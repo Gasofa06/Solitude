@@ -82,13 +82,11 @@ export async function AddNavigationMenu() {
     if (response.ok) {
         let layout = await response.text();
         let body = document.body;
-        let main = body.getElementsByTagName('main')[0];
 
-        main.insertAdjacentHTML('beforebegin', layout);
+        body.insertAdjacentHTML('beforebegin', layout);
 
         SetMobileNavigation();
         SetToggleTheme();
-        console.log('HI');
         SetFooterDetection();
 
         return;

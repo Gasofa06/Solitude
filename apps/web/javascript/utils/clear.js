@@ -3,7 +3,7 @@ export const Clear_Search_Text_Input = () => {
 };
 
 export const Clear_Suggestions = () => {
-    var search_suggestions_container = window.search_suggestions.firstChild;
-
-    if (search_suggestions_container) search_suggestions_container.remove();
+    while (window.search_suggestions.firstChild) {
+        window.search_suggestions.firstChild.remove();
+    }
 };
