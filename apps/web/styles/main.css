@@ -88,7 +88,7 @@ body > main:before {
   background: var(--soft-black);
 }
 
-body > #loading ~ main:before {
+#loading + body > main:before {
   content: none !important;
 }
 

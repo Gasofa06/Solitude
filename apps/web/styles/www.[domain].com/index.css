@@ -206,22 +206,30 @@
           background: var(--white-smoke);
         }
 
+        [theme='light'] .hero-decoration > form img:last-child {
+          display: none !important;
+        }
+
+        [theme='dark'] .hero-decoration > form img:first-child {
+          display: none !important;
+        }
+
         @media (min-width: 1080px) {
-          .hero-decoration > form > img {
+          .hero-decoration > form  img {
             width: 1180px;
             padding: 94px 0;
           }
         }
 
         @media (min-width: 480px) and (max-width: 1080px) {
-          .hero-decoration > form > img {
+          .hero-decoration > form  img {
             width: 100%;
             padding: 56px 0;
           }
         }
 
         @media (max-width: 480px) {
-          .hero-decoration > form > img {
+          .hero-decoration > form  img {
             width: 132%;
             padding: 34px 0;
           }
@@ -269,25 +277,170 @@
         }
       }
 
-      @layer image {
-        #section-brief-about .image-container {
+      @layer user-image {
+        .user-centric,
+        .user-centric > div,
+        .user-centric > ul,
+        .user-centric > ul li div,
+        .user-centric > ul li div svg {
           display: flex;
           align-items: center;
           justify-content: center;
+        }
 
-          min-height: 720px;
+        .user-centric {
+          position: relative;
 
           border-radius: 4px;
-          background-color: var(--white-smoke);
+          background: var(--white-smoke);
         }
 
-        #section-brief-about .image-container img {
-          height: 564px;
+        .user-centric > div {
+          position: absolute;
+
+          border-radius: 124px;
+          background: var(--white);
+          border: 1px solid var(--soft-gray);
+          box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 12px;
         }
 
-        @media (max-width: 1080px) {
-          #section-brief-about .double-column > div:last-child {
-            display: none !important;
+        @media (min-width: 1480px) {
+          .user-centric > div {
+            width: 146px;
+            height: 146px;
+          }
+        }
+
+        @media (min-width: 480px) and (max-width: 1480px) {
+          .user-centric > div {
+            width: 124px;
+            height: 124px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .user-centric > div {
+            width: 104px;
+            height: 104px;
+          }
+        }
+
+        .user-centric > div svg {
+          padding: 6px;
+          border-radius: 124px;
+        }
+
+        [theme='light'] .user-centric > div svg {
+          fill: var(--green);
+        }
+
+        [theme='dark'] .user-centric > div svg {
+          fill: var(--soft-gray);
+        }
+
+        .user-centric > ul {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+        }
+
+        @media (min-width: 1080px) {
+          .user-centric > ul {
+            height: 574px;
+          }
+        }
+
+        @media (min-width: 480px) and (max-width: 1080px) {
+          .user-centric > ul {
+            height: 498px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .user-centric > ul {
+            height: 384px;
+          }
+        }
+
+        .user-centric > ul li,
+        .user-centric > ul li div svg {
+          animation-duration: 22s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+
+        .user-centric > ul li {
+          position: absolute;
+          animation-name: properties-rotation;
+        }
+
+        @media (min-width: 1080px) {
+          .user-centric > ul li {
+            width: 394px;
+          }
+        }
+
+        @media (min-width: 480px) and (max-width: 1080px) {
+          .user-centric > ul li {
+            width: 376px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .user-centric > ul li {
+            width: 294px;
+          }
+        }
+
+        @keyframes properties-rotation {
+          0% {
+            transform: rotate(var(--rotation));
+          }
+
+          100% {
+            transform: rotate(calc(360deg + var(--rotation)));
+          }
+        }
+
+        .user-centric > ul li div {
+          border-radius: 52px;
+          background: var(--white);
+          border: 1px solid var(--soft-gray);
+          box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 12px;
+        }
+
+        @media (min-width: 1480px) {
+          .user-centric > ul li div {
+            width: 72px;
+            height: 72px;
+          }
+        }
+
+        @media (min-width: 480px) and (max-width: 1480px) {
+          .user-centric > ul li div {
+            width: 64px;
+            height: 64px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .user-centric > ul li div {
+            width: 54px;
+            height: 54px;
+          }
+        }
+
+        .user-centric > ul li div svg {
+          height: 56%;
+          fill: var(--soft-gray);
+
+          animation-direction: reverse;
+          animation-name: properties-inverted-rotation;
+        }
+
+        @keyframes properties-inverted-rotation {
+          100% {
+            transform: rotate(1turn);
           }
         }
       }
@@ -617,9 +770,12 @@
             #data-breach-protection .layers::after {
               content: '';
               position: absolute;
+
               width: 100%;
               height: 100%;
+
               border-radius: 40px;
+
               animation-duration: 0.4s;
               animation-direction: alternate;
               animation-iteration-count: infinite;
@@ -979,9 +1135,6 @@
   }
 
   @layer details-section {
-    @layer title {
-    }
-
     @layer content {
       #section-details .double-column > div:first-child {
         display: flex;
@@ -1017,8 +1170,23 @@
         }
 
         .details-list li > div:first-child {
-          min-height: 364px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
           background-color: var(--white-smoke);
+        }
+
+        @media (min-width: 480px) {
+          .blyss-logo img {
+            min-height: 364px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .blyss-logo img {
+            min-height: 294px;
+          }
         }
 
         .details-list li > div:last-child {
@@ -1040,11 +1208,51 @@
           color: var(--dark-gray);
           letter-spacing: -0.13px;
         }
+
+        @layer details-images {
+          .blyss-logo img {
+            border-radius: 4px;
+            background-color: var(--soft-gray);
+          }
+
+          [theme='light'] .blyss-logo img:last-child {
+            display: none !important;
+          }
+
+          [theme='dark'] .blyss-logo img:first-child {
+            display: none !important;
+          }
+
+          @media (min-width: 768px) {
+            .blyss-logo img {
+              width: 212px;
+              padding: 8px 46px;
+            }
+          }
+
+          @media (main-width: 480px) and (max-width: 768px) {
+            .blyss-logo img {
+              width: 186px;
+              padding: 4px 52px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .blyss-logo img {
+              width: 148px;
+              padding: 2px 38px;
+            }
+          }
+        }
       }
     }
   }
 
   @layer faqs-section {
+    #section-faqs {
+      margin-bottom: 46px;
+    }
+
     @layer content {
       #section-faqs > .double-column {
         padding: 0;

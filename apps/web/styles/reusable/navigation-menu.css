@@ -38,7 +38,7 @@
 }
 
 @layer navigation-menu {
-  #navigation-menu.mobile-menu__opened + body {
+  #navigation-menu.mobile-menu__opened ~ body {
     overflow-x: scroll;
     overflow-y: hidden;
   }

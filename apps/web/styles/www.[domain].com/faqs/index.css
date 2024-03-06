@@ -1,13 +1,6 @@
 @import '/styles/www.[domain].com/accordion.css';
 
 @layer sections {
-  section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-bottom: 1px solid var(--white-smoke);
-  }
-
   section > * {
     max-width: var(--max-width);
   }
@@ -23,8 +16,24 @@
 
   @layer faqs-section {
     #section-faqs {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      margin-bottom: 36px;
       padding-top: 238px;
-      border: none !important;
+    }
+
+    @media (min-width: 768px) {
+      #section-faqs {
+        padding-bottom: 92px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #section-faqs {
+        padding-bottom: 62px;
+      }
     }
 
     @layer content {

@@ -66,7 +66,8 @@
           </ol>
 
           <form>
-            <img src="/assets/imgs/iMac-Platform.png" loading="lazy" />
+            <img src="/assets/imgs/iMac-platform-light.png" loading="lazy" />
+            <img src="/assets/imgs/iMac-platform-dark.png" loading="lazy" />
           </form>
         </div>
       </section>
@@ -115,8 +116,50 @@
           </div>
 
           <div>
-            <div class="image-container">
-              <img src="/assets/imgs/key-lock.png" />
+            <div class="user-centric">
+              <div>
+                <svg viewBox="0 0 100 100">
+                  <path
+                    d="M50,97c25.9,0,47-21.1,47-47S75.9,3,50,3S3,24.1,3,50S24.1,97,50,97z M49.9,24.1c9.8,0,17.7,7.9,17.7,17.7    c0,9.8-7.9,17.7-17.7,17.7c-9.8,0-17.7-7.9-17.7-17.7C32.2,32.1,40.2,24.1,49.9,24.1z M21.8,82.4c0.4-1.1,1-2.3,1.8-3.3    c6.6-8.8,16.2-14.3,26.7-14.3s20.1,5.5,26.7,14.3c0.7,0.9,1.2,1.8,1.6,2.8C71.1,88.8,61,93,50,93C39.2,93,29.4,89,21.8,82.4z"
+                  ></path>
+                </svg>
+              </div>
+
+              <ul>
+                <li style="--rotation: 0deg">
+                  <div>
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M20.25,12.719l-0,-6.582c-0,-0.68 -0.394,-1.298 -1.01,-1.586c-1.452,-0.678 -5.231,-2.441 -6.5,-3.033c-0.469,-0.219 -1.011,-0.219 -1.48,-0c-1.269,0.592 -5.048,2.355 -6.5,3.033c-0.616,0.288 -1.01,0.906 -1.01,1.586l-0,6.582c0,2.925 1.462,5.657 3.896,7.28l3.383,2.255c0.588,0.392 1.354,0.392 1.942,0l3.383,-2.255c2.434,-1.623 3.896,-4.355 3.896,-7.28Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </li>
+
+                <li style="--rotation: 72deg">
+                  <div>
+                    <svg></svg>
+                  </div>
+                </li>
+
+                <li style="--rotation: 144deg">
+                  <div>
+                    <svg></svg>
+                  </div>
+                </li>
+
+                <li style="--rotation: 216deg">
+                  <div>
+                    <svg></svg>
+                  </div>
+                </li>
+
+                <li style="--rotation: 288deg">
+                  <div>
+                    <svg></svg>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -297,9 +340,9 @@
             <span>05</span>
             <h3>Traditional Encryption</h3>
             <p>
-              While encryption can effectively prevent unauthorized access, it also entails the
-              destruction of the underlying semantic structure of the data, which result in the need
-              of online services to decrypt the message before processing it.
+              While encryption can prevent unauthorized access, it also destructs the underlying
+              semantic structure of the data, which results in the need of decrypting the message
+              before processing it.
             </p>
           </li>
 
@@ -323,23 +366,25 @@
             </hgroup>
 
             <p>
-              Solitude Search is designed to provide a range of private features, using the
-              open-source code provided by the Blyss company. The code is employed to implement the
-              Private Information Retrieval (PIR) protocol, which is utilized by this platform.
+              These are some of the key concepts you may want to understand about the Solitude
+              Search platform.
             </p>
           </div>
 
           <div>
             <ul class="details-list">
               <li>
-                <div></div>
+                <div class="blyss-logo">
+                  <img src="/assets/svgs/blyss-mark-white.svg" />
+                  <img src="/assets/svgs/blyss-mark.svg" />
+                </div>
 
                 <div>
-                  <span>Monitor In Real-Time</span>
+                  <span>Private Information Retrieval</span>
                   <p>
-                    Track the status of all your transactions in real-time, with live updates,
-                    detailed information, notifications, and seamless animations between states.
-                    You’ll be the first to know when your transactions go through.
+                    The platform is based on the open-source code provided by the company Blyss, to
+                    establish the cryptographic system that enables the generation and processing of
+                    incoming requests.
                   </p>
                 </div>
               </li>
@@ -348,11 +393,11 @@
                 <div></div>
 
                 <div>
-                  <span>Monitor In Real-Time</span>
+                  <span>Index Problem</span>
                   <p>
-                    Track the status of all your transactions in real-time, with live updates,
-                    detailed information, notifications, and seamless animations between states.
-                    You’ll be the first to know when your transactions go through.
+                    In PIR, users are expected to know the index of information on the server, but
+                    in reality, they only know the article's name, not its location. Therefore, a
+                    mapping between titles and indices is essential.
                   </p>
                 </div>
               </li>
@@ -361,11 +406,11 @@
                 <div></div>
 
                 <div>
-                  <span>Monitor In Real-Time</span>
+                  <span>Search Suggestions</span>
                   <p>
-                    Track the status of all your transactions in real-time, with live updates,
-                    detailed information, notifications, and seamless animations between states.
-                    You’ll be the first to know when your transactions go through.
+                    While searching you expect suggestions to appear. However, on this private
+                    platform, server-based suggestion algorithms are impractical due to encrypted
+                    processing. Therefore, the suggestion algorithm operates on the client device.
                   </p>
                 </div>
               </li>
