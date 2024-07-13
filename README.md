@@ -33,9 +33,9 @@ Això demostra la singularitat dels historials de cerca i com aquests són prou 
 
 ---
 
-### Ignota Search com a eina confidencial
+### Solitude Search com a eina confidencial
 
-Amb la finalitat contrarestar la falta de privacitat en Internet, Incognito dB es recolza en els principis de l’Homomorphic Encryption per garantir la Recuperació d’Informació Privada (Private Information Retrieval, PIR). És a dir, implementa algoritmes homomòrfics que asseguren que els usuaris aconsegueixin la informació que cerquen sense revelar cap detall personal o específic de la seva consulta, gràcies al suport del codi obert proporcionat per l’empresa [Blyss][blyss].
+Amb la finalitat contrarestar la falta de privacitat en Internet, Solitude Search es recolza en els principis de l’Homomorphic Encryption per garantir la Recuperació d’Informació Privada (Private Information Retrieval, PIR). És a dir, implementa algoritmes homomòrfics que asseguren que els usuaris aconsegueixin la informació que cerquen sense revelar cap detall personal o específic de la seva consulta, gràcies al suport del codi obert proporcionat per l’empresa [Blyss][blyss].
 
 Aquest fet impedeix que les empreses puguin analitzar, utilitzar, vendre o compartir les nostres dades de cerca. Les quals, recordem, són un 99% personals i molt definidores de la nostra identitat. Això es deu al fet que el servidor no té coneixement de la informació que l'usuari ha cercat, tot i haver-li proporcionat el contingut desitjat.
 
@@ -53,12 +53,12 @@ Twitter: [@rovi_roger](https://twitter.com/rovi_roger)
 
 ## :triangular_flag_on_post: Exempció de Responsabilitat
 
-Aquest projecte, Ignota Search, és una aplicació experimental i es proporciona "tal com és", sense cap garantia, expressa o implícita. En utilitzar aquest programari, accepteu assumir tots els riscos associats amb la seva utilització, incloent-hi, però sense limitar-se, la pèrdua de dades, fallida del sistema o qualsevol altre problema que pugui sorgir.
+Aquest projecte, Solitude Search, és una aplicació experimental i es proporciona "tal com és", sense cap garantia, expressa o implícita. En utilitzar aquest programari, accepteu assumir tots els riscos associats amb la seva utilització, incloent-hi, però sense limitar-se, la pèrdua de dades, fallida del sistema o qualsevol altre problema que pugui sorgir.
 
 <br />
 
 ## :page_with_curl: License
 
-Ignota Search es publica sota la Llicència MIT, que és una llicència de codi obert. Podeu contribuir a aquest projecte o utilitzar el codi com vulgueu, sempre que es compleixin les seves condicions. Podeu trobar una còpia del text de la llicència aquí: [`LICENSE`](LICENSE).
+Solitude Search es publica sota la Llicència MIT, que és una llicència de codi obert. Podeu contribuir a aquest projecte o utilitzar el codi com vulgueu, sempre que es compleixin les seves condicions. Podeu trobar una còpia del text de la llicència aquí: [`LICENSE`](LICENSE).
 
 **Nota**: Aquest programa no està afiliat amb [Blyss][blyss].
