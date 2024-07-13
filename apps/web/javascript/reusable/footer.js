@@ -1,5 +1,7 @@
 export async function AddFooter() {
-    const response = await fetch('http://192.168.1.201/reusable/footer.html');
+    const response = await fetch(
+        'http://192.168.0.100:80/reusable/footer.html',
+    );
 
     if (response.ok) {
         let layout = await response.text();

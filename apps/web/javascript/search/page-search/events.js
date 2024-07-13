@@ -5,7 +5,7 @@ import {
     Clear_Search_Text_Input,
 } from '/javascript/utils/clear.js';
 
-/**
+/**S
  * @info Actualiza la barra de búsqueda con un nuevo marcador de posición
  * y realiza acciones adicionales.
  *

@@ -5,7 +5,9 @@ let GetPageName = () => {
 };
 
 export async function AddLoading() {
-    const response = await fetch('http://192.168.1.201/reusable/loading.html');
+    const response = await fetch(
+        'http://192.168.0.100:80/reusable/loading.html',
+    );
 
     if (response.ok) {
         let layout = await response.text();
