@@ -4,13 +4,13 @@
 
 ## Reporting a Vulnerability
 
-Thank you for checking out _incognito dB_ project_. If you happen to spot something that doesn't look quite right on the security front, please follow these steps:
+Thank you for checking out _Solitude Search_ project_. If you happen to spot something that doesn't look quite right on the security front, please follow these steps:
 
 1. **Do not disclose the vulnerability publicly.** Please avoid creating GitHub issues or posting about it in public forums.
 
 2. **Email me directly:** Contact the project owner and maintainer by sending an email to [rogerrovi2006@gmail.com](mailto:rogerrovi2006@gmail.com). Please include all relevant details and, if possible, provide steps to reproduce the vulnerability.
 
-Your feedback in improving _ingocnito dB_ is greatly appreciated. Thank you for your cooperation.
+Your feedback in improving _Solitude Search_ is greatly appreciated. Thank you for your cooperation.
 
 <br />
 
