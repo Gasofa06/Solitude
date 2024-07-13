@@ -7,6 +7,12 @@ Benvingut/da al monorepositori de codi obert per a [Solitude Search][website], d
 
 <br />
 
+## :dart: Sample
+
+https://github.com/Gasofa06/Solitude/blob/main/apps/docs/assets/videos/sample.mp4
+
+<br />
+
 ## :dart: Introducció
 
 ### Economia de vigilància
