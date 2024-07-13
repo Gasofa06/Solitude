@@ -215,21 +215,21 @@
         }
 
         @media (min-width: 1080px) {
-          .hero-decoration > form  img {
+          .hero-decoration > form img {
             width: 1180px;
             padding: 94px 0;
           }
         }
 
         @media (min-width: 480px) and (max-width: 1080px) {
-          .hero-decoration > form  img {
+          .hero-decoration > form img {
             width: 100%;
             padding: 56px 0;
           }
         }
 
         @media (max-width: 480px) {
-          .hero-decoration > form  img {
+          .hero-decoration > form img {
             width: 132%;
             padding: 34px 0;
           }
@@ -1178,13 +1178,13 @@
         }
 
         @media (min-width: 480px) {
-          .blyss-logo img {
+          .details-list li > div:first-child {
             min-height: 364px;
           }
         }
 
         @media (max-width: 480px) {
-          .blyss-logo img {
+          .details-list li > div:first-child {
             min-height: 294px;
           }
         }
