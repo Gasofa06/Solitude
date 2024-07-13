@@ -3,53 +3,56 @@
 
 # Solitude Search
 
-Benvingut/da al monorepositori de codi obert per a [Solitude Search][website], dedicat a garantir la privacitat de l'usuari. S'utilitza el codi obert proporcionat per l'empresa [Blyss][blyss] amb l'objectiu de proporcionar accés totalment confidencial a una varietat d'articles. Ningú, ni tan sols el servidor en si mateix, serà capaç de conèixer el que estàs cercant; tot gràcies als principis de l'Homomorphic Encryption.
+Welcome to the open-source monorepository for [Solitude Search][website], dedicated to ensuring user privacy. The open-source code provided by the company [Blyss][blyss] is used with the aim of providing completely confidential access to a variety of articles. No one, not even the server itself, will be able to know what you are searching for; all thanks to the principles of Homomorphic Encryption.
 
 <br />
 
-## :dart: Sample
-
-https://github.com/Gasofa06/Solitude/blob/main/apps/docs/assets/videos/sample.mp4
+https://github.com/user-attachments/assets/4ae30b59-9b27-47d3-a779-17123ddff614
 
 <br />
 
-## :dart: Introducció
+> 🌏 The README file is available in [Spanish]() and [Catalan]() as well.
 
-### Economia de vigilància
+> 📄 An article about the project is also available [here]().
 
-És difícil mantenir secrets en l’era digital. Malgrat la criptografia i les diverses legislacions implementades, el problema de la privacitat continua assetjant als usuaris en Internet. Amb cada missatge, cada cerca i cada interacció; les empreses aprenen _quelcom_ més d’informació sobre nosaltres, fent que el preu que hem de pagar per estar connectats sigui la nostra privacitat.
+<br />
 
-Si bé s’espera que siguem els propietaris de les nostres dades personals, per poder participar mínimament en la vida moderna, ens veiem obligats a renunciar a aquest dret fonamental. Degut, en part, a la proliferació de grans i petites empreses tecnològiques que assumeixen el control de les nostres dades, amb l’únic objectiu d’obtenir-ne benefici (el que se li anomena _economia de vigilància_).
+## :dart: Introduction
 
-> Tanmateix, la implementació d’un sistema que no posa en control als usuaris serà, immediatament o amb el temps, rebutjat per tants d’ells que no pugui esdevenir i continuar essent una tecnologia unificadora.
+### Surveillance economy
+It is difficult to keep secrets in the digital age. Despite encryption and various legislations implemented, the issue of privacy continues to plague internet users. With every message, every search, and every interaction, companies learn something more about us, making the price we pay for being connected our privacy.
+
+While we are expected to be the owners of our personal data, to minimally participate in modern life, we are forced to relinquish this fundamental right. This is partly due to the proliferation of large and small tech companies that take control of our data, with the sole aim of profiting from it (what is known as the _surveillance economy_).
+
+> A system that does not put users in control will – immediately or over time - be rejected by enough of them that it cannot become and remain a unifying technology. 
 >
-> Cameron, K. (2005, maig 11). _The Laws of Identity_. [PDF link](https://www.identityblog.com/stories/2005/05/13/TheLawsOfIentity.pdf).
+> Cameron, K. (2005, maig 11). _The Laws of Identity_. [PDF link](https://www.identityblog.com/stories/2005/05/13/TheLawsOfIdentity.pdf).
 
 ---
 
-### Historial de navegació
+### Browsing history
 
-En el context de l'economia de vigilància, l'historial de cerca esdevé una eina magnífica per a les empreses per conèixer els elements definitoris de la nostra personalitat i els nostres gustos. És més:
+In the context of the surveillance economy, search history becomes a powerful tool for companies to understand the defining elements of our personality and preferences. Furthermore:
 
-> L'any 2020, Mozilla va publicar una investigació en què afirmava que els historials de cerca són un 99% únics a l'usuari, tot després d'haver analitzat 48,103 historials diferents.
+> In 2020, Mozilla published a study stating that search histories are 99% unique to the user, after analyzing 48,103 different histories.
 >
 > Mozilla Research. [PDF link](https://www.usenix.org/system/files/soups2020-bird.pdf).
 
-Això demostra la singularitat dels historials de cerca i com aquests són prou únics com per a identificar i comprendre als usuaris. Emfatitzant la necessitat d'adoptar pràctiques més transparents i respectuoses davant la gestió de dades personals, o la necessitat de dirigir-nos cap a un entorn on les proves criptogràfiques utilitzades siguin una justificació suficient per garantir que l'empresa no utilitzarà ni compartirà el contingut de les nostres cerques.
+This demonstrates the uniqueness of search histories and how they are distinct enough to identify and understand users. It underscores the need to adopt more transparent and respectful practices in the management of personal data or to move towards an environment where cryptographic proofs are a sufficient justification to ensure that the company will neither use nor share the content of our searches.
 
 ---
 
-### Solitude Search com a eina confidencial
+### Solitude Search as a confidential tool
 
-Amb la finalitat contrarestar la falta de privacitat en Internet, Solitude Search es recolza en els principis de l’Homomorphic Encryption per garantir la Recuperació d’Informació Privada (Private Information Retrieval, PIR). És a dir, implementa algoritmes homomòrfics que asseguren que els usuaris aconsegueixin la informació que cerquen sense revelar cap detall personal o específic de la seva consulta, gràcies al suport del codi obert proporcionat per l’empresa [Blyss][blyss].
+To counteract the lack of privacy on the Internet, Solitude Search relies on the principles of Homomorphic Encryption to ensure Private Information Retrieval (PIR). This means it implements homomorphic algorithms that allow users to obtain the information they seek without revealing any personal or specific details of their query, thanks to the support of the open-source code provided by the company [Blyss][blyss].
 
-Aquest fet impedeix que les empreses puguin analitzar, utilitzar, vendre o compartir les nostres dades de cerca. Les quals, recordem, són un 99% personals i molt definidores de la nostra identitat. Això es deu al fet que el servidor no té coneixement de la informació que l'usuari ha cercat, tot i haver-li proporcionat el contingut desitjat.
+This prevents companies from analyzing, using, selling, or sharing our search data, which, as we remember, is 99% personal and highly defining of our identity. This is because the server has no knowledge of the information the user has searched for, despite having provided the desired content.
 
 <br />
 
-## :mailbox_closed: _Feedback_ i Contacte
+## :mailbox_closed: Feedback and Contact
 
-No dubtis en posar-te en contacte si tens alguna pregunta, suggeriment o comentari sobre aquest projecte. Pots contactar-me per correu electrònic o connectar amb mi a través de les xarxes socials.
+Do not hesitate to contact me if you have any questions, suggestions, or comments about this project. You can reach me by email or connect with me through social media.
 
 Email: [rogerrovi2006@gmail.com](mailto:rogerrovi2006@gmail.com)
 
@@ -57,14 +60,14 @@ Twitter: [@rovi_roger](https://twitter.com/rovi_roger)
 
 <br />
 
-## :triangular_flag_on_post: Exempció de Responsabilitat
+## :triangular_flag_on_post: Disclaimer
 
-Aquest projecte, Solitude Search, és una aplicació experimental i es proporciona "tal com és", sense cap garantia, expressa o implícita. En utilitzar aquest programari, accepteu assumir tots els riscos associats amb la seva utilització, incloent-hi, però sense limitar-se, la pèrdua de dades, fallida del sistema o qualsevol altre problema que pugui sorgir.
+This project, Solitude Search, is an experimental application and is provided "as is," without any warranty, express or implied. By using this software, you agree to assume all risks associated with its use, including, but not limited to, data loss, system failure, or any other issues that may arise.
 
 <br />
 
 ## :page_with_curl: License
 
-Solitude Search es publica sota la Llicència MIT, que és una llicència de codi obert. Podeu contribuir a aquest projecte o utilitzar el codi com vulgueu, sempre que es compleixin les seves condicions. Podeu trobar una còpia del text de la llicència aquí: [`LICENSE`](LICENSE).
+Solitude Search is released under the MIT License, which is an open-source license. You can contribute to this project or use the code as you wish, provided that you comply with its terms. You can find a copy of the license text here: [`LICENSE`](https://github.com/Gasofa06/Solitude/blob/main/LICENSE.md).
 
-**Nota**: Aquest programa no està afiliat amb [Blyss][blyss].
+**Note**: This program is not affiliated with [Blyss][blyss].
