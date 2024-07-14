@@ -1,19 +1,32 @@
 [website]: https://incognitodb.com
 [blyss]: https://github.com/blyssprivacy
+[article]: https://github.com/Gasofa06/Treball-de-Recerca/tree/main/[PDF]/article.ca.pdf
 
 # Solitude Search
 
 Welcome to the open-source monorepository for [Solitude Search][website], dedicated to ensuring user privacy. The open-source code provided by the company [Blyss][blyss] is used with the aim of providing completely confidential access to a variety of articles. No one, not even the server itself, will be able to know what you are searching for; all thanks to the principles of Homomorphic Encryption.
 
-<br />
-
-https://github.com/user-attachments/assets/4ae30b59-9b27-47d3-a779-17123ddff614
+The Readme file is available in [Spanish]() and [Catalan]() as well, and there is also an article about the project available [here][article], only in Catalan though.
 
 <br />
 
-> 🌏 The README file is available in [Spanish]() and [Catalan]() as well.
+## :sparkles: Samples
 
-> 📄 An article about the project is also available [here]().
+https://github.com/user-attachments/assets/1ad48141-073e-4b7b-b835-efbe36b97774
+
+> The homepage of the site.
+
+---
+
+https://github.com/user-attachments/assets/31235a5e-443d-4c97-9b5c-81f83ab0d953
+
+> A sample of a confidential search using Solitude Search.
+
+---
+
+https://github.com/user-attachments/assets/dfda971f-301c-4f69-8035-a31ef431483c
+
+> The site also comes with dark theme.
 
 <br />
 
@@ -47,6 +60,14 @@ This demonstrates the uniqueness of search histories and how they are distinct e
 To counteract the lack of privacy on the Internet, Solitude Search relies on the principles of Homomorphic Encryption to ensure Private Information Retrieval (PIR). This means it implements homomorphic algorithms that allow users to obtain the information they seek without revealing any personal or specific details of their query, thanks to the support of the open-source code provided by the company [Blyss][blyss].
 
 This prevents companies from analyzing, using, selling, or sharing our search data, which, as we remember, is 99% personal and highly defining of our identity. This is because the server has no knowledge of the information the user has searched for, despite having provided the desired content.
+
+<br />
+
+## :books: Article
+
+![](https://github.com/Gasofa06/Treball-de-Recerca/blob/main/mockup/sample-magazine.jpg)
+
+> An article about the project is also available [here][article].
 
 <br />
 
