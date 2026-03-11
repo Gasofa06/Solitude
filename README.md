@@ -75,8 +75,6 @@ This prevents companies from analyzing, using, selling, or sharing our search da
 
 Do not hesitate to contact me if you have any questions, suggestions, or comments about this project. You can reach me by email or connect with me through social media.
 
-Email: [rogerrovi2006@gmail.com](mailto:rogerrovi2006@gmail.com)
-
 Twitter: [@rovi_roger](https://twitter.com/rovi_roger)
 
 <br />
